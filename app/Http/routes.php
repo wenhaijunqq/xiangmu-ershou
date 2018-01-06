@@ -11,24 +11,25 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('index');
+    return view('home/index');
 });
 Route::get('/www/buy', function () {
-    return view('PurchaseCar');
+    return view('/home/PurchaseCar');
 });
 Route::get('/www/sell', function () {
-    return view('SellCar');
+    return view('/home/SellCar');
 });
 Route::get('/www/server', function () {
-    return view('ServerPro');
+    return view('/home/ServerPro');
 });
 Route::get('/www/oldcar', function () {
-    return view('OldCarCon');
+    return view('/home/OldCarCon');
 });
 Route::get('IndexLogin', function () {
-    return view('login');
+    return view('/home/login');
 });
 Route::get('/IndexRegister', function () {
-    return view('register');
+    return view('/home/register');
 });

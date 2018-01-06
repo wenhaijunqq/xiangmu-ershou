@@ -1,22 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>我要买车</title>
-        <link rel="stylesheet" href="/css/h_SellCar.css">
-        <link rel="stylesheet" href="/css/h_public.css">
-    </head>
-    <body style="background-image: url(/img/sell-bg.290289564e5360959be1857de09bf8c4.jpg);background-repeat: no-repeat;">
-        <header class="head">
-            @include('header');
-                <span style="position:absolute;top:200px;left: 7px;font-size: 20px;"><</span>
-                <span style="position:absolute;top:200px;right: 7px;font-size: 20px;">></span>
-                <div class="nav-btn">
-                    <em></em>
-                    <em></em>
-                    <em></em>
-                </div>
-        </header>
+@extends('/layout/HomeLayout')
+@section('title','我要卖车')
+
+@section('content')
+
+<body style="background-image: url(/img/sell-bg.290289564e5360959be1857de09bf8c4.jpg);background-repeat: no-repeat;">
+
 		<div class="main-con">
 			<div class="sell-area">
 		        <div class="slogan-1">个人卖给个人,无中间商赚差价</div>
@@ -69,28 +57,28 @@
 		        <ul class="deal-list clearfix">
 		            <div class="deal-list-wrapper clearfix" style="left: -;">
 		                <li>
-			                </img src="/img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
+			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
 			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
 			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
 			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
 			                <div class="deal-day">1天<br><em>卖出</em></div>
 		            	</li>
 		            	<li>
-			                </img src="/img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
+			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
 			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
 			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
 			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
 			                <div class="deal-day">1天<br><em>卖出</em></div>
 		            	</li>
 		            	<li>
-			                </img src="/img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
+			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
 			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
 			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
 			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
 			                <div class="deal-day">1天<br><em>卖出</em></div>
 		            	</li>
 		            	<li>
-			                </img src="/img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
+			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
 			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
 			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
 			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
@@ -142,6 +130,6 @@
 	        </ul>
 	    </div>
 	</div>
-@include('footer');
+
 </body>
-</html>
+@endsection

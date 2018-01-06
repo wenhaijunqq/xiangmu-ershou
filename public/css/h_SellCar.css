@@ -61,7 +61,7 @@ width: 63px;float: left;height: 34px;padding: 0 15px;margin: 17px 0 0 15px;
 }
 .phone-input {
     width: 408px;
-    height: 18px;
+    height: 56px;
     padding: 19px 15px;
     line-height: 18px;
     color: #495056;
@@ -371,5 +371,3 @@ width: 63px;float: left;height: 34px;padding: 0 15px;margin: 17px 0 0 15px;
 .guazi-qa .qa-box .qa-list li .qa-pic.qa-pic-4 {
     background-position: -310px -220px;
 }
-
-
