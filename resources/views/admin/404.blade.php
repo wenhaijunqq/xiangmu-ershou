@@ -1,4 +1,4 @@
-@extends('/layout/adminLayout')
+@extends('/layout/AdminLayout')
 @section('title','后台文章')
 
 @section('content')
@@ -8,7 +8,7 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="/admins/img/user04.png" alt="">
+                        <img src="/admin/img/user04.png" alt="">
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
@@ -17,6 +17,7 @@
                     <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
                 </div>
             </div>
+
 
             <!-- 菜单 -->
             <ul class="sidebar-nav">
@@ -43,7 +44,7 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="chart.html" class="active">
+                    <a href="chart.html">
                         <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
 
                     </a>
@@ -81,7 +82,7 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="404.html">
+                    <a href="404.html" class="active">
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
                     </a>
                 </li>
@@ -89,71 +90,38 @@
             </ul>
         </div>
 
+
+
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
 
-            <div class="container-fluid am-cf">
-                <div class="row">
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 图表 <small>Amaze UI</small></div>
-                        <p class="page-header-description">图表组件使用的是 <a href="http://echarts.baidu.com">百度图表echarts</a>。</p>
-                    </div>
-                    <div class="am-u-lg-3 tpl-index-settings-button">
-                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
-                    </div>
-                </div>
 
-            </div>
 
             <div class="row-content am-cf">
                 <div class="widget am-cf">
-                    <div class="widget-head am-cf">
-                        <div class="widget-title am-fl">折线</div>
-                        <div class="widget-function am-fr">
-                            <a href="javascript:;" class="am-icon-cog"></a>
-                        </div>
-                    </div>
-                    <div class="widget-body am-fr">
-                        <div style="height: 400px" class="" id="tpl-echarts-A">
+                    <div class="widget-body">
+                        <div class="tpl-page-state">
+                            <div class="tpl-page-state-title am-text-center tpl-error-title">404</div>
+                            <div class="tpl-error-title-info">Page Not Found</div>
+                            <div class="tpl-page-state-content tpl-error-content">
+
+                                <p>对不起,没有找到您所需要的页面,可能是URL不确定,或者页面已被移除。</p>
+                                <button type="button" class="am-btn am-btn-secondary am-radius tpl-error-btn">Back Home</button></div>
 
                         </div>
                     </div>
                 </div>
 
 
-                <div class="widget am-cf">
-                    <div class="widget-head am-cf">
-                        <div class="widget-title am-fl">雷达</div>
-                        <div class="widget-function am-fr">
-                            <a href="javascript:;" class="am-icon-cog"></a>
-                        </div>
-                    </div>
-                    <div class="widget-body am-fr">
-                        <div style="height: 400px" id="tpl-echarts-B">
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="widget am-cf">
-                    <div class="widget-head am-cf">
-                        <div class="widget-title am-fl">折线柱图</div>
-                        <div class="widget-function am-fr">
-                            <a href="javascript:;" class="am-icon-cog"></a>
-                        </div>
-                    </div>
-                    <div class="widget-body am-fr">
-                        <div style="height: 400px" id="tpl-echarts-C">
-
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
     </div>
     </div>
+    <script src="/admin/js/amazeui.min.js"></script>
+    <script src="/admin/js/amazeui.datatables.min.js"></script>
+    <script src="/admin/js/dataTables.responsive.min.js"></script>
+    <script src="/admin/js/app.js"></script>
 
 </body>
 

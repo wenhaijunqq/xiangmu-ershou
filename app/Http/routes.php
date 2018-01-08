@@ -52,28 +52,28 @@ Route::get('/admin/index',function(){
 Route::get('/admin/chart',function(){
 	return view('/admin/chart');
 });
-//后台UI表单页
-Route::get('/admin/fA',function(){
-	return view('admin/formAmazeui');
+//后台日历页
+Route::get('/admin/calendar',function(){
+	return view('admin/calendar');
 });
-//后台线条表单页
-Route::get('/admin/fL',function(){
-	return view('admin/formLine');
+//后台表单页
+Route::get('/admin/form',function(){
+	return view('admin/form');
 });
-//后台表格消息列表页
-Route::get('/admin/fN',function(){
-	return view('admin/formNews');
+//后台注册页
+Route::get('/admin/signup',function(){
+	return view('admin/signUp');
 });
-//后台表格文字列表页
-Route::get('/admin/fNL',function(){
-	return view('admin/formNewsList');
+//后台文字列表页
+Route::get('/admin/list',function(){
+	return view('admin/tableList');
 });
-//后台表格文字表格页
-Route::get('/admin/font',function(){
-	return view('admin/tableFontList');
+//后台图片列表页
+Route::get('/admin/imglist',function(){
+	return view('admin/tableListImg');
 });
-//后台表格图片表格页
-Route::get('/admin/images',function(){
-	return view('/admin/tableImagesList');
+//后台表格页
+Route::get('/admin/table',function(){
+	return view('admin/tables');
 });
 
