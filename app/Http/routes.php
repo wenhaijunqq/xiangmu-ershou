@@ -28,6 +28,15 @@ Route::get('/www/server', function () {
 Route::get('/www/oldcar', function () {
     return view('/home/OldCarCon');
 });
+Route::get('/www/ask',function(){
+	return view('/home/question/ask');
+});
+Route::get('/www/asklist',function(){
+	return view('/home/question/asklist');
+});
+Route::get('/www/answer',function(){
+	return view('/home/question/answer');
+});
 Route::get('IndexLogin', function () {
     return view('/home/login');
 });

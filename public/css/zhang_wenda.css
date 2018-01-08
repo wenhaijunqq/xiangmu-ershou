@@ -118,7 +118,7 @@ a{
 }
 
 #header .top .search-box .search .search-btn {
-    float: right;
+    float: left;
     width: 63px;
     height: 36px;
     color: #fff;
@@ -174,7 +174,7 @@ a{
     background: url("../img/banimg-2.jpg") no-repeat;
 }
 .banimg .search{
-	width: 804px;
+	width: 1000px;
     height: 58px;
     padding-top: 105px;
     margin: 0 auto;
@@ -200,18 +200,16 @@ a{
     background-position: 36px 13px;
 }
 .ipt-btn{
-    background-image: url(../img/icon-2.png);
-    background-repeat: no-repeat;
     width: 60px;
     height: 36px;
     padding: 0;
-    font: 16px/36px Microsoft yahei;
-    color: #fff;
+    font-size: 16px ;
+    color: white;
     background-color: #22ac38;
     border: 1px solid #22ac38;
     border-radius: 0 5px 5px 0;
     background-position: 18px -105px;
-    text-indent: -9999px;
+   
 }
 .ipt-btn:hover{
 	cursor: pointer;
@@ -325,4 +323,163 @@ a{
 .footer{
 	height:364px;
 	background: url(../img/footer.png);
+}
+
+/*提问页开始*/
+    .ask-main-box{
+     width:616px;
+     height:350px;
+     padding: 55px 0 0;
+     margin: 0 auto 50px;
+     }
+     .ask-main-box .tiwen{
+        width: 616px;
+        height: 50px;
+        margin-top: -12px;
+        }
+     .tiwen p{
+       margin-left: 80px;
+       margin-top: -50px;
+       font-size: 28px;
+     }
+     .leibie{
+        margin-top: 20px;
+     }
+     #wentikuang{
+        margin-top:20px;
+     }
+     .submit{
+        float: right;
+        margin-top: 20px;
+     }
+
+     /*问题列表页开始*/
+     .listbox{
+        width: 1200px;
+        height: 600px;
+        padding: 55px 0 0;
+        margin: 0px auto 50px;
+     }
+     .dh{
+        width: 300px;
+        height: 20px;
+        margin-top: -30px;
+     }
+
+.listbox .search2{
+    width: 502px;
+    height: 36px;
+    margin: -20px auto 50px;
+}
+.listbox .search2 .search2-input {
+    float: left;
+    width: 438px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    border: 1px solid #22ac38;
+    border-right: none;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+}
+
+.listbox .search2 .search2-btn {
+    float: left;
+    width: 63px;
+    height: 36px;
+    color: #fff;
+    background: #22ac38;
+    border: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+}
+.find-tit{
+    width: 502px;
+    height: 20px;
+    margin: -30px auto 50px;  
+}
+#askpage{
+    width: 235px;
+    height: 40px;
+    margin: -30px  auto 10px;
+}
+
+/*answer页开始*/
+ .answerbox .dh{
+        width: 300px;
+        height: 20px;
+        margin-top: 30px;
+     }
+.answerbox .wen{
+    width: 870px;
+    height: 105px;
+    margin: -10px auto 10px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 400;
+    padding-left: 80px;
+    padding-top: 20px;
+    border: 1px solid #8A8B86;
+}   
+  
+  .answerbox .wen p{
+    font-size: 14px;
+  } 
+
+  #time{
+   margin-top: 5px;
+  }
+
+.answerbox .da{
+    width: 870px;
+    height: 105px;
+    margin: 20px auto 80px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 400;
+    padding-left: 80px;
+    padding-top: 20px;
+    border: 1px solid #8A8B86;
+}   
+
+.answerbox .search2{
+    width: 502px;
+    height: 36px;
+    margin: -20px auto 50px;
+}
+.answerbox .search2 .search2-input {
+    float: left;
+    width: 438px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    border: 1px solid #22ac38;
+    border-right: none;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+}
+
+.answerbox .search2 .search2-btn {
+    float: left;
+    width: 63px;
+    height: 36px;
+    color: #fff;
+    background: #22ac38;
+    border: none;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
 }
