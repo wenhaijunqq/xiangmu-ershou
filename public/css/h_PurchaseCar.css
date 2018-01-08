@@ -132,7 +132,7 @@ width: 63px;float: left;height: 34px;padding: 0 15px;margin: 17px 0 0 15px;
 .dd-top {
     height: 20px;
     padding: 15px 0 15px 6px;
-}	
+}
 .dd-top .a-box {
     float: left;
     width: 940px;
@@ -425,7 +425,7 @@ js-hover:hover .dd-sel>i{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    
+
 }
 .t-i {
     padding-left: 20px;
@@ -450,7 +450,7 @@ address, cite, code, dfn, em, i, var {
     font-style: normal;
 }
 .icon-sale {
-    background-image: url(../img/icon_@1x_s.fb16a94d9aafffcb573139cb98bd4964.png);
+    background-image: url(/img/icon_@1x_s.fb16a94d9aafffcb573139cb98bd4964.png);
  	background-repeat: no-repeat;
     background-position: -100px -100px;
     height: 40px;
