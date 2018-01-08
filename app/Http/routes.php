@@ -34,6 +34,9 @@ Route::get('IndexLogin', function () {
 Route::get('/IndexRegister', function () {
     return view('/home/register');
 });
+Route::get('/www/xiangqing', function () {
+	return view('/home/Xiangqing');
+});
 
 //后台模板引入
 // Route::get('/admin',function()
