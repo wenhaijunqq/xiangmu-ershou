@@ -32,3 +32,4 @@ Route::get('IndexLogin', function () {
 Route::get('/IndexRegister', function () {
     return view('register');
 });
+
