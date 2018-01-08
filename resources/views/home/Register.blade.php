@@ -53,6 +53,7 @@
 		var pwd=document.getElementById('pwd').value;
 		var icode=document.getElementById('icode').value;
 		var vcode=document.getElementById('vcode').value;
+        var phone= /^(0-9){11}$/;
 		var Email = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
 		if(phone=="")
 		  alert("请输入手机号");
