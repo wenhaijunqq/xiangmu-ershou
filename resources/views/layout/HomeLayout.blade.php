@@ -11,6 +11,7 @@
         <!-- 卖车页css样式-->
         <link rel="stylesheet" href="/css/h_SellCar.css">
     </head>
+
         @include('/home/header')
         <!-- 引入页面内容-->
         @section('content')

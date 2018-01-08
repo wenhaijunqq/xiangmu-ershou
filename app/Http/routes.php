@@ -27,7 +27,7 @@ Route::get('/www/server', function () {
 Route::get('/www/oldcar', function () {
     return view('/home/OldCarCon');
 });
-Route::get('IndexLogin', function () {
+Route::get('/IndexLogin', function () {
     return view('/home/login');
 });
 Route::get('/IndexRegister', function () {
