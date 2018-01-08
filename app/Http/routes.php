@@ -12,6 +12,7 @@
 */
 
 
+//前台模板引入
 Route::get('/', function () {
     return view('home/index');
 });
@@ -33,3 +34,46 @@ Route::get('IndexLogin', function () {
 Route::get('/IndexRegister', function () {
     return view('/home/register');
 });
+
+//后台模板引入
+// Route::get('/admin',function()
+// {
+// 	return redirect('/admin/login');
+// });
+
+//后台登陆路由
+Route::controller('/admin/login','Admin\LoginController');
+
+//后台首页
+Route::get('/admin/index',function(){
+	return view('admin/index');
+});
+//后台数据表页
+Route::get('/admin/chart',function(){
+	return view('/admin/chart');
+});
+//后台UI表单页
+Route::get('/admin/fA',function(){
+	return view('admin/formAmazeui');
+});
+//后台线条表单页
+Route::get('/admin/fL',function(){
+	return view('admin/formLine');
+});
+//后台表格消息列表页
+Route::get('/admin/fN',function(){
+	return view('admin/formNews');
+});
+//后台表格文字列表页
+Route::get('/admin/fNL',function(){
+	return view('admin/formNewsList');
+});
+//后台表格文字表格页
+Route::get('/admin/font',function(){
+	return view('admin/tableFontList');
+});
+//后台表格图片表格页
+Route::get('/admin/images',function(){
+	return view('/admin/tableImagesList');
+});
+
