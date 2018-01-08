@@ -76,4 +76,8 @@ Route::get('/admin/imglist',function(){
 Route::get('/admin/table',function(){
 	return view('admin/tables');
 });
+//后台404页
+Route::get('/admin/404',function(){
+	return view('admin/404');
+});
 

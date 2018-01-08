@@ -23,7 +23,7 @@
 
 
 </head>
-
+    
 <body data-type="index">
     <script src="/admins/js/theme.js"></script>
     <div class="am-g tpl-g">
@@ -186,8 +186,4 @@
                 </div>
             </div>
         </div>
-        <script src="/admins/js/amazeui.min.js"></script>
-        <script src="/admins/js/amazeui.datatables.min.js"></script>
-        <script src="/admins/js/dataTables.responsive.min.js"></script>
-        <script src="/admins/js/app.js"></script>
 
