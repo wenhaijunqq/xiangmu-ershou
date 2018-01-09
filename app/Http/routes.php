@@ -44,13 +44,6 @@ Route::get('/IndexRegister', function () {
     return view('/home/register');
 });
 
-//后台模板引入
-// Route::get('/admin',function()
-// {
-// 	return redirect('/admin/login');
-// });
-
-
 //后台首页
 Route::get('/admin/index',function(){
 	return view('admin/index');
