@@ -226,7 +226,11 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/b4f22bc4794b652fccefae5a5be9565305e11572",
+=======
                 "url": "https://files.phpcomposer.com/files/Gregwar/Captcha/b4f22bc4794b652fccefae5a5be9565305e11572.zip",
+>>>>>>> d2246f51d9023659fe5246609d9e34030fd83674
                 "reference": "b4f22bc4794b652fccefae5a5be9565305e11572",
                 "shasum": ""
             },
