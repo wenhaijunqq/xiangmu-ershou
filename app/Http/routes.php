@@ -98,3 +98,8 @@ Route::get('/admin/question-reply',function(){
 	return view('admin/question/reply');
 });
 
+//后台网站配置页
+Route::resource('/admin/config','admin\ConfigController');
+//后台订单管理页
+Route::resource('/admin/order','admin\OrderController');
+
