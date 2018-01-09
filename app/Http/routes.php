@@ -48,6 +48,7 @@ Route::get('/www/xiangqing', function () {
 
 });
 
+
 Route::get('/admin/index',function(){
 	return view('admin/index');
 });
