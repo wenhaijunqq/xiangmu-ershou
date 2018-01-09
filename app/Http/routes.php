@@ -47,7 +47,7 @@ Route::get('/www/xiangqing', function () {
 	return view('/home/Xiangqing');
 
 });
-
+Route::controller('/admin/login','Admin\LoginController');
 Route::get('/admin/index',function(){
 	return view('admin/index');
 });
