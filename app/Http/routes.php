@@ -83,3 +83,15 @@ Route::get('/admin/table',function(){
 Route::get('/admin/404',function(){
 	return view('admin/404');
 });
+//后台登陆路由
+Route::controller('/admin/login','Admin\LoginController');
+//后台已经评估路由
+Route::resource('/admin/estimate/already','Admin\EstimateAlreadyController');
+//后台等待评估路由
+Route::resource('/admin/estimate/wait','Admin\EstimateWaitController');
+//后台待审核路由
+Route::resource('/admin/examine/wait','Admin\ExamineWaitController');
+//后台已经审核路由
+Route::resource('/admin/examine/already','Admin\ExamineAlreadyController');
+//后台车辆基本信息
+Route::resource('/admin/basicinformation','Admin\BasicInformationController');

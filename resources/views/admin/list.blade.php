@@ -66,6 +66,45 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 评估模块
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub estimate">
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/estimate/wait">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 待评估
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/estimate/already">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 已评估
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                  <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 审核模块
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub examine">
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/examine/wait">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 待审核
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/examine/already">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 已审核
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
