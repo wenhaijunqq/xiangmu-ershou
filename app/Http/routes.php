@@ -83,3 +83,7 @@ Route::get('/admin/table',function(){
 Route::get('/admin/404',function(){
 	return view('admin/404');
 });
+//后台网站配置页
+Route::resource('/admin/config','admin\ConfigController');
+//后台订单管理页
+Route::resource('/admin/order','admin\OrderController');

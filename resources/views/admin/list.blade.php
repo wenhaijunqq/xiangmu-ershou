@@ -82,6 +82,18 @@
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
                     </a>
                 </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/config">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 网站配置
+
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/order">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 订单管理
+
+                    </a>
+                </li>
 
             </ul>
         </div>
