@@ -42,10 +42,13 @@
                 <li class="sidebar-nav-link">
                     <a href="/admin/chart">
                         <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
-
                     </a>
                 </li>
-
+                <li class="sidebar-nav-link">
+                    <a href="/admin/oldcar">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 问答管理
+                    </a>
+                </li>
                 <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
