@@ -43,8 +43,11 @@ Route::get('IndexLogin', function () {
 Route::get('/IndexRegister', function () {
     return view('/home/register');
 });
+Route::get('/www/xiangqing', function () {
+	return view('/home/Xiangqing');
 
-//后台首页
+});
+
 Route::get('/admin/index',function(){
 	return view('admin/index');
 });
@@ -80,5 +83,3 @@ Route::get('/admin/table',function(){
 Route::get('/admin/404',function(){
 	return view('admin/404');
 });
-
-
