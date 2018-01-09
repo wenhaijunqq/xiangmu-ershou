@@ -51,4 +51,41 @@ Route::get('/IndexRegister', function () {
 // });
 
 
+//后台首页
+Route::get('/admin/index',function(){
+	return view('admin/index');
+});
+//后台数据表页
+Route::get('/admin/chart',function(){
+	return view('/admin/chart');
+});
+//后台日历页
+Route::get('/admin/calendar',function(){
+	return view('admin/calendar');
+});
+//后台表单页
+Route::get('/admin/form',function(){
+	return view('admin/form');
+});
+//后台注册页
+Route::get('/admin/signup',function(){
+	return view('admin/signUp');
+});
+// 后台文字列表页
+Route::get('/admin/list',function(){
+	return view('admin/tableList');
+});
+//后台图片列表页
+Route::get('/admin/imglist',function(){
+	return view('admin/tableListImg');
+});
+//后台表格页
+Route::get('/admin/table',function(){
+	return view('admin/tables');
+});
+//后台404页
+Route::get('/admin/404',function(){
+	return view('admin/404');
+});
+
 

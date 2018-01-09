@@ -12,9 +12,9 @@
                 <span>（周一至周日 9:00-21:00）</span>
             </p>
         </div>
-        <img src="img/ewm-wx-2.png" alt="" class="gz-ewm">
+        <img src="./img/ewm-wx-2.png" alt="" class="gz-ewm">
         <p class="ewm-tit">关注微信</p>
-        <img src="img/ewm-app-2.png" alt="" class="gz-ewm">
+        <img src="./img/ewm-app-2.png" alt="" class="gz-ewm">
         <p class="ewm-tit">下载APP</p>
         <div class="basic-info">
             <div class="info-link">

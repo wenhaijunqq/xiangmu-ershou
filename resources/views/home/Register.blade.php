@@ -22,7 +22,7 @@
                 <input id="vcode" type="text" class="kuang_txt yanzm" placeholder="验证码" value="">
                 <div>
                 	<div class="hui_kuang"><img src="img/zc_22.jpg" width="92" height="31"></div>
-                	<div class="shuaxin"><a href="#"><img src="imgs/zc_25.jpg" width="13" height="14"></a></div>
+                	<div class="shuaxin"><a href="#"><img src="img/zc_25.jpg" width="13" height="14"></a></div>
                 </div>
                 <div>
                		<input name="" type="checkbox" value=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《XXXXX使用协议》</span></a></span>
