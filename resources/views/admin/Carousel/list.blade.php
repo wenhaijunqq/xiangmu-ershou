@@ -10,7 +10,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">订单列表</div>
+                                <div class="widget-title  am-cf">轮播列表</div>
 
 
                             </div>
@@ -20,10 +20,8 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/Carousel/list/create"> 新增</a></button>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -51,25 +49,25 @@
                                 </div>
 
                                 <div class="am-u-sm-12">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
                                         <thead>
                                             <tr>
-                                                <th>订单编号</th>
-                                                <th>卖家id</th>
-                                                <th>买家id</th>
-                                                <th>车辆id</th>
-                                                <th>评估员id</th>
-                                                <th></th>
+                                                <th>轮播缩略图</th>
+                                                <th>标题</th>
+                                                <th>URL地址</th>
+                                                <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="gradeX">
-                                                <td>Amaze UI 模式窗口</td>
-                                                <td>张鹏飞</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">大酬宾</td>
+                                                <td class="am-text-middle">www.sina.com.cn</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
+                                                        <a href="/admin/Carousel/list/1/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
@@ -78,27 +76,11 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr class="even gradeC">
-                                                <td>有适配微信小程序的计划吗</td>
-                                                <td>天纵之人</td>
-                                                <td>2016-09-26</td>
-                                                <td>
-                                                    <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 编辑
-                                                        </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 删除
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                           
-                                            <!-- more data -->
-                                        </tbody>
+                                            </tbody>
                                     </table>
                                 </div>
-                                <div class="am-u-lg-12 am-cf">
+                                            
+                               <div class="am-u-lg-12 am-cf">
 
                                     <div class="am-fr">
                                         <ul class="am-pagination tpl-pagination">
@@ -120,6 +102,7 @@
         </div>
     </div>
     </div>
+
 </body>
 
 </html>

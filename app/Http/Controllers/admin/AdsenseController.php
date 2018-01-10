@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Model\adsense;
 
-class ConfigController extends Controller
+class AdsenseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        //加载网站配置首页
-        return view('/admin/config/index');
+        //加载到广告浏览页面
+        return view('/admin/adsense/list');
     }
 
     /**
@@ -27,7 +28,9 @@ class ConfigController extends Controller
      */
     public function create()
     {
-        //
+        //加载到广告添加页面
+        return view('/admin/adsense/create');
+
     }
 
     /**
@@ -60,7 +63,9 @@ class ConfigController extends Controller
      */
     public function edit($id)
     {
-        //
+        //加载修改页面
+        return view('/admin/adsense/edit');
+
     }
 
     /**
