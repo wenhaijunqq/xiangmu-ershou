@@ -92,11 +92,25 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="/admin/order">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 订单管理
-
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/order">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 订单信息
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/reserve">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 预约信息
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
 
             </ul>
         </div>

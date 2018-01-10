@@ -100,6 +100,8 @@ Route::get('/admin/question-reply',function(){
 
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');
-//后台订单管理页
+//后台订单信息页
 Route::resource('/admin/order','admin\OrderController');
+//后台预约信息页
+Route::resource('/admin/reserve','admin\ReserveController');
 

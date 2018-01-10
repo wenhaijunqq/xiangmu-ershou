@@ -1,5 +1,5 @@
 @extends('/layout/adminLayout')
-@section('title','后台订单页')
+@section('title','后台文章')
 
 @section('content')
 
@@ -20,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -29,13 +29,11 @@
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
               <option value="option1">所有类别</option>
-              <option value="option2">订单编号</option>
-              <option value="option3">买家id</option>
+              <option value="option2">预约编号</option>
+              <option value="option3">车辆id</option>
               <option value="option4">卖家id</option>
-              <option value="option5">评估员id</option>
-              <option value="option6">成交状态</option>
-              <option value="option7">成交价格</option>
-
+              <option value="option5">买家id</option>
+              <option value="option6">评估员id</option>
             </select>
                                     </div>
                                 </div>
@@ -52,60 +50,40 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>订单编号</th>
-                                                <th>卖家id</th>
-                                                <th>买家id</th>
-                                                <th>车辆id</th>
-                                                <th>评估员id</th>
-                                                <th>交易时间</th>
-                                                <th>成交状态</th>
-                                                <th>成交价格</th>
+                                                <th>预约编号</th>
+                                                <th>车辆ID</th>
+                                                <th>卖家ID</th>
+                                                <th>买家ID</th>
+                                                <th>评估员ID</th>
+                                                <th>预约时间</th>
+                                                <th>看车时间</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="gradeX">
                                                 <td>1</td>
-                                                <td>小朱</td>
-                                                <td>小航</td>
-                                                <td>宝马</td>
-                                                <td>高级评估员</td>
-                                                <td>2018</td>
-                                                <td>交易成功</td>
-                                                <td>110000</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                                <td>5</td>
+                                                <td>2018/1/10</td>
+                                                <td>2018/1/15</td>
                                                 <td>
-                                                     <a href="/admin/question-edit">
-                                                        <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
-                                                    </a> 
-                                                    <a href="/admin/question-reply">
-                                                        <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
-                                                    </a>
-                                                    <a href="javascript:;">
-                                                        <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
-                                                    </a>
+                                                    
+                                                          <a href="/admin/question-edit">
+                                                            <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
+                                                        </a> 
+                                                      <a href="/admin/question-reply">
+                                                            <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
+                                                        </a>
+                                                          <a href="javascript:;">
+                                                            <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
+                                                        </a>
+                                                   
                                                 </td>
                                             </tr>
-                                            <tr class="even gradeC">
-                                                <td>1</td>
-                                                <td>小朱</td>
-                                                <td>小媛</td>
-                                                <td>宝马</td>
-                                                <td>高级评估员</td>
-                                                <td>2018</td>
-                                                <td>交易成功</td>
-                                                <td>120000</td>
-                                                <td>
-                                                    <a href="/admin/question-edit">
-                                                        <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
-                                                    </a> 
-                                                    <a href="/admin/question-reply">
-                                                        <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">回复</button> 
-                                                    </a>
-                                                    <a href="javascript:;">
-                                                        <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                        
                                            
                                             <!-- more data -->
                                         </tbody>
