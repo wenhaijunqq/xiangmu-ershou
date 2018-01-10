@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>二手车问答</title>
-
 		<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
-
+       <link rel="icon" type="image/png" href="/img/favicon.ico">
 	</head>
 	<body>
 		<div id="header">
@@ -63,7 +62,7 @@
 			<div class="search">
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
-				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
+				<a href="/www/ask" target="_blank"><button class="ipt-btn" type="button">提问</button></a>
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>

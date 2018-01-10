@@ -47,7 +47,10 @@ Route::get('/www/xiangqing', function () {
 	return view('/home/Xiangqing');
 
 });
+
+
 Route::controller('/admin/login','Admin\LoginController');
+
 Route::get('/admin/index',function(){
 	return view('admin/index');
 });
@@ -83,3 +86,20 @@ Route::get('/admin/table',function(){
 Route::get('/admin/404',function(){
 	return view('admin/404');
 });
+
+//后台问答管理页
+Route::get('/admin/oldcar',function(){
+	return view('admin/question/oldcar');
+});
+Route::get('/admin/question-edit',function(){
+	return view('admin/question/edit');
+});
+Route::get('/admin/question-reply',function(){
+	return view('admin/question/reply');
+});
+
+//后台网站配置页
+Route::resource('/admin/config','admin\ConfigController');
+//后台订单管理页
+Route::resource('/admin/order','admin\OrderController');
+
