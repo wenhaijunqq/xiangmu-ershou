@@ -82,6 +82,22 @@
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
                     </a>
                 </li>
-
+                 
+                    <li class="sidebar-nav-link">
+                            <a href="/admin/adsense/list">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 广告位
+                            </a>
+                    </li> 
+                    <li class="sidebar-nav-link">
+                            <a href="/admin/Carousel/list">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 轮播图
+                            </a>
+                    </li>
+                <li class="sidebar-nav-link">
+                            <a href="/admin/link/list">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 友情链接
+                            </a>
+                        </li>
+                  
             </ul>
         </div>

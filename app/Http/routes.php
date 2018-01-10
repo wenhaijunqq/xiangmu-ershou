@@ -83,3 +83,9 @@ Route::get('/admin/table',function(){
 Route::get('/admin/404',function(){
 	return view('admin/404');
 });
+//轮播图路由器
+Route::resource('/admin/Carousel/list','admin\CarouselController');
+//广告位路由器
+Route::resource('/admin/adsense/list','admin\AdsenseController');
+//友情链接路由器
+Route::resource('/admin/link/list','admin\LinkController');
