@@ -42,10 +42,13 @@
                 <li class="sidebar-nav-link">
                     <a href="/admin/chart">
                         <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
-
                     </a>
                 </li>
-
+                <li class="sidebar-nav-link">
+                    <a href="/admin/oldcar">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 问答管理
+                    </a>
+                </li>
                 <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -80,6 +83,18 @@
                 <li class="sidebar-nav-link">
                     <a href="/admin/404">
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/config">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 网站配置
+
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/order">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 订单管理
+
                     </a>
                 </li>
 

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>二手车问答列表</title>
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
@@ -76,19 +77,24 @@
    <div class="wentilist">
       <table class="table table-hover" style="width:870px; margin: -20px auto 50px;">
         <tr>
-          <td height="60px" style="font-size:20px;">二手车如何过户上牌可以选吗</td>
+          <td class="wt"><a href="/www/answer" target="_blank">二手车如何过户上牌可以选吗</a></td>
+          <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
         <tr>
-          <td height="60px" style="font-size:20px;">DS 6的性价比怎么样？</td>
+          <td class="wt">DS 6的性价比怎么样？</td>
+           <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
         <tr>
-          <td height="60px" style="font-size:20px;">买了车之后你们提供哪些保障？</td>
+          <td class="wt">买了车之后你们提供哪些保障？</td>
+          <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
         <tr>
-          <td height="60px" style="font-size:20px;">在瓜子二手车直卖网上买二手车办理贷款需要做抵押吗？</td>
+          <td class="wt">在瓜子二手车直卖网上买二手车办理贷款需要做抵押吗？</td>
+          <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
         <tr>
-          <td height="60px" style="font-size:20px;">平台车辆的价格高，可以谈吗？</td>
+          <td class="wt">平台车辆的价格高，可以谈吗？</td>
+          <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
       </table>
       <div id="askpage">
