@@ -53,13 +53,13 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="/admin/lists">
+                            <a href="/admin/xinzeng">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增用户
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="/admin/imglists">
+                            <a href="/admin/chakan">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 查看分区
                             </a>
                         </li>
@@ -86,6 +86,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册

@@ -86,11 +86,11 @@ Route::get('/admin/404',function(){
 
 //后台用户管理分区
 //
-Route::get('/admin/lists',function(){
+Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
 });
 
-Route::get('/admin/imglists',function(){
+Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
 
