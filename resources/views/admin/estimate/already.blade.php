@@ -67,7 +67,7 @@
                                                 <td>2342342</td>
                                                 <td>Amaze UI 模式窗口</td>
                                                 <td>张鹏飞</td>
-                                                <td><a>查看基本信息</a></td>
+                                                <td><a href="/admin/seeinformation">查看基本信息</a></td>
                                                 <td>2016-09-26</td>
                                                 <td>审核状态</td>
                                                 <td>
@@ -86,7 +86,7 @@
                                                 <td>2342342</td>
                                                 <td>有适配微信小程序的计划吗</td>
                                                 <td>天纵之人</td>
-                                                <td><a>查看基本信息</a></td>
+                                                <td><a href="/admin/seeinformation">查看基本信息</a></td>
                                                 <td>2016-09-26</td>
                                                 <td>审核状态</td>
                                                 <td>

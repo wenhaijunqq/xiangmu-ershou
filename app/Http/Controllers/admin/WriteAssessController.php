@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class BasicInformationController extends Controller
+class WriteAssessController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class BasicInformationController extends Controller
      */
     public function index()
     {
-        //加载已评估页面
-        return view('admin/estimate/basicinformation');
+        //加载评估报告表
+        return view('admin/estimate/writeassess');
     }
 
     /**

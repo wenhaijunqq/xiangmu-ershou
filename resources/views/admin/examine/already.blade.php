@@ -69,7 +69,7 @@
                                                 <td>Amaze UI 模式窗口</td>
                                                 <td>张鹏飞</td>
                                                 <td>13</td>
-                                                <td><a>车辆基本信息</a></td>
+                                                <td><a href="/admin/seeinformation">车辆基本信息</a></td>
                                                 <td>2016-09-26</td>
                                                 <td><a>评估报告表<a/></td>
                                                 <td>
@@ -86,7 +86,7 @@
                                                 <td>有适配微信小程序的计划吗</td>
                                                 <td>天纵之人</td>
                                                 <td>13</td>
-                                                <td><a href="">车辆信息</a></td>
+                                                <td><a href="/admin/seeinformation">车辆信息</a></td>
                                                 <td>2016-09-26</td>
                                                 <td><a>评估报告表<a/></td>
                                                 <td>

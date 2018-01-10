@@ -69,16 +69,16 @@
                                                 <td>玛莎拉蒂</td>
                                                 <td>张鹏飞</td>
                                                 <td>12</td>
-                                                <td><a href="#">111</a></td>
+                                                <td><a href="/admin/seeinformation">查看车辆基础信息</a></td>
                                                 <td>正在评估</td>
                                                 <td><a>查看评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 提交
+                                                            <i class="am-icon-pencil"></i> 审核通过
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 取消评估
+                                                            <i class="am-icon-trash"></i> 驳回
                                                         </a>
                                                     </div>
                                                 </td>
@@ -89,16 +89,16 @@
                                                 <td>玛莎拉蒂</td>
                                                 <td>张鹏飞</td>
                                                 <td>12</td>
-                                                <td><a href="#">111</a></td>
+                                                <td><a href="/admin/seeinformation">查看车辆基础信息</a></td>
                                                 <td>已评估</td>
                                                 <td><a>查看评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 提交
+                                                            <i class="am-icon-pencil"></i> 审核通过
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 取消评估
+                                                            <i class="am-icon-trash"></i> 驳回
                                                         </a>
                                                     </div>
                                                 </td>

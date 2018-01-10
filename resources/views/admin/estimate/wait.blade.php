@@ -66,8 +66,8 @@
                                                 <td>2342342</td>
                                                 <td>玛莎拉蒂</td>
                                                 <td>张鹏飞</td>
-                                                <td><a href="/admin/basicinformation">添加与修改基本信息</a></td>
-                                                <td><a>填写评估报告</a></td>
+                                                <td><a href="/admin/estimate/basicinformation">添加与修改基本信息</a></td>
+                                                <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
@@ -84,8 +84,8 @@
                                                 <td>1234234</td>
                                                 <td>玛莎拉蒂</td>
                                                 <td>张鹏飞</td>
-                                                <td><a href="/admin/basicinformation">添加与修改基本信息</a></td>
-                                                <td><a>填写评估报告</a></td>
+                                                <td><a href="/admin/estimate/basicinformation">添加与修改基本信息</a></td>
+                                                <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">

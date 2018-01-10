@@ -84,17 +84,21 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 //后台登陆路由
-Route::controller('/admin/login','Admin\LoginController');
+Route::controller('/admin/login','admin\LoginController');
 //后台已经评估路由
-Route::resource('/admin/estimate/already','Admin\EstimateAlreadyController');
+Route::resource('/admin/estimate/already','admin\EstimateAlreadyController');
 //后台等待评估路由
-Route::resource('/admin/estimate/wait','Admin\EstimateWaitController');
+Route::resource('/admin/estimate/wait','admin\EstimateWaitController');
 //后台待审核路由
-Route::resource('/admin/examine/wait','Admin\ExamineWaitController');
+Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
-Route::resource('/admin/examine/already','Admin\ExamineAlreadyController');
+Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+//后台车辆基本信息查看
+Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+//后台评估报告
+Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
