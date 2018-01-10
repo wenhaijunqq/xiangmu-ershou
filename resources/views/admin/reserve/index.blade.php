@@ -1,5 +1,5 @@
 @extends('/layout/adminLayout')
-@section('title','后台文章')
+@section('title','后台预约信息')
 
 @section('content')
 
