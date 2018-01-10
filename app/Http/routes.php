@@ -37,6 +37,7 @@ Route::get('/www/asklist',function(){
 Route::get('/www/answer',function(){
 	return view('/home/question/answer');
 });
+
 Route::get('IndexLogin', function () {
     return view('/home/login');
 });
