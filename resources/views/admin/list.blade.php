@@ -36,19 +36,15 @@
                 <li class="sidebar-nav-link">
                     <a href="/admin/form">
                         <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
-
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="/admin/chart">
                         <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
+
                     </a>
                 </li>
-                <li class="sidebar-nav-link">
-                    <a href="/admin/oldcar">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 问答管理
-                    </a>
-                </li>
+
                 <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -69,45 +65,6 @@
                         </li>
                     </ul>
                 </li>
-
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 评估模块
-                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-                    </a>
-                    <ul class="sidebar-nav sidebar-nav-sub estimate">
-                        <li class="sidebar-nav-link">
-                            <a href="/admin/estimate/wait">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 待评估
-                            </a>
-                        </li>
-
-                        <li class="sidebar-nav-link">
-                            <a href="/admin/estimate/already">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 已评估
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                  <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 审核模块
-                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-                    </a>
-                    <ul class="sidebar-nav sidebar-nav-sub examine">
-                        <li class="sidebar-nav-link">
-                            <a href="/admin/examine/wait">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 待审核
-                            </a>
-                        </li>
-
-                        <li class="sidebar-nav-link">
-                            <a href="/admin/examine/already">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 已审核
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
@@ -122,18 +79,6 @@
                 <li class="sidebar-nav-link">
                     <a href="/admin/404">
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="/admin/config">
-                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 网站配置
-
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="/admin/order">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 订单管理
-
                     </a>
                 </li>
 

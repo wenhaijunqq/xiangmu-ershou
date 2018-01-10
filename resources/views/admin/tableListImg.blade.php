@@ -67,7 +67,11 @@
                                                     <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt="">
                                                 </td>
                                                 <td class="am-text-middle">Amaze UI 模式窗口</td>
+<<<<<<< HEAD
                                                 <td class="am-text-middle">张鹏飞</td>
+=======
+                                                <td class="am-text-middle">aaaaaa张鹏飞</td>
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
                                                 <td class="am-text-middle">2016-09-26</td>
                                                 <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">

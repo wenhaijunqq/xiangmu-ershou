@@ -62,7 +62,11 @@
 			<div class="search">
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
+<<<<<<< HEAD
 				<a href="/www/ask" target="_blank"><button class="ipt-btn" type="button">提问</button></a>
+=======
+				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>
