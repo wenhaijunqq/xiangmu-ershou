@@ -87,6 +87,7 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 
+
 //后台问答管理页
 Route::get('/admin/oldcar',function(){
 	return view('admin/question/oldcar');
@@ -122,3 +123,10 @@ Route::get('/admin/xinzeng',function(){
 Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
+
+//轮播图路由器
+Route::resource('/admin/Carousel/list','admin\CarouselController');
+//广告位路由器
+Route::resource('/admin/adsense/list','admin\AdsenseController');
+//友情链接路由器
+Route::resource('/admin/link/list','admin\LinkController');
