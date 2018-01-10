@@ -95,3 +95,10 @@ Route::resource('/admin/examine/wait','Admin\ExamineWaitController');
 Route::resource('/admin/examine/already','Admin\ExamineAlreadyController');
 //后台车辆基本信息
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');
+//后台用户管理分区
+Route::get('/admin/xinzeng',function(){
+	return view('/admin/UserManagement/tableList');
+});
+Route::get('/admin/chakan',function(){
+	return view('/admin/UserManagement/tableListImg');
+});

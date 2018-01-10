@@ -45,7 +45,25 @@
 
                     </a>
                 </li>
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 用户管理分区
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/xinzeng">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增用户
+                            </a>
+                        </li>
 
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/chakan">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 查看分区
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -105,6 +123,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
