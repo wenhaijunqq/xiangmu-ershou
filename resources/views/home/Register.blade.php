@@ -22,7 +22,7 @@
                 <input id="vcode" type="text" class="kuang_txt yanzm" placeholder="验证码" value="">
                 <div>
                 	<div class="hui_kuang"><img src="img/zc_22.jpg" width="92" height="31"></div>
-                	<div class="shuaxin"><a href="#"><img src="imgs/zc_25.jpg" width="13" height="14"></a></div>
+                	<div class="shuaxin"><a href="#"><img src="img/zc_25.jpg" width="13" height="14"></a></div>
                 </div>
                 <div>
                		<input name="" type="checkbox" value=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《XXXXX使用协议》</span></a></span>
@@ -53,7 +53,6 @@
 		var pwd=document.getElementById('pwd').value;
 		var icode=document.getElementById('icode').value;
 		var vcode=document.getElementById('vcode').value;
-        var phone= /^(0-9){11}$/;
 		var Email = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
 		if(phone=="")
 		  alert("请输入手机号");

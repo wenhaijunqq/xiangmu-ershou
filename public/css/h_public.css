@@ -5,8 +5,8 @@
     li, ol, ul {
     list-style: none;
 }
-.action{border-bottom: 2px solid #22ac38}
-.pppp{border-bottom: 4px solid #22ac38}
+/*.action{border-bottom: 2px solid #22ac38}*/
+/*.pppp{border-bottom: 4px solid #22ac38}*/
 body, button, input, select, textarea {
     font: 12px/1.5 arial,helvetica,clean,sans-serif;
 }

@@ -96,7 +96,7 @@ h3{
 
 #header .top .search-box {
     position: relative;
-   /*width: 402px;*/
+    width: 402px;
     height: 36px;
     padding: 25px 95px 0px 0px;
     float: right;

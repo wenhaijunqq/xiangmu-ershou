@@ -79,6 +79,7 @@
                     int=self.setInterval("dinashiqi()",3000);
                     i = 2;
                 }
+                
                 zuo.onclick = function(){
                     int = window.clearInterval(int);
                     i++;
@@ -120,8 +121,8 @@
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="/IndexLogin" >登录</a></div>
-                <div class="nav-nav">
-                    <a href="/" class="action">首页</a>
+                <div class="nav-nav" id='h'>
+                    <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>
                     <a href="/www/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
