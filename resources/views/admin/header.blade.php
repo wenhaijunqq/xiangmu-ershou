@@ -19,7 +19,29 @@
     <link rel="stylesheet" href="/admins/css/fullcalendar.min.css" />
     <link rel="stylesheet" href="/admins/css/fullcalendar.print.css" media='print' />
     <link rel="stylesheet" href="/admins/css/app.css">
+    <link rel="stylesheet" href="/admins/css/bootstrap.min.css">
     <script src="/admins/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        // 评估模块
+        $(function(){
+            // 获取路径
+            var url = window.location.pathname;
+            var preg_path = /^\/admin\/estimate.*$/;
+            if(preg_path.test(url)){
+                $('.estimate').css('display','block');
+            } 
+        });
+        // 审核模块
+        $(function(){
+            // 获取路径
+            var url = window.location.pathname;
+            var preg_path = /^\/admin\/examine.*$/;
+            if(preg_path.test(url)){
+                $('.examine').css('display','block');
+            } 
+        });
+        
+    </script>
 
 
 </head>

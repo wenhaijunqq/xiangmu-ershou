@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ConfigController extends Controller
+class EstimateWaitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        //加载网站配置首页
-        return view('/admin/config/index');
+        //加载待评估的页面
+        return view('admin/estimate/wait');
     }
 
     /**

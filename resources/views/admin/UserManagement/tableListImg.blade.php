@@ -3,6 +3,7 @@
 
 @section('content')
 
+        <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
                 <div class="row">
@@ -19,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
                                             </div>
                                         </div>
                                     </div>
@@ -27,19 +28,16 @@
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2">过审</option>
-              <option value="option3">未过审</option>
-              <option value="option3">买车卖车</option>
-              <option value="option3">交易过户</option>
-              <option value="option3">保养维修</option>
-              <option value="option3">金融贷款</option>
-            </select>
+                                          <option value="option0">所有用户</option>
+                                          <option value="option1">管理员</option>
+                                          <option value="option2">审核员</option>
+                                          <option value="option3">评估员</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field">
+                                        <input type="text" class="am-form-field ">
                                         <span class="am-input-group-btn">
             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
           </span>
@@ -47,40 +45,38 @@
                                 </div>
 
                                 <div class="am-u-sm-12">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
                                         <thead>
                                             <tr>
-                                                <th>问题ID&nbsp;</th>
-                                                <th>问题内容</th>
-                                                <th>提问者</th>
-                                                <th>时间</th>
-                                                <th>审核&nbsp;&nbsp;</th>
-                                                <th>类型分区</th>
-                                                <th>回复</th>
+                                                <th>ID</th>
+                                                <th>头像</th>
+                                                <th>用户名</th>
+                                                <th>身份权限</th>
+                                                <th>邮箱</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="gradeX">
-                                                <td align="center">1</td>
-                                                <td>2014款DS 6的油耗大概多少？</td>
-                                                <td>张鹏飞</td>
-                                                <td>2016-09-26</td>
-                                                <td>通过</td>
-                                                <td>买车卖车</td>
-                                                <td>未回复</td>
+                                                <td class="am-text-middle">1</td>
                                                 <td>
-                                                        <a href="/admin/question-edit">
-                                                            <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
-                                                        </a> 
-                                                      <a href="/admin/question-reply">
-                                                            <button type="button" class="am-btn am-btn-primary am-radius am-btn-xs">回复</button> 
+                                                    <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">Amaze UI 模式窗口</td>
+                                                <td class="am-text-middle">aaaaaa张鹏飞</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
+                                                    <div class="tpl-table-black-operation">
+                                                        <a href="javascript:;">
+                                                            <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                          <a href="javascript:;">
-                                                            <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
+                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                            <i class="am-icon-trash"></i> 删除
                                                         </a>
+                                                    </div>
                                                 </td>
                                             </tr>
+                                           
                                             <!-- more data -->
                                         </tbody>
                                     </table>
@@ -107,22 +103,8 @@
         </div>
     </div>
     </div>
+
 </body>
 
 </html>
-  <script type="text/javascript">
-                                                          $(function() {
-  $('#doc-prompt-toggle').on('click', function() {
-    $('#my-prompt').modal({
-      relatedTarget: this,
-      onConfirm: function(e) {
-        alert('你输入的是：' + e.data || '')
-      },
-      onCancel: function(e) {
-        alert('不想说!');
-      }
-    });
-  });
-});
-                                                        </script>
 @endsection
