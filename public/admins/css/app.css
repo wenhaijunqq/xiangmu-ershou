@@ -631,6 +631,7 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   max-width: 100px;
   padding: 2px;
 }
+
 .tpl-table-list-select {
   text-align: right;
 }
@@ -1345,6 +1346,7 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   padding: 2px;
   border: none;
 }
+
 .theme-black .tpl-table-list-field {
   border: none;
 }

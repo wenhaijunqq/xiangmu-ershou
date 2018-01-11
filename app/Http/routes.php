@@ -99,8 +99,8 @@ Route::get('/admin/chakan',function(){
 });
 
 //轮播图路由器
-Route::resource('/admin/Carousel/list','admin\CarouselController');
+Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
-Route::resource('/admin/adsense/list','admin\AdsenseController');
+Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-Route::resource('/admin/link/list','admin\LinkController');
+Route::resource('/admin/link','admin\LinkController');

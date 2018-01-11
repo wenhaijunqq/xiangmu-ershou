@@ -20,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/Carousel/list/create"> 新增</a></button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/Carousel/create">新增</a></button>
                                                
                                             </div>
                                         </div>
@@ -52,6 +52,7 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
                                         <thead>
                                             <tr>
+                                                <th>ID</th>
                                                 <th>轮播缩略图</th>
                                                 <th>标题</th>
                                                 <th>URL地址</th>
@@ -59,23 +60,49 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @if(count($res) == 1)
+                                        @foreach($res as $v) 
                                             <tr class="gradeX">
+                                                <td class="am-text-middle">{{$v['id']}}</td>
                                                 <td>
-                                                    <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                    <img src="../../../uploads/{{$v['pic']}}" class="tpl-table-line-img" alt="" style="max-height: 100px;">
                                                 </td>
-                                                <td class="am-text-middle">大酬宾</td>
-                                                <td class="am-text-middle">www.sina.com.cn</td>
+                                                <td class="am-text-middle">{{$v['title']}}</td>
+                                                <td class="am-text-middle">{{$v['url']}}</td>
                                                 <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/Carousel/list/1/edit">
+                                                        <a href="/admin/Carousel/{{$v['id']}}/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <a href="javascript:void(0)" class="tpl-table-black-operation-del" onclick="del({{$v['id']}},$(this))">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
                                                 </td>
                                             </tr>
+                                        @endforeach
+                                        @else
+                                            <tr class="gradeX">
+                                                <td colspan="5" align="center">没有任何操作数据</td>
+                                            </tr>
+                                        @endif
+                                        <!-- 通过ajax去删除 -->
+                                                    <script>
+                          
+                                                             function del(id,obj){
+                                                                 // $.post("{{url('/admin/adsense/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data)
+                                                                $.post("{{url('/admin/Carousel/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}',"id":id},function(data)
+                                                                 {
+                                                                 if(data == 1){
+                                                                       obj.parent().parent().parent().remove();
+                                                                        
+                                                                     alert('删除成功！');
+                                                                 }else if(data == 0){
+                                                                     alert('删除失败！');
+                                                                 }
+                                                                 });
+                                                             }
+                                                    </script>
                                             </tbody>
                                     </table>
                                 </div>

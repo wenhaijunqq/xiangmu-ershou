@@ -138,17 +138,17 @@
 
 
                     <li class="sidebar-nav-link">
-                            <a href="/admin/adsense/list">
+                            <a href="/admin/adsense">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 广告位
                             </a>
                     </li>
                     <li class="sidebar-nav-link">
-                            <a href="/admin/Carousel/list">
+                            <a href="/admin/Carousel">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 轮播图
                             </a>
                     </li>
                 <li class="sidebar-nav-link">
-                            <a href="/admin/link/list">
+                            <a href="/admin/link">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 友情链接
                             </a>
                         </li>
