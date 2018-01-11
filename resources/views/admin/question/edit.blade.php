@@ -9,7 +9,8 @@
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
                         <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 问题编辑页 <small>Config</small></div>
-                        <p class="page-header-description">此页面来管理网站配置</p>
+                        <p class="page-header-description">此页面来管理问题信息</p>
+                        <a href="/admin/question"><p>>>返回问题列表</p></a>
                     </div>                  
                 </div>
              </div>
@@ -72,7 +73,7 @@
                                     </div>
 
                                     <center>
-                                        <button type="button" class="am-btn am-btn-default am-btn-secondary">提交</button>
+                                        <input type="submit" class="am-btn am-btn-default am-btn-secondary">
                                         <input type="reset" class="am-btn am-btn-default am-btn-warning">
                                     </center>
                                  </form>

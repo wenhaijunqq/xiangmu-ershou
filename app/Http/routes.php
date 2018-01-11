@@ -12,10 +12,11 @@
 */
 
 
-//前台模板引入
+// 前台模板引入
 Route::get('/', function () {
     return view('home/index');
 });
+
 Route::get('/www/buy', function () {
     return view('/home/PurchaseCar');
 });

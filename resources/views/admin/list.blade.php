@@ -26,7 +26,7 @@
 
                 <li class="sidebar-nav-link">
 
-                    <a href="/admin/oldcar">
+                    <a href="/admin/question">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 问答管理
                     </a>
                     <a href="javascript:;" class="sidebar-nav-sub-title">

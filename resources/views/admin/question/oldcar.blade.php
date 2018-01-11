@@ -69,12 +69,14 @@
                                                 <td>{{$type[$v->type]}}</td>
                                                 <td>{{$v->reply_content =='' ? '未回复':'已回复'}}</td>
                                                 <td>
-                                                      <a href="/admin/question/{{$v->qid}}/edit">
-                                                            <button type="button" class="am-btn am-btn-primary am-radius am-btn-xs">编辑</button> 
-                                                        </a>
-                                                          <a href="javascript:;">
-                                                            <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
-                                                        </a>
+                                                      <form action="/admin/question/{{$v->qid}}/edit" method="GET" style="display: inline;">
+                                                        <input type="submit" value="编辑" class="am-btn am-btn-primary am-radius am-btn-xs"/>
+                                                    </form>
+                                                        <form action="/admin/question/{{$v->qid}}" method="POST" style="display: inline;">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <input type="submit" value="删除" class="am-btn am-btn-danger am-radius am-btn-xs"/>
+                                                        </form>                                                         
                                                 </td>
                                             </tr>
                                              @endforeach
