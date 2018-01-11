@@ -79,24 +79,21 @@ Route::resource('/admin/config','admin\ConfigController');
 Route::resource('/admin/order','admin\OrderController');
 
 //后台登陆路由
-Route::controller('/admin/login','Admin\LoginController');
+Route::controller('/admin/login','admin\LoginController');
 //后台已经评估路由
-Route::resource('/admin/estimate/already','Admin\EstimateAlreadyController');
+Route::resource('/admin/estimate/already','admin\EstimateAlreadyController');
 //后台等待评估路由
-Route::resource('/admin/estimate/wait','Admin\EstimateWaitController');
+Route::resource('/admin/estimate/wait','admin\EstimateWaitController');
 //后台待审核路由
-Route::resource('/admin/examine/wait','Admin\ExamineWaitController');
+Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
-Route::resource('/admin/examine/already','Admin\ExamineAlreadyController');
+Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
-//后台用户管理分区
-Route::get('/admin/xinzeng',function(){
-	return view('/admin/UserManagement/tableList');
-});
-Route::get('/admin/chakan',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
+//后台用户管理分区,新增用户
+Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
+//车看用户
+Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
 
 //轮播图路由器
 Route::resource('/admin/Carousel/list','admin\CarouselController');
