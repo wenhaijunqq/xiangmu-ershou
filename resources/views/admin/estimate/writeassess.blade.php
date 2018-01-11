@@ -4,6 +4,10 @@
 @section('content')
 
     <!-- 内容区域 -->
+    <script src="/admins/js/jquery.min.js"></script>
+    <script>
+       
+    </script>
     <div class="tpl-content-wrapper">
         <div class="container-fluid am-cf">
             <div class="row">
@@ -406,66 +410,66 @@
                                     <tbody>
                                         <tr class="gradeX">
                                             <td width="20%">
-                                                <label for="power-sunroof">电动天窗:</label>
+                                                <label for="MFL">多功能方向盘:</label>
                                             </td>
                                             <td width="30%">
-                                                <input type="text" id="power-sunroof" class="tpl-form-input" name="power-sunroof" placeholder="请输入电动天窗" />
+                                                <input type="text" id="MFL" class="tpl-form-input" name="MFL" placeholder="请输入多功能方向盘" />
                                             </td>
                                             <td width="20%">
-                                                <label for="panoramic-sunroof">全景天窗:</label>
+                                                <label for="cruise-control">定速巡航:</label>
                                             </td>
                                             <td width="30%">
-                                                <input type="text" id="panoramic-sunroof" class="tpl-form-input" name="panoramic-sunroof" placeholder="请输入全景天窗" />
+                                                <input type="text" id="cruise-control" class="tpl-form-input" name="cruise-control" placeholder="请输入定速巡航" />
                                             </td>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>
-                                                <label for="Electric-suction-door">电动吸合门:</label>
+                                                <label for="air-conditioner">空调:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="Electric-suction-door" class="tpl-form-input" name="Electric-suction-door" placeholder="请输入电动吸合门" />
+                                                <input type="text" id="air-conditioner" class="tpl-form-input" name="air-conditioner" placeholder="请输入空调" />
                                             </td>
                                             <td>
-                                                <label for="Induction-trunk">感应后备箱:</label>
+                                                <label for="automatic-air-conditioning">自动空调:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="Induction-trunk" class="tpl-form-input" name="Induction-trunk" placeholder="请输入感应后备箱" />
+                                                <input type="text" id="automatic-air-conditioning" class="tpl-form-input" name="automatic-air-conditioning" placeholder="请输入自动空调" />
                                             </td>
                                         </tr>
                                         <tr class="gradeX">
                                             <td>
-                                                <label for="Rain-sensing-Wipers">感应雨刷:</label>
+                                                <label for="GPS">GPS导航:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="Rain-sensing-Wipers" class="tpl-form-input" name="Rain-sensing-Wipers" placeholder="请输入感应雨刷" />
+                                                <input type="text" id="GPS" class="tpl-form-input" name="GPS" placeholder="请输入GPS导航" />
                                             </td>
                                             <td>
-                                                <label for="rear-wiper">后雨刷:</label>
+                                                <label for="car-backing-radar">倒车雷达:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="rear-wiper" class="tpl-form-input" name="rear-wiper" placeholder="请输入后雨刷" />
+                                                <input type="text" id="car-backing-radar" class="tpl-form-input" name="car-backing-radar" placeholder="请输入倒车雷达" />
                                             </td>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>
-                                                <label for="AND-POWER-WINDOWS">前后电动车窗:</label>
+                                                <label for="Back-eye-camera">倒车影像系统:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="AND-POWER-WINDOWS" class="tpl-form-input" name="AND-POWER-WINDOWS" placeholder="请输入前后电动车窗" />
+                                                <input type="text" id="Back-eye-camera" class="tpl-form-input" name="Back-eye-camera" placeholder="请输入倒车影像系统" />
                                             </td>
                                             <td>
-                                                <label for="power-mirror">后视镜电动调节:</label>
+                                                <label for="leather-seat">真皮座椅:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="power-mirror" class="tpl-form-input" name="power-mirror" placeholder="请输入后视镜电动调节" />
+                                                <input type="text" id="leather-seat" class="tpl-form-input" name="leather-seat" placeholder="请输入真皮座椅" />
                                             </td>
                                         </tr>
                                         <tr class="even gradeC">
                                              <td>
-                                                <label for="warm-mirror">后视镜加热:</label>
+                                                <label for="seat-heating">前后排座椅加热:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="warm-mirror" class="tpl-form-input" name="warm-mirror" placeholder="请输入后视镜加热" />
+                                                <input type="text" id="seat-heating" class="tpl-form-input" name="seat-heating" placeholder="请输入前后排座椅加热" />
                                             </td>
                                             <td></td>
                                             <td></td>
@@ -473,6 +477,86 @@
                                         <!-- more data -->
                                     </tbody>
                                 </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">事故排查检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="left-frame">左前大灯框架:</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="left-frame" value="2"/>没有此项
+                                                <input type="radio" name="left-frame" value="0" />正常
+                                                <input type="radio" name="left-frame" value="1" $('')/>异常
+                                                <input type="text" name="left-frame1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="cruise-control">定速巡航:</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="text" id="cruise-control" class="tpl-form-input" name="cruise-control" placeholder="请输入定速巡航" />
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="air-conditioner">空调:</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="air-conditioner" class="tpl-form-input" name="air-conditioner" placeholder="请输入空调" />
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="automatic-air-conditioning">自动空调:</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="automatic-air-conditioning" class="tpl-form-input" name="automatic-air-conditioning" placeholder="请输入自动空调" />
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td style="text-align:center">
+                                                <label for="GPS">GPS导航:</label>
+                                            </td>
+                                            <td style="text-align:center">
+                                                <input type="text" id="GPS" class="tpl-form-input" name="GPS" placeholder="请输入GPS导航" />
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="car-backing-radar">倒车雷达:</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="car-backing-radar" class="tpl-form-input" name="car-backing-radar" placeholder="请输入倒车雷达" />
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Back-eye-camera">倒车影像系统:</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="Back-eye-camera" class="tpl-form-input" name="Back-eye-camera" placeholder="请输入倒车影像系统" />
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="leather-seat">真皮座椅:</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="leather-seat" class="tpl-form-input" name="leather-seat" placeholder="请输入真皮座椅" />
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                             <td style="text-align:center">
+                                                <label for="seat-heating">前后排座椅加热:</label>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="seat-heating" class="tpl-form-input" name="seat-heating" placeholder="请输入前后排座椅加热" />
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <!-- more data -->
+                                    </tbody>
+                                </table>
+
 
                             </div>
                         </div>
