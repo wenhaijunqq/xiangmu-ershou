@@ -78,9 +78,9 @@
                                  </form>
                              <script type="text/javascript">
                             
-                               $('button').click(function(){
-                                   var aaa = $("input[type='radio']").attr("checked");
-                                  alert(aaa);
+                               // $('button').click(function(){
+                               //     var aaa = $("input[type='radio']").attr("checked");
+                               //    alert(aaa);
 
                                   // if (empty($(input[type='radio']).val())) {
                                   //    alert('请选择审核状态');

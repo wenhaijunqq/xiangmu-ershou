@@ -37,7 +37,8 @@ class QuestionController extends Controller
     {
         //接受要修改的数据
        $data = $request -> except(['_token','_method']);
-       var_dump($data);
+      
+
     }
 
 
@@ -65,24 +66,8 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-   
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
     /**
      * Remove the specified resource from storage.
