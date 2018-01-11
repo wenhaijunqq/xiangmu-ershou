@@ -2,7 +2,7 @@
 @section('title','后台文章')
 
 @section('content')
-
+    
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
                 <div class="row">
@@ -10,9 +10,7 @@
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
                                 <div class="widget-title  am-cf">文章列表</div>
-
-
-                            </div>
+                                </div>
                             <div class="widget-body  am-fr">
 
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
@@ -50,7 +48,7 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>问题ID&nbsp;</th>
+                                                <th>问题ID&nbsp;&nbsp;</th>
                                                 <th>问题内容</th>
                                                 <th>提问者</th>
                                                 <th>时间</th>
@@ -61,26 +59,25 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                         @foreach($data as $k=>$v)
                                             <tr class="gradeX">
-                                                <td align="center">1</td>
-                                                <td>2014款DS 6的油耗大概多少？</td>
-                                                <td>张鹏飞</td>
-                                                <td>2016-09-26</td>
-                                                <td>通过</td>
-                                                <td>买车卖车</td>
-                                                <td>未回复</td>
+                                                <td align="center">{{$v->qid}}</td>
+                                                <td>{{$v->content}}</td>
+                                                <td>{{$v->uid}}</td>
+                                                <td>{{$v->ask_time}}</td>
+                                                <td>{{$v->check ==1 ? '通过':'未审核'}}</td>
+                                                <td>{{$type[$v->type]}}</td>
+                                                <td>{{$v->reply_content =='' ? '未回复':'已回复'}}</td>
                                                 <td>
-                                                        <a href="/admin/question-edit">
-                                                            <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
-                                                        </a> 
-                                                      <a href="/admin/question-reply">
-                                                            <button type="button" class="am-btn am-btn-primary am-radius am-btn-xs">回复</button> 
+                                                      <a href="/admin/question/{{$v->qid}}/edit">
+                                                            <button type="button" class="am-btn am-btn-primary am-radius am-btn-xs">编辑</button> 
                                                         </a>
                                                           <a href="javascript:;">
                                                             <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
                                                         </a>
                                                 </td>
                                             </tr>
+                                             @endforeach
                                             <!-- more data -->
                                         </tbody>
                                     </table>

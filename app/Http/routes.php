@@ -73,7 +73,7 @@ Route::get('/admin/404',function(){
 // Route::get('/admin/question-reply',function(){
 // 	return view('admin/question/reply');
 // });
-Route::
+Route::resource('/admin/question','admin\QuestionController');
 
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');
