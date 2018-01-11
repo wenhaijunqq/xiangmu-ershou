@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>二手车提问</title>
+    <link rel="icon" type="image/png" href="/img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
