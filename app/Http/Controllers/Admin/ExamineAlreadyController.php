@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Model\appointment;
 class ExamineAlreadyController extends Controller
 {
     /**
@@ -17,7 +17,9 @@ class ExamineAlreadyController extends Controller
     public function index()
     {
         //加载已经审核页面
-        return view('admin/examine/already');
+        $data = appointment::get();
+
+        return view('admin/examine/already',['data'=>$data]);
     }
 
     /**

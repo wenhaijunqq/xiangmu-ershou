@@ -51,7 +51,6 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>编号</th>
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
                                                 <th>拥有者</th>
@@ -63,34 +62,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($data as $key=>$val)
                                             <tr class="gradeX">
-                                                <td>01</td>
-                                                <td>2342342</td>
-                                                <td>玛莎拉蒂</td>
-                                                <td>张鹏飞</td>
-                                                <td>12</td>
+                                                <td>{{$val['rid']}}</td>
+                                                <td>{{$val['car_name']}}</td>
+                                                <td>{{$val['sell_id']}}</td>
+                                                <td>{{$val['ping_id']}}</td>
                                                 <td><a href="/admin/seeinformation">查看车辆基础信息</a></td>
-                                                <td>正在评估</td>
-                                                <td><a>查看评估报告</a></td>
-                                                <td>
-                                                    <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 审核通过
-                                                        </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 驳回
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="even gradeC">
-                                                <td>02</td>
-                                                <td>1234234</td>
-                                                <td>玛莎拉蒂</td>
-                                                <td>张鹏飞</td>
-                                                <td>12</td>
-                                                <td><a href="/admin/seeinformation">查看车辆基础信息</a></td>
+                                                @if($val['status']==0)
+                                                <td>未评估</td>
+                                                @elseif($val['status']==1)
                                                 <td>已评估</td>
+                                                @else
+                                                <td>正在评估</td>
+                                                @endif                                                            
+                                                <td></td>
                                                 <td><a>查看评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
@@ -103,7 +89,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
+                                            @endforeach
                                             <!-- more data -->
                                         </tbody>
                                     </table>

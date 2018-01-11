@@ -101,13 +101,9 @@ Route::get('/admin/xinzeng',function(){
 Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
-<<<<<<< HEAD
-=======
-
 //轮播图路由器
 Route::resource('/admin/Carousel/list','admin\CarouselController');
 //广告位路由器
 Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5

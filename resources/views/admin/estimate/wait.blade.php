@@ -51,21 +51,20 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>编号</th>
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
-                                                <th>拥有者</th>
+                                                <th>拥有者编号</th>
                                                 <th>基本信息</th>
                                                 <th>评估报告</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($data as $key=>$val)
                                             <tr class="gradeX">
-                                                <td>1</td>
-                                                <td>2342342</td>
-                                                <td>玛莎拉蒂</td>
-                                                <td>张鹏飞</td>
+                                                <td>{{$val['rid']}}</td>
+                                                <td>{{$val['car_name']}}</td>
+                                                <td>{{$val['sell_id']}}</td>
                                                 <td><a href="/admin/estimate/basicinformation">添加与修改基本信息</a></td>
                                                 <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
@@ -79,25 +78,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr class="even gradeC">
-                                                <td>2</td>
-                                                <td>1234234</td>
-                                                <td>玛莎拉蒂</td>
-                                                <td>张鹏飞</td>
-                                                <td><a href="/admin/estimate/basicinformation">添加与修改基本信息</a></td>
-                                                <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
-                                                <td>
-                                                    <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 提交
-                                                        </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 取消评估
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            
+                                            @endforeach
                                             <!-- more data -->
                                         </tbody>
                                     </table>
