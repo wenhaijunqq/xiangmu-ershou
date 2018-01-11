@@ -37,7 +37,7 @@ class QuestionController extends Controller
     {
         //接受要修改的数据
        $data = $request -> except(['_token','_method']);
-      
+       
 
     }
 

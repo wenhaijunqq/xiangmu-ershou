@@ -64,21 +64,21 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 //后台问答管理页
-// Route::get('/admin/oldcar',function(){
-// 	return view('admin/question/oldcar');
-// });
-// Route::get('/admin/question-edit',function(){
-// 	return view('admin/question/edit');
-// });
-// Route::get('/admin/question-reply',function(){
-// 	return view('admin/question/reply');
-// });
+
 Route::resource('/admin/question','admin\QuestionController');
+
+//人员具体信息页面
+Route::get('/admin/basicperson','admin\BasicpersonController@index');
+//车辆具体信息页面
+Route::get('/admin/basiccar','admin\BasicpersonController@show');
 
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');
-//后台订单管理页
+//后台订单信息页
 Route::resource('/admin/order','admin\OrderController');
+//后台预约信息页
+Route::resource('/admin/reserve','admin\ReserveController');
+
 
 //后台登陆路由
 Route::controller('/admin/login','Admin\LoginController');
