@@ -4,10 +4,7 @@
 @section('content')
 
     <!-- 内容区域 -->
-    <script src="/admins/js/jquery.min.js"></script>
-    <script>
-       
-    </script>
+    
     <div class="tpl-content-wrapper">
         <div class="container-fluid am-cf">
             <div class="row">
@@ -489,79 +486,108 @@
                                                 <label for="left-frame">左前大灯框架:</label>
                                             </td>
                                             <td width="30%">
-                                                <input type="radio" name="left-frame" value="2"/>没有此项
-                                                <input type="radio" name="left-frame" value="0" />正常
-                                                <input type="radio" name="left-frame" value="1" $('')/>异常
+                                                <input type="radio" name="left-frame" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="left-frame" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="left-frame" value="1" onclick="unusual($(this))"/>异常
                                                 <input type="text" name="left-frame1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                             <td width="20%" style="text-align:center">
-                                                <label for="cruise-control">定速巡航:</label>
+                                                <label for="right-frame">右前大灯框架:</label>
                                             </td>
                                             <td width="30%">
-                                                <input type="text" id="cruise-control" class="tpl-form-input" name="cruise-control" placeholder="请输入定速巡航" />
+                                                <input type="radio" name="right-frame" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="right-frame" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="right-frame" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="right-frame1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td style="text-align:center">
-                                                <label for="air-conditioner">空调:</label>
+                                                <label for="Left-front-lining">左前翼子板内衬:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="air-conditioner" class="tpl-form-input" name="air-conditioner" placeholder="请输入空调" />
+                                                <input type="radio" name="Left-front-lining" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-front-lining" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-front-lining" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-front-lining1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                             <td style="text-align:center">
-                                                <label for="automatic-air-conditioning">自动空调:</label>
+                                                <label for="Right-front-lining">右前翼子板内衬:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="automatic-air-conditioning" class="tpl-form-input" name="automatic-air-conditioning" placeholder="请输入自动空调" />
+                                                 <input type="radio" name="Right-front-lining" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-front-lining" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-front-lining" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-front-lining1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                         </tr>
                                         <tr class="gradeX">
-                                            <td style="text-align:center">
-                                                <label for="GPS">GPS导航:</label>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-damper-holder">左前减震器座:</label>
                                             </td>
-                                            <td style="text-align:center">
-                                                <input type="text" id="GPS" class="tpl-form-input" name="GPS" placeholder="请输入GPS导航" />
+                                            <td width="30%">
+                                                <input type="radio" name="Left-damper-holder" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-damper-holder" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-damper-holder" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-damper-holder1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
-                                            <td style="text-align:center">
-                                                <label for="car-backing-radar">倒车雷达:</label>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="right-damper-holder">右前减震器座:</label>
                                             </td>
-                                            <td>
-                                                <input type="text" id="car-backing-radar" class="tpl-form-input" name="car-backing-radar" placeholder="请输入倒车雷达" />
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td style="text-align:center">
-                                                <label for="Back-eye-camera">倒车影像系统:</label>
-                                            </td>
-                                            <td>
-                                                <input type="text" id="Back-eye-camera" class="tpl-form-input" name="Back-eye-camera" placeholder="请输入倒车影像系统" />
-                                            </td>
-                                            <td style="text-align:center">
-                                                <label for="leather-seat">真皮座椅:</label>
-                                            </td>
-                                            <td>
-                                                <input type="text" id="leather-seat" class="tpl-form-input" name="leather-seat" placeholder="请输入真皮座椅" />
+                                            <td width="30%">
+                                                <input type="radio" name="right-damper-holder" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="right-damper-holder" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="right-damper-holder" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="right-damper-holder1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                         </tr>
                                         <tr class="even gradeC">
-                                             <td style="text-align:center">
-                                                <label for="seat-heating">前后排座椅加热:</label>
+                                            <td style="text-align:center">
+                                                <label for="Left-longeron">左前纵梁:</label>
                                             </td>
                                             <td>
-                                                <input type="text" id="seat-heating" class="tpl-form-input" name="seat-heating" placeholder="请输入前后排座椅加热" />
+                                                <input type="radio" name="Left-longeron" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-longeron" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-longeron" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-longeron1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
-                                            <td></td>
-                                            <td></td>
+                                            <td style="text-align:center">
+                                                <label for="Right-longeron">右前纵梁:</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Right-longeron" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-longeron" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-longeron" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-front-lining1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
                                         </tr>
+                                
                                         <!-- more data -->
                                     </tbody>
                                 </table>
-
+                                
 
                             </div>
                         </div>
                     </div>
                     </form>
+                    <script type="text/javascript">
+                        function unusual(obj)
+                        {
+                            //alert(obj);
+                            obj.next().css('display','block');
+                        }
+                        function normal(obj)
+                        {
+                            //alert(obj);
+                            obj.next().next().css('display','none');
+                        }
+                        function not(obj)
+                        {
+                            //alert(obj);
+                            obj.next().next().next().css('display','none');
+                        }
+                    </script>
     
             </div>
         </div>
