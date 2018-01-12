@@ -18,7 +18,12 @@ class AdsenseController extends Controller
     public function index()
     {
         //加载到广告浏览页面
-        return view('/admin/adsense/list');
+        $res = adsense::get();
+       
+        
+        // dump($res);
+         return view('/admin/adsense/list',['res'=>$res]);
+
     }
 
     /**
@@ -41,7 +46,37 @@ class AdsenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $res = $request->except(['_token']);
+         if($request->hasFile('pic')){
+            // 创建上传对象
+            $pic = $request -> file('pic');
+            // 获取文件后缀
+            $hz = $pic -> getClientOriginalExtension();
+            // 随机文件名字
+             $temp_name =time()+rand(10000,99999);
+            // 拼接
+            $filename = $temp_name.'.'.$hz;
+            // 上传
+            $pic -> move('./uploads',$filename);
+            
+
+        }else{
+            dd('没有文件上传');
+        }
+
+        $adsense = new adsense;
+        $adsense->title = $res['title'];
+        $adsense->url = $res['url'];
+        $adsense->pic = $filename;
+
+        $i =  $adsense->save();
+       if($i){
+              echo "<script>alert('恭喜，添加成功！');location.href='/admin/adsense'</script>";
+       }else{
+              echo "<script>alert('抱歉，添加失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+
+       }
+          
     }
 
     /**
@@ -64,7 +99,9 @@ class AdsenseController extends Controller
     public function edit($id)
     {
         //加载修改页面
-        return view('/admin/adsense/edit');
+        $res = adsense::find($id);
+        
+        return view('/admin/adsense/edit',['res'=>$res]);
 
     }
 
@@ -77,7 +114,39 @@ class AdsenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+         // echo "update页面";
+        $res = $request->except(['_token','_method']);
+        if($request->hasFile('pic')){
+            // 创建上传对象
+            $pic = $request -> file('pic');
+            // 获取文件后缀
+            $hz = $pic -> getClientOriginalExtension();
+            // 随机文件名字
+             $temp_name =time()+rand(10000,99999);
+            // 拼接
+            $filename = $temp_name.'.'.$hz;
+            // 上传
+            $pic -> move('./uploads',$filename);
+            
+        }else{
+            dd('没有文件上传');
+        }
+        // var_dump($res);
+        $jieguo = adsense::find($id);
+                // var_dump($jieguo);
+
+        $jieguo->title = $res['title'];
+        $jieguo->url = $res['url'];
+        $jieguo->pic = $filename;
+        
+        $aaa =  $jieguo->save();
+        if($aaa){
+            echo "<script>alert('恭喜，修改成功！');location.href='/admin/adsense'</script>";
+        }else{
+            echo "<script>alert('抱歉，修改失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+
+        }
     }
 
     /**
@@ -88,6 +157,18 @@ class AdsenseController extends Controller
      */
     public function destroy($id)
     {
-        //
+     
+        
+        $res = adsense::find($id);
+        $jieguo = $res->delete();
+        
+
+       if($jieguo){
+            echo  1;
+       }else{
+            echo  0;
+       }
+
+       
     }
 }

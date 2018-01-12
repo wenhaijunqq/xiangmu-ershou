@@ -13,7 +13,7 @@
 
                 <div class="row">
 
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12" >
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
                                 <div class="widget-title am-fl">广告添加</div>
@@ -23,11 +23,12 @@
                             </div>
                             <div class="widget-body am-fr">
 
-                                <form class="am-form tpl-form-border-form tpl-form-border-br">
+                                <form class="am-form tpl-form-border-form tpl-form-border-br" action="/admin/adsense" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
+                                            <input type="text" class="tpl-form-input" id="user-name" name="title"  placeholder="请输入标题文字">
                                             <small>请填写标题文字10-20字左右。</small>
                                         </div>
                                     </div>
@@ -37,7 +38,7 @@
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">URl 地址 <span class="tpl-form-line-small-title">url</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" placeholder="输入url地址">
+                                            <input type="text" name="url"  placeholder="输入url地址">
                                         </div>
                                     </div>
 
@@ -50,7 +51,7 @@
                                                 </div>
                                                 <button type="button" class="am-btn am-btn-danger am-btn-sm">
                                                 <i class="am-icon-cloud-upload"></i> 添加广告图片</button>
-                                                <input id="doc-form-file" type="file" multiple="">
+                                                <input id="doc-form-file" name="pic"  type="file" multiple="">
                                             </div>
 
                                         </div>
@@ -61,7 +62,7 @@
 
                                     <div class="am-form-group">
                                         <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
                                         </div>
                                     </div>
                                 </form>

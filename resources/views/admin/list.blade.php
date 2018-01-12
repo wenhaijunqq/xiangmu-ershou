@@ -23,6 +23,29 @@
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/table">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/calendar">
+                        <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/form">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/admin/chart">
+                        <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
+
+                    </a>
+                </li>
+
+                <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
 
                 <li class="sidebar-nav-link">
 
@@ -35,13 +58,13 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="/admin/xinzeng">
+                            <a href="/admin/UserManagement/xinzeng">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增用户
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="/admin/chakan">
+                            <a href="/admin/NameUserManagement/chakan">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 查看分区
                             </a>
                         </li>
@@ -49,13 +72,13 @@
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>车辆管理分区
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="/admin/list">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                            <a href="/admin/CarType">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 车辆类型
                             </a>
                         </li>
 
@@ -151,17 +174,17 @@
 
 
                     <li class="sidebar-nav-link">
-                            <a href="/admin/adsense/list">
+                            <a href="/admin/adsense">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 广告位
                             </a>
                     </li>
                     <li class="sidebar-nav-link">
-                            <a href="/admin/Carousel/list">
+                            <a href="/admin/Carousel">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 轮播图
                             </a>
                     </li>
                 <li class="sidebar-nav-link">
-                            <a href="/admin/link/list">
+                            <a href="/admin/link">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 友情链接
                             </a>
                         </li>

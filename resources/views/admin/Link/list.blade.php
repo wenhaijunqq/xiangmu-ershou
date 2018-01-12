@@ -20,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/link/list/create">新增</a></button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/link/create">新增</a></button>
                                                
                                             </div>
                                         </div>
@@ -62,12 +62,12 @@
                                         <tbody>
                                             <tr class="gradeX">
                                                 <td>百度</td>
-                                                <td>2016-09-26</td>
                                                 <td>http://www.baidu.com</td>
+                                                <td>2016-09-26</td>
                                                 <td>开启</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/link/list/2/edit">
+                                                        <a href="/admin/link/2/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
@@ -76,11 +76,6 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
-                                            
-                                           
-
-                                           
                                             <!-- more data -->
                                         </tbody>
                                     </table>
