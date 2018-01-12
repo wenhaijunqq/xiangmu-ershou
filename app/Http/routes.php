@@ -78,44 +78,21 @@ Route::resource('/admin/config','admin\ConfigController');
 //后台订单管理页
 Route::resource('/admin/order','admin\OrderController');
 //后台登陆路由
-Route::controller('/admin/login','Admin\LoginController');
+Route::controller('/admin/login','admin\LoginController');
 //后台已经评估路由
-Route::resource('/admin/estimate/already','Admin\EstimateAlreadyController');
+Route::resource('/admin/estimate/already','admin\EstimateAlreadyController');
 //后台等待评估路由
-Route::resource('/admin/estimate/wait','Admin\EstimateWaitController');
+Route::resource('/admin/estimate/wait','admin\EstimateWaitController');
 //后台待审核路由
-Route::resource('/admin/examine/wait','Admin\ExamineWaitController');
+Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
-Route::resource('/admin/examine/already','Admin\ExamineAlreadyController');
+Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
-//后台表单页
-Route::get('/admin/form',function(){
-	return view('admin/form');
-});
-//后台注册页
-Route::get('/admin/signup',function(){
-	return view('admin/signUp');
-});
-// 后台文字列表页
-Route::get('/admin/list',function(){
-	return view('admin/tableList');
-});
-//后台图片列表页
-Route::get('/admin/imglist',function(){
-	return view('admin/tableListImg');
-});
-//后台表格页
-Route::get('/admin/table',function(){
-	return view('admin/tables');
-});
-//后台404页
-Route::get('/admin/404',function(){
-	return view('admin/404');
-});
+
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 //后台用户管理分区
-//
+
 Route::get('/admin/lists',function(){
 	return view('/admin/UserManagement/tableList');
 });
@@ -127,6 +104,13 @@ Route::get('/admin/imglists',function(){
 Route::controller('/db','Dbcontroller');
 Route::resource('imglists','imglistsController');
 
+
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+//后台车辆基本信息查看
+Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+//后台评估报告
+Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
@@ -134,7 +118,6 @@ Route::get('/admin/xinzeng',function(){
 Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
-
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\appointment;
-class ExamineWaitController extends Controller
+
+class WriteAssessController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class ExamineWaitController extends Controller
      */
     public function index()
     {
-        //加载待审核页面
-        $data = appointment::get();
-        return view('admin/examine/wait',['data'=>$data]);
+        //加载评估报告表
+        return view('admin/estimate/writeassess');
     }
 
     /**

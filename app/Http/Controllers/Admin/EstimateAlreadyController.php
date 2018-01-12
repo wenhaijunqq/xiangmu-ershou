@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Model\appointment;
 class EstimateAlreadyController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class EstimateAlreadyController extends Controller
     public function index()
     {
         //加载已评估页面
-        return view('admin/estimate/already');
+        $data = appointment::get();
+        return view('admin/estimate/already',['data'=>$data]);
     }
 
     /**

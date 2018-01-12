@@ -23,31 +23,7 @@
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
-<<<<<<< HEAD
-                <li class="sidebar-nav-link">
-                    <a href="/admin/table">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="/admin/calendar">
-                        <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="/admin/form">
-                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="/admin/chart">
-                        <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
 
-                    </a>
-                </li>
-
-                <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
-=======
 
                 <li class="sidebar-nav-link">
 
@@ -72,28 +48,8 @@
                         </li>
                     </ul>
                 </li>
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
-                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-                    </a>
-                    <ul class="sidebar-nav sidebar-nav-sub">
-                        <li class="sidebar-nav-link">
-                            <a href="/admin/list">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
-                            </a>
-                        </li>
 
-                        <li class="sidebar-nav-link">
-                            <a href="/admin/imglist">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-<<<<<<< HEAD
-=======
+
 
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -134,7 +90,7 @@
                     </ul>
                 </li>
 
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
+
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
@@ -151,8 +107,7 @@
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
                     </a>
                 </li>
-<<<<<<< HEAD
-=======
+
 
                 <li class="sidebar-nav-link">
                     <a href="/admin/config">
@@ -166,7 +121,7 @@
 
                     </a>
                 </li>
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
+
 
 
                     <li class="sidebar-nav-link">

@@ -61,16 +61,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        
+                                        @if(count($res))
                                         @foreach($res as $k=>$v)
                                             <tr class="gradeX">
                                                 <td>{{$v['id']}}</td>
                                                 <td>{{$v['url']}}</td>
-                                                <td></td>
+                                                <td>{{$v['name']}}</td>
                                                 <td>{{$v['status']}}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/Link/2/edit">
+                                                        <a href="/admin/Link/{{$v['id']}}/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
@@ -80,8 +80,9 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                            
-                                                
+                                        @else
+                                        <td colspan="5">没有任何操作数据</td> 
+                                        @endif        
                                             <!-- more data -->
                                         </tbody>
                                     </table>
