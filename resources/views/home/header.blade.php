@@ -13,6 +13,6 @@
         <a href="/www/buy">我要买车</a>
         <a href="/www/sell">我要卖车</a>
         <a href="/www/server">瓜子服务</a>
-        <a href="/www/oldcar">瓜子问答</a>
+        <a href="/home/question">瓜子问答</a>
     </div>
 </div>

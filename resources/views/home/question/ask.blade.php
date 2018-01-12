@@ -63,27 +63,31 @@
 <div class="ask-main-box">
   <div class="tiwen">
     <img src="/img/wenicon.png"/><p>提问</p>
+    <form id="form" class="am-form tpl-form-line-form" action="/home/question" method="POST">
+       {{ csrf_field() }}
+      {{ method_field('POST')}}
       <div class="leibie">
         您要提问的问题类别（必选）：
         <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">买车卖车
+        <input type="radio" name="type" id="inlineRadio1" value="0">买车卖车
         </label>
         <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">交易过户
+        <input type="radio" name="type" id="inlineRadio2" value="1">交易过户
         </label>
         <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">保养维修
+        <input type="radio" name="type" id="inlineRadio3" value="2">保养维修
         </label>
         <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">金融贷款
+        <input type="radio" name="type" id="inlineRadio4" value="3">金融贷款
         </label>
       </div>
       <div id="wentikuang">
-          <textarea class="form-control" rows="5" placeholder="请输入您的问题"></textarea>
+          <textarea class="form-control" rows="5" placeholder="请输入您的问题" name="content"></textarea>
       </div>
       <div class="submit">
-      <button type="button" class="btn btn-success btn-lg">提交</button>
+      <button type="submit" class="btn btn-success btn-lg">提交</button>
       </div>
+      </form>
   </div>
 </div>
         <!-- 提问框结束 -->
