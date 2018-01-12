@@ -39,8 +39,8 @@
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
                                         <input type="text" class="am-form-field ">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
-          </span>
+                                            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+                                        </span>
                                     </div>
                                 </div>
 
@@ -57,18 +57,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($data as $k=>$v)
                                             <tr class="gradeX">
-                                                <td class="am-text-middle">1</td>
+                                                <td class="am-text-middle">{{$v['id']}}</td>
                                                 <td>
-                                                    <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                    {{$v['head']}}
+                                                    <!-- <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt=""> -->
                                                 </td>
-                                                <td class="am-text-middle">Amaze UI 模式窗口</td>
-                                                <td class="am-text-middle">aaaaaa张鹏飞</td>
-                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">{{$v['name']}}</td>
+                                                <td class="am-text-middle"><!-- {{$v['position']}} -->
+                                                     @if($v->position == '0' || $v->position == null) 普通用户 @elseif($v->position == '1') 管理员 @elseif($v->position == '2') 审核员 @elseif($v->position == '3') 评估员 @endif 
+                                                </td>
+                                                <td class="am-text-middle">{{$v['email']}}</td>
                                                 <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 编辑
+                                                        <a href="/admin/UserManagement/xiangqing">
+                                                            <i class="am-icon-pencil"></i> 查看详情
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
@@ -76,7 +80,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                           
+                                           @endforeach
                                             <!-- more data -->
                                         </tbody>
                                     </table>
