@@ -90,5 +90,5 @@
                                         <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存修改</button>
                                         <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 重置修改</button>
                                     </center>
-
+                            </form>
 @endsection

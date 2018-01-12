@@ -42,14 +42,10 @@
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="car-standard" class="am-u-sm-3 am-form-label" >国标 ：</label>
+                                        <label for="car-standard" class="am-u-sm-3 am-form-label">国标：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" name="car-standard" style="display: none;">
-                                              <option value="1">国三</option>
-                                              <option value="2">国四</option>
-                                              <option value="0">国五</option>
-                                            </select>
-
+                                            <input type="text" name="car-standard" class="tpl-form-input" id="car-border"  style="width:200px;">
+                    
                                         </div>
                                     </div>
 
@@ -82,43 +78,31 @@
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="car-standard" class="am-u-sm-3 am-form-label" >变速箱 ：</label>
+                                        <label for="car-standard" class="am-u-sm-3 am-form-label">变速箱 ：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="car-standard">
-                                              <option value="1">自动挡</option>
-                                              <option value="0">手动挡</option>
-                                            </select>
-
+                                            <input type="text" name="car-standard" class="tpl-form-input" id="car-standard" style="width:200px;">
+                    
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="accident" class="am-u-sm-3 am-form-label" >重大事故 ：</label>
+                                        <label for="accident" class="am-u-sm-3 am-form-label">重大事故 ：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="accident">
-                                              <option value="0">无</option>
-                                              <option value="1">有</option>
-                                            </select>
-
+                                            <input type="text" name="car-km" class="tpl-form-input" id="重大事故" style="width:200px;">
+                    
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="burn" class="am-u-sm-3 am-form-label" >火烧事故 ：</label>
+                                        <label for="burn" class="am-u-sm-3 am-form-label">火烧事故 ：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="burn">
-                                              <option value="0">无</option>
-                                              <option value="1">有</option>
-                                            </select>
-
+                                            <input type="text" name="burn" class="tpl-form-input" id="burn" style="width:200px;">
+                    
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="soaking_water" class="am-u-sm-3 am-form-label" >泡水事故 ：</label>
+                                        <label for="soaking_water" class="am-u-sm-3 am-form-label">泡水事故 ：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="soaking_water">
-                                              <option value="0">无</option>
-                                              <option value="1">有</option>
-                                            </select>
-
+                                            <input type="text" name="soaking_water" class="tpl-form-input" id="soaking_water" style="width:200px;">
+                    
                                         </div>
                                     </div>
                                     <div class="am-form-group">
@@ -177,7 +161,7 @@
 
                                     <div class="am-form-group">
                                         <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">返回</button>
                                         </div>
                                     </div>
                                 </form>
