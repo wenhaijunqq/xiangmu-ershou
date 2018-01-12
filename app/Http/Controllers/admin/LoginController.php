@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Flc\Dysms\Client;
 use Flc\Dysms\Request\SendSms;
-use App\Model\seller_log;
+use App\Http\Model\seller_log;
 
 
  class LoginController extends Controller
@@ -22,7 +22,7 @@ use App\Model\seller_log;
     //检查电话号码是否正确
     public function phone(Request $request)
     {
-    	$phone = $request->input('phone');
+    	$phone = $request->user('phone');
 		if(!preg_match("/^1[34578]{1}\d{9}$/",$phone)){
 		    echo "not"; //不是电话号码
 		}else{
