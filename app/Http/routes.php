@@ -97,6 +97,7 @@ Route::get('/admin/basiccar','admin\BasicpersonController@show');
 Route::resource('/admin/config','admin\ConfigController');
 //后台订单信息页
 Route::resource('/admin/order','admin\OrderController');
+
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
 //后台登陆路由
@@ -121,7 +122,25 @@ Route::resource('/admin/estimate/basicinformation','admin\BasicInformationContro
 Route::get('/admin/seeinformation','admin\SeeInformationController@index');
 //后台评估报告
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
-Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
+Route::resource('/admin/basicinformation','Admin\BasicInformationController');
+
+//后台用户管理分区
+Route::get('/admin/xinzeng',function(){
+	return view('/admin/UserManagement/tableList');
+});
+Route::get('/admin/chakan',function(){
+	return view('/admin/UserManagement/tableListImg');
+});
+
+//轮播图路由器
+Route::resource('/admin/Carousel/list','admin\CarouselController');
+//广告位路由器
+Route::resource('/admin/adsense/list','admin\AdsenseController');
+//友情链接路由器
+Route::resource('/admin/link/list','admin\LinkController');
+
+
 //后台表单页
 Route::get('/admin/form',function(){
 	return view('admin/form');
