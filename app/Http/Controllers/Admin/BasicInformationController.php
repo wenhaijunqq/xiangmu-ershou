@@ -17,7 +17,7 @@ class BasicInformationController extends Controller
     public function index()
     {
         //加载已评估页面
-        return view('admin/basicinformation');
+        return view('admin/estimate/basicinformation');
     }
 
     /**

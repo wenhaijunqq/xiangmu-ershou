@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Model\link;
 
-class ConfigController extends Controller
+class LinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,9 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        //加载网站配置首页
-        return view('/admin/config/index');
+        //加载友情链接显示页面
+        return view('/admin/link/list');
+
     }
 
     /**
@@ -27,7 +29,8 @@ class ConfigController extends Controller
      */
     public function create()
     {
-        //
+        //加载添加友情链接页面
+        return view('/admin/link/create');
     }
 
     /**
@@ -61,6 +64,7 @@ class ConfigController extends Controller
     public function edit($id)
     {
         //
+        return view('/admin/link/edit');
     }
 
     /**

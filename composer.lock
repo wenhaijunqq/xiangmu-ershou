@@ -3308,7 +3308,11 @@
 =======
                 "url": "https://files.phpcomposer.com/files/symfony/yaml/ddc23324e6cfe066f3dd34a37ff494fa80b617ed.zip",
                 "reference": "ddc23324e6cfe066f3dd34a37ff494fa80b617ed",
+<<<<<<< HEAD
 >>>>>>> ddb5645fbc0ac0bfa52119d314965045d9018770
+=======
+>>>>>>> c904800c318fee59635c9fde13f2310d464acc22
+>>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
                 "shasum": ""
             },
             "require": {
