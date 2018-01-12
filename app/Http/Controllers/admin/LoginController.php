@@ -6,50 +6,72 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Flc\Dysms\Client;
+use Flc\Dysms\Request\SendSms;
+use App\Model\seller_log;
 
-class LoginController extends Controller
+
+ class LoginController extends Controller
 {
-	    //登录页
-    public function register()
-    {	
-        return view('home.Login');
+    //显示登录界面
+    public function login()
+    {
+        return view('home/Login');
+    }
+
+    //检查电话号码是否正确
+    public function phone(Request $request)
+    {
+    	$phone = $request->input('phone');
+		if(!preg_match("/^1[34578]{1}\d{9}$/",$phone)){
+		    echo "not"; //不是电话号码
+		}else{
+		     $res = seller_log::where('phone',$phone)->first();
+		     if($res){
+		     	echo 'ok'; //电话可用
+		     }else{
+		     	echo 'no'; //不是商家电话
+		     }
+		}
+    }
+
+    //发送验证码
+    public function code(Request $request)
+    {
+    	// $phone = $request->input(phone);
+    	// $config = [
+    	//     'accessKeyId'    => 'LTAIoIL9CepmtlBW',
+    	//     'accessKeySecret' => 'y8cJCQJazGlX1KIhLbNrPw4O3kYomW',
+    	// ];
+
+    	// $client  = new Client($config);
+    	// $sendSms = new SendSms;
+    	// $sendSms->setPhoneNumbers($phone);
+    	// $sendSms->setSignName('冉泽龙');
+    	// $sendSms->setTemplateCode('SMS_120405864');
+    	$code = rand(100000, 999999);
+    	// $sendSms->setTemplateParam(['code' => $code);
+    	// $sendSms->setOutId('demo');
+    	session(['code'=>$code]);
+    	// $client->execute($sendSms);
+    	echo $code;
+    }
+
+    //执行登录
+    public function dologin(Request $request)
+    {
+    	$code = $request->input('code');
+    	$phone = $request->input('phone');
+    	// $id = shop::where('phone',$phone)->id;
+    	//session(['shopid'=>$id]);
+    	if($code == session('code')){
+    		echo 1;
+    	}else{
+    		echo 0;
+    	}
     }
 
 
-   public function dotelregister()
-   {
-   		 $res = Input::except('_token');
-        $yzcode = $res['yzcode'];
-        unset($res['yzcode']);
 
-        //手机号验证
-        $rule = [
-            'tel'=>'required|regex:/^1[34578][0-9]{9}$/|unique:user_details,tel',
-        ];
-        $validator = Validator::make($res,$rule);
-
-        //如果验证失败
-        if($validator->fails()){
-            return back() -> withErrors($validator) -> withInput();
-        }
-        if(session('yzcode') != $yzcode)
-        {
-            return back()->withErrors('验证码错误') -> withInput();
-        }
-
-        //存放数据
-        $user = new User();
-        $user -> phone = $res['tel'];
-        $user -> identity = 2;
-        $user -> save();
-        $id = $user -> uid;
-
-        $userdetail = new UserDetail();
-        $userdetail -> uid = $id;
-        $userdetail -> tel = $res['tel'];
-        $userdetail -> status = 1 ;
-        $userdetail -> save();
-
-        return redirect('home.index');
-   }
 }
+

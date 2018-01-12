@@ -88,13 +88,11 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-<<<<<<< HEAD
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
 //车看用户
 Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
-=======
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');
 //后台表单页
 Route::get('/admin/form',function(){
@@ -122,7 +120,6 @@ Route::get('/admin/404',function(){
 });
 
 //后台用户管理分区
-//
 Route::get('/admin/lists',function(){
 	return view('/admin/UserManagement/tableList');
 });
@@ -141,7 +138,7 @@ Route::get('/admin/xinzeng',function(){
 Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
->>>>>>> 9d178573ecf72df77255254fa22ef8e239cc6c00
+
 
 //轮播图路由器
 Route::resource('/admin/Carousel/list','admin\CarouselController');
@@ -154,7 +151,9 @@ Route::resource('/admin/link/list','admin\LinkController');
 
 //前台
 
-//前台用户登录
-Route::get('home/register','admin\LoginController@register');
-//前台登录验证
-Route::post('home/dotelregister','admin\LoginController@dotelregister');
+//登录
+Route::get('home/login','admin\LoginController@login');
+Route::post('home/phone','admin\LoginController@phone');
+Route::post('code','LoginController@code');
+Route::post('dologin','LoginController@dologin');
+Route::post('shouye','LoginController@index');
