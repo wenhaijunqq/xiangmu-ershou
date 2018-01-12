@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Model\appointment;
 class EstimateWaitController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class EstimateWaitController extends Controller
     public function index()
     {
         //加载待评估的页面
-        return view('admin/estimate/wait');
+        $data = appointment::get();
+        return view('admin/estimate/wait',['data'=>$data]);
     }
 
     /**

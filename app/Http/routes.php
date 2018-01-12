@@ -100,12 +100,25 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
+
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
 //车看用户
 Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
 
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+//后台车辆基本信息查看
+Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+//后台评估报告
+Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+//后台用户管理分区
+Route::get('/admin/xinzeng',function(){
+	return view('/admin/UserManagement/tableList');
+});
+Route::get('/admin/chakan',function(){
+	return view('/admin/UserManagement/tableListImg');
+});
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
