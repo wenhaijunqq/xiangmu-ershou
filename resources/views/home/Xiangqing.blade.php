@@ -5,9 +5,18 @@
   <meta name="renderer" content="webkit" /> 
   <title>北京二手宝马7系 2011款 730Li典雅型(进口)_北京大兴二手车交易市场-瓜子二手车直卖网</title> 
   <meta name="description" content="北京二手车,急卖二手车,直面个人买家 好车卖出好价,瓜子二手车均经过259项检测,标准无事故,优质个人二手车,14天可退1年质保,个人二手车买卖首选瓜子二手车直卖网!" /> 
+<<<<<<< HEAD
   <link rel="stylesheet" href="/css/xiangqing1.css" > 
   <link rel="stylesheet" href="/css/xiangqing2.css" > 
   <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+=======
+  <script src="/js/xiangqing.hm.js.下载"></script>
+  <link rel="stylesheet" href="/css/xiangqing1.css" > 
+  <link rel="stylesheet" href="/css/xiangqing2.css" > 
+  
+ <script type="text/javascript" src=/js/xiangqing.base.4b81eb2fb2dda5120fb9.js.下载"></script>
+
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
  </head> 
  <!-- 加载js/css--> 
  <body class="detail"> 

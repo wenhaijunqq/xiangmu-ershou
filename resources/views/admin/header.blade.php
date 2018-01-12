@@ -4,13 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
     <title>瓜子二手车后台</title>
+=======
+    <title>Amaze UI Admin index Examples</title>
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+<<<<<<< HEAD
     <link rel="icon" type="image/png" href="/admins/i/favicon.ico">
+=======
+    <link rel="icon" type="image/png" href="/admins/i/favicon.png">
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
     <link rel="apple-touch-icon-precomposed" href="/admins/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
     <script src="/admins/js/echarts.min.js"></script>
@@ -19,6 +27,7 @@
     <link rel="stylesheet" href="/admins/css/fullcalendar.min.css" />
     <link rel="stylesheet" href="/admins/css/fullcalendar.print.css" media='print' />
     <link rel="stylesheet" href="/admins/css/app.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/admins/css/bootstrap.min.css">
     <script src="/admins/js/jquery.min.js"></script>
     <script type="text/javascript">
@@ -42,6 +51,9 @@
         });
         
     </script>
+=======
+    <script src="/admins/js/jquery.min.js"></script>
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 
 
 </head>
