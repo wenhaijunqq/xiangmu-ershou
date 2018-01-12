@@ -75,8 +75,12 @@ class BasicInformationController extends Controller
         // 获取数据
         $data = $request->except(['_token','_method']);
         $data['car_id'] = $id;
-        dd($data);
-        $res = vehicle_information::
+        $res = vehicle_information::insert($data);
+        if($res){
+             echo "<script>alert('添加成功！');location.href='/admin/estimate/wait'</script>";   
+        }else{
+            echo "<script>alert('添加失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+        }
 
     }
 

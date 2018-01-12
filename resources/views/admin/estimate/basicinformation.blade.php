@@ -47,9 +47,9 @@
                                         <label for="standard" class="am-u-sm-3 am-form-label" >国标 ：</label>
                                         <div class="am-u-sm-9">
                                             <select data-am-selected="{searchBox: 1}" name="standard" style="display: none;">
-                                              <option value="1">国三</option>
-                                              <option value="2">国四</option>
-                                              <option value="0">国五</option>
+                                              <option value="0">国三</option>
+                                              <option value="1">国四</option>
+                                              <option value="2">国五</option>
                                             </select>
 
                                         </div>

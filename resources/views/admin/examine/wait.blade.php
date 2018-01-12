@@ -80,10 +80,10 @@
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 审核通过
+                                                            <i class="am-btn-success"></i> 审核通过
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 审核不通过
+                                                            <i class="am-btn-trash"></i> 审核不通过
                                                         </a>
                                                     </div>
                                                 </td>

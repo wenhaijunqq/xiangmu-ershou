@@ -44,8 +44,13 @@
                                     <div class="am-form-group">
                                         <label for="car-standard" class="am-u-sm-3 am-form-label">国标：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-standard" class="tpl-form-input" id="car-border" value="{{$data['standard']}}"  style="width:200px;" readonly="readonly">
-                    
+                                            @if($data['standard'] == 0)
+                                            <input type="text"  class="tpl-form-input" id="car-standard"  value="国三" style="width:200px;" readonly="readonly">
+                                            @elseif($data['standard == 1'])
+                                            <input type="text"  class="tpl-form-input" id="car-standard"  value="国四" style="width:200px;" readonly="readonly">
+                                            @else
+                                            <input type="text"  class="tpl-form-input" id="car-standard"  value="国五" style="width:200px;" readonly="readonly">
+                                            @endif
                                         </div>
                                     </div>
 

@@ -54,7 +54,7 @@
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
                                                 <th>拥有者编号</th>
-                                                <th>基本信息</th>
+                                                <th>基本信息(蓝色未添加)</th>
                                                 <th>评估报告</th>
                                                 <th>操作</th>
                                             </tr>
@@ -65,12 +65,19 @@
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
-                                                <td><a href="/admin/estimate/basicinformation/{{$val['car_id']}}">添加与修改基本信息</a></td>
+                                                @if ($val['add_status'] == 0)
+                                                <td ><a href="/admin/estimate/basicinformation/{{$val['car_id']}}" >添加基本信息</a></td>
+                                                @else
+                                                <td ><a style="color:#aaa">添加基本信息</a></td>
+                                                @endif
                                                 <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 提交
+                                                            <i class="am-btn-success"></i> 提交
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <i class="am-icon-pencil" onclick="update({{$val['car_id']}},$(this))"></i> 修改
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 取消评估
@@ -105,6 +112,11 @@
         </div>
     </div>
     </div>
+    <script type="text/javascript">
+        function update(id,obj){
+            
+        }
+    </script>
 </body>
 
 </html>
