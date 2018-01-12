@@ -48,9 +48,9 @@
           <div class="am-u-sm-9">
            <div class="am-form-group am-form-file">
             <div class="tpl-form-file-img">
-             <img src="/admins/img/timg1.gif" alt="" width="220" height="220"  id="myimg"/>
+             <img src="/admins/img/timg1.gif" alt=""  id="myimg" style="width:200px;height:200px"/>
             </div>
-            <button type="button" class="am-btn am-btn-danger am-btn-sm"> <i class="am-icon-cloud-upload"></i> 添加封面图片</button>
+            <button type="button" class="am-btn am-btn-danger am-btn-sm" style="width:200px"> <i class="am-icon-cloud-upload" ></i> 添加封面图片</button>
             <input id="doc-form-file " type="file" name="pic" value=""  class="myfile"/>
 
            </div>
@@ -106,12 +106,14 @@
                    contentType: false,
                    cache: false,
                    beforeSend:function(){
-                        $("#myimg").attr('src',"/admins/img/timg.gif");
+                        //$("#myimg").attr('src',"/admins/img/timg.gif");
 
                    },
                    success:function(data){
                        alert(data.message);
-                       $('#myimg').attr('src',data.filePath);
+
+                       //alert(data->filePath)
+                       $('#myimg').attr('src',data.filePath+"?imageView2/2/w/200/h/200/q/75|imageslim");
                    },
                    error:function(err){
                      console.log(err);

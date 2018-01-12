@@ -4,16 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
     "content-hash": "c55e41ec6d878b25d7da77d9926f8618",
-=======
-    "hash": "8a913ef53499f6e26a6258f453ca0f0e",
-    "content-hash": "1de9e73a3b35157a2b2b285d6c8c2a2f",
->>>>>>> fe4990f64837972ec69d471b1ca9dd9f100b6a6c
-=======
-    "content-hash": "c55e41ec6d878b25d7da77d9926f8618",
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -168,11 +159,7 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
                 "url": "https://api.github.com/repos/doctrine/inflector/zipball/5527a48b7313d15261292c149e55e26eae771b0a",
-=======
-                "url": "https://files.phpcomposer.com/files/doctrine/inflector/5527a48b7313d15261292c149e55e26eae771b0a.zip",
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
                 "reference": "5527a48b7313d15261292c149e55e26eae771b0a",
                 "shasum": ""
             },
@@ -227,15 +214,8 @@
                 "singularize",
                 "string"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
             "time": "2018-01-09T20:05:19+00:00"
-=======
-            "time": "2017-07-22 12:18:28"
->>>>>>> fe4990f64837972ec69d471b1ca9dd9f100b6a6c
-=======
-            "time": "2018-01-09T20:05:19+00:00"
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
+
         },
         {
             "name": "gregwar/captcha",
@@ -2123,7 +2103,6 @@
                 "env",
                 "environment"
             ],
-<<<<<<< HEAD
             "time": "2015-05-30T15:59:26+00:00"
         },
         {
@@ -2136,11 +2115,8 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
                 "url": "https://api.github.com/repos/zgldh/qiniu-laravel-storage/zipball/06392b37654e8710216153106254a24a2d3e330e",
-=======
-                "url": "https://files.phpcomposer.com/files/zgldh/qiniu-laravel-storage/06392b37654e8710216153106254a24a2d3e330e.zip",
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
+
                 "reference": "06392b37654e8710216153106254a24a2d3e330e",
                 "shasum": ""
             },
@@ -2187,13 +2163,11 @@
                 "sdk",
                 "storage"
             ],
-            "time": "2017-11-25T14:07:17+00:00"
-<<<<<<< HEAD
-=======
+            "time": "2017-11-25T14:07:17+00:00",
+
             "time": "2015-05-30 15:59:26"
->>>>>>> fe4990f64837972ec69d471b1ca9dd9f100b6a6c
-=======
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
+
+
         }
     ],
     "packages-dev": [
@@ -2207,13 +2181,10 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
+
                 "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
                 "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
-=======
-                "url": "https://files.phpcomposer.com/files/doctrine/instantiator/185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda.zip",
-                "reference": "185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda",
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
+
                 "shasum": ""
             },
             "require": {
@@ -3501,12 +3472,11 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/7c80d81b5805589be151b85b0df785f0dc3269cf",
-=======
-                "url": "https://files.phpcomposer.com/files/symfony/yaml/7c80d81b5805589be151b85b0df785f0dc3269cf.zip",
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
                 "reference": "7c80d81b5805589be151b85b0df785f0dc3269cf",
+                "url": "https://files.phpcomposer.com/files/symfony/yaml/ddc23324e6cfe066f3dd34a37ff494fa80b617ed.zip",
+                "reference": "ddc23324e6cfe066f3dd34a37ff494fa80b617ed",
+
                 "shasum": ""
             },
             "require": {
@@ -3548,15 +3518,8 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "time": "2018-01-03T07:37:11+00:00"
-=======
-            "time": "2018-01-03 07:37:11"
->>>>>>> fe4990f64837972ec69d471b1ca9dd9f100b6a6c
-=======
-            "time": "2018-01-03T07:37:11+00:00"
->>>>>>> c7e1da7159f1e9f3cf0384945b649d5227f01ce8
+
         },
         {
             "name": "webmozart/assert",

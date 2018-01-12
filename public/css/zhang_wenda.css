@@ -410,6 +410,7 @@ a{
     height: 40px;
     margin: -30px  auto 10px;
 }
+<<<<<<< HEAD
 .wentilist table tr td a{
     color:#000000;
     text-decoration:none;
@@ -428,24 +429,38 @@ a{
     color: #999;
 }
 
+=======
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 
 /*answer页开始*/
  .answerbox .dh{
         width: 300px;
         height: 20px;
         margin-top: 30px;
+<<<<<<< HEAD
         margin-left: 75px;
+=======
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
      }
 .answerbox .wen{
     width: 870px;
     height: 105px;
     margin: -10px auto 10px;
+<<<<<<< HEAD
     font-size: 18px;
     color: #333;
     font-weight: 400;
     padding-left: 40px;
     padding-top: 20px;
     border: 0.5px solid #999;
+=======
+    font-size: 20px;
+    color: #333;
+    font-weight: 400;
+    padding-left: 80px;
+    padding-top: 20px;
+    border: 1px solid #8A8B86;
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 }   
   
   .answerbox .wen p{
@@ -458,14 +473,24 @@ a{
 
 .answerbox .da{
     width: 870px;
+<<<<<<< HEAD
     height: 155px;
+=======
+    height: 105px;
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
     margin: 20px auto 80px;
     font-size: 20px;
     color: #333;
     font-weight: 400;
+<<<<<<< HEAD
    /* padding-left: 80px;
     padding-top: 20px;*/
     border: 0.5px solid #999;
+=======
+    padding-left: 80px;
+    padding-top: 20px;
+    border: 1px solid #8A8B86;
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 }   
 
 .answerbox .search2{
@@ -501,6 +526,7 @@ a{
     cursor: pointer;
     font-size: 14px;
     font-family: Microsoft YaHei;
+<<<<<<< HEAD
 }
 .answerbox .da .photos{
     margin-top: 20px;
@@ -531,4 +557,6 @@ a{
     font-size: 18px;
     margin-top: 15px;
     margin-left: 20px;
+=======
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 }

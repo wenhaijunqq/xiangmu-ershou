@@ -55,7 +55,7 @@
             <td class="am-text-middle">{{$v['car_typeName']}}</td>
             <td class="am-text-middle">
              <div class="tpl-table-black-operation">
-              <a href="javascript:;"> <i class="am-icon-pencil"></i> 编辑 </a>
+              <a href="javascript:;" onclick="edit({{$v['id']}})"> <i class="am-icon-pencil"></i> 编辑 </a>
               <a href="javascript:;" class="tpl-table-black-operation-del"> <i class="am-icon-trash"></i> 删除 </a>
               <a href="javascript:;"class="am-btn tpl-table-black-operation"> <i class="am-icon-archive"></i> 查看 </a>
              </div>
@@ -97,7 +97,19 @@
       maxmin: true, //开启最大化最小化按钮
       area: ['893px', '600px'],
       content: '/admin/CarType/add'
+  });
 });
-    })
+    function edit(obj){
+        layer.open({
+      type: 2,
+      title: '车辆类别添加',
+      shadeClose: true,
+      shade: false,
+      maxmin: true, //开启最大化最小化按钮
+      area: ['893px', '600px'],
+      content: '/admin/CarType/edit'
+  });
+
+    }
 </script>
 @endsection
