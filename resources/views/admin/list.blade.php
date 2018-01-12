@@ -23,7 +23,6 @@
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
-<<<<<<< HEAD
                 <li class="sidebar-nav-link">
                     <a href="/admin/table">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
@@ -47,7 +46,6 @@
                 </li>
 
                 <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
-=======
 
                 <li class="sidebar-nav-link">
 
@@ -72,7 +70,6 @@
                         </li>
                     </ul>
                 </li>
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
                         <i class="am-icon-table sidebar-nav-link-logo"></i>车辆管理分区
@@ -92,8 +89,6 @@
                         </li>
                     </ul>
                 </li>
-<<<<<<< HEAD
-=======
 
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -134,7 +129,6 @@
                     </ul>
                 </li>
 
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
@@ -151,8 +145,6 @@
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
                     </a>
                 </li>
-<<<<<<< HEAD
-=======
 
                 <li class="sidebar-nav-link">
                     <a href="/admin/config">
@@ -179,7 +171,6 @@
                         </li>
                     </ul>
                 </li>
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
 
 
                     <li class="sidebar-nav-link">
