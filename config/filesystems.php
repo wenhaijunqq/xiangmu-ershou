@@ -79,6 +79,20 @@ return [
             'region'    => 'IAD',
             'url_type'  => 'publicURL',
         ],
+        'qiniu' => [
+            'driver'  => 'qiniu',
+            'domains' => [
+                'default'   => 'p2dtsikvg.bkt.clouddn.com', //你的七牛域名
+                'https'     => 'dn-yourdomain.qbox.me',         //你的HTTPS域名
+                'custom'    => 'static.abc.com',                //Useless 没啥用，请直接使用上面的 default 项
+             ],
+            'access_key'=> 'h2porM8utJBw-E_ohWVWh7WeLruirUl0wXLHF5Mc',  //AccessKey
+            'secret_key'=> 'YZZKExMm2cpK1vDLde-aasOIMfJuQNC-l5yiJoy8',  //SecretKey
+            'bucket'    => 'zhuguangyu',  //Bucket名字，空间名
+            'notify_url'=> '',  //持久化处理回调地址
+            'access'    => 'public'  //空间访问控制 public 或 private
+        ],
+
 
     ],
 

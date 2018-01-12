@@ -62,7 +62,8 @@
 			<div class="search">
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
-				<a href="/www/ask" target="_blank"><button class="ipt-btn" type="button">提问</button></a>
+
+				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>
@@ -76,24 +77,16 @@
 			<ul class="index-list">
 				<li class="box-item bore4">
 					<h3 class="buy-tit">买车卖车</h3>
+
 					<ul class="list sale-list">
+                       @foreach($data as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">2013款Cayman的性价比怎么样？</a>
+							<a target="_blank" href="#">{{$v->content}}</a>
 						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">保时捷2013款Cayman可以收么？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">保时捷Panamera油耗怎么样？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">保时捷Panamera内部空间怎么样？</a>
-						</li>
+						 @endforeach
 					</ul>
+
 					<div class="extra">
 						<a href="#" target="_blank">查看更多>></a>
 					</div>
@@ -101,22 +94,12 @@
 				<li class="box-item bore4">
 					<h3 class="sale-tit">交易过户</h3>
 					<ul class="list sale-list">
+					@foreach($data1 as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">在瓜子二手车平台上买一辆车有什么费用？</a>
+							<a target="_blank" href="#">{{$v->content}}</a>
 						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">异地可以看车吗？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">平台车辆的价格高，可以谈吗？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">买了车之后你们提供哪些保障？</a>
-						</li>
+					@endforeach
 					</ul>
 					<div class="extra">
 						<a href="#" target="_blank">查看更多>></a>
@@ -125,22 +108,12 @@
 				<li class="box-item bore4">
 					<h3 class="policy-tit">保养维修</h3>
 					<ul class="list sale-list">
+					@foreach($data2 as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">为什么说使用点燃式汽油发动 机的车辆和机械都可以使用车用乙醇汽油?</a>
+							<a target="_blank" href="#">{{$v->content}}</a>
 						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">汽车排气噪音增加废气排放量增加超标怎么办？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">夏天空调怎么用更好？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">汽车的基本结构包括那些部分？</a>
-						</li>
+					@endforeach
 					</ul>
 					<div class="extra">
 						<a href="#" target="_blank">查看更多>></a>
@@ -149,27 +122,18 @@
 				<li class="box-item bore4">
 					<h3 class="loan-tit">金融贷款</h3>
 					<ul class="list sale-list">
+					@foreach($data3 as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">在瓜子二手车直卖网上买二手车可以办理贷款吗？</a>
+							<a target="_blank" href="#">{{$v->content}}</a>
 						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">最低多少价位的车可以申请贷款？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">在瓜子二手车直卖网上买二手车办理贷款需要做抵押吗？</a>
-						</li>
-						<li>
-							<span class="icon-circle"></span>
-							<a target="_blank" href="#">网站上的贷款利息会不会太高了？</a>
-						</li>
+					@endforeach
 					</ul>
 					<div class="extra">
 						<a href="#" target="_blank">查看更多>></a>
 					</div>
 				</li>
+
 			</ul>
 		</div>
 

@@ -122,13 +122,13 @@
                     <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
                 </div>
                 <div class="phone">400-060-6046</div>
-                <div class="login"><a href="/IndexLogin" >登录</a></div>
+                <div class="login"><a href="{{ url('home/register') }}" >登录</a></div>
                 <div class="nav-nav" id='h'>
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>
                     <a href="/www/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
-                    <a href="/www/oldcar">瓜子问答</a>
+                    <a href="/home/question">瓜子问答</a>
                 </div>
                 <span id="zuo" style="position:absolute;top:200px;left: 7px;font-size: 20px;color: #888;font-weight: 900;">&lt;</span>
                 <span id="you" style="position:absolute;top:200px;right: 7px;font-size: 20px;color: #888;font-weight: 900;">&gt;</span>

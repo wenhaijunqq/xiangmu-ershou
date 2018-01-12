@@ -6,7 +6,11 @@
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
              <div class="row">
-
+                <ol class="am-breadcrumb">
+                      <li><a href="/admin/index">首页</a></li>
+                      <li><a href="/admin/order">分类</a></li>
+                      <li class="am-active">内容</li>
+                    </ol>
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
