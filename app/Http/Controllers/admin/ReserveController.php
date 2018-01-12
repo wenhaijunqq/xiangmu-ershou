@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-class OrderController extends Controller
+class ReserveController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +16,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        // if($request -> has('id')){
-        //     //根据提交id查询商品数据
-        //     $res = $request -> input('id');
-        //     $data = DB::table('order') -> where('id',$res) -> paginate(1);
-        //     //发送数据
-        //     return view('admin.order.index',['data'=>$data]);
-        // }else{
-            //查询商品所有数据
-            $data = DB::table('order') -> orderBy('buy_time','desc') -> get();
-            //发送数据
-            return view('admin.order.index',['data'=>$data]);
-        // }
+        //加载预约信息首页的操作
+        $data = DB::table('reserve') -> orderBy('yutime','desc') -> get();
+        //将数据返回
+        return view('admin.reserve.index',['data'=>$data]);
     }
 
     /**
@@ -59,21 +51,23 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
-    // *
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-     
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
-        $data = DB::table('order') -> where('id',$id) -> first();
+        //加载修改页的操作
+        $data = DB::table('reserve') -> where('rid',$id) -> first();
+        // $data1 = DB::table('assessor') -> where
+        //将数据带去修改页
+        return view('admin.reserve.edit',['data'=>$data]);
 
-        //显示订单列表的详情操作
-        return view('admin.order.show',['data'=>$data]);
     }
 
     /**
@@ -85,7 +79,14 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //执行修改的操作
+       $data = $request -> except(['_token','_method']);
+       $res = DB::table('reserve')->where('rid',$id)->update($data);
+       if($res){
+            echo '<script>alert("修改成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }else{
+            echo '<script>alert("修改失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }
     }
 
     /**
@@ -96,14 +97,6 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //执行订单删除的操作
-        $res = DB::table('order') -> where('id',$id) -> delete();
-        if($res){
-            echo '<script>alert("删除成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
-        }else{
-            echo '<script>alert("删除失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
-        }
-        
+        //
     }
-
 }

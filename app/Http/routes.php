@@ -12,10 +12,11 @@
 */
 
 
-//前台模板引入
+// 前台模板引入
 Route::get('/', function () {
     return view('home/index');
 });
+
 Route::get('/www/buy', function () {
     return view('/home/PurchaseCar');
 });
@@ -25,18 +26,7 @@ Route::get('/www/sell', function () {
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
 });
-Route::get('/www/oldcar', function () {
-    return view('/home/OldCarCon');
-});
-Route::get('/www/ask',function(){
-	return view('/home/question/ask');
-});
-Route::get('/www/asklist',function(){
-	return view('/home/question/asklist');
-});
-Route::get('/www/answer',function(){
-	return view('/home/question/answer');
-});
+
 Route::get('IndexLogin', function () {
     return view('/home/login');
 });
@@ -45,8 +35,9 @@ Route::get('/IndexRegister', function () {
 });
 Route::get('/www/xiangqing', function () {
 	return view('/home/Xiangqing');
-
 });
+//前台问答
+Route::resource('/home/question','Home\QuestionController');
 
 //后台模板引入
 Route::controller('/admin/login','Admin\LoginController');
@@ -63,6 +54,7 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 //后台问答管理页
+
 Route::get('/admin/oldcar',function(){
 	return view('admin/question/oldcar');
 });
@@ -80,10 +72,22 @@ Route::resource('admin/CarType/','admin\VehiclInfoController');
 //后台网站车辆类型增加
 
 
+
+Route::resource('/admin/question','admin\QuestionController');
+
+//人员具体信息页面
+Route::get('/admin/basicperson','admin\BasicpersonController@index');
+//车辆具体信息页面
+Route::get('/admin/basiccar','admin\BasicpersonController@show');
+
+
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');
-//后台订单管理页
+//后台订单信息页
 Route::resource('/admin/order','admin\OrderController');
+//后台预约信息页
+Route::resource('/admin/reserve','admin\ReserveController');
+
 
 //后台登陆路由
 Route::controller('/admin/login','Admin\LoginController');
