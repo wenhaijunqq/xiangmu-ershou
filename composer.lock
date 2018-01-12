@@ -3308,7 +3308,11 @@
 =======
                 "url": "https://files.phpcomposer.com/files/symfony/yaml/ddc23324e6cfe066f3dd34a37ff494fa80b617ed.zip",
                 "reference": "ddc23324e6cfe066f3dd34a37ff494fa80b617ed",
+<<<<<<< HEAD
+>>>>>>> ddb5645fbc0ac0bfa52119d314965045d9018770
+=======
 >>>>>>> c904800c318fee59635c9fde13f2310d464acc22
+>>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
                 "shasum": ""
             },
             "require": {
@@ -3350,7 +3354,11 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-07-23T12:43:26+00:00"
+=======
+            "time": "2018-01-03T07:37:11+00:00"
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
         },
         {
             "name": "webmozart/assert",
