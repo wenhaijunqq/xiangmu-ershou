@@ -25,18 +25,7 @@ Route::get('/www/sell', function () {
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
 });
-Route::get('/www/oldcar', function () {
-    return view('/home/OldCarCon');
-});
-Route::get('/www/ask',function(){
-	return view('/home/question/ask');
-});
-Route::get('/www/asklist',function(){
-	return view('/home/question/asklist');
-});
-Route::get('/www/answer',function(){
-	return view('/home/question/answer');
-});
+
 Route::get('IndexLogin', function () {
     return view('/home/login');
 });
@@ -59,6 +48,7 @@ Route::get('/www/xiangqing', function () {
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
 Route::get('/home/answer/{id}','Home\AnswerController@index');
+Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
 
 
 //后台模板引入
@@ -131,7 +121,7 @@ Route::resource('/admin/estimate/basicinformation','admin\BasicInformationContro
 Route::get('/admin/seeinformation','admin\SeeInformationController@index');
 //后台评估报告
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
 //后台表单页
 Route::get('/admin/form',function(){
 	return view('admin/form');

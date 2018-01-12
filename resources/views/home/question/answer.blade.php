@@ -65,8 +65,8 @@
 <div class="answerbox">
     <div class="dh">
        <a href="/">首页</a>   <em>&gt;</em>
-       <a href="/www/oldcar" title="二手车问答">二手车问答</a>  <em>&gt;</em>
-       <span>如何过户上牌</span>
+       <a href="/home/question" title="二手车问答">二手车问答</a>  <em>&gt;</em>
+       <span>{{$data[0]->content}}</span>
      </div>
      <div class="search2">
           <input type="text" class="search2-input"/>
@@ -86,7 +86,6 @@
         <p class="fabutime">2018-01-09  11:25:05</p>
         <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">{{$data[0]->like}}</e></button>
         <div class="huida-content">{{$data[0]->reply_content}}</div>
-       <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 查找全部车源</font></p>
      </div>
 </div>
        <!-- 列表结束 -->
