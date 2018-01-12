@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class ConfigController extends Controller
 {
     /**
@@ -16,8 +16,9 @@ class ConfigController extends Controller
      */
     public function index()
     {
+        $data = DB::table('config') -> get();
         //加载网站配置首页
-        return view('/admin/config/index');
+        return view('/admin/config/index',['data'=>$data]);
     }
 
     /**

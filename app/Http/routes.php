@@ -129,7 +129,7 @@ Route::resource('/admin/estimate/basicinformation','admin\BasicInformationContro
 Route::get('/admin/seeinformation','admin\SeeInformationController@index');
 //后台评估报告
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
 //后台表单页
 Route::get('/admin/form',function(){
 	return view('admin/form');

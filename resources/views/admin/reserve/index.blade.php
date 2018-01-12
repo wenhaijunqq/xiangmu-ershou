@@ -81,12 +81,14 @@
                                                     <a href="/admin/reserve/{{$v->rid}}/edit">
                                                         <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
                                                     </a> 
-                                                    <a href="/admin/question-reply">
+                                                    <a href="/admin/reserve/{{$v->rid}}">
                                                         <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
                                                     </a>
-                                                      <a href="javascript:;">
-                                                        <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
-                                                    </a>
+                                                    <form action="/admin/reserve/{{$v->rid}}" method="POST" style="display: inline;">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <input type="submit" value="删除" class="am-btn am-btn-danger am-radius am-btn-xs"/>
+                                                    </form>  
                                                 </td>
                                             </tr>
                                         @endforeach
