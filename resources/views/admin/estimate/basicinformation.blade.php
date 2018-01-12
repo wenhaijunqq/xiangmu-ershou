@@ -17,34 +17,36 @@
                             </div>
                             <div class="widget-body am-fr">
 
-                                <form class="am-form tpl-form-border-form tpl-form-border-br">
+                                <form class="am-form tpl-form-border-form tpl-form-border-br"  method="post" action="/admin/estimate/basicinformation/{{$id}}">
+                                    {{ csrf_field() }}
+                                    {{ method_field('PATCH') }}
                                     <div class="am-form-group">
-                                        <label for="car-title" class="am-u-sm-3 am-form-label">车辆标题：</label>
+                                        <label for="car_title" class="am-u-sm-3 am-form-label">车辆标题：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-title" class="tpl-form-input" id="car-title" placeholder="请输入车辆标题" style="width:500px;">
+                                            <input type="text" name="car_title" class="tpl-form-input" id="car_title" placeholder="请输入车辆标题" style="width:500px;">
                     
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="car-name" class="am-u-sm-3 am-form-label">车辆名：</label>
+                                        <label for="car_name" class="am-u-sm-3 am-form-label">车辆名：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-name" class="tpl-form-input" id="car-name" placeholder="请输入车辆名称" style="width:300px;">
-                    
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="car-border" class="am-u-sm-3 am-form-label">车辆品牌：</label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" name="car-border" class="tpl-form-input" id="car-border" placeholder="车辆品牌" style="width:300px;">
+                                            <input type="text" name="car_name" class="tpl-form-input" id="car_name" placeholder="请输入车辆名称" style="width:300px;">
                     
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="car-standard" class="am-u-sm-3 am-form-label" >国标 ：</label>
+                                        <label for="Vbrand" class="am-u-sm-3 am-form-label">车辆品牌：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" name="car-standard" style="display: none;">
+                                            <input type="text" name="Vbrand" class="tpl-form-input" id="Vbrand" placeholder="车辆品牌" style="width:300px;">
+                    
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="standard" class="am-u-sm-3 am-form-label" >国标 ：</label>
+                                        <div class="am-u-sm-9">
+                                            <select data-am-selected="{searchBox: 1}" name="standard" style="display: none;">
                                               <option value="1">国三</option>
                                               <option value="2">国四</option>
                                               <option value="0">国五</option>
@@ -54,17 +56,17 @@
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="car-km" class="am-u-sm-3 am-form-label">公里数：</label>
+                                        <label for="km" class="am-u-sm-3 am-form-label">公里数：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="number" name="car-km" class="tpl-form-input" id="car-km" placeholder="公里数" style="width:300px;">
+                                            <input type="text" name="km" class="tpl-form-input" id="km" placeholder="公里数" style="width:300px;">
                     
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="car-price" class="am-u-sm-3 am-form-label">价格：</label>
+                                        <label for="pice" class="am-u-sm-3 am-form-label">价格：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-price" class="tpl-form-input" id="car-price" placeholder="报价" style="width:300px;">
+                                            <input type="text" name="pice" class="tpl-form-input" id="pice" placeholder="报价" style="width:300px;">
                     
                                         </div>
                                     </div>
@@ -82,9 +84,9 @@
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="car-standard" class="am-u-sm-3 am-form-label" >变速箱 ：</label>
+                                        <label for="gearbox" class="am-u-sm-3 am-form-label" >变速箱 ：</label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="car-standard">
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="gearbox">
                                               <option value="1">自动挡</option>
                                               <option value="0">手动挡</option>
                                             </select>
@@ -154,7 +156,7 @@
                                         </div>  
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="car-pic" class="am-u-sm-3 am-form-label">车辆图片 <span class="tpl-form-line-small-title">Images</span></label>
+                                        <label for="car_pic" class="am-u-sm-3 am-form-label">车辆图片 <span class="tpl-form-line-small-title">Images</span></label>
                                         <div class="am-u-sm-9">
                                             <div class="am-form-group am-form-file">
                                                 <div class="tpl-form-file-img">
@@ -162,7 +164,7 @@
                                                 </div>
                                                 <button type="button" class="am-btn am-btn-danger am-btn-sm">
                                                 <i class="am-icon-cloud-upload"></i> 添加车辆图片</button>
-                                                <input id="doc-form-file" type="file" multiple="" name="car-pic">
+                                                <input id="doc-form-file" type="file" multiple="" name="car_pic">
                                             </div>
 
                                         </div>
@@ -177,7 +179,7 @@
 
                                     <div class="am-form-group">
                                         <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
                                         </div>
                                     </div>
                                 </form>

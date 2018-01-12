@@ -66,7 +66,7 @@
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
-                                                <td><a href="/admin/seeinformation">查看基本信息</a></td>
+                                                <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看基本信息</a></td>
                                                 <td>{{$val['assess_time']}}</td>
                                                 <td>已审核</td>
                                                 <td>

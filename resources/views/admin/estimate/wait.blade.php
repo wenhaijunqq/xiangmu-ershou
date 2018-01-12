@@ -65,7 +65,7 @@
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
-                                                <td><a href="/admin/estimate/basicinformation">添加与修改基本信息</a></td>
+                                                <td><a href="/admin/estimate/basicinformation/{{$val['car_id']}}">添加与修改基本信息</a></td>
                                                 <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">

@@ -68,7 +68,7 @@
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
                                                 <td>{{$val['ping_id']}}</td>
-                                                <td><a href="/admin/seeinformation">查看车辆基础信息</a></td>
+                                                <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看车辆基础信息</a></td>
                                                 @if($val['status']==0)
                                                 <td>未评估</td>
                                                 @elseif($val['status']==1)

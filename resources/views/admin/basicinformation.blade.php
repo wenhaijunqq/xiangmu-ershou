@@ -56,7 +56,7 @@
                                     <div class="am-form-group">
                                         <label for="car-km" class="am-u-sm-3 am-form-label">公里数：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="number" name="car-km" class="tpl-form-input" id="car-km" placeholder="公里数" style="width:300px;">
+                                            <input type="text" name="car-km" class="tpl-form-input" id="car-km" placeholder="公里数" style="width:300px;">
                     
                                         </div>
                                     </div>

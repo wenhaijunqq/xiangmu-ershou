@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Model\vehicle_information;
 class BasicInformationController extends Controller
 {
     /**
@@ -16,8 +16,7 @@ class BasicInformationController extends Controller
      */
     public function index()
     {
-        //加载已评估页面
-        return view('admin/estimate/basicinformation');
+        
     }
 
     /**
@@ -27,7 +26,7 @@ class BasicInformationController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,7 +37,8 @@ class BasicInformationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         
+        
     }
 
     /**
@@ -72,7 +72,12 @@ class BasicInformationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // 获取数据
+        $data = $request->except(['_token','_method']);
+        $data['car_id'] = $id;
+        dd($data);
+        $res = vehicle_information::
+
     }
 
     /**
@@ -84,5 +89,10 @@ class BasicInformationController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function indexs($id)
+    {
+        //加载已评估页面
+        return view('admin/estimate/basicinformation',['id'=>$id]);
     }
 }
