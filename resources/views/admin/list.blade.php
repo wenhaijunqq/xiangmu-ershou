@@ -24,10 +24,11 @@
                     </a>
                 </li>
 
+                
 
                 <li class="sidebar-nav-link">
 
-                    <a href="/admin/oldcar">
+                    <a href="/admin/question">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 问答管理
                     </a>
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -36,19 +37,38 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="/admin/xinzeng">
+                            <a href="/admin/UserManagement/xinzeng">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增用户
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="/admin/chakan">
+                            <a href="/admin/NameUserManagement/chakan">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 查看分区
                             </a>
                         </li>
                     </ul>
                 </li>
 
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>车辆管理分区
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/CarType">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 车辆类型
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/imglist">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
 
                 <li class="sidebar-nav-link">
@@ -116,10 +136,23 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="/admin/order">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 订单管理
-
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/order">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 订单信息
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="/admin/reserve">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 预约信息
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
 
@@ -139,7 +172,6 @@
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 友情链接
                             </a>
                         </li>
-
 
             </ul>
         </div>

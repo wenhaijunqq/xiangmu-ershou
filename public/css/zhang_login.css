@@ -234,6 +234,24 @@ body {
 	-webkit-appearance: none;
 }
 
+.login-top input[type="button"] {
+	background: #22AC38;
+	color: #FFF;
+	font-size: 17px;
+	font-weight: 400;
+	padding: 7px 7px;
+	width: 30%;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 6px;
+	-webkit-border-radius: 19px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	margin: 0px 0px 0px 3px;
+	outline: none;
+	border: none;
+}
+
 .login-top input[type="submit"] {
 	background: #22AC38;
 	color: #FFF;
