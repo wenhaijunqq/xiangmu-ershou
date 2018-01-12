@@ -53,7 +53,7 @@
                                             <tr>
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
-                                                <th>拥有者</th>
+                                                <th>拥有者编号</th>
                                                 <th>评估员编号</th>
                                                 <th>基本信息</th>
                                                 <th>评估状态</th>
@@ -75,8 +75,7 @@
                                                 <td>已评估</td>
                                                 @else
                                                 <td>正在评估</td>
-                                                @endif                                                            
-                                                <td></td>
+                                                @endif     
                                                 <td><a>查看评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
@@ -84,13 +83,13 @@
                                                             <i class="am-icon-pencil"></i> 审核通过
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 驳回
+                                                            <i class="am-icon-trash"></i> 审核不通过
                                                         </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            <!-- more data -->
+                                            <!-- more data
                                         </tbody>
                                     </table>
                                 </div>

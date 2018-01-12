@@ -53,10 +53,11 @@
                                             <tr>
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
-                                                <th>拥有者</th>
+                                                <th>拥有者编号</th>
                                                 <th>基本信息</th>
                                                 <th>评估员编号</th>
                                                 <th>审核时间</th>
+                                                <th>审核结果</th>
                                                 <th>评估信息</th>
                                                 <th>操作</th>
                                             </tr>
@@ -71,6 +72,7 @@
                                                 <td><a href="/admin/seeinformation">车辆基本信息</a></td>
                                                 <td>{{$val['ping_id']}}</td>
                                                 <td>{{$val['audit_time']}}</td>
+                                                <td></td>
                                                 <td><a>评估报告表<a/></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
