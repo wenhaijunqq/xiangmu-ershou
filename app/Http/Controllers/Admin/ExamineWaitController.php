@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Model\appointment;
 class ExamineWaitController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class ExamineWaitController extends Controller
     public function index()
     {
         //加载待审核页面
-        return view('admin/examine/wait');
+        $data = appointment::get();
+        return view('admin/examine/wait',['data'=>$data]);
     }
 
     /**

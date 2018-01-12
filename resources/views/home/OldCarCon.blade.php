@@ -62,7 +62,8 @@
 			<div class="search">
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
-				<a href="/home/question/create" target="_blank"><button class="ipt-btn" type="button">我要提问</button></a>
+
+				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>
@@ -76,7 +77,7 @@
 			<ul class="index-list">
 				<li class="box-item bore4">
 					<h3 class="buy-tit">买车卖车</h3>
-					
+
 					<ul class="list sale-list">
                        @foreach($data as $k=>$v)
 						<li>
@@ -132,7 +133,7 @@
 						<a href="#" target="_blank">查看更多>></a>
 					</div>
 				</li>
-				
+
 			</ul>
 		</div>
 

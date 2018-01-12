@@ -7,10 +7,14 @@
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
                 <div class="row">
+                 <ol class="am-breadcrumb">
+                      <li><a href="/admin/index">首页</a></li>
+                      <li class="am-active">预约管理</li>
+                    </ol>
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">订单列表</div>
+                                <div class="widget-title  am-cf">预约列表</div>
 
 
                             </div>
@@ -51,39 +55,41 @@
                                         <thead>
                                             <tr>
                                                 <th>预约编号</th>
-                                                <th>车辆ID</th>
-                                                <th>卖家ID</th>
-                                                <th>买家ID</th>
-                                                <th>评估员ID</th>
+                                                <th>车辆名称</th>
+                                                <th>卖家编号</th>
+                                                <th>买家编号</th>
+                                                <th>评估员编号</th>
                                                 <th>预约时间</th>
                                                 <th>看车时间</th>
+                                                <th>预约状态</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($data as $k=>$v)
                                             <tr class="gradeX">
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>2018/1/10</td>
-                                                <td>2018/1/15</td>
+                                                <td>{{$v -> rid}}</td>
+                                                <td>{{$v -> car_id}}</td>
+                                                <td>{{$v -> sell_id}}</td>
+                                                <td>{{$v -> buy_id}}</td>
+                                                <td>{{$v -> ping_id}}</td>
+                                                <td>{{$v -> yutime}}</td>
+                                                <td>{{$v -> seetime}}</td>
+                                                <td>{{$v -> yu_status == 1 ? '看车中' : '预约中'}}</td>
                                                 <td>
-                                                    
-                                                          <a href="/admin/question-edit">
-                                                            <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
-                                                        </a> 
-                                                      <a href="/admin/question-reply">
-                                                            <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
-                                                        </a>
-                                                          <a href="javascript:;">
-                                                            <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
-                                                        </a>
-                                                   
+                                                &nbsp;&nbsp;&nbsp;
+                                                    <a href="/admin/reserve/{{$v->rid}}/edit">
+                                                        <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
+                                                    </a> 
+                                                    <a href="/admin/question-reply">
+                                                        <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
+                                                    </a>
+                                                      <a href="javascript:;">
+                                                        <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
+                                                    </a>
                                                 </td>
                                             </tr>
-                                        
+                                        @endforeach
                                            
                                             <!-- more data -->
                                         </tbody>

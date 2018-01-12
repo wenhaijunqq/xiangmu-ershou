@@ -96,7 +96,14 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //执行订单删除的操作
+        $res = DB::table('order') -> where('id',$id) -> delete();
+        if($res){
+            echo '<script>alert("删除成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }else{
+            echo '<script>alert("删除失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }
+        
     }
 
 }

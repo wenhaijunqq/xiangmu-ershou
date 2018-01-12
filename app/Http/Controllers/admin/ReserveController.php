@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class ReserveController extends Controller
 {
     /**
@@ -17,7 +17,9 @@ class ReserveController extends Controller
     public function index()
     {
         //加载预约信息首页的操作
-        return view('/admin/reserve/index');
+        $data = DB::table('reserve') -> orderBy('yutime','desc') -> get();
+        //将数据返回
+        return view('admin.reserve.index',['data'=>$data]);
     }
 
     /**
@@ -60,7 +62,12 @@ class ReserveController extends Controller
      */
     public function edit($id)
     {
-        //
+        //加载修改页的操作
+        $data = DB::table('reserve') -> where('rid',$id) -> first();
+        // $data1 = DB::table('assessor') -> where
+        //将数据带去修改页
+        return view('admin.reserve.edit',['data'=>$data]);
+
     }
 
     /**
@@ -72,7 +79,14 @@ class ReserveController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //执行修改的操作
+       $data = $request -> except(['_token','_method']);
+       $res = DB::table('reserve')->where('rid',$id)->update($data);
+       if($res){
+            echo '<script>alert("修改成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }else{
+            echo '<script>alert("修改失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }
     }
 
     /**

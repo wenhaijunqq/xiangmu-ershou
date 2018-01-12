@@ -22,20 +22,22 @@
                                 </div>
                             </div>
                             <div class="widget-body am-fr">
-
-                                <form class="am-form tpl-form-line-form">
+                           
+                                <form class="am-form tpl-form-line-form" action="/admin/Carousel/{{$res->id}}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    {{ method_field('PATCH') }}
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
-                                            <small>请填写标题文字10-20字左右。</small>
+                                            <input type="text" class="tpl-form-input" name="title" value="{{$res->title}}" id="user-name" placeholder="请输入标题文字">
+                                            <small>请填写标题。</small>
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
                                         <label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="am-form-field tpl-form-no-bg" placeholder="发布时间" data-am-datepicker="" readonly="">
+                                            <input type="text" class="am-form-field tpl-form-no-bg" name="time" value="{{$res->time}}" placeholder="发布时间" data-am-datepicker="" readonly="">
                                             <small>发布时间为必填</small>
                                         </div>
                                     </div>
@@ -44,7 +46,7 @@
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">URL地址 <span class="tpl-form-line-small-title">URL</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" placeholder="输入URL地址">
+                                            <input type="text" name="url" value="{{$res->url}}" placeholder="输入URL地址">
                                         </div>
                                     </div>
 
@@ -53,11 +55,11 @@
                                         <div class="am-u-sm-9">
                                             <div class="am-form-group am-form-file">
                                                 <div class="tpl-form-file-img">
-                                                    <img src="/admins/img/a5.png" alt="">
+                                                    <img src="../../../uploads/{{$res->pic}}" alt="">
                                                 </div>
                                                 <button type="button" class="am-btn am-btn-danger am-btn-sm">
-    <i class="am-icon-cloud-upload"></i> 添加图片</button>
-                                                <input id="doc-form-file" type="file" multiple="">
+                                         <i class="am-icon-cloud-upload"></i> 添加图片</button>
+                                                <input id="doc-form-file" type="file" name="pic" multiple="">
                                             </div>
 
                                         </div>
@@ -65,7 +67,7 @@
 
                                     <div class="am-form-group">
                                         <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">修改</button>
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">修改</button>
                                         </div>
                                     </div>
                                 </form>
