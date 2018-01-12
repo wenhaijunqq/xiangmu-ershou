@@ -51,26 +51,28 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>编码</th>
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
-                                                <th>拥有者</th>
+                                                <th>拥有者编号</th>
                                                 <th>基本信息</th>
                                                 <th>评估员编号</th>
                                                 <th>审核时间</th>
+                                                <th>审核结果</th>
                                                 <th>评估信息</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
+                                        
                                         <tbody>
+                                        @foreach($data as $key=>$val) 
                                             <tr class="gradeX">
-                                                <td>1</td>
-                                                <td>2342342</td>
-                                                <td>Amaze UI 模式窗口</td>
-                                                <td>张鹏飞</td>
-                                                <td>13</td>
-                                                <td><a>车辆基本信息</a></td>
-                                                <td>2016-09-26</td>
+                                                <td>{{$val['rid']}}</td>
+                                                <td>{{$val['car_name']}}</td>
+                                                <td>{{$val['sell_id']}}</td>
+                                                <td><a href="/admin/seeinformation">车辆基本信息</a></td>
+                                                <td>{{$val['ping_id']}}</td>
+                                                <td>{{$val['audit_time']}}</td>
+                                                <td></td>
                                                 <td><a>评估报告表<a/></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
@@ -80,23 +82,8 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr class="even gradeC">
-                                                <td>1</td>
-                                                <td>2342342</td>
-                                                <td>有适配微信小程序的计划吗</td>
-                                                <td>天纵之人</td>
-                                                <td>13</td>
-                                                <td><a href="">车辆信息</a></td>
-                                                <td>2016-09-26</td>
-                                                <td><a>评估报告表<a/></td>
-                                                <td>
-                                                    <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 删除
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        @endforeach
+                                            
                                             
                                             <!-- more data -->
                                         </tbody>

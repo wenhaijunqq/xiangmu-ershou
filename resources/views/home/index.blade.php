@@ -128,7 +128,7 @@
                     <a href="/www/buy">我要买车</a>
                     <a href="/www/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
-                    <a href="/www/oldcar">瓜子问答</a>
+                    <a href="/home/question">瓜子问答</a>
                 </div>
                 <span id="zuo" style="position:absolute;top:200px;left: 7px;font-size: 20px;color: #888;font-weight: 900;">&lt;</span>
                 <span id="you" style="position:absolute;top:200px;right: 7px;font-size: 20px;color: #888;font-weight: 900;">&gt;</span>
