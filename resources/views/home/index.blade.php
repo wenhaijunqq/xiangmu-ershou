@@ -122,7 +122,7 @@
                     <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
                 </div>
                 <div class="phone">400-060-6046</div>
-                <div class="login"><a href="/IndexLogin" >登录</a></div>
+                <div class="login"><a href="{{ url('home/register') }}" >登录</a></div>
                 <div class="nav-nav" id='h'>
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>

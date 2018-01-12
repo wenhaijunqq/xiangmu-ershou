@@ -28,7 +28,7 @@ class UserManagementController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

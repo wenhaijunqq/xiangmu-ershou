@@ -101,3 +101,12 @@ Route::resource('/admin/Carousel/list','admin\CarouselController');
 Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
+
+
+
+//前台
+
+//前台用户登录
+Route::get('home/register','admin\LoginController@register');
+//前台登录验证
+Route::post('home/dotelregister','admin\LoginController@dotelregister');

@@ -20,6 +20,7 @@ class NameUserManagementController extends Controller
         //查看用户分页
         $data = user::get();
         return view('admin/UserManagement/tableListImg',['data'=>$data]);
+        
 
     }
 

@@ -71,8 +71,8 @@
                                                 <td class="am-text-middle">{{$v['email']}}</td>
                                                 <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
-                                                            <i class="am-icon-pencil"></i> 编辑
+                                                        <a href="/admin/UserManagement/xiangqing">
+                                                            <i class="am-icon-pencil"></i> 查看详情
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
