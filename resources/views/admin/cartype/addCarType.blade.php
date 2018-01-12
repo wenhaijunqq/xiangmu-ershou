@@ -37,7 +37,7 @@
         <form class="am-form tpl-form-border-form tpl-form-border-br " id="carAdd" enctype="multipart/form-data">
                     {{csrf_field()}}
          <div class="am-form-group">
-          <label for="user-name" class="am-u-sm-3 am-form-label" name="carName">车辆品牌名 <span class="tpl-form-line-small-title">Title</span></label>
+          <label for="user-name" class="am-u-sm-3 am-form-label" name="carName" >车辆品牌名 <span class="tpl-form-line-small-title">Title</span></label>
           <div class="am-u-sm-9">
            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字" name="title" value="" />
            <small>请填写标题文字10-20字左右。</small>
@@ -83,13 +83,7 @@
             })
         });
         function uploadImg(){
-            //判断是否上传文件
-                var imgPath = $(".myfile").val();
-
-                 if(imgPath == ""){
-                    layer.msg('请添加品牌图标');
-                    return;
-                    }
+            alert("asdas");
             //判断上传的图片后缀名
                 var strExtension = imgPath.substr(imgPath.lastIndexOf('.')+1);
                 if(strExtension !='jpg'  && strExtension !='png' && strExtension !='gif' && strExtension !='bmp'){
@@ -111,18 +105,29 @@
                    },
                    success:function(data){
                        alert(data.message);
-
                        //alert(data->filePath)
-                       $('#myimg').attr('src',data.filePath+"?imageView2/2/w/200/h/200/q/75|imageslim");
+                       $('#myimg').attr('src',data.filePath);
                    },
                    error:function(err){
-                     console.log(err);
+                     alert(err);
                    }
                });
 
         }
     $("[type='button']").click(function(){
-
+        //判断是否上传文件
+            var imgPath = $(".myfile").val();
+            var title = $("#user-name").val();
+            if(title == ""){
+               layer.msg('请添加品牌名称');
+               return;
+               }
+             if(imgPath == ""){
+                layer.msg('请添加品牌图标');
+                return;
+            }else(
+                console.log($("#myimg").attr('src'));
+            )
 
         // $.post('','',function(){
         //
