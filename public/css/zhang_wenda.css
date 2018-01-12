@@ -458,7 +458,7 @@ a{
 
 .answerbox .da{
     width: 870px;
-    height: 155px;
+    height: 250px;
     margin: 20px auto 80px;
     font-size: 20px;
     color: #333;
@@ -529,6 +529,5 @@ a{
 }
 .huida-content{
     font-size: 18px;
-    margin-top: 15px;
-    margin-left: 20px;
+    margin: 20px 38px 10px;
 }

@@ -81,7 +81,7 @@
                        @foreach($data as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>	
-							<a target="_blank" href="#">{{$v->content}}</a>
+							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
 						</li>
 						 @endforeach
 					</ul>

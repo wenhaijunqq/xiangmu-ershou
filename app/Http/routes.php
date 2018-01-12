@@ -38,6 +38,8 @@ Route::get('/www/xiangqing', function () {
 });
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
+Route::get('/home/answer/{id}','Home\AnswerController@index');
+
 
 //后台模板引入
 Route::controller('/admin/login','Admin\LoginController');
