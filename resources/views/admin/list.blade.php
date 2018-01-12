@@ -148,7 +148,7 @@
                             </a>
                     </li>
                 <li class="sidebar-nav-link">
-                            <a href="/admin/link">
+                            <a href="/admin/Link">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 友情链接
                             </a>
                         </li>

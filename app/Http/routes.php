@@ -103,4 +103,4 @@ Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-Route::resource('/admin/link','admin\LinkController');
+Route::resource('/admin/Link','admin\LinkController');

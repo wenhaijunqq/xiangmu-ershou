@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\link;
+use App\Http\Model\Link;
 
 class LinkController extends Controller
 {
@@ -17,8 +17,11 @@ class LinkController extends Controller
      */
     public function index()
     {
+        // echo "加载友情链接显示页面";
         //加载友情链接显示页面
-        return view('/admin/link/list');
+         $res= Link::get();
+        
+          return view('/admin/Link/list',['res'=>$res]);
 
     }
 
@@ -30,7 +33,7 @@ class LinkController extends Controller
     public function create()
     {
         //加载添加友情链接页面
-        return view('/admin/link/create');
+        return view('/admin/Link/create');
     }
 
     /**
@@ -64,7 +67,7 @@ class LinkController extends Controller
     public function edit($id)
     {
         //
-        return view('/admin/link/edit');
+        return view('/admin/Link/edit');
     }
 
     /**
