@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+<<<<<<< HEAD
 	<title>二手车回答页</title>
   <link rel="icon" type="image/png" href="/img/favicon.ico">
+=======
+	<title>二手车问答列表</title>
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
 	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
@@ -76,6 +80,7 @@
         10w以内买什么样的二手车比较合适 运动点的 更喜欢美系和日系
        </p> 
        <p></p>
+<<<<<<< HEAD
        <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 &nbsp;<a class="btn btn-default" href="/www/buy" target="_blank" role="button">查找全部车源</a></font></p>
      </div>
      <div class="da">
@@ -85,6 +90,16 @@
       <p class="fabutime">2018-01-09  11:25:05</p>
       <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">30</e></button>
       <p class="huida-content">翼神 马自达6 福克斯，都比较合适 价格内可以找到车况不错的，后期成本也算可以接受 运动性能不错</p>
+=======
+       <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 查找全部车源</font></p>
+     </div>
+     <div class="da">
+       <p style="font-size:20px;">
+        10w以内买什么样的二手车比较合适 运动点的 更喜欢美系和日系
+       </p> 
+       <p></p>
+       <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 查找全部车源</font></p>
+>>>>>>> 5f41603ea3665e7a5a6d41bfd1ec8402ab3e0d2a
      </div>
 </div>
        <!-- 列表结束 -->

@@ -90,6 +90,7 @@ Route::resource('/admin/examine/wait','Admin\ExamineWaitController');
 Route::resource('/admin/examine/already','Admin\ExamineAlreadyController');
 //后台车辆基本信息
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');
+
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
@@ -104,3 +105,41 @@ Route::resource('/admin/Carousel/list','admin\CarouselController');
 Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
+
+//后台表单页
+Route::get('/admin/form',function(){
+	return view('admin/form');
+});
+//后台注册页
+Route::get('/admin/signup',function(){
+	return view('admin/signUp');
+});
+// 后台文字列表页
+Route::get('/admin/list',function(){
+	return view('admin/tableList');
+});
+//后台图片列表页
+Route::get('/admin/imglist',function(){
+	return view('admin/tableListImg');
+});
+//后台表格页
+Route::get('/admin/table',function(){
+	return view('admin/tables');
+});
+//后台404页
+Route::get('/admin/404',function(){
+	return view('admin/404');
+});
+
+//后台用户管理分区
+//
+Route::get('/admin/lists',function(){
+	return view('/admin/UserManagement/tableList');
+});
+
+Route::get('/admin/imglists',function(){
+	return view('/admin/UserManagement/tableListImg');
+});
+
+Route::controller('/db','Dbcontroller');
+Route::resource('imglists','imglistsController');
