@@ -72,6 +72,13 @@ Route::get('/admin/question-edit',function(){
 Route::get('/admin/question-reply',function(){
 	return view('admin/question/reply');
 });
+Route::get('admin/CarType/add',function(){
+	return view('admin/cartype/addCarType');
+});
+//后台网站车辆管理
+Route::resource('admin/CarType/','admin\VehiclInfoController');
+//后台网站车辆类型增加
+
 
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');

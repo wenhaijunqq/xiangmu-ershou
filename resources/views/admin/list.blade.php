@@ -49,13 +49,13 @@
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>车辆管理分区
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="/admin/list">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                            <a href="/admin/CarType">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 车辆类型
                             </a>
                         </li>
 
