@@ -7,6 +7,10 @@
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
                 <div class="row">
+                 <ol class="am-breadcrumb">
+                      <li><a href="/admin/index">首页</a></li>
+                      <li class="am-active">订单管理</li>
+                    </ol>
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
@@ -53,10 +57,10 @@
                                         <thead>
                                             <tr>
                                                 <th>订单编号</th>
-                                                <th>卖家id</th>
-                                                <th>买家id</th>
-                                                <th>车辆id</th>
-                                                <th>评估员id</th>
+                                                <th>卖家编号</th>
+                                                <th>买家编号</th>
+                                                <th>车辆编号</th>
+                                                <th>评估员编号</th>
                                                 <th>交易时间</th>
                                                 <th>成交状态</th>
                                                 <th>成交价格</th>
@@ -79,9 +83,11 @@
                                                     <a href="/admin/order/{{$v->id}}/edit">
                                                         <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
                                                     </a>
-                                                    <a href="javascript:;">
-                                                        <button type="button" class="am-btn am-btn-danger am-radius am-btn-xs">删除</button> 
-                                                    </a>
+                                                    <form action="/admin/order/{{$v->id}}" method="POST" style="display: inline;">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <input type="submit" value="删除" class="am-btn am-btn-danger am-radius am-btn-xs"/>
+                                                    </form>           
                                                 </td>
                                             </tr>
                                         @endforeach

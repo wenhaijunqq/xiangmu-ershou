@@ -150,8 +150,6 @@
                 </li>
 
 
-<<<<<<< HEAD
-=======
                     <li class="sidebar-nav-link">
                             <a href="/admin/adsense/list">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 广告位
@@ -168,7 +166,5 @@
                             </a>
                         </li>
 
-
->>>>>>> ad184df16c7d141350a169524d2b14f2286529c5
             </ul>
         </div>

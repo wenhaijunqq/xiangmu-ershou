@@ -10,7 +10,7 @@
             <div class="container-fluid am-cf">
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 订单编辑页 <small>Order</small></div>
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 订单查询页 <small>Order</small></div>
                         <p class="page-header-description">此页面来管理网页订单信息</p>
                     </div>
                     
@@ -43,25 +43,25 @@
                                         </div>
                                     </div>
                                      <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 卖家ID <span class="tpl-form-line-small-title">SELL_ID</span></label>
+                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 卖家编号 <span class="tpl-form-line-small-title">SELL_ID</span></label>
                                         <div class="am-u-sm-9">
                                             <input type="text" class="tpl-form-input" id="user-name" value="{{$data->sell_id}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 买家ID <span class="tpl-form-line-small-title">BUY_ID</span></label>
+                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 买家编号 <span class="tpl-form-line-small-title">BUY_ID</span></label>
                                         <div class="am-u-sm-9">
                                             <input type="text" class="tpl-form-input" id="user-name" value="{{$data->buy_id}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 车辆ID <span class="tpl-form-line-small-title">CAR_ID</span></label>
+                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 车辆编号 <span class="tpl-form-line-small-title">CAR_ID</span></label>
                                         <div class="am-u-sm-9">
                                             <input type="text" class="tpl-form-input" id="user-name" value="{{$data->car_id}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 评估员ID <span class="tpl-form-line-small-title">PING_ID</span></label>
+                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 评估员编号 <span class="tpl-form-line-small-title">PING_ID</span></label>
                                         <div class="am-u-sm-9">
                                             <input type="text" class="tpl-form-input" id="user-name" value="{{$data->ping_id}}" readonly>
                                         </div>
