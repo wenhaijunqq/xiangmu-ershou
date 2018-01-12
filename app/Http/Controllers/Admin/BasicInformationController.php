@@ -60,7 +60,9 @@ class BasicInformationController extends Controller
      */
     public function edit($id)
     {
-        //
+        //加载修改基础信息页面
+        $data = vehicle_information::where('car_id',$id)->first();
+        return view('admin/estimate/updateinformation',['data'=>$data]);
     }
 
     /**

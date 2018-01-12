@@ -76,8 +76,8 @@
                                                         <a href="javascript:;">
                                                             <i class="am-btn-success"></i> 提交
                                                         </a>
-                                                        <a href="javascript:;">
-                                                            <i class="am-icon-pencil" onclick="update({{$val['car_id']}},$(this))"></i> 修改
+                                                        <a href="javascript:;" onclick="update({{$val['car_id']}})">
+                                                            <i class="am-icon-pencil" ></i> 修改
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 取消评估
@@ -113,8 +113,15 @@
     </div>
     </div>
     <script type="text/javascript">
-        function update(id,obj){
-            
+        function update(id){
+            //询问框
+            layer.confirm('请选择您要修改的信息', {
+              btn: ['基础信息','评估信息'] //按钮
+            }, function(){
+                window.location.href = '/admin/estimate/basicinformation/'+id+'/edit';
+            }, function(){
+              
+            });
         }
     </script>
 </body>

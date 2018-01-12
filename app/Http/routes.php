@@ -91,8 +91,6 @@ Route::get('admin/CarType/add',function(){
 Route::resource('admin/CarType/','admin\VehiclInfoController');
 //后台网站车辆类型增加
 
-
-
 Route::resource('/admin/question','admin\QuestionController');
 
 //人员具体信息页面
