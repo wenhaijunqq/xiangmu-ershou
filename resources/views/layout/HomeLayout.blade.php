@@ -10,7 +10,10 @@
         <link rel="stylesheet" href="/css/h_PurchaseCar.css">
         <!-- 卖车页css样式-->
         <link rel="stylesheet" href="/css/h_SellCar.css">
+        <link rel="stylesheet" href="/layer/skin/layer.css">
+      
     </head>
+    
         @include('/home/header')
         <!-- 引入页面内容-->
         @section('content')

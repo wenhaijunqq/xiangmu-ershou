@@ -54,7 +54,7 @@
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
                                                 <th>拥有者编号</th>
-                                                <th>基本信息</th>
+                                                <th>基本信息(已审核不能修改)</th>
                                                 <th>评估时间</th>
                                                 <th>审核状态</th>
                                                 <th>操作</th>
@@ -66,7 +66,7 @@
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
-                                                <td><a href="/admin/seeinformation">查看基本信息</a></td>
+                                                <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看与修改基本信息</a></td>
                                                 <td>{{$val['assess_time']}}</td>
                                                 <td>已审核</td>
                                                 <td>
