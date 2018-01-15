@@ -208,12 +208,7 @@ Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-
 Route::resource('/admin/Link','admin\LinkController');
-
-
-Route::resource('/admin/link','admin\LinkController');
-Route::resource('/admin/link/list','admin\LinkController');
 
 
 
@@ -231,3 +226,6 @@ Route::post('shouye','LoginController@index');
 Route::get('home/register','admin\LoginController@register');
 //前台登录验证
 Route::post('home/dotelregister','admin\LoginController@dotelregister');
+
+//前台友情链接
+Route::resource('home/footer','home\LinkController');

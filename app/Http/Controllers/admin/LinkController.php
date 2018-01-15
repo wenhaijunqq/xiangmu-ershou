@@ -15,7 +15,7 @@ class LinkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
+    public function index()
     {
         // echo "加载友情链接显示页面";
         //加载友情链接显示页面
@@ -44,7 +44,22 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $res = $request->except(['_token']);
+         
+        
+        $Link = new Link;
+        $Link->name = $res['name'];
+        $Link->url = $res['url'];
+        $Link->status = $res['status'];
+        // dump($Link);
+        // die();
+        $i =  $Link->save();
+       if($i){
+              echo "<script>alert('恭喜，添加成功！');location.href='/admin/Link'</script>";
+       }else{
+              echo "<script>alert('抱歉，添加失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+
+       }
     }
 
     /**
@@ -67,7 +82,8 @@ class LinkController extends Controller
     public function edit($id)
     {
         //
-        return view('/admin/Link/edit');
+        $res = Link::find($id);
+        return view('/admin/Link/edit',['res'=>$res]);
     }
 
     /**
@@ -80,6 +96,23 @@ class LinkController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $res = $request->except(['_token','_method']);
+        // dump($res);
+         $jieguo = Link::find($id);
+        // var_dump($jieguo);
+
+        $jieguo->name = $res['name'];     
+        $jieguo->url = $res['url'];
+        $jieguo->status = $res['status'];
+        
+        $aaa =  $jieguo->save();
+        if($aaa){
+             echo "<script>alert('恭喜，修改成功！');location.href='/admin/Link'</script>";
+        }else{
+            echo "<script>alert('抱歉，修改失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+
+        }
+    
     }
 
     /**
@@ -91,5 +124,16 @@ class LinkController extends Controller
     public function destroy($id)
     {
         //
+        $res = Link::find($id);
+        $jieguo = $res->delete();
+        
+
+       if($jieguo){
+            echo  1;
+       }else{
+            echo  0;
+       }
+
     }
+    
 }

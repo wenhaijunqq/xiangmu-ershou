@@ -51,11 +51,10 @@
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
-                                            <tr>
+                                            <tr >
+                                                <th>ID</th>
                                                 <th>友情链接标题</th>
-
                                                 <th>URL地址</th>
-                                                <th>时间</th>
                                                 <th>状态</th>
                                                 <th>操作</th>
                                             </tr>
@@ -63,17 +62,21 @@
                                         <tbody>
                                         @if(count($res))
                                         @foreach($res as $k=>$v)
-                                            <tr class="gradeX">
+                                            <tr class="gradeX" style="text-align:center">
                                                 <td>{{$v['id']}}</td>
-                                                <td>{{$v['url']}}</td>
                                                 <td>{{$v['name']}}</td>
-                                                <td>{{$v['status']}}</td>
+                                                <td>{{$v['url']}}</td>
+                                                @if($v['status']==1)                                                
+                                                <td>开启</td>
+                                                @else
+                                                <td>关闭</td>
+                                                @endif
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="/admin/Link/{{$v['id']}}/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <a href="" class="tpl-table-black-operation-del" onclick="del({{$v['id']}},$(this))">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
@@ -84,6 +87,24 @@
                                         <td colspan="5">没有任何操作数据</td> 
                                         @endif        
                                             <!-- more data -->
+                                            <!-- 通过ajax去删除 -->
+                                                          <script>
+                          
+                                                             function del(id,obj){
+                                                                 // $.post("{{url('/admin/Link/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data)
+                                                                $.post("{{url('/admin/Link/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}',"id":id},function(data)
+                                                                 {
+                                                                 if(data == 1){
+                                                                       obj.parent().parent().parent().remove();
+                                                                        
+                                                                     alert('删除成功！');
+                                                                 }else if(data == 0){
+                                                                     alert('删除失败！');
+                                                                 }
+                                                                 });
+                                                             }
+
+                                                        </script>
                                         </tbody>
                                     </table>
                                 </div>
