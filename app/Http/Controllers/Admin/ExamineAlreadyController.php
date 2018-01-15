@@ -17,7 +17,7 @@ class ExamineAlreadyController extends Controller
     public function index()
     {
         //加载已经审核页面
-        $data = appointment::get();
+        $data = appointment::where('audit_status',1)->where('del_audit',0)->get();
 
         return view('admin/examine/already',['data'=>$data]);
     }
@@ -85,6 +85,12 @@ class ExamineAlreadyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //接受id执行修改
+        $res = appointment::where('car_id',$id)->update(['del_audit'=> 1]);
+        if($res){
+            echo "1";
+        }else{
+            echo "0";
+        }
     }
 }

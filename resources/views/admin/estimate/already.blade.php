@@ -68,13 +68,23 @@
                                                 <td>{{$val['sell_id']}}</td>
                                                 <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看与修改基本信息</a></td>
                                                 <td>{{$val['assess_time']}}</td>
+                                                @if($val['audit_status'] == 0)
+                                                <td>未审核</td>
+                                                @else
                                                 <td>已审核</td>
+                                                @endif
                                                 <td>
                                                     <div class="tpl-table-black-operation">
+                                                        @if($val['audit_status'] == 0)
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i>修改评估
                                                         </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        @else
+                                                        <a style="color:#aaa;border:1px #aaa solid">
+                                                            <i class="am-icon-pencil" ></i>修改评估
+                                                        </a>
+                                                        @endif
+                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del({{$val['rid']}},$(this))">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
@@ -107,6 +117,26 @@
         </div>
     </div>
     </div>
+    <script type="text/javascript">
+        function del(id,obj)
+        {
+            layer.confirm('是否进行删除', {
+              btn: ['是','否'] //按钮
+            }, function(){
+              $.post("{{url('/admin/estimate/already/')}}/"+id,{'id':id,'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                if(data == 1){
+                    obj.parent().parent().parent().remove();
+                
+                    layer.msg('已删除', {icon: 1});
+                }
+                });
+              
+            }, function(){
+              
+            });
+            
+        }
+    </script>
 </body>
 
 </html>

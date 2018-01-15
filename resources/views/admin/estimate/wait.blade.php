@@ -73,13 +73,13 @@
                                                 <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
+                                                        <a href="javascript:;" onclick="add({{$val['car_id']}})">
                                                             <i class="am-btn-success"></i> 提交
                                                         </a>
                                                         <a href="javascript:;" onclick="update({{$val['car_id']}})">
                                                             <i class="am-icon-pencil" ></i> 修改
                                                         </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del({{$val['car_id']}},$(this))">
                                                             <i class="am-icon-trash"></i> 取消评估
                                                         </a>
                                                     </div>
@@ -108,17 +108,50 @@
                         </div>
                     </div>
                 </div>
-            </div>
+         </div>
         </div>
     </div>
     </div>
     <script type="text/javascript">
-        function update(id){
+        function update(id)
+        {
             //询问框
             layer.confirm('请选择您要修改的信息', {
               btn: ['基础信息','评估信息'] //按钮
             }, function(){
                 window.location.href = '/admin/estimate/basicinformation/'+id+'/edit';
+            }, function(){
+              
+            });
+        }
+        function del(pid,obj)
+        {
+            //alert($);
+            layer.confirm('是否取消评估', {
+              btn: ['是','否'] //按钮
+            }, function(){
+               $.post("{{url('/admin/estimate/wait/')}}/"+pid,{'_method':'delete','_token':'{{csrf_token()}}',"id":pid},function(data)
+                {
+                    if(data == 1){
+                        obj.parent().parent().parent().remove();
+                         layer.msg('已取消', {icon: 1});
+                    }
+                   
+                });
+               
+              
+            }, function(){
+              
+            });
+           
+        }
+        function add(aid)
+        {
+            layer.confirm('是否进行提交', {
+              btn: ['是','否'] //按钮
+            }, function(){
+              window.location.href = '/admin/estimate/wait/'+aid+'/edit';
+              layer.msg('已提交', {icon: 1});
             }, function(){
               
             });

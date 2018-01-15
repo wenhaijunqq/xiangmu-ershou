@@ -117,7 +117,7 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-
+Route::post('/admin/estimate/basicinformation/edit/{id}','admin\BasicInformationController@updates');
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户

@@ -17,55 +17,66 @@
                             </div>
                             <div class="widget-body am-fr">
 
-                                <form class="am-form tpl-form-border-form tpl-form-border-br">
+                                <form class="am-form tpl-form-border-form tpl-form-border-br" method="post" action="/admin/estimate/basicinformation/edit/{{$data['car_id']}}">
+                                    {{ csrf_field() }}
                                     <div class="am-form-group">
-                                        <label for="car-title" class="am-u-sm-3 am-form-label">车辆标题：</label>
+                                        <label for="car_title" class="am-u-sm-3 am-form-label">车辆标题：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-title" class="tpl-form-input" id="car-title" value="{{$data['car_title']}}" style="width:500px;" >
+                                            <input type="text" name="car_title" class="tpl-form-input" id="car_title" value="{{$data['car_title']}}" style="width:500px;" >
                     
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="car-name" class="am-u-sm-3 am-form-label">车辆名：</label>
+                                        <label for="car_name" class="am-u-sm-3 am-form-label">车辆名：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-name" class="tpl-form-input" id="car-name" value="{{$data['car_name']}}" style="width:300px;" >
-                    
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="car-border" class="am-u-sm-3 am-form-label">车辆品牌：</label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" name="car-border" class="tpl-form-input" id="car-border" value="{{$data['Vbrand']}}" style="width:300px;" >
+                                            <input type="text" name="car_name" class="tpl-form-input" id="car_name" value="{{$data['car_name']}}" style="width:300px;" >
                     
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="car-standard" class="am-u-sm-3 am-form-label">国标：</label>
+                                        <label for="Vbrand" class="am-u-sm-3 am-form-label">车辆品牌：</label>
                                         <div class="am-u-sm-9">
-                                            @if($data['standard'] == 0)
-                                            <input type="text"  class="tpl-form-input" id="car-standard"  value="国三" style="width:200px;" >
-                                            @elseif($data['standard == 1'])
-                                            <input type="text"  class="tpl-form-input" id="car-standard"  value="国四" style="width:200px;" >
-                                            @else
-                                            <input type="text"  class="tpl-form-input" id="car-standard"  value="国五" style="width:200px;" >
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="am-form-group">
-                                        <label for="car-km" class="am-u-sm-3 am-form-label">公里数：</label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" name="car-km" class="tpl-form-input" id="car-km" value="{{$data['km']}}" style="width:300px;" >
+                                            <input type="text" name="Vbrand" class="tpl-form-input" id="Vbrand" value="{{$data['Vbrand']}}" style="width:300px;" >
                     
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="car-price" class="am-u-sm-3 am-form-label">价格：</label>
+                                        <label for="standard" class="am-u-sm-3 am-form-label" >国标 ：</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="car-price" class="tpl-form-input" id="car-price" value="{{$data['pice']}}" style="width:300px;" >
+                                            <select data-am-selected="{searchBox: 1}" name="standard" style="display: none;">
+                                              <option value="0" {{$data["standard"] == 0? "selected" :"" }}>国三</option>
+                                              <option value="1" {{$data["standard"] == 1? "selected" :"" }}>国四</option>
+                                              <option value="2" {{$data["standard"] == 2? "selected" :"" }}>国五</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="gearbox" class="am-u-sm-3 am-form-label" >变速箱 ：</label>
+                                        <div class="am-u-sm-9">
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="gearbox">
+                                              <option value="1">自动挡</option>
+                                              <option value="0">手动挡</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="am-form-group">
+                                        <label for="km" class="am-u-sm-3 am-form-label">公里数：</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" name="km" class="tpl-form-input" id="km" value="{{$data['km']}}" style="width:300px;" >
+                    
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="pice" class="am-u-sm-3 am-form-label">价格：</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" name="pice" class="tpl-form-input" id="pice" value="{{$data['pice']}}" style="width:300px;" >
                     
                                         </div>
                                     </div>
@@ -83,43 +94,33 @@
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="car-standard" class="am-u-sm-3 am-form-label">变速箱 ：</label>
+                                        <label for="accident" class="am-u-sm-3 am-form-label" >重大事故 ：</label>
                                         <div class="am-u-sm-9">
-                                            @if($data['gearbox'] == 0)
-                                            <input type="text" name="car-standard" class="tpl-form-input" id="car-standard"  value="手动" style="width:200px;" >
-                                            @else
-                                            <input type="text" name="car-standard" class="tpl-form-input" id="car-standard"  value="自动" style="width:200px;" >
-                                            @endif
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="accident">
+                                              <option value="0" {{$data["accident"] == 0? "selected" :"" }}>无</option>
+                                              <option value="1" {{$data["accident"] == 1? "selected" :"" }}>有</option>
+                                            </select>
+
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="accident" class="am-u-sm-3 am-form-label">重大事故 ：</label>
+                                        <label for="burn" class="am-u-sm-3 am-form-label" >火烧事故 ：</label>
                                         <div class="am-u-sm-9">
-                                            @if($data['accident'] == 0)
-                                            <input type="text" name="car-km" class="tpl-form-input"  value="无" style="width:200px;" >
-                                            @else
-                                            <input type="text" name="car-km" class="tpl-form-input"  value="有" style="width:200px;" >
-                                            @endif
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="burn">
+                                              <option value="0" {{$data["burn"] == 0? "selected" :"" }}>无</option>
+                                              <option value="1" {{$data["burn"] == 1? "selected" :"" }}>有</option>
+                                            </select>
+
                                         </div>
                                     </div>
                                     <div class="am-form-group">
-                                        <label for="burn" class="am-u-sm-3 am-form-label"> 火烧事故 ：</label>
+                                        <label for="soaking_water" class="am-u-sm-3 am-form-label" >泡水事故 ：</label>
                                         <div class="am-u-sm-9">
-                                            @if($data['burn'] == 0)
-                                            <input type="text" name="burn" class="tpl-form-input" id="burn" value="无" style="width:200px;" >
-                                            @else
-                                            <input type="text" name="burn" class="tpl-form-input" id="burn" value="有" style="width:200px;" >
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="am-form-group">
-                                        <label for="soaking_water" class="am-u-sm-3 am-form-label">泡水事故 ：</label>
-                                        <div class="am-u-sm-9">
-                                            @if($data['soaking_water'] == 0)
-                                            <input type="text" name="soaking_water" class="tpl-form-input" id="soaking_water" value="无" style="width:200px;" >
-                                            @else
-                                            <input type="text" name="soaking_water" class="tpl-form-input" id="soaking_water" value="有" style="width:200px;" >
-                                            @endif
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="soaking_water">
+                                              <option value="0" {{$data["soaking_water"] == 0? "selected" :"" }}>无</option>
+                                              <option value="1" {{$data["soaking_water"] == 1? "selected" :"" }}>有</option>
+                                            </select>
+
                                         </div>
                                     </div>
                                     <div class="am-form-group">
@@ -176,7 +177,7 @@
 
                                     <div class="am-form-group">
                                         <div class="am-u-sm-9 am-u-sm-push-3">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "><a href="javascript:history.back(-1)" class="am-btn-primary">返回</a></button>
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-Update "> 修改</button>
                                         </div>
                                     </div>
                                 </form>
