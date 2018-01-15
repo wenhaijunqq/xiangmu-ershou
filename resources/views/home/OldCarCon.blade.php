@@ -63,7 +63,7 @@
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
 
-				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
+				<a href="/home/question/create"><button class="ipt-btn" type="button">提问</button></a>
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>
@@ -82,13 +82,13 @@
                        @foreach($data as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">{{$v->content}}</a>
+							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
 						</li>
 						 @endforeach
 					</ul>
 
 					<div class="extra">
-						<a href="#" target="_blank">查看更多>></a>
+						<a href="/home/asklist/{{$type[0]}}" target="_blank">查看更多>></a>
 					</div>
 				</li>
 				<li class="box-item bore4">
@@ -97,12 +97,12 @@
 					@foreach($data1 as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">{{$v->content}}</a>
+							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
 						</li>
 					@endforeach
 					</ul>
 					<div class="extra">
-						<a href="#" target="_blank">查看更多>></a>
+						<a href="/home/asklist/{{$type[1]}}" target="_blank">查看更多>></a>
 					</div>
 				</li>
 				<li class="box-item bore4">
@@ -111,12 +111,12 @@
 					@foreach($data2 as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">{{$v->content}}</a>
+							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
 						</li>
 					@endforeach
 					</ul>
 					<div class="extra">
-						<a href="#" target="_blank">查看更多>></a>
+						<a href="/home/asklist/{{$type[2]}}" target="_blank">查看更多>></a>
 					</div>
 				</li>
 				<li class="box-item bore4">
@@ -125,12 +125,12 @@
 					@foreach($data3 as $k=>$v)
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="#">{{$v->content}}</a>
+							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
 						</li>
 					@endforeach
 					</ul>
 					<div class="extra">
-						<a href="#" target="_blank">查看更多>></a>
+						<a href="/home/asklist/{{$type[3]}}" target="_blank">查看更多>></a>
 					</div>
 				</li>
 
