@@ -78,7 +78,7 @@
                                                 @if($val['assess_status']==1)
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;" onclick="add({{$val['car_id']}})">
+                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},$(this))">
                                                             <i class="am-btn-success"></i> 审核通过
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del({{$val['car_id']}},$(this))">
@@ -127,13 +127,21 @@
     </div>
     <script type="text/javascript">
 
-        function add(id)
+        function add(id,obj)
         {
             layer.confirm('确定通过审核', {
               btn: ['是','否'] //按钮
             }, function(){
-              window.location.href = '/admin/examine/wait/'+id+'/edit';
-              layer.msg('已提交', {icon: 1});
+              $.get("{{url('/admin/examine/wait/')}}/"+id,{"id":id},function(data)
+                {
+                    if(data == 1){
+                        obj.parent().parent().parent().remove();
+                        layer.msg('通过审核', {icon: 1});
+                    }
+                    
+                });
+
+              
             }, function(){
               
             });

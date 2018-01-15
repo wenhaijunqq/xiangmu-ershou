@@ -50,7 +50,17 @@ class EstimateWaitController extends Controller
      */
     public function show($id)
     {
-        //
+        //加载评估时间 修改评估状态
+        // 获取加载时间
+        $date = date('Y-m-d H:i:s',time());
+       
+        // 修改评估状态
+        $res = appointment::where('car_id',$id)->update(['assess_status'=>1,'assess_time'=>$date]);
+        if($res){
+             echo 1;   
+        }else{
+            echo  0;
+        }
     }
 
     /**
@@ -61,17 +71,7 @@ class EstimateWaitController extends Controller
      */
     public function edit($id)
     {
-        //加载评估时间 修改评估状态
-        // 获取加载时间
-        $date = date('Y-m-d H:i:s',time());
-       
-        // 修改评估状态
-        $res = appointment::where('car_id',$id)->update(['assess_status'=>1,'assess_time'=>$date]);
-        if($res){
-             echo "<script>alert('提交成功！');location.href='/admin/estimate/already'</script>";   
-        }else{
-            echo "<script>alert('提交失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
-        }
+        
 
     }
 

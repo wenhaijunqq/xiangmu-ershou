@@ -73,7 +73,7 @@
                                                 <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;" onclick="add({{$val['car_id']}})">
+                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},$(this))">
                                                             <i class="am-btn-success"></i> 提交
                                                         </a>
                                                         <a href="javascript:;" onclick="update({{$val['car_id']}})">
@@ -145,13 +145,19 @@
             });
            
         }
-        function add(aid)
+        function add(aid,obj)
         {
             layer.confirm('是否进行提交', {
               btn: ['是','否'] //按钮
             }, function(){
-              window.location.href = '/admin/estimate/wait/'+aid+'/edit';
-              layer.msg('已提交', {icon: 1});
+             $.get("{{url('/admin/estimate/wait/')}}/"+aid,{"id":aid},function(data)
+                {
+                    if(data == 1){
+                        obj.parent().parent().parent().remove();
+                         layer.msg('已提交', {icon: 1});
+                    }
+                   
+                });
             }, function(){
               
             });

@@ -50,7 +50,17 @@ class ExamineWaitController extends Controller
      */
     public function show($id)
     {
-        //
+        //加载评估时间 修改评估状态
+        // 获取加载时间
+        $date = date('Y-m-d H:i:s',time());
+       
+        // 修改评估状态
+        $res = appointment::where('car_id',$id)->update(['audit_status'=>1,'audit_time'=>$date]);
+        if($res){
+             echo 1;   
+        }else{
+            echo 0;
+        }
     }
 
     /**
@@ -61,17 +71,7 @@ class ExamineWaitController extends Controller
      */
     public function edit($id)
     {
-        //加载评估时间 修改评估状态
-        // 获取加载时间
-        $date = date('Y-m-d H:i:s',time());
-       
-        // 修改评估状态
-        $res = appointment::where('car_id',$id)->update(['audit_status'=>1,'audit_time'=>$date]);
-        if($res){
-             echo "<script>location.href='/admin/examine/already'</script>";   
-        }else{
-            echo "<script>location.href='".$_SERVER['HTTP_REFERER']."'</script>";
-        }
+        
     }
 
     /**
