@@ -55,7 +55,7 @@
                     <a class="fl" href="/www/buy" title="天津个人二手车">我要买车</a>
                     <a class="fl" href="/www/sell" title="天津二手车出售">我要卖车</a>
                     <a class="fl" href="/www/server" title="瓜子二手车服务保障">服务保障</a>
-                    <a class="fr" href="/www/oldcar" title="瓜子二手车问答系统">二手车问答</a>
+                    <a class="fr" href="/home/question" title="瓜子二手车问答系统">二手车问答</a>
                 </div>
             </div>
         </div>

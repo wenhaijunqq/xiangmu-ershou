@@ -54,7 +54,7 @@
                     <a class="fl" href="/www/buy" title="天津个人二手车">我要买车</a>
                     <a class="fl" href="/www/sell" title="天津二手车出售">我要卖车</a>
                     <a class="fl" href="/www/server" title="瓜子二手车服务保障">服务保障</a>
-                    <a class="fr" href="/www/oldcar" title="瓜子二手车问答系统">二手车问答</a>
+                    <a class="fr" href="/home/question" title="瓜子二手车问答系统">二手车问答</a>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
 
-				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
+				<a href="/home/question/create"><button class="ipt-btn" type="button">提问</button></a>
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>

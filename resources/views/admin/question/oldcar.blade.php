@@ -2,7 +2,6 @@
 @section('title','后台文章')
 
 @section('content')
-    
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
                 <div class="row">
@@ -83,22 +82,13 @@
                                             <!-- more data -->
                                         </tbody>
                                     </table>
-      
+                             <div id="pull_right">
+                                   <div class="am-pagination-right">
+                                     {!! $data->render() !!}
+                                   </div>
+                             </div> 
                                 </div>
-                                <div class="am-u-lg-12 am-cf">
-
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            
                             </div>
                         </div>
                     </div>

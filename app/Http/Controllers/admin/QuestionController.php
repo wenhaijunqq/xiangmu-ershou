@@ -20,7 +20,7 @@ class QuestionController extends Controller
     {
         //查询数据并且分页
         // $data = DB::table('question')->paginate(1);
-        $data = DB::table('question')->get();
+        $data = DB::table('question')->paginate(5);;
         $type = array('买车卖车','交易过户','保养维修','金融贷款');
         return view('admin.question.oldcar',['data'=>$data,'type'=>$type]);
     }
