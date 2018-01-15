@@ -82,6 +82,7 @@ Route::get('admin/CarType/add',function(){
 //后台网站车辆管理
 Route::resource('admin/CarType/','admin\VehiclInfoController');
 //后台网站车辆类型增加
+
 Route::post('admin/CarType/add','admin\VehiclInfoController@create');
 
 
@@ -116,14 +117,15 @@ Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
+Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
 //车看用户
 Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
 
-Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台车辆基本信息查看
-Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 

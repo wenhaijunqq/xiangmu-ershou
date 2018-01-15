@@ -69,7 +69,7 @@
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
-                                                <td><a href="/admin/seeinformation">车辆基本信息</a></td>
+                                                <td><a href="/admin/seeinformation/{{$val['car_id']}}">车辆基本信息</a></td>
                                                 <td>{{$val['ping_id']}}</td>
                                                 <td>{{$val['audit_time']}}</td>
                                                 <td></td>
@@ -96,7 +96,7 @@
                                             <li class="am-disabled"><a href="#">«</a></li>
                                             <li class="am-active"><a href="#">1</a></li>
                                             <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">3</a></li
                                             <li><a href="#">4</a></li>
                                             <li><a href="#">5</a></li>
                                             <li><a href="#">»</a></li>
