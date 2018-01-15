@@ -9,6 +9,11 @@
 
             <div class="container-fluid am-cf">
                 <div class="row">
+                <ol class="am-breadcrumb">
+                      <li><a href="/admin/index">首页</a></li>
+                      <li><a href="/admin/reserve">分类</a></li>
+                      <li class="am-active">内容</li>
+                    </ol>
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
                         <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 预约修改页 <small>RESERVE</small></div>
                         <p class="page-header-description">此页面来管理网页预约信息</p>
@@ -34,38 +39,40 @@
                             </div>
                             <div class="widget-body am-fr">
             
-                                <form class="am-form tpl-form-border-form tpl-form-border-br" action="/admin/reserve/{{$data->rid}}">
+                                <form class="am-form tpl-form-border-form tpl-form-border-br" action="/admin/reserve/{{$data[0]->rid}}" method="POST">
                                 {{ csrf_field() }}
                                 {{ method_field('PUT')}}
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 预约编号 <span class="tpl-form-line-small-title">NUMBER</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data->rid}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->rid}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 买家编号 <span class="tpl-form-line-small-title">BUY_ID</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data->buy_id}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->buy_id}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 卖家编号 <span class="tpl-form-line-small-title">SELL_ID</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data->buy_id}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->buy_id}}" readonly>
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 车辆编号 <span class="tpl-form-line-small-title">CAR_ID</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data->car_id}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->car_id}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 派遣评估员 <span class="tpl-form-line-small-title">PING_ID</span></label>
                                         <div class="am-u-sm-9 am-form-select">
                                             <select data-am-selected="{searchBox:1}" class="am-input-sm" name="ping_id">
-                                              <option value="a">评估员1</option>
+                                            @foreach($ping as $k=>$v)
+                                              <option value="{{$v->id}}">{{$v->id}}号评估员{{$v->name}}</option>
+                                            @endforeach
                                             </select>
 
                                         </div>
@@ -73,19 +80,19 @@
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 预约时间 <span class="tpl-form-line-small-title">YU_TIME</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data->yutime}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->yutime}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 看车时间 <span class="tpl-form-line-small-title">SEETIME</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data->seetime}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->seetime}}" readonly>
                                         </div>
                                     </div>
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 预约状态 <span class="tpl-form-line-small-title">YU_STATUS</span></label>
                                         <div class="am-u-sm-9">
-                                        @if($data -> yu_status  == 1)
+                                        @if($data[0] -> yu_status  == 1)
                                             <div class="am-radio">
                                               <label>
                                                 <input type="radio" name="yu_status" value="1" checked>

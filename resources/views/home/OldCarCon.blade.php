@@ -63,7 +63,7 @@
 				<input class="ipt-text" type="text" placeholder="查找问题"/>
 				<button class="ipt-btn" type="button">搜索</button>
 
-				<a href="/www/ask"><button class="ipt-btn" type="button">提问</button></a>
+				<a href="/home/question/create"><button class="ipt-btn" type="button">提问</button></a>
 			</div>
 			<div class="hot-question">
 				<a href="">如何过户上牌？</a>
@@ -81,7 +81,7 @@
 					<ul class="list sale-list">
                        @foreach($data as $k=>$v)
 						<li>
-							<span class="icon-circle"></span>	
+							<span class="icon-circle"></span>
 							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
 						</li>
 						 @endforeach

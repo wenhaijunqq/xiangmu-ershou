@@ -36,14 +36,14 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">网站标题 <span class="tpl-form-line-small-title">TITLE</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字" value="{{$data[0]->title}}">
                                             <small>请填写标题文字10-20字左右。</small>
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">网站版权 <span class="tpl-form-line-small-title">COPYING</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入相关版权">
+                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入相关版权" value="{{$data[0]->copyright}}">
                                             <small>请填写网站版权10-20字左右。</small>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">关键字 <span class="tpl-form-line-small-title">SEO</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" placeholder="输入关键字">
+                                            <input type="text" placeholder="输入关键字" value="{{$data[0]->key}}">
                                         </div>
                                     </div>
                                     
@@ -79,10 +79,14 @@
                                         <label for="user-phone" class="am-u-sm-3 am-form-label">网站维护 <span class="tpl-form-line-small-title">STATUS</span></label>
                                         <div class="am-u-sm-9">
                                             <select data-am-selected="{searchBox:0}" style="display: none;">
-                                              <option value="a">开启网页</option>
+                                            @if({{$data[0]->Wstatus}} == 1)
+                                              <option value="a" selected>开启网页</option>
                                               <option value="b">关闭网页</option>
+                                            @else
+                                              <option value="a">开启网页</option>
+                                              <option value="b" selected>关闭网页</option>
                                             </select>
-
+                                            @endif
                                         </div>
                                     </div>
 

@@ -140,6 +140,7 @@ Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
 
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 //后台表单页
 Route::get('/admin/form',function(){
