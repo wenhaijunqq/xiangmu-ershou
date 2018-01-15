@@ -25,7 +25,18 @@ Route::get('/www/sell', function () {
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
 });
-
+Route::get('/www/oldcar', function () {
+    return view('/home/OldCarCon');
+});
+Route::get('/www/ask',function(){
+	return view('/home/question/ask');
+});
+Route::get('/www/asklist',function(){
+	return view('/home/question/asklist');
+});
+Route::get('/www/answer',function(){
+	return view('/home/question/answer');
+});
 Route::get('IndexLogin', function () {
     return view('/home/login');
 });
@@ -47,9 +58,9 @@ Route::get('/www/xiangqing', function () {
 });
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
-Route::get('/home/answer/{id}','Home\AnswerController@index');
-Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
 
+//个人中心
+Route::resource('/home/center','home\CenterController');
 
 //后台模板引入
 Route::controller('/admin/login','Admin\LoginController');
@@ -83,7 +94,6 @@ Route::get('admin/CarType/add',function(){
 Route::resource('admin/CarType/','admin\VehiclInfoController');
 //后台网站车辆类型增加
 
-Route::post('admin/CarType/add','admin\VehiclInfoController@create');
 
 
 Route::resource('/admin/question','admin\QuestionController');
@@ -102,7 +112,17 @@ Route::resource('/admin/order','admin\OrderController');
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
 //后台登陆路由
-Route::controller('/admin/login','admin\LoginController');
+Route::resource('/admin/login','admin\LoginController@login');
+//后台登录验证
+Route::post('/admin/dologin','admin\LoginController@dologin');
+
+Route::post('/admin/phone','admin\LoginController@phone');
+Route::post('code','LoginController@code');
+
+//后台账号设置
+Route::resource('/admin/Accountupdate','admin\AccountUpdateController');
+
+
 //后台已经评估路由
 Route::resource('/admin/estimate/already','admin\EstimateAlreadyController');
 //后台等待评估路由
@@ -112,20 +132,15 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-
-
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
-
-Route::resource('/admin/basicinformation','admin\BasicInformationController');
-Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
-Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
 //车看用户
 Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
 
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台车辆基本信息查看
-Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
+Route::get('/admin/seeinformation','admin\SeeInformationController@index');
 //后台评估报告
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 
@@ -145,8 +160,6 @@ Route::resource('/admin/Carousel/list','admin\CarouselController');
 Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
-
-Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 //后台表单页
 Route::get('/admin/form',function(){
@@ -173,7 +186,6 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 
-
 //后台用户管理分区
 Route::get('/admin/lists',function(){
 	return view('/admin/UserManagement/tableList');
@@ -185,16 +197,6 @@ Route::get('/admin/imglists',function(){
 
 Route::controller('/db','Dbcontroller');
 Route::resource('imglists','imglistsController');
-
-
-
-Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
-//后台车辆基本信息查看
-Route::get('/admin/seeinformation','admin\SeeInformationController@index');
-//后台评估报告
-Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
-
-
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
@@ -209,9 +211,6 @@ Route::resource('/admin/Carousel','admin\CarouselController');
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
 
-Route::resource('/admin/Link','admin\LinkController');
-
-
 Route::resource('/admin/link','admin\LinkController');
 Route::resource('/admin/link/list','admin\LinkController');
 
@@ -221,13 +220,14 @@ Route::resource('/admin/link/list','admin\LinkController');
 
 
 //登录
-Route::get('home/login','admin\LoginController@login');
-Route::post('home/phone','admin\LoginController@phone');
+Route::get('home/login','home\LoginController@login');
+Route::post('home/phone','home\LoginController@phone');
 Route::post('code','LoginController@code');
 Route::post('dologin','LoginController@dologin');
 Route::post('shouye','LoginController@index');
 
 //前台用户登录
-Route::get('home/register','admin\LoginController@register');
+Route::get('home/register','home\LoginController@register');
 //前台登录验证
-Route::post('home/dotelregister','admin\LoginController@dotelregister');
+Route::post('home/dotelregister','home\LoginController@dotelregister');
+
