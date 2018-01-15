@@ -173,7 +173,6 @@ Route::get('/admin/404',function(){
 
 
 //后台用户管理分区
-
 Route::get('/admin/lists',function(){
 	return view('/admin/UserManagement/tableList');
 });
@@ -201,6 +200,7 @@ Route::get('/admin/xinzeng',function(){
 Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
+
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
@@ -217,8 +217,15 @@ Route::resource('/admin/link/list','admin\LinkController');
 
 //前台
 
+
+//登录
+Route::get('home/login','admin\LoginController@login');
+Route::post('home/phone','admin\LoginController@phone');
+Route::post('code','LoginController@code');
+Route::post('dologin','LoginController@dologin');
+Route::post('shouye','LoginController@index');
+
 //前台用户登录
 Route::get('home/register','admin\LoginController@register');
 //前台登录验证
 Route::post('home/dotelregister','admin\LoginController@dotelregister');
-
