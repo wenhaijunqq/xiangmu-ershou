@@ -27,8 +27,9 @@
     <link rel="stylesheet" href="/admins/css/fullcalendar.min.css" />
     <link rel="stylesheet" href="/admins/css/fullcalendar.print.css" media='print' />
     <link rel="stylesheet" href="/admins/css/app.css">
-
+    
     <link rel="stylesheet" href="/admins/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admins/css/paginate.css">
     <script src="/admins/js/jquery.min.js"></script>
     <script src="/layer/layer.js"></script>
     <script type="text/javascript">

@@ -24,7 +24,7 @@ class OrderController extends Controller
         //     return view('admin.order.index',['data'=>$data]);
         // }else{
             //查询商品所有数据
-            $data = DB::table('order') -> orderBy('buy_time','desc') -> get();
+            $data = DB::table('order') -> orderBy('buy_time','desc') -> paginate(5);
             //发送数据
             return view('admin.order.index',['data'=>$data]);
         // }
@@ -57,9 +57,23 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$key)
     {
-
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+        // var_dump($check);
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/order"</script>';
+        }else if($check == 'user'){
+            $res = DB::table('order')->where('sell_id','like','%'.$key.'%')->orwhere('buy_id','like','%'.$key.'%')->paginate(3);
+            $count = DB::table('order')->where('sell_id','like','%'.$key.'%')->orwhere('buy_id','like','%'.$key.'%')->count();
+        }else{
+            $res = DB::table('order')->where("$check",'like','%'.$key.'%')->get();
+            $count = DB::table('order')->where('$check','like','%'.$key.'%')->count();
+        }
+        $res = $res ->appends(array('key'=>$key));
+        $res->setPath('/admin/order/show');
+        return view('/admin/order/search',['res'=>$res,'count'=>$count,'check'=>$check]);
     }
 
     // *

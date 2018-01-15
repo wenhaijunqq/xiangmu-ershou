@@ -1,5 +1,5 @@
 @extends('/layout/adminLayout')
-@section('title','后台订单页')
+@section('title','后台订单搜索页')
 
 @section('content')
 
@@ -14,7 +14,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">订单列表</div>
+                                <div class="widget-title  am-cf">订单搜索</div>
 
 
                             </div>
@@ -29,27 +29,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form class="am-form-inline" role="form" action="/admin/order/show" method="GET">
-                                    <div class="am-u-sm-9 am-u-md-6 am-u-lg-3">
-                                        <div class="am-form-group tpl-table-list-select">
-                                            <select data-am-selected="{btnSize: 'sm'}" name="check">
-                                              <option value="1">请选择搜索类别</option>
-                                              <option value="id">订单编号</option>
-                                              <option value="user">用户id</option>
-                                              <option value="ping_id">评估员id</option>
-                                            </select>
-                                        </div>
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+                                    <div class="am-form-group tpl-table-list-select">
+                                        <select data-am-selected="{btnSize: 'sm'}">
+                                          <option value="option1">所有类别</option>
+                                          <option value="option2">订单编号</option>
+                                          <option value="option3">买家id</option>
+                                          <option value="option4">卖家id</option>
+                                          <option value="option5">评估员id</option>
+                                          <option value="option6">成交状态</option>
+                                          <option value="option7">成交价格</option>
+
+                                        </select>
                                     </div>
-                                    <div class="am-u-sm-3 am-u-md-6 am-u-lg-3">
-                                        <div class="am-input-group tpl-form-border-form cl-p">
-                                              <div class="am-form-group">
-                                                <input type="text" class="am-form-field am-input-sm" name="key">
-                                              </div>
-                                              <button type="submit" class="am-btn am-btn-default am-btn-success">搜索</button>
-                                            
-                                        </div>
+                                </div>
+                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+                                    <div class="am-input-group tpl-form-border-form cl-p">
+                                    <form class="am-form-inline" role="form">
+                                          <div class="am-form-group">
+                                            <input type="text" class="am-form-field am-input-sm" name="key">
+                                          </div>
+                                          <button type="submit" class="am-btn am-btn-default am-btn-success">搜索</button>
+                                        </form>
                                     </div>
-                                </form>
+                                </div>
+
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -66,7 +70,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($data as $k=>$v)
+                                        @foreach($res as $k=>$v)
                                             <tr class="gradeX">
                                                 <td>{{$v -> id}}</td>
                                                 <td>{{$v -> sell_id}}</td>
@@ -95,7 +99,7 @@
                                     </table>
                                     <div id="pull_right">
                                       <div class="am-pagination-right">
-                                        {!! $data->render() !!}
+                                        {!! $res->appends(['check'=>$check])->render() !!}
                                       </div>
                                     </div> 
                                 </div>
