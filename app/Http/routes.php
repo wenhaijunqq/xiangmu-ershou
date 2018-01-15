@@ -111,6 +111,10 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
+
+
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
@@ -167,8 +171,9 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 
+
 //后台用户管理分区
-//
+
 Route::get('/admin/lists',function(){
 	return view('/admin/UserManagement/tableList');
 });
@@ -179,6 +184,16 @@ Route::get('/admin/imglists',function(){
 
 Route::controller('/db','Dbcontroller');
 Route::resource('imglists','imglistsController');
+
+
+
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+//后台车辆基本信息查看
+Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+//后台评估报告
+Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+
+
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
@@ -192,6 +207,9 @@ Route::resource('/admin/Carousel','admin\CarouselController');
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
 
+Route::resource('/admin/Link','admin\LinkController');
+
+
 Route::resource('/admin/link','admin\LinkController');
 Route::resource('/admin/link/list','admin\LinkController');
 
@@ -203,3 +221,4 @@ Route::resource('/admin/link/list','admin\LinkController');
 Route::get('home/register','admin\LoginController@register');
 //前台登录验证
 Route::post('home/dotelregister','admin\LoginController@dotelregister');
+

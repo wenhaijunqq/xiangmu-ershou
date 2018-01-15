@@ -561,12 +561,109 @@
                                                 <input type="text" name="Right-front-lining1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                         </tr>
-                                
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-D-column">左D柱</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-D-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-D-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-D-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-D-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="Left-C-column">左C柱</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Left-C-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-C-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-C-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-C-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-side">左侧顶边梁</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-side" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-side" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-side" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-side1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="Left-B-column">左B柱</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Left-B-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-B-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-B-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-B-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-A-column">左A柱</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-A-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-A-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-A-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-A-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="Left-edge">左侧底大边</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Left-edge" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-edge" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-edge" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-edge1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-A-column">左侧驾驶舱底板</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-floor" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-floor" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-floor" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-floor1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
                                         <!-- more data -->
                                     </tbody>
                                 </table>
-                                
-
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">泡水排查检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Cabin-box">机舱保险盒</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Cabin-box" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Cabin-box" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Cabin-box" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Cabin-box1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Seat-screws">座椅滑轨及固定螺丝</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="right-frame" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="right-frame" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="right-frame" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="right-frame1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             </div>
                         </div>
                     </div>

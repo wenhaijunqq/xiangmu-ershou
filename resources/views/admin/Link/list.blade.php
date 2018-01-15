@@ -10,7 +10,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">文章列表</div>
+                                <div class="widget-title  am-cf">友情链接列表</div>
 
 
                             </div>
@@ -20,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/link/create">新增</a></button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/Link/create">新增</a></button>
                                                
                                             </div>
                                         </div>
@@ -53,21 +53,24 @@
                                         <thead>
                                             <tr>
                                                 <th>友情链接标题</th>
-                                                <th>时间</th>
+
                                                 <th>URL地址</th>
+                                                <th>时间</th>
                                                 <th>状态</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @if(count($res))
+                                        @foreach($res as $k=>$v)
                                             <tr class="gradeX">
-                                                <td>百度</td>
-                                                <td>http://www.baidu.com</td>
-                                                <td>2016-09-26</td>
-                                                <td>开启</td>
+                                                <td>{{$v['id']}}</td>
+                                                <td>{{$v['url']}}</td>
+                                                <td>{{$v['name']}}</td>
+                                                <td>{{$v['status']}}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/link/2/edit">
+                                                        <a href="/admin/Link/{{$v['id']}}/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
@@ -76,6 +79,10 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                        @endforeach
+                                        @else
+                                        <td colspan="5">没有任何操作数据</td> 
+                                        @endif        
                                             <!-- more data -->
                                         </tbody>
                                     </table>
