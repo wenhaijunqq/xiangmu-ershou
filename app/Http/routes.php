@@ -90,7 +90,7 @@ Route::get('admin/CarType/add',function(){
 //后台网站车辆管理
 Route::resource('admin/CarType/','admin\VehiclInfoController');
 //后台网站车辆类型增加
-
+Route::post('admin/CarType/add','admin\VehiclInfoController@create');
 
 
 Route::resource('/admin/question','admin\QuestionController');

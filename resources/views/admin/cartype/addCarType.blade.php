@@ -56,7 +56,7 @@
            </div>
            <div class="am-form-group">
             <div class="am-u-sm-9 am-u-sm-push-3">
-             <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+             <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" id="sumbit">提交</button>
             </div>
            </div>
           </div>
@@ -76,6 +76,7 @@
 </html>
 
 <script type="text/javascript">
+
         $(function(){
             $(".myfile").change(function(){
                 uploadImg();
@@ -83,8 +84,8 @@
             })
         });
         function uploadImg(){
-            alert("asdas");
             //判断上传的图片后缀名
+                var imgPath = $(".myfile").val();
                 var strExtension = imgPath.substr(imgPath.lastIndexOf('.')+1);
                 if(strExtension !='jpg'  && strExtension !='png' && strExtension !='gif' && strExtension !='bmp'){
                     layer.msg('请选择正确的图片格式');
@@ -99,41 +100,55 @@
                    processData:false,
                    contentType: false,
                    cache: false,
+                   async :true,
                    beforeSend:function(){
+
                         //$("#myimg").attr('src',"/admins/img/timg.gif");
 
                    },
                    success:function(data){
                        alert(data.message);
-                       //alert(data->filePath)
+                       arr = data;
+                       //filepath = data->filePath;
+
+
                        $('#myimg').attr('src',data.filePath);
                    },
                    error:function(err){
+
                      alert(err);
                    }
                });
 
         }
-    $("[type='button']").click(function(){
-        //判断是否上传文件
-            var imgPath = $(".myfile").val();
-            var title = $("#user-name").val();
-            if(title == ""){
-               layer.msg('请添加品牌名称');
-               return;
-               }
-             if(imgPath == ""){
-                layer.msg('请添加品牌图标');
-                return;
-            }else(
-                console.log($("#myimg").attr('src'));
-            )
+        $(document).on("click","#sumbit",function(){
 
-        // $.post('','',function(){
-        //
-        // })
-        //var index=parent.layer.getFrameIndex(window.name);
-            //parent.layer.close(index);
-});
+            //判断是否上传文件
+                var imgPath = $(".myfile").val();
+                var title = $("#user-name").val();
+                if(title == ""){
+                   layer.msg('请添加品牌名称');
+                   return;
+                   }
+                 if(imgPath == ""){
+                    layer.msg('请添加品牌图标');
+                    return;
+                }
+                $.post("admin/CarType/add",{'car_typeName':$('user-name').val(),'car_icon':arr.filePath,'_token':csrf_field()},function(){
+
+                })
+
+        })
+
+//     function addSumbit(){
+//         alert("sfdsf");
+//
+//
+//         $.post('','',function(){
+//
+//         })
+//         //var index=parent.layer.getFrameIndex(window.name);
+//             //parent.layer.close(index);
+// }
 
 </script>

@@ -27,6 +27,7 @@ class VehiclInfoController extends Controller
      */
     public function create(Request $request)
     {
+        dump($_POST);
 
     }
 
@@ -38,7 +39,7 @@ class VehiclInfoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($_POST);
+        //dd($_POST);
         //获取文件上传的临时文件
          $file = $request->file('pic');
          //验证
@@ -49,8 +50,8 @@ class VehiclInfoController extends Controller
          $fileName = md5(time().rand(0,10000)).".".$postfix;
 
          $disk = \Storage::disk('qiniu');
-         //$disk->put($fileName,file_get_contents($transverse_pic));
-         $disk->put($fileName,fopen($transverse_pic,'r+'));
+         $disk->put($fileName,file_get_contents($transverse_pic));
+         //$disk->put($fileName,fopen($transverse_pic,'r+'));
          $filePath = $disk->getDriver()->downloadUrl($fileName);
          return Response()->json([
            'filePath' => $filePath,
