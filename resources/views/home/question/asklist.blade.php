@@ -69,8 +69,11 @@
        <span>{{$types[$type]}}</span>
  </div>
       <div class="search2">
-          <input type="text" class="search2-input"/>
-          <button class="search2-btn" type="button">搜索</button>
+          <form action="/home/question/show" method="GET" class="form-inline">
+            <input class="search2-input" type="text" placeholder="查找问题"  name="key"/>
+            <button class="search2-btn" type="submit">搜索</button>
+          </form> 
+          
       </div>
    <div class="find-tit">
            为您找到<strong class="co22">“5条”</strong>相关记录
@@ -79,7 +82,7 @@
       <table class="table table-hover" style="width:870px; margin: -20px auto 50px;">
        @for($i=0;$i<count($res);$i++)
         <tr>
-          <td class="wt"><a href="" target="_blank">{{$res[$i]->content}}</a></td>
+          <td class="wt"><a href="/home/answer/{{$res[$i]->qid}}" target="_blank">{{$res[$i]->content}}</a></td>
           <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
         @endfor

@@ -56,4 +56,22 @@ class QuestionController extends Controller
         } 
     }
 
+     public function show(Request $request, $key)
+    {
+         $type = array('买车卖车','交易过户','保养维修','金融贷款');
+         $key = $_GET['key'];
+         $check = $_GET['check'];
+         if($check==2){
+
+            $res = DB::table('question')->where('content','like','%'.$key.'%')->paginate(3);
+            $count = DB::table('question')->where('content','like','%'.$key.'%')->count();
+         }else{
+             $res = DB::table('question')->where('content','like','%'.$key.'%')->where('check',$check)->paginate(3);
+             $count = DB::table('question')->where('content','like','%'.$key.'%')->where('check',$check)->count();
+         }
+            $res->setPath('/admin/question/show');
+         $res = $res ->appends(array('key'=>$key));
+        return view('/admin/question/search',['res'=>$res,'count'=>$count,'type'=>$type,'check'=>$check]);
+    }
+
 }

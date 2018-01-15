@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-
-	<title>二手车回答页</title>
+	<title>二手车搜索列表</title>
   <link rel="icon" type="image/png" href="/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
+  <link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
+	<link rel="stylesheet" type="text/css" href="/admins/css/paginate.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 <body>
@@ -62,34 +62,36 @@
         </div>
         <!-- 列表开始 -->
 
-<div class="answerbox">
-    <div class="dh">
+<div class="listbox">
+<div class="dh">
        <a href="/">首页</a>   <em>&gt;</em>
        <a href="/home/question" title="二手车问答">二手车问答</a>  <em>&gt;</em>
-       <span>{{$data[0]->content}}</span>
-     </div>
-     <div class="search2">
-          <form action="/home/question/show" method="GET" class="form-inline">
-            <input class="search2-input" type="text" placeholder="查找问题"  name="key"/>
-            <button class="search2-btn" type="submit">搜索</button>
-          </form> 
-        
-     </div>
-     <div class="wen">
-       <p style="font-size:20px;">
-         {{$data[0]->content}}
-       </p> 
-       <p></p>
-       <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 &nbsp;<a class="btn btn-default" href="/www/buy" target="_blank" role="button">查找全部车源</a></font></p>
-     </div>
-     <div class="da">
-       <img src="/img/smallicon.png" style="float:left;">
-       <img src="/img/logo.png" alt="..." class="img-circle photos" style="width:40px; height:40px; ">
-        <p class="user-name">瓜子官方</p>
-        <p class="fabutime">2018-01-09  11:25:05</p>
-        <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">{{$data[0]->like}}</e></button>
-        <div class="huida-content">{{$data[0]->reply_content}}</div>
-     </div>
+      <span>查询结果</span>
+ </div>
+      <div class="search2">
+        <form action="/home/question/show" method="GET" class="form-inline">
+       <input type="text" class="search2-input" name="key"/>
+         <button class="search2-btn" type="submit">搜索</button>
+    </form>        
+      </div>
+   <div class="find-tit">
+           为您找到<strong class="co22">“{{$count}}条”</strong>相关记录
+    </div>
+   <div class="wentilist">
+      <table class="table table-hover" style="width:870px; margin: -20px auto 50px;">
+       @for($i=0;$i<count($res);$i++)
+        <tr>
+          <td class="wt"><a href="/home/answer/{{$res[$i]->qid}}" target="_blank">{{$res[$i]->content}}</a></td>
+          <td class="twtime">2018-01-09 14:57:24</td>
+        </tr>
+        @endfor
+      </table>
+      <div id="pull_right">
+          <div class="am-pagination-centered">
+            {!! $res->render() !!}
+          </div>
+    </div> 
+   </div>
 </div>
        <!-- 列表结束 -->
           <!-- 页脚 -->

@@ -40,7 +40,7 @@
                 <!--搜索框-->
                 <div class="search-box">
                     <div class="search">
-                        <input type="text" class="search-input" placeholder="搜索您想要的车"/>
+                        <input type="text" class="search-input" placeholder="搜索您想要的车" name="key"/>
                         <button class="search-btn" type="button">搜索</button>
                     </div>
                 </div>
@@ -60,17 +60,18 @@
         </div>
 		<div class="banimg">
 			<div class="search">
-				<input class="ipt-text" type="text" placeholder="查找问题"/>
-				<button class="ipt-btn" type="button">搜索</button>
-
+	          <form action="/home/question/show" method="GET" class="form-inline">
+		        <input class="ipt-text" type="text" placeholder="查找问题"  name="key"/>
+				<button class="ipt-btn" type="submit">搜索</button>
 				<a href="/home/question/create"><button class="ipt-btn" type="button">提问</button></a>
+		      </form>		
 			</div>
 			<div class="hot-question">
-				<a href="">如何过户上牌？</a>
-				<a href="">买什么车合适？</a>
-				<a href="">瓜子质保包括什么？</a>
-				<a href="">福克斯怎么样？</a>
-				<a href="">异地怎么过户？</a>
+				<a href="/home/answer/6">如何过户上牌？</a>
+				<a href="/home/answer/31">买什么车合适？</a>
+				<a href="/home/answer/13">瓜子服务费谁出？</a>
+				<a href="/home/answer/32">福克斯怎么样？</a>
+				<a href="/home/answer/16">异地二手车如何过户？</a>
 			</div>
 		</div>
 		<div class="w hide1">
