@@ -4,6 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "hash": "684457f2848914cc3b6ceb27ae3955d3",
+=======
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
     "content-hash": "c55e41ec6d878b25d7da77d9926f8618",
     "packages": [
         {
@@ -214,8 +218,12 @@
                 "singularize",
                 "string"
             ],
+<<<<<<< HEAD
+            "time": "2017-07-22 12:18:28"
+=======
             "time": "2018-01-09T20:05:19+00:00"
 
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
         },
         {
             "name": "gregwar/captcha",
@@ -1064,6 +1072,9 @@
                 "sdk",
                 "storage"
             ],
+<<<<<<< HEAD
+            "time": "2017-11-07 06:12:11"
+=======
             "time": "2017-11-07T06:12:11+00:00"
         },
         {
@@ -1116,6 +1127,7 @@
                 "storage"
             ],
             "time": "2017-11-07T06:12:11+00:00"
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2103,7 +2115,11 @@
                 "env",
                 "environment"
             ],
+<<<<<<< HEAD
+            "time": "2015-05-30 15:59:26"
+=======
             "time": "2015-05-30T15:59:26+00:00"
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
         },
         {
             "name": "zgldh/qiniu-laravel-storage",
@@ -2116,7 +2132,10 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/zgldh/qiniu-laravel-storage/zipball/06392b37654e8710216153106254a24a2d3e330e",
+<<<<<<< HEAD
+=======
 
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
                 "reference": "06392b37654e8710216153106254a24a2d3e330e",
                 "shasum": ""
             },
@@ -2163,11 +2182,15 @@
                 "sdk",
                 "storage"
             ],
+<<<<<<< HEAD
+            "time": "2017-11-25 14:07:17"
+=======
             "time": "2017-11-25T14:07:17+00:00",
 
             "time": "2015-05-30 15:59:26"
 
 
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
         }
     ],
     "packages-dev": [
@@ -2181,10 +2204,15 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
+                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
+=======
 
                 "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
                 "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
 
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
                 "shasum": ""
             },
             "require": {
@@ -3474,9 +3502,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/7c80d81b5805589be151b85b0df785f0dc3269cf",
                 "reference": "7c80d81b5805589be151b85b0df785f0dc3269cf",
+<<<<<<< HEAD
+=======
                 "url": "https://files.phpcomposer.com/files/symfony/yaml/ddc23324e6cfe066f3dd34a37ff494fa80b617ed.zip",
                 "reference": "ddc23324e6cfe066f3dd34a37ff494fa80b617ed",
 
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
                 "shasum": ""
             },
             "require": {
@@ -3518,8 +3549,12 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
+            "time": "2018-01-03 07:37:11"
+=======
             "time": "2018-01-03T07:37:11+00:00"
 
+>>>>>>> 329c740339a9da11b1d5b37545b2d314387a6290
         },
         {
             "name": "webmozart/assert",
