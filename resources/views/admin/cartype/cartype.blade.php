@@ -200,7 +200,7 @@
 
     //执行登录
     $('#dynamicLogon').click(function(){
-        var code = $('#dynamicPWD').val();
+        var code = $('#').val();
         var phone = $('input[name=phone]').val();
         $.post('/shop/dologin',{'code':code,'phone':phone,'_token':'{{csrf_token()}}'},function(data){
             if(data == 0){

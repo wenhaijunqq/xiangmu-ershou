@@ -10,10 +10,21 @@
     <link rel="stylesheet" type="text/css" href="/css/gerenzhongxin/footer.css" />
     <link rel="stylesheet" type="text/css" href="/css/gerenzhongxin/page2016_9d570cf.css" />
     <link rel="stylesheet" type="text/css" href="/css/gerenzhongxin/popup_68f8bb9.css" />
-            <link rel="stylesheet" href="/css/h_public.css">
-            <link rel="stylesheet" href="/css/h_index.css">
+    <link rel="stylesheet" href="/css/h_public.css">
+    <link rel="stylesheet" href="/css/h_index.css">
     <script src="/js/jquery-3.2.1.js"></script>
+    <style>
+        li a .bb:link {
+        color:#00e224;
+        }
+        li a .bb:hover {
+        color:#00e224;
+        }
+        li a .bb:active {
+        color:#00e224;
+        }
 
+    </style>
 </head>  
     <body class="bg-f0">
         
@@ -46,13 +57,13 @@
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
-        <li><a href="/home/baodian" class=" active ">我的宝典</a></li>
-        <li><a href="/home/shoucang" class="">我的收藏</a></li>
-        <li><a href="/home/duibi" class="">对比记录</a></li>
-        <li><a href="/home/maiche" class="">我买的车</a></li>
-        <li><a href="/home/shouche" class="">我卖的车</a></li>
-        <li><a href="/home/huiyuan" class="">会员身份</a></li>
-        <li><a href="/home/mima" class="">修改密码</a></li>
+        <li><a href="http://www.chenghang.com/home/baodian" class=" active "><font class="bb">我的宝典</font></a></li>
+        <li><a href="http://www.chenghang.com/home/shoucang" class=""><font class="bb">我的收藏</font></a></li>
+        <li><a href="http://www.chenghang.com/home/duibi" class=""><font class="bb">对比记录</font></a></li>
+        <li><a href="http://www.chenghang.com/home/maiche" class=""><font class="bb">我买的车</font></a></li>
+        <li><a href="http://www.chenghang.com/home/shouche" class=""><font class="bb">我卖的车</font></a></li>
+        <li><a href="http://www.chenghang.com/home/huiyuan" class=""><font class="bb">会员身份</font></a></li>
+        <li><a href="http://www.chenghang.com/home/mima" class=""><font class="bb">修改密码</font></a></li>
                 
       </ul>
     </div>     
@@ -61,7 +72,7 @@
                 <img src="/img/error_people.png">
                 <div class="con fr">
                         <p>主人，您暂时还没有提问，赶紧去宝典看看有没有想问的吧！</p>
-                        <a href="https://www.xin.com/qa/lists/" target="_blank">去宝典看看&nbsp;&gt;</a>
+                        <a href="https://www.xin.com/qam/lists/" target="_blank">去宝典看看&nbsp;&gt;</a>
                 </div>
             </div>
         </div>

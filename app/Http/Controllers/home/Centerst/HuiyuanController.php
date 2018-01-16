@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Home\Centerst;
 
 use Illuminate\Http\Request;
 
@@ -10,13 +10,14 @@ use Flc\Dysms\Client;
 use Flc\Dysms\Request\SendSms;
 
 
-class CenterController extends Controller
+class HuiyuanController extends Controller
 {
    
-        //显示个人中心界面
+    
+        //显示个人中心会员界面
         public function index()
         {
-            return view('home/centers/PersonalCenter');
+            return view('home/centers/CenterHuiyuan');
         }
     
 }
