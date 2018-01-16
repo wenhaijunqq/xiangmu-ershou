@@ -5,6 +5,33 @@
         <title>首页</title>
         <link rel="stylesheet" href="/css/h_index.css">
         <link rel="stylesheet" href="/css/h_public.css">
+        <link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
+        <link rel="stylesheet" href="/css/h_city.css">
+        <script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
+
+        <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
+        <script type="text/javascript">
+        
+        $(function(){
+            var fn2 = function(city){
+                c.value = city;
+            };
+            $('#test3').hover(function(){
+                $('#test3').css("color","red");
+                citypicker.show({
+                    left : 172,
+                    top  : 45,
+                    selected : fn2
+                }); 
+                
+            });
+            $('body').click(function(){
+                $('#test3').css("color","black");
+                $('#div_select_city_sub_menu').hide();
+            });
+
+        });
+        </script>
         <script>
             var i = 1;
             function dinashiqi(){
@@ -107,6 +134,7 @@
     </head>
     <body style="background-color: #f5f5f7">
    
+         
 
         <header class="head">
             <ul >
@@ -117,9 +145,8 @@
             <div class="nav">
                 <div class="nav-1">
                 </div>
-                <div class="nav-2">
-                    <span style="font-size: 14px;color: #888;">天津</span>
-                    <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
+                <div class="nav-2" style="height:25px">
+                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  style="border:0px;background:none;height:31px;font-size:14px;" />
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
@@ -455,6 +482,7 @@
                 <a href="###" target="_blank">天津二手起亚智跑</a>
                 <a href="####" target="_blank">天津二手现代现代ix...</a>
             </div>
+           
             <div class="friendly-link">
                 <p class="link-tit">友情链接：</p>
                 <span class="open-box"></span>
@@ -536,6 +564,7 @@
             <div class="friendly-link">
                 <p class="link-tit">热门页面：</p>
                 <span class="open-box"></span>
+                
                 <span class="close-box" data-role="is_show_box"></span>
                 <a href="#">1万元二手车</a>
                 <a href="#">2万左右二手车</a>
