@@ -20,7 +20,7 @@
          <div class="am-form-group">
           <div class="am-btn-toolbar">
            <div class="am-btn-group am-btn-group-xs">
-            <button type="button" class="am-btn am-btn-default am-btn-success new"><span class="am-icon-plus"></span> 新增</button>
+            <button type="button" class="am-btn am-btn-default am-btn-success new" onclick="listCar({{$type[0]['id']}})"><span class="am-icon-plus" ></span> 新增</button>
 
            </div>
           </div>
@@ -42,22 +42,22 @@
           <thead>
            <tr style="text-align:center">
             <th>ID</th>
-            <th>车辆标志</th>
-            <th>车辆名称</th>
+            <th>车辆类型</th>
+            <th>所属品牌</th>
             <th>操作</th>
            </tr>
           </thead>
           <tbody>
               @foreach($data as $k=>$v)
            <tr class="gradeX" style="text-align:center">
-            <td class="am-text-middle" id="content">{{$v['id']}}</td>
-            <td> <img src="{{$v['car_icon']}}" class="tpl-table-line-img" alt="" /></td>
+            <td class="am-text-middle">{{$v['id']}}</td>
             <td class="am-text-middle">{{$v['car_typeName']}}</td>
+            <td class="am-text-middle">{{$type[0]['car_typeName']}}</td>
             <td class="am-text-middle">
              <div class="tpl-table-black-operation">
               <a href="javascript:;" onclick="edit({{$v['id']}})"> <i class="am-icon-pencil"></i> 编辑 </a>
-              <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteCar({{$v['id']}},$(this))"> <i class="am-icon-trash"></i> 删除 </a>
-              <a href="/admin/CarType/Carlist/{{$v['id']}}" class="am-btn tpl-table-black-operation"> <i class="am-icon-archive"></i> 查看 </a>
+              <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteCar({{$v['id']}})"> <i class="am-icon-trash" ></i> 删除 </a>
+
              </div>
             </td>
            </tr>
@@ -88,57 +88,46 @@
  </body>
 </html>
 <script type="text/javascript">
-    $(".new").click(function()
-    {
-        layer.open({
-      type: 2,
-      title: '车辆类别添加',
-      shadeClose: true,
-      shade: false,
-      maxmin: true, //开启最大化最小化按钮
-      area: ['893px', '600px'],
-      content: '/admin/CarType/add'
-            });
-    });
-
-    function edit(obj)
-    {
-
-        layer.open({
-      type: 2,
-      title: '车辆类别添加',
-      shadeClose: true,
-      shade: false,
-      maxmin: true, //开启最大化最小化按钮
-      area: ['893px', '600px'],
-      content: '/admin/CarType/'+obj+'/edit',
-        });
+    function listCar(tid){
+        var url ="/admin/CarType/CarModel/"+tid;
+        window.location.href=url;
     }
 
-    function deleteCar(id,obj){
+    function edit(id)
+    {
+        //console.log(id);
+        layer.open({
+              type: 2,
+              title: '车辆类别添加',
+              shadeClose: true,
+              shade: false,
+              maxmin: true, //开启最大化最小化按钮
+              area: ['893px', '600px'],
+              content: '/admin/CarType/'+id+'/edit'
+                });
+    }
 
-        layer.confirm('您确定要删除吗?', {
-              btn: ['确定','取消'] //按钮
-            }, function()
+    function deleteCar(pid)
+    {
+        layer.confirm('您确定要删除数据吗？',
             {
-
-                $.get("/admin/CarType/"+id+"/delete/",function(data){
-                        if(data ==1){
-
-                            layer.msg('恭喜您,删除成功', {icon: 1});
-                            obj.parent().parent().parent().remove();
-                        }else{
-
-
-                        }
-
+              btn: ['确定','取消'] //按钮
+            }, function(){
+                $.get('/admin/CarType/'+pid+'/delete/',function(data){
+                    if(data == 1){
+                        layer.msg('删除成功', {icon: 1});
+                        window.location.reload();
+                    }else{
+                        layer.msg('删除失败', {icon: 2});
+                        window.location.reload();
+                    }
                 })
             }, function()
             {
-              layer.msg('您已取消操作', {icon: 5});
-            });
-    }
+              layer.msg('已取消操作', {icon: 3});
+});
 
+    }
 
 
 

@@ -25,18 +25,7 @@ Route::get('/www/sell', function () {
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
 });
-Route::get('/www/oldcar', function () {
-    return view('/home/OldCarCon');
-});
-Route::get('/www/ask',function(){
-	return view('/home/question/ask');
-});
-Route::get('/www/asklist',function(){
-	return view('/home/question/asklist');
-});
-Route::get('/www/answer',function(){
-	return view('/home/question/answer');
-});
+
 Route::get('IndexLogin', function () {
     return view('/home/login');
 });
@@ -58,6 +47,9 @@ Route::get('/www/xiangqing', function () {
 });
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
+Route::get('/home/answer/{id}','Home\AnswerController@index');
+Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
+
 
 //后台模板引入
 Route::controller('/admin/login','Admin\LoginController');
@@ -87,9 +79,26 @@ Route::get('/admin/question-reply',function(){
 Route::get('admin/CarType/add',function(){
 	return view('admin/cartype/addCarType');
 });
+
 //后台网站车辆管理
+//增加类型
+Route::post('/admin/CarType/createCat','admin\VehiclInfoController@test');
+//加载修改页面
+Route::get('/admin/CarType/{id}/edit/','admin\VehiclInfoController@destroy');
+//修改类型
+Route::post('/admin/CarType/updateCar/{id}','admin\VehiclInfoController@update');
+//删除修改页面
+Route::get('/admin/CarType/{pid}/delete/','admin\VehiclInfoController@edit');
+//后台网站车辆品牌增加页面
+Route::get('admin/CarType/CarModel/{id}','admin\VehiclInfoController@ModelIndex');
+//后台网站车辆品牌添加
+Route::post('/admin/CarType/addCarModel','admin\VehiclInfoController@addModel');
+//后台网站车辆车型查看
+Route::get('/admin/CarType/Carlist/{id}','admin\VehiclInfoController@CarList');
+//后台网站车辆管理页面
 Route::resource('admin/CarType/','admin\VehiclInfoController');
-//后台网站车辆类型增加
+
+
 
 
 
@@ -119,17 +128,23 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
+
+
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
+Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
 //车看用户
 Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
 
-Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台车辆基本信息查看
-Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');
 
 //后台用户管理分区
@@ -146,6 +161,8 @@ Route::resource('/admin/Carousel/list','admin\CarouselController');
 Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
+
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 //后台表单页
 Route::get('/admin/form',function(){
@@ -172,8 +189,8 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 
+
 //后台用户管理分区
-//
 Route::get('/admin/lists',function(){
 	return view('/admin/UserManagement/tableList');
 });
@@ -184,6 +201,16 @@ Route::get('/admin/imglists',function(){
 
 Route::controller('/db','Dbcontroller');
 Route::resource('imglists','imglistsController');
+
+
+
+Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+//后台车辆基本信息查看
+Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+//后台评估报告
+Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+
+
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
 	return view('/admin/UserManagement/tableList');
@@ -191,11 +218,15 @@ Route::get('/admin/xinzeng',function(){
 Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
+
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
+
+Route::resource('/admin/Link','admin\LinkController');
+
 
 Route::resource('/admin/link','admin\LinkController');
 Route::resource('/admin/link/list','admin\LinkController');
@@ -203,6 +234,14 @@ Route::resource('/admin/link/list','admin\LinkController');
 
 
 //前台
+
+
+//登录
+Route::get('home/login','admin\LoginController@login');
+Route::post('home/phone','admin\LoginController@phone');
+Route::post('code','LoginController@code');
+Route::post('dologin','LoginController@dologin');
+Route::post('shouye','LoginController@index');
 
 //前台用户登录
 Route::get('home/register','admin\LoginController@register');
