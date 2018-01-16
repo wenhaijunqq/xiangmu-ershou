@@ -34,7 +34,7 @@
                             <div class="widget-head am-cf">
                                 <div class="widget-title am-fl">预约信息</div>
                                 <div class="widget-function am-fr">
-                    
+                                     <a href="/admin/reserve"><button type="button" class="am-btn am-btn-success">返回预约列表</button></a>
                                 </div>
                             </div>
                             <div class="widget-body am-fr">
@@ -57,7 +57,7 @@
                                      <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 卖家编号 <span class="tpl-form-line-small-title">SELL_ID</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->buy_id}}" readonly>
+                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->sell_id}}" readonly>
                                         </div>
                                     </div>
                                     <div class="am-form-group">

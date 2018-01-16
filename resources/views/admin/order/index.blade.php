@@ -62,7 +62,7 @@
                                                 <th>交易时间</th>
                                                 <th>成交状态</th>
                                                 <th>成交价格</th>
-                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</th>
+                                                <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>

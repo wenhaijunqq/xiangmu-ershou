@@ -17,43 +17,45 @@
                             <div class="widget-head am-cf">
                                 <div class="widget-title am-fl">人员基本信息</div>
                                 <div class="widget-function am-fr">
-                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                    <a href="/admin/order"><button type="button" class="am-btn am-btn-success">返回订单列表</button></a>
                                 </div>
                             </div>
                             <div class="widget-body am-fr">
 
                                 <form class="am-form tpl-form-border-form tpl-form-border-br">
+                                <fieldset disabled>
                                     <div class="am-form-group">
                                         <label for="car-title" class="am-u-sm-3 am-form-label">订单信息：</label>
                                         <div class="am-u-sm-10">
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">订单编号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">订单编号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$data[0]->id}}"><br>
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="car-title" class="am-u-sm-3 am-form-label">卖家基本信息：</label>
                                         <div class="am-u-sm-10">
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">卖家ID：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">卖家姓名：  </label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">卖家手机号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">卖家ID：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$sell[0]->id}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">卖家姓名：  </label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$sell[0]->name}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">卖家手机号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$sell[0]->phone}}"><br>
                                         </div>
                                     </div>
                                    <div class="am-form-group">
                                         <label for="car-title" class="am-u-sm-3 am-form-label">买家基本信息：</label>
                                         <div class="am-u-sm-10">
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">买家ID：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">买家姓名：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">买家手机号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">买家ID：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$buy[0]->id}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">买家姓名：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$buy[0]->name}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">买家手机号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$buy[0]->phone}}"><br>
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="car-title" class="am-u-sm-3 am-form-label">评估员基本信息：</label>
                                         <div class="am-u-sm-10">
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员ID：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员姓名：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员手机号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
-                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员职称：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员ID：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$ping[0]->id}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员姓名：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$ping[0]->name}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员手机号：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$ping[0]->phone}}"><br>
+                                            <label for="car-title" class="am-u-sm-2 am-form-label">评估员职称：</label><input type="text" name="car-title" class="tpl-form-input" id="car-title" style="width:150px;" value="{{$ping[0]->auth == 1 ? '高级评估员' : '初级评估员'}}"><br>
                                         </div>
                                     </div>
+                                    </fieldset>
                                 </form>
                             </div>
                         </div>

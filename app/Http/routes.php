@@ -89,11 +89,11 @@ Route::post('admin/CarType/add','admin\VehiclInfoController@create');
 Route::resource('/admin/question','admin\QuestionController');
 
 //人员具体信息页面
-Route::get('/admin/basicperson','admin\BasicpersonController@index');
+Route::get('/admin/basicperson/{id}','admin\BasicpersonController@index');
 //车辆具体信息页面
 Route::get('/admin/basiccar','admin\BasicpersonController@show');
-
-
+//后台预约搜索页
+Route::resource('/admin/ysearch','admin\SearchController');
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');
 //后台订单信息页

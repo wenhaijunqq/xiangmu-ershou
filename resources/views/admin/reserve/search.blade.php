@@ -14,7 +14,7 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">预约列表</div>
+                                <div class="widget-title  am-cf">预约搜索</div>
 
 
                             </div>
@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form class="am-form-inline" role="form" action="/admin/ysearch/show" method="GET">
+                           <form class="am-form-inline" role="form" action="/admin/ysearch/show" method="GET">
                                     <div class="am-u-sm-9 am-u-md-6 am-u-lg-3">
                                         <div class="am-form-group tpl-table-list-select">
                                             <select data-am-selected="{btnSize: 'sm'}" name="check">
@@ -67,7 +67,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($data as $k=>$v)
+                                        @foreach($res as $k=>$v)
                                             <tr class="gradeX">
                                                 <td>{{$v -> rid}}</td>
                                                 <td>{{$v -> car_id}}</td>
@@ -101,7 +101,7 @@
 
   
                                           <div class="am-pagination-centered">
-                                            {!! $data->render() !!}
+                                            {!! $res->appends(['check'=>$check])->render() !!}
                                           </div>
   
                                     </div>
