@@ -76,7 +76,7 @@
                                                 <td><a>评估报告表<a/></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <a href="javascript:;" class="tpl-table-black-operation-del"  onclick="del({{$val['car_id']}},$(this))">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
@@ -111,6 +111,33 @@
         </div>
     </div>
     </div>
+    <script type="text/javascript">
+
+        function del(id,obj)
+        {
+            
+            layer.confirm('确定是否删除', {
+              btn: ['是','否'] //按钮
+            }, function(){
+               $.post("{{url('/admin/examine/already/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}',"id":id},function(data)
+                {
+
+                    if(data == 1){
+                        obj.parent().parent().parent().remove();
+                        layer.msg('已删除', {icon: 1});
+                    }
+                    
+                });
+
+                
+              
+              
+            }, function(){
+              
+            });
+           
+        }
+    </script>
 </body>
 
 </html>

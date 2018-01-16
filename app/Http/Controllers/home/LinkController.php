@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\appointment;
-class ExamineAlreadyController extends Controller
+use App\Http\Model\Link;
+
+class LinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +17,9 @@ class ExamineAlreadyController extends Controller
      */
     public function index()
     {
-        //加载已经审核页面
-        $data = appointment::where('audit_status',1)->where('del_audit',0)->get();
-
-        return view('admin/examine/already',['data'=>$data]);
+        //
+        echo "string";
+        // return view('/home/footer');
     }
 
     /**
@@ -85,12 +85,6 @@ class ExamineAlreadyController extends Controller
      */
     public function destroy($id)
     {
-        //接受id执行修改
-        $res = appointment::where('car_id',$id)->update(['del_audit'=> 1]);
-        if($res){
-            echo "1";
-        }else{
-            echo "0";
-        }
+        //
     }
 }

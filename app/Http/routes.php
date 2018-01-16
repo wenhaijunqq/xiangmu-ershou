@@ -122,11 +122,10 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-
-
-Route::resource('/admin/basicinformation','admin\BasicInformationController');
+Route::post('/admin/estimate/basicinformation/edit/{id}','admin\BasicInformationController@updates');
 
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
@@ -137,6 +136,7 @@ Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementCont
 //后台车辆基本信息查看
 Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
+Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');
@@ -218,12 +218,7 @@ Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-
 Route::resource('/admin/Link','admin\LinkController');
-
-
-Route::resource('/admin/link','admin\LinkController');
-Route::resource('/admin/link/list','admin\LinkController');
 
 
 
@@ -241,3 +236,6 @@ Route::post('shouye','LoginController@index');
 Route::get('home/register','admin\LoginController@register');
 //前台登录验证
 Route::post('home/dotelregister','admin\LoginController@dotelregister');
+
+//前台友情链接
+Route::resource('home/footer','home\LinkController');

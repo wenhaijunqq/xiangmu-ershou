@@ -69,27 +69,37 @@
                                                 <td>{{$val['sell_id']}}</td>
                                                 <td>{{$val['ping_id']}}</td>
                                                 <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看车辆基础信息</a></td>
-                                                @if($val['status']==0)
+                                                @if($val['assess_status']==0)
                                                 <td>未评估</td>
-                                                @elseif($val['status']==1)
+                                                @else($val['assess_status']==1)
                                                 <td>已评估</td>
-                                                @else
-                                                <td>正在评估</td>
                                                 @endif     
                                                 <td><a>查看评估报告</a></td>
+                                                @if($val['assess_status']==1)
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;">
+                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},$(this))">
                                                             <i class="am-btn-success"></i> 审核通过
                                                         </a>
-                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del({{$val['car_id']}},$(this))">
+                                                            <i class="am-btn-trash" ></i> 审核不通过
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                @else($val['assess_status']==0)
+                                                <td>
+                                                    <div class="tpl-table-black-operation">
+                                                        <a style="color:#aaa;border:1px #aaa solid">
+                                                            <i class="am-btn-success"></i> 审核通过
+                                                        </a>
+                                                        <a style="color:#aaa;border:1px #aaa solid">
                                                             <i class="am-btn-trash"></i> 审核不通过
                                                         </a>
                                                     </div>
                                                 </td>
+                                                @endif
                                             </tr>
                                             @endforeach
-                                            <!-- more data
                                         </tbody>
                                     </table>
                                 </div>
@@ -115,6 +125,49 @@
         </div>
     </div>
     </div>
+    <script type="text/javascript">
+
+        function add(id,obj)
+        {
+            layer.confirm('确定通过审核', {
+              btn: ['是','否'] //按钮
+            }, function(){
+              $.get("{{url('/admin/examine/wait/')}}/"+id,{"id":id},function(data)
+                {
+                    if(data == 1){
+                        obj.parent().parent().parent().remove();
+                        layer.msg('通过审核', {icon: 1});
+                    }
+                    
+                });
+
+              
+            }, function(){
+              
+            });
+        }
+        function del(id,obj)
+        {
+            //alert($);
+            layer.confirm('确定不通过审核', {
+              btn: ['是','否'] //按钮
+            }, function(){
+               $.post("{{url('/admin/examine/wait/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}',"id":id},function(data)
+                {
+                    if(data == 1){
+                        obj.parent().parent().parent().remove();
+                        layer.msg('没有通过审核', {icon: 1});
+                    }
+                    
+                });
+              
+              
+            }, function(){
+              
+            });
+           
+        }
+    </script>
 </body>
 
 </html>

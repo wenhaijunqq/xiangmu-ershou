@@ -17,7 +17,7 @@ class EstimateAlreadyController extends Controller
     public function index()
     {
         //加载已评估页面
-        $data = appointment::get();
+        $data = appointment::where('ping_id','>',0)->where('assess_status',1)->where('del_assess',0)->get();
         return view('admin/estimate/already',['data'=>$data]);
     }
 
@@ -84,6 +84,12 @@ class EstimateAlreadyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //获取信息
+       $res = appointment::where('rid',$id)->update(['del_assess'=>1]);
+        if($res){
+            echo "1";
+        }else{
+            echo "0";
+        }
     }
 }
