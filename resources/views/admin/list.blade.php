@@ -48,6 +48,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
                         <i class="am-icon-table sidebar-nav-link-logo"></i>车辆管理分区
@@ -67,6 +68,7 @@
                         </li>
                     </ul>
                 </li>
+
 
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
@@ -107,6 +109,7 @@
                     </ul>
                 </li>
 
+
                 <li class="sidebar-nav-link">
                     <a href="/admin/signup">
                         <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
@@ -123,6 +126,7 @@
                         <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
                     </a>
                 </li>
+
 
                 <li class="sidebar-nav-link">
                     <a href="/admin/config">
@@ -163,7 +167,7 @@
                             </a>
                     </li>
                 <li class="sidebar-nav-link">
-                            <a href="/admin/link">
+                            <a href="/admin/Link">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 友情链接
                             </a>
                         </li>

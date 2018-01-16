@@ -27,6 +27,7 @@ class VehiclInfoController extends Controller
      */
     public function create(Request $request)
     {
+        dump($_POST);
 
     }
 
@@ -38,6 +39,7 @@ class VehiclInfoController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($_POST);
         //获取文件上传的临时文件
          $file = $request->file('pic');
          //验证

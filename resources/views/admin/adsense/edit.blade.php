@@ -4,8 +4,6 @@
 @section('content')
 
         <!-- 内容区域 -->
-      
-
             <div class="row-content am-cf">
 
 
@@ -16,13 +14,12 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title am-fl">广告修改</div>
+                                <div class="widget-title am-fl">修改广告位</div>
                                 <div class="widget-function am-fr">
                                     <a href="javascript:;" class="am-icon-cog"></a>
                                 </div>
                             </div>
                             <div class="widget-body am-fr">
-                              
                                 <form class="am-form tpl-form-border-form tpl-form-border-br" action="/admin/adsense/{{$res->id}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{ method_field('PATCH') }}

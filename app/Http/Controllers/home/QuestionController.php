@@ -19,11 +19,12 @@ class QuestionController extends Controller
     {
         //查询数据并且分页
         $type = array(0,1,2,3);
-        $data = DB::table('question')->where('type',$type[0])->paginate(4);
-        $data1 = DB::table('question')->where('type',$type[1])->paginate(4);
-        $data2 = DB::table('question')->where('type',$type[2])->paginate(4);
-        $data3 = DB::table('question')->where('type',$type[3])->paginate(4);
-        return view('/home/OldCarCon',['data'=>$data,'data1'=>$data1,'data2'=>$data2,'data3'=>$data3]);
+        $check = array(0,1);
+        $data = DB::table('question')->where('type',$type[0])->where('check',$check[1])->paginate(4);
+        $data1 = DB::table('question')->where('type',$type[1])->where('check',$check[1])->paginate(4);
+        $data2 = DB::table('question')->where('type',$type[2])->where('check',$check[1])->paginate(4);
+        $data3 = DB::table('question')->where('type',$type[3])->where('check',$check[1])->paginate(4);
+        return view('/home/OldCarCon',['data'=>$data,'data1'=>$data1,'data2'=>$data2,'data3'=>$data3,'type'=>$type]);
     }
 
    

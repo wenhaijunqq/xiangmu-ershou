@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
-class ConfigController extends Controller
+use App\Http\Model\Link;
+
+class LinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,9 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        $data = DB::table('config') -> get();
-        //加载网站配置首页
-        return view('/admin/config/index',['data'=>$data]);
+        //
+        echo "string";
+        // return view('/home/footer');
     }
 
     /**

@@ -561,12 +561,1353 @@
                                                 <input type="text" name="Right-front-lining1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                         </tr>
-                                
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-D-column">左D柱</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-D-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-D-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-D-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-D-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="Left-C-column">左C柱</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Left-C-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-C-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-C-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-C-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-side">左侧顶边梁</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-side" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-side" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-side" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-side1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="Left-B-column">左B柱</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Left-B-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-B-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-B-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-B-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-A-column">左A柱</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-A-column" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-A-column" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-A-column" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-A-column1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td style="text-align:center">
+                                                <label for="Left-edge">左侧底大边</label>
+                                            </td>
+                                            <td>
+                                                 <input type="radio" name="Left-edge" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-edge" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-edge" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-edge1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td style="text-align:center">
+                                                <label for="Left-A-column">左侧驾驶舱底板</label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="Left-floor" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-floor" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-floor" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-floor1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
                                         <!-- more data -->
                                     </tbody>
                                 </table>
-                                
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">泡水排查检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Cabin-box">机舱保险盒</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Cabin-box" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Cabin-box" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Cabin-box" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Cabin-box1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Seat-screws">座椅滑轨及固定螺丝</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Seat-screws" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Seat-screws" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Seat-screws" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Seat-screws1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Interior-harness">车内线束</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Interior-harness" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Interior-harness" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Interior-harness" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Interior-harness1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Seat-bottom">安全带底部</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Seat-bottom" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Seat-bottom" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Seat-bottom" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Seat-bottom1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="The-cushion">全车座椅座垫</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="The-cushion" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="The-cushion" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="The-cushion" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="The-cushion1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Car-plastic">全车地毯地胶</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Car-plastic" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Car-plastic" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Car-plastic" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Car-plastic1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Ashtray base">烟灰缸底座</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Ashtray base" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Ashtray base" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Ashtray base" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Ashtray base1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                 </tbody>
+                            </table>
+                             <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">火烧排查检测</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Firewall-cotton">防火墙隔音棉</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Firewall-cotton" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Firewall-cotton" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Firewall-cotton" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Firewall-cotton1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Main-harness">发动机主线束</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Main-harness" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Main-harness" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Main-harness" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Main-harness1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">机舱项检测</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine-oil-pan">发动机油底壳</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine-oil-pan" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Engine-oil-pan" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine-oil-pan" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine-oil-pan1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Antifreeze-level">防冻液液面</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Antifreeze-level" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Antifreeze-level" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Antifreeze-level" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Antifreeze-level1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                   
+                                    
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Transmission">变速箱总成</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Transmission" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Transmission" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Transmission" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Transmission1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine assembly">发动机总成</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine assembly" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Engine assembly" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine assembly" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine assembly1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Brake-oil-pot">制动油壶</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Brake-oil-pot" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Brake-oil-pot" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Brake-oil-pot" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Brake-oil-pot1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Booster-oil">助力油壶</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Booster-oil" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Booster-oil" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Booster-oil" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Booster-oil1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Water-tank-pipes">水箱水管</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Water-tank-pipes" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Water-tank-pipes" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Water-tank-pipes" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Water-tank-pipes1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Water-tank">水箱</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Water-tank" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Water-tank" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Water-tank" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Water-tank1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine-belt">发动机外围皮带</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine-belt" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Engine-belt" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine-belt" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine-belt1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine-pad">发动机缸垫</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine-pad" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Engine-pad" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine-pad" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine-pad1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Oil-level">机油液面</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Oil-level" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Oil-level" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Oil-level" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Oil-level1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Battery">电瓶（极柱）</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Battery" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Battery" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Battery" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Battery1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Power-pump">转向助力泵</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Power-pump" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Power-pump" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Power-pump" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Power-pump1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Condenser">冷凝器</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Condenser" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Condenser" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Condenser" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Condenser1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Transmission-pan">变速箱油底壳</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Transmission-pan" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Transmission-pan" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Transmission-pan" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Transmission-pan1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">底盘悬架项检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-q-absorber">左前减震器</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Left-q-absorber" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-q-absorber" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-q-absorber" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-q-absorber1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-q-absorber">右前减震器</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-q-h-absorber" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-q-h-absorber" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-q-h-absorber" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-q-h-absorber1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-h-absorber">右后减震器</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-h-absorber" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-h-absorber" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-h-absorber" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-h-absorber1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-h-absorber">左后减震器</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Left-h-absorber" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-h-absorber" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-h-absorber" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-h-absorber1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
+                                
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">安全系统检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Driver-seat-airbag">驾驶座安全气囊</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Driver-seat-airbag" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Driver-seat-airbag" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Driver-seat-airbag" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Driver-seat-airbag1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Co-pilot-airbag">副驾驶安全气囊</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Co-pilot-airbag" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Co-pilot-airbag" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Co-pilot-airbag" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Co-pilot-airbag1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Front-side-airbags">前排侧气囊</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Front-side-airbags" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Front-side-airbags" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Front-side-airbags" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Front-side-airbags1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rear-side-airbags">后排侧气囊</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rear-side-airbags" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rear-side-airbags" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rear-side-airbags" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rear-side-airbags1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Front-head-airbags">前排头部气囊</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Front-head-airbags" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Front-head-airbags" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Front-head-airbags" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Front-head-airbags1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rear-head-airbags">后排头部气囊</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rear-head-airbags" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rear-head-airbags" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rear-head-airbags" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rear-head-airbags1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Tire-pressure-monitoring">胎压监测</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Tire-pressure-monitoring" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Tire-pressure-monitoring" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Tire-pressure-monitoring" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Tire-pressure-monitoring1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Central-locking">中控锁</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Central-locking" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Central-locking" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Central-locking" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Central-locking1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Child-seat">儿童座椅接口</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Child-seat" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Child-seat" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Child-seat" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Child-seat1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Keyless start">无钥匙启动</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Keyless-start" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Keyless-start" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Keyless-start" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Keyless-start1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Keyless-entry">无钥匙进入系统</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Keyless-entry" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Keyless-entry" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Keyless-entry" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Keyless-entry1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="remote-key">遥控钥匙</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="remote-key" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="remote-key" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="remote-key" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="remote-key1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="ABS">防抱死系统(ABS)</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="ABS" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="ABS" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="ABS" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="ABS1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="ESP">车身稳定控制(ESP)</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="ESP" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="ESP" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="ESP" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="ESP1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Electronic-parking-brake">电子驻车制动</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Electronic-parking-brake" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Electronic-parking-brake" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Electronic-parking-brake" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Electronic-parking-brake1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                           
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">外部配置检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-h-front-hub">左前轮毂</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Left-h-front-hub" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-h-front-hub" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-h-front-hub" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-h-front-hub1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-front-tire">左前轮胎</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Left-front-tire" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-front-tire" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-front-tire" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-front-tire1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="front-windshield">前挡风玻璃</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="front-windshield" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="front-windshield" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="front-windshield" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="front-windshield1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-q-front-hub">右前轮毂</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-q-front-hub" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-q-front-hub" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-q-front-hub" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-q-front-hub1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-front-tire">右前轮胎</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-front-tire" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-front-tire" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-front-tire" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-front-tire1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-h-front-hub">右后轮毂</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-front-hub" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-front-hub" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-front-hub" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-front-hub1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-rear-tire">右后轮胎</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-rear-tire" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-rear-tire" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-rear-tire" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-rear-tire1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rear-windshield">后挡风玻璃</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rear-windshield" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rear-windshield" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rear-windshield" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rear-windshield1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Right-h-rear-hub">左后轮毂</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Right-rear-hub" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Right-rear-hub" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Right-rear-hub" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Right-rear-hub1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-rear-tire">左后轮胎</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Left-rear-tire" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-rear-tire" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-rear-tire" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-rear-tire1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Panoramic-skylight">全景天窗</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Panoramic-skylight" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Panoramic-skylight" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Panoramic-skylight" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Panoramic-skylight1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Induction-wipers">感应雨刷</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Induction-wipers" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Induction-wipers" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Induction-wipers" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Induction-wipers1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="After-wipers">后雨刷</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="After-wipers" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="After-wipers" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="After-wipers" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="After-wipers1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Front-window">前电动车窗</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Front-window" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Front-window" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Front-window" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Front-window1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rear-windows">后电动车窗</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rear-windows" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rear-windows" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rear-windows" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rear-windows1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rearview-mirror-adjustment">后视镜电动调节</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rearview-mirror-adjustment" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rearview-mirror-adjustment" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rearview-mirror-adjustment" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rearview-mirror-adjustment1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rearview-mirror-fold">后视镜电动折叠</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rearview-mirror-fold" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rearview-mirror-fold" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rearview-mirror-fold" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rearview-mirror-fold1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rearview-heatingr">后视镜加热</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rearview-heatingr" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rearview-heatingr" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rearview-heatingr" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rearview-heatingr1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Electric-door"> 电动吸合门</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Electric-door" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Electric-door" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Electric-door" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Electric-door1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Rear-side-sunshade">后排侧遮阳帘</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Rear-side-sunshade" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Rear-side-sunshade" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Rear-side-sunshade" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Rear-side-sunshade1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Induction-trunk">感应后备箱</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Induction-trunk" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Induction-trunk" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Induction-trunk" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Induction-trunk1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Electric-sunroof">电动天窗</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Electric-sunroof" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Electric-sunroof" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Electric-sunroof" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Electric-sunroof1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                       
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">内部配置检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Leather-seat">皮质座椅</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Leather-seat" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Leather-seat" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Leather-seat" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Leather-seat1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="front-heated">前排座椅加热</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="front-heated" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="front-heated" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="front-heated" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="front-heated1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Seat-ventilation">座椅通风</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Seat-ventilation" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Seat-ventilation" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Seat-ventilation" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Seat-ventilation1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Driver-adjustment">驾驶座座椅电动调节</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Driver-adjustment" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Driver-adjustment" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Driver-adjustment" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Driver-adjustment1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Multifunction-wheel">多功能方向盘</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Multifunction-wheel" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Multifunction-wheel" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Multifunction-wheel" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Multifunction-wheel1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Cruise">定速巡航</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Cruise" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Cruise" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Cruise" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Cruise1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="GPS">GPS导航</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="GPS" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="GPS" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="GPS" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="GPS1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Reversing-radar">倒车雷达</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Reversing-radar" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Reversing-radar" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Reversing-radar" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Reversing-radar1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Reverse-image">倒车影像系统</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Reverse-image" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Reverse-image" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Reverse-image" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Reverse-image1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Manual-conditioning">手动空调</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Manual-conditioning" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Manual-conditioning" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Manual-conditioning" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Manual-conditioning1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Automatic-conditioning">自动空调</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Automatic-conditioning" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Automatic-conditioning" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Automatic-conditioning" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Automatic-conditioning1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="HUD-display">HUD抬头显示</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="HUD-display" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="HUD-display" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="HUD-display" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="HUD-display1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="conditioning">后排座椅加热</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="conditioning" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="conditioning" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="conditioning" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="conditioning1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Left-h-absorber">空调</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Left-h-absorber" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Left-h-absorber" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Left-h-absorber" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Left-h-absorber1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">灯光系统检测</th>
+                                        </tr>
+                                    </thead>
+                                     <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Low-lights">近光灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Low-lights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Low-lights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Low-lights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Low-lights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="High-beam">远光灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="High-beam" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="High-beam" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="High-beam" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="High-beam1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Front-turn-signal">前转向灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Front-turn-signal" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Front-turn-signal" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Front-turn-signal" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Front-turn-signal1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Fog-q-lightsr">前雾灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Fog-q-lights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Fog-q-lights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Fog-q-lights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Fog-lights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="After-signal">后转向灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="After-signal" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="After-signal" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="After-signal" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="After-signal1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="brake-light">刹车灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="brake-light" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="brake-light" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="brake-light" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="brake-light1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Reversing-lights">倒车灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Reversing-lights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Reversing-lights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Reversing-lights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Reversing-lights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Fog-h-lights">后雾灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Fog-h-lights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Fog-h-lights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Fog-h-lights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Fog-h-lights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Indoor-light">室内顶灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Indoor-light" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Indoor-light" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Indoor-light" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Indoor-lightr1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Xenon-headlights">氙气大灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Xenon-headlights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Xenon-headlights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Xenon-headlights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Xenon-headlights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="LED-headlights">LED大灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="LED-headlights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="LED-headlights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="LED-headlights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="LED-headlights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Automatic-headlights">自动头灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Automatic-headlights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Automatic-headlights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Automatic-headlights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Automatic-headlights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Fog-q-lights">前雾灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Fog-q-lights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Fog-q-lights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Fog-q-lights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Fog-q-lights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Headlight-adjustable">大灯高度可调</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Headlight-adjustable" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Headlight-adjustable" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Headlight-adjustable" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Headlight-adjustable1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                         <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Headlight">大灯清洗</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Headlight" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Headlight" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Headlight" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Headlight1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">高科技配置检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="departure-warning">车道偏离预警系统</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="departure-warning" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="departure-warning" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="departure-warning" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="departure-warning1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Automatic-parking">自动泊车</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Automatic-parking" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Automatic-parking" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Automatic-parking" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Automatic-parking1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Blind-system">盲点辅助系统</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Blind-system" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Blind-system" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Blind-system" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Blind-system1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Panoramic-camera">全景摄像头</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Panoramic-camera" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Panoramic-camera" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Panoramic-camera" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Panoramic-camera1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr><tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Fog-q-lights">前雾灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Fog-q-lights" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Fog-q-lights" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Fog-q-lights" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Fog-q-lights1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine-automatically">发动机自动启停</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine-automatically" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Engine-automatically" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine-automatically" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine-automatically1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">灯随车工具检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="jack">千斤顶</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="jack" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="jack" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="jack" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="jack1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Fire-extinguisher">灭火器</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Fire-extinguisher" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Fire-extinguisher" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Fire-extinguisher" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Fire-extinguisher1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="warning-signs">三角警示标</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="warning-signs" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="warning-signs" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="warning-signs" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="warning-signs1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Repair-kit">维修工具包</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Repair-kit" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Repair-kit" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Repair-kit" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Repair-kit1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Spare-tire">备胎</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Spare-tire" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Spare-tire" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Spare-tire" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Spare-tire1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">仪表台指示灯检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Tune-car">调表车</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Tune-car" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Tune-car" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Tune-car" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Tune-car1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Brake-indicator">制动系统指示灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Brake-indicator" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Brake-indicator" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Brake-indicator" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Brake-indicator1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Airbag-light">安全气囊故障灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Airbag-light" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Airbag-light" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Airbag-light" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Airbag-light1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Body-light">车身稳定系统故障灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Body-light" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Body-light" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Body-light" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Body-light1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine-light">发动机故障灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine-light" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Engine-light" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine-light" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine-light1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Transmission-light">变速箱故障灯</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Transmission-light" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Transmission-light" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Transmission-light" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Transmission-light1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">发动机状态检测</th>
+                                        </tr>
+                                    </thead>
+                                    <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="start-up">启动</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="start-up" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="start-up" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="start-up" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="start-up1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Idle-speed">怠速</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Idle-speed" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Idle-speed" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Idle-speed" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Idle-speed1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Engine-shake">发动机抖动</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Engine-shake" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="LEngine-shake" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Engine-shake" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Engine-shake1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="exhaust">尾气</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="exhaust" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="exhaust" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="exhaust" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="exhaust1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                </table>
+                                <table width="100%" class="am-table-compact  tpl-table-black " >
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" style="text-align:center">变速箱及转向检测</th>
+                                        </tr>
+                                    </thead>
+                                        <tr class="gradeX">
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Gearbox-gear">变速箱挂挡</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Gearbox-gear" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Gearbox-gear" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Gearbox-gear" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Gearbox-gear1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                            <td width="20%" style="text-align:center">
+                                                <label for="Turn">转向</label>
+                                            </td>
+                                            <td width="30%">
+                                                <input type="radio" name="Turn" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Turn" value="0" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Turn" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Turn1" value="" style="display:none" placeholder="请输入异常信息">
+                                            </td>
+                                        </tr>
+                                </table>
                             </div>
                         </div>
                     </div>

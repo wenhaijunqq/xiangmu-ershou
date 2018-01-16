@@ -62,7 +62,7 @@
                                         <tbody>
                                         @if(count($res) == 1)
                                         @foreach($res as $v) 
-                                            <tr class="gradeX">
+                                            <tr class="gradeX" style="text-align:center">
                                                 <td class="am-text-middle">{{$v['id']}}</td>
                                                 <td>
                                                     <img src="../../../uploads/{{$v['pic']}}" class="tpl-table-line-img" alt="" style="max-height: 100px;">
