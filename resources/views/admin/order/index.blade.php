@@ -29,29 +29,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-                                    <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-                                          <option value="option1">所有类别</option>
-                                          <option value="option2">订单编号</option>
-                                          <option value="option3">买家id</option>
-                                          <option value="option4">卖家id</option>
-                                          <option value="option5">评估员id</option>
-                                          <option value="option6">成交状态</option>
-                                          <option value="option7">成交价格</option>
-
-                                        </select>
+                                <form class="am-form-inline" role="form" action="/admin/order/show" method="GET">
+                                    <div class="am-u-sm-9 am-u-md-6 am-u-lg-3">
+                                        <div class="am-form-group tpl-table-list-select">
+                                            <select data-am-selected="{btnSize: 'sm'}" name="check">
+                                              <option value="1">请选择搜索类别</option>
+                                              <option value="id">订单编号</option>
+                                              <option value="user">用户id</option>
+                                              <option value="ping_id">评估员id</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
-                                    <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field ">
-                                        <span class="am-input-group-btn">
-                                           <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button" ></button>
-                                        </span>
+                                    <div class="am-u-sm-3 am-u-md-6 am-u-lg-3">
+                                        <div class="am-input-group tpl-form-border-form cl-p">
+                                              <div class="am-form-group">
+                                                <input type="text" class="am-form-field am-input-sm" name="key">
+                                              </div>
+                                              <button type="submit" class="am-btn am-btn-default am-btn-success">搜索</button>
+                                            
+                                        </div>
                                     </div>
-                                </div>
-
+                                </form>
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -64,7 +62,7 @@
                                                 <th>交易时间</th>
                                                 <th>成交状态</th>
                                                 <th>成交价格</th>
-                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</th>
+                                                <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -95,20 +93,11 @@
                                             <!-- more data -->
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="am-u-lg-12 am-cf">
-
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
+                                    <div id="pull_right">
+                                      <div class="am-pagination-right">
+                                        {!! $data->render() !!}
+                                      </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>

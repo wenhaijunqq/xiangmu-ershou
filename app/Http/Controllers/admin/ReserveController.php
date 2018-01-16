@@ -17,7 +17,7 @@ class ReserveController extends Controller
     public function index()
     {
         //加载预约信息首页的操作
-        $data = DB::table('reserve') -> orderBy('yutime','desc') -> get();
+        $data = DB::table('reserve') -> orderBy('yutime','desc') -> paginate(5);
         //将数据返回
         return view('admin.reserve.index',['data'=>$data]);
     }
@@ -51,7 +51,13 @@ class ReserveController extends Controller
      */
     public function show($id)
     {
-        //
+        //执行查看的操作
+        $data = DB::table('reserve') -> where('rid',$id) -> get();
+        $sell = DB::table('user') -> where('id',$data[0]->sell_id) -> get();
+        $buy = DB::table('user') -> where('id',$data[0]->buy_id) -> get();
+        $ping = DB::table('assessor') -> where('id',$data[0]->ping_id) -> get();
+        //将数据带回网页
+        return view('admin.reserve.show',['data'=>$data,'sell'=>$sell,'buy'=>$buy,'ping'=>$ping]);
     }
 
     /**
@@ -63,10 +69,11 @@ class ReserveController extends Controller
     public function edit($id)
     {
         //加载修改页的操作
-        $data = DB::table('reserve') -> where('rid',$id) -> first();
-        // $data1 = DB::table('assessor') -> where
+        $data = DB::table('reserve') -> where('rid',$id) -> get();
+        $ping = DB::table('assessor') -> get();
+        // dd($ping);
         //将数据带去修改页
-        return view('admin.reserve.edit',['data'=>$data]);
+        return view('admin.reserve.edit',['data'=>$data,'ping'=>$ping]);
 
     }
 
@@ -97,6 +104,12 @@ class ReserveController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //执行删除的操作
+        $res = DB::table('reserve') -> where('rid',$id) -> delete();
+        if($res){
+            echo '<script>alert("删除成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }else{
+            echo '<script>alert("删除失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }
     }
 }

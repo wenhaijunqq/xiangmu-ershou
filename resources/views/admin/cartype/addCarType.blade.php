@@ -125,6 +125,7 @@
 
             $("#sumbit").click(function(){
 
+        $(document).on("click","#sumbit",function(){
 
             //判断是否上传文件
                 var imgPath = $(".myfile").val();
@@ -134,6 +135,7 @@
                    return;
                    }
                  if(imgPath == ""){
+
                     imgPath = $('#myimg').attr('src');
                 }
                 $.post("/admin/CarType/createCat",{'_token':'{{csrf_token()}}','car_typeName':title,'car_icon':arr.filePath,'tid':0},function(data){
@@ -158,6 +160,14 @@
                         }
                 });
             })
+                    layer.msg('请添加品牌图标');
+                    return;
+                }
+                $.post("admin/CarType/add",{'car_typeName':$('user-name').val(),'car_icon':arr.filePath,'_token':csrf_field()},function(){
+
+                })
+
+        })
 
 
 

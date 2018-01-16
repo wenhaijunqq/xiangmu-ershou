@@ -1,28 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\Link;
-
-class LinkController extends Controller
+use DB;
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
+    public function index()
     {
-        // echo "加载友情链接显示页面";
-        //加载友情链接显示页面
-         $res= Link::get();
-        
-          return view('/admin/Link/list',['res'=>$res]);
-
+        //
     }
 
     /**
@@ -32,8 +26,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        //加载添加友情链接页面
-        return view('/admin/Link/create');
+        //
     }
 
     /**
@@ -50,12 +43,26 @@ class LinkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  varchar $key
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$key)
     {
-        //
+        //预约页面搜索控制器
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/reserve"</script>';
+        }else if($check == 'user'){
+            $res = DB::table('reserve')->where('sell_id','like','%'.$key.'%')->orwhere('buy_id','like','%'.$key.'%')->paginate(3);
+            $count = DB::table('reserve')->where('sell_id','like','%'.$key.'%')->orwhere('buy_id','like','%'.$key.'%')->count();
+        }else{
+            $res = DB::table('reserve')->where("$check",'like','%'.$key.'%')->paginate(3);
+            $count = DB::table('reserve')->where("$check",'like','%'.$key.'%')->count();
+        }
+        $res->setPath('/admin/ysearch/show');
+        $res = $res->appends(array('key'=>$key));
+        return view('/admin/reserve/search',['res'=>$res,'count'=>$count,'check'=>$check]);
     }
 
     /**
@@ -67,7 +74,6 @@ class LinkController extends Controller
     public function edit($id)
     {
         //
-        return view('/admin/Link/edit');
     }
 
     /**

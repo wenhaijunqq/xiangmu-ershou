@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Model\vehicle_information;
 class BasicInformationController extends Controller
 {
     /**
@@ -16,8 +16,7 @@ class BasicInformationController extends Controller
      */
     public function index()
     {
-        //加载已评估页面
-        return view('admin/estimate/basicinformation');
+        
     }
 
     /**
@@ -27,7 +26,7 @@ class BasicInformationController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,7 +37,8 @@ class BasicInformationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         
+        
     }
 
     /**
@@ -60,7 +60,9 @@ class BasicInformationController extends Controller
      */
     public function edit($id)
     {
-        //
+        //加载修改基础信息页面
+        $data = vehicle_information::where('car_id',$id)->first();
+        return view('admin/estimate/updateinformation',['data'=>$data]);
     }
 
     /**
@@ -72,7 +74,16 @@ class BasicInformationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // 获取数据
+        $data = $request->except(['_token','_method']);
+        $data['car_id'] = $id;
+        $res = vehicle_information::insert($data);
+        if($res){
+             echo "<script>alert('添加成功！');location.href='/admin/estimate/wait'</script>";   
+        }else{
+            echo "<script>alert('添加失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+        }
+
     }
 
     /**
@@ -84,5 +95,10 @@ class BasicInformationController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function indexs($id)
+    {
+        //加载已评估页面
+        return view('admin/estimate/basicinformation',['id'=>$id]);
     }
 }

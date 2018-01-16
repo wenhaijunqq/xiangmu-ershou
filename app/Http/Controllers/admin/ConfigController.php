@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class ConfigController extends Controller
 {
     /**
@@ -16,8 +16,10 @@ class ConfigController extends Controller
      */
     public function index()
     {
+        $data = DB::table('config')->first();
+        // dd($data);
         //加载网站配置首页
-        return view('/admin/config/index');
+        return view('admin/config/index',['data'=>$data]);
     }
 
     /**
@@ -38,7 +40,24 @@ class ConfigController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //获取文件上传的临时文件
+        $file = $request->file('pic');
+        //验证
+        //获取文件路径
+        $transverse_pic = $file ->getRealPath();
+        //获取后缀名
+        $postfix = $file ->getClientOriginalExtension();
+         $fileName = md5(time().rand(0,10000)).".".$postfix;
+
+        $disk = \Storage::disk('qiniu');
+        $disk->put($fileName,file_get_contents($transverse_pic));
+        //$disk->put($fileName,fopen($transverse_pic,'r+'));
+        $filePath = $disk->getDriver()->downloadUrl($fileName);
+        return Response()->json([
+           'filePath' => $filePath,
+           'fileName' => $fileName,
+           'message' => '恭喜上传成功'
+       ]);
     }
 
     /**

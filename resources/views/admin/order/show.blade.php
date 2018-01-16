@@ -29,13 +29,12 @@
                             <div class="widget-head am-cf">
                                 <div class="widget-title am-fl">订单信息</div>
                                 <div class="widget-function am-fr">
-                    
+                                    <a href="/admin/order"><button type="button" class="am-btn am-btn-success">返回订单列表</button></a>
                                 </div>
                             </div>
                             <div class="widget-body am-fr">
-            
+                                
                                 <form class="am-form tpl-form-border-form tpl-form-border-br">
-
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 订单编号 <span class="tpl-form-line-small-title">NUMBER</span></label>
                                         <div class="am-u-sm-9">
@@ -85,7 +84,7 @@
                                         </div>
                                     </div>
                                     <center>                                      
-                                        <a href="/admin/basicperson" class="am-btn am-btn-success" target="_blank"><span class="am-icon-archive"></span> 查看人员具体信息</a></button>
+                                        <a href="/admin/basicperson/{{$data->id}}" class="am-btn am-btn-success" target="_blank"><span class="am-icon-archive"></span> 查看人员具体信息</a></button>
                                        <a href="/admin/basiccar" class="am-btn am-btn-secondary" target="_blank"><span class="am-icon-archive"></span> 查看车辆具体信息</a></button>
                                     </center>
                                 </form>

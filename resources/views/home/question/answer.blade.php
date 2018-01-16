@@ -65,8 +65,8 @@
 <div class="answerbox">
     <div class="dh">
        <a href="/">首页</a>   <em>&gt;</em>
-       <a href="/www/oldcar" title="二手车问答">二手车问答</a>  <em>&gt;</em>
-       <span>如何过户上牌</span>
+       <a href="/home/question" title="二手车问答">二手车问答</a>  <em>&gt;</em>
+       <span>{{$data[0]->content}}</span>
      </div>
      <div class="search2">
           <input type="text" class="search2-input"/>
@@ -74,26 +74,18 @@
      </div>
      <div class="wen">
        <p style="font-size:20px;">
-        10w以内买什么样的二手车比较合适 运动点的 更喜欢美系和日系
-       </p>
+         {{$data[0]->content}}
+       </p> 
        <p></p>
        <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 &nbsp;<a class="btn btn-default" href="/www/buy" target="_blank" role="button">查找全部车源</a></font></p>
      </div>
      <div class="da">
-     <img src="/img/smallicon.png" style="float:left;">
-     <img src="/img/logo.png" alt="..." class="img-circle photos" style="width:40px; height:40px; ">
-      <p class="user-name">瓜子官方</p>
-      <p class="fabutime">2018-01-09  11:25:05</p>
-      <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">30</e></button>
-      <p class="huida-content">翼神 马自达6 福克斯，都比较合适 价格内可以找到车况不错的，后期成本也算可以接受 运动性能不错</p>
-       <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 查找全部车源</font></p>
-     </div>
-     <div class="da">
-       <p style="font-size:20px;">
-        10w以内买什么样的二手车比较合适 运动点的 更喜欢美系和日系
-       </p>
-       <p></p>
-       <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 查找全部车源</font></p>
+       <img src="/img/smallicon.png" style="float:left;">
+       <img src="/img/logo.png" alt="..." class="img-circle photos" style="width:40px; height:40px; ">
+        <p class="user-name">瓜子官方</p>
+        <p class="fabutime">2018-01-09  11:25:05</p>
+        <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">{{$data[0]->like}}</e></button>
+        <div class="huida-content">{{$data[0]->reply_content}}</div>
      </div>
 </div>
        <!-- 列表结束 -->
