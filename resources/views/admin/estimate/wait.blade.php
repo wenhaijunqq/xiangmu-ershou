@@ -70,7 +70,7 @@
                                                 @else
                                                 <td ><a style="color:#aaa">添加基本信息</a></td>
                                                 @endif
-                                                <td><a href="/admin/estimate/writeassess">填写评估报告</a></td>
+                                                <td><a href="/admin/estimate/writeassess/{{$val['car_id']}}">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;" onclick="add({{$val['car_id']}},$(this))">

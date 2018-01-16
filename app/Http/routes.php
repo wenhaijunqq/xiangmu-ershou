@@ -126,6 +126,7 @@ Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementCont
 //后台车辆基本信息查看
 Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
+Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');

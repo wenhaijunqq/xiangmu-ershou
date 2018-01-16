@@ -102,7 +102,7 @@ class BasicInformationController extends Controller
     }
     public function indexs($id)
     {
-        //加载已评估页面
+        //加载基础信息添加页面
         return view('admin/estimate/basicinformation',['id'=>$id]);
     }
 
