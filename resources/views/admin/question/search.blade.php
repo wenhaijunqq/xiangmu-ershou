@@ -16,32 +16,21 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+                                               <a href="/admin/question"><button type="button" class="am-btn am-btn-success">返回问题列表</button></a> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <form action="/admin/question/show" method="GET" class="am-form-inline" role="form">
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}" name="check">
-                                          <option value="2">所有类别</option>
-                                          <option value="1">已审核</option>
-                                          <option value="0">未审核</option>
-                                        </select>
+                                        
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                    
-                                        <div class="am-form-group">
-                                       <input type="text" class="am-form-field " name="key"/>
-                                       </div>
-                                        <button type="submit" class="am-btn am-btn-success am-icon-search"></button>
-                                           
+                    
                                     </div>
                                 </div>
-                                </form> 
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -57,7 +46,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                         @foreach($data as $k=>$v)
+                                         @foreach($res as $k=>$v)
                                             <tr class="gradeX">
                                                 <td align="center">{{$v->qid}}</td>
                                                 <td>{{$v->content}}</td>
@@ -82,8 +71,9 @@
                                         </tbody>
                                     </table>
                              <div id="pull_right">
+                                  共“{{$count}}”条相关记录
                                    <div class="am-pagination-right">
-                                     {!! $data->render() !!}
+                                     {!! $res->appends(['check'=>$check])->render() !!}
                                    </div>
                              </div> 
                                 </div>

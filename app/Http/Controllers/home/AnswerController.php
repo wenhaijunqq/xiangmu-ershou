@@ -27,7 +27,15 @@ class AnswerController extends Controller
     {
          $check = array(0,1);
          $types = array('买车卖车','交易过户','保养维修','金融贷款');
-         $res = DB::table('question')->where('type',$type)->where('check',$check[1])->get();
+         $res = DB::table('question')->where('type',$type)->where('check',$check[1])->paginate(2);
          return view('/home/question/asklist',['res'=>$res,'type'=>$type,'types'=>$types]);
+    }
+    
+    //点赞
+    public function like($id)
+    {
+        $res = DB::update('update question set likenum=likenum+1 where qid ='.$id);
+        $data = DB::table('question')->where('qid',$id)->first();
+        return $data->likenum;
     }
 }

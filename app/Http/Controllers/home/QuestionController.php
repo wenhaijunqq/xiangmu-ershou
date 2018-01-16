@@ -37,9 +37,10 @@ class QuestionController extends Controller
     {
         //接受要修改的数据
        $data = $request -> except(['_token','_method']);
+       // var_dump($data);
        $res=DB::table('question')->insert($data);
         if($res){
-            echo '<script>alert("提问成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+            echo '<script>alert("提问成功,审核通过后给您答复，敬请期待~");location.href="/home/question"</script>';
         }else{
             echo '<script>alert("提问失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
         }
@@ -51,9 +52,15 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($key)
     {
-        //
+         $key = $_GET['key'];
+         $check = array(0,1);
+         $res = DB::table('question')->where('check',$check[1])->where('content','like','%'.$key.'%')->paginate(3);
+         $count = DB::table('question')->where('check',$check[1])->where('content','like','%'.$key.'%')->count();
+         $res = $res ->appends(array('key'=>$key));
+         // var_dump($res);
+        return view('/home/question/search',['res'=>$res,'count'=>$count]);
     }
 
     /**

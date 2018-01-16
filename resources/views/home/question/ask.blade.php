@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" href="/img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/layer/skin/layer.css">
+    <script type="text/javascript" src="/layer/layer.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -55,7 +57,7 @@
                     <a class="fl" href="/www/buy" title="天津个人二手车">我要买车</a>
                     <a class="fl" href="/www/sell" title="天津二手车出售">我要卖车</a>
                     <a class="fl" href="/www/server" title="瓜子二手车服务保障">服务保障</a>
-                    <a class="fr" href="/www/oldcar" title="瓜子二手车问答系统">二手车问答</a>
+                    <a class="fr" href="/home/question" title="瓜子二手车问答系统">二手车问答</a>
                 </div>
             </div>
         </div>
@@ -69,16 +71,16 @@
       <div class="leibie">
         您要提问的问题类别（必选）：
         <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio1" value="0">买车卖车
+        <input type="radio" name="type" id="type" value="0">买车卖车
         </label>
         <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio2" value="1">交易过户
+        <input type="radio" name="type" id="type" value="1">交易过户
         </label>
         <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio3" value="2">保养维修
+        <input type="radio" name="type" id="type" value="2">保养维修
         </label>
         <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio4" value="3">金融贷款
+        <input type="radio" name="type" id="type" value="3">金融贷款
         </label>
       </div>
       <div id="wentikuang">

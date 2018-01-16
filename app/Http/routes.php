@@ -45,10 +45,12 @@ Route::get('/IndexRegister', function () {
 Route::get('/www/xiangqing', function () {
 	return view('/home/Xiangqing');
 });
+
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
 Route::get('/home/answer/{id}','Home\AnswerController@index');
 Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
+Route::post('/home/like/{id}','Home\AnswerController@like');
 
 
 //后台模板引入
@@ -65,17 +67,11 @@ Route::get('/admin/signup',function(){
 Route::get('/admin/404',function(){
 	return view('admin/404');
 });
-//后台问答管理页
 
-Route::get('/admin/oldcar',function(){
-	return view('admin/question/oldcar');
-});
-Route::get('/admin/question-edit',function(){
-	return view('admin/question/edit');
-});
-Route::get('/admin/question-reply',function(){
-	return view('admin/question/reply');
-});
+//后台问答管理页
+Route::resource('/admin/question','admin\QuestionController');
+
+
 Route::get('admin/CarType/add',function(){
 	return view('admin/cartype/addCarType');
 });
@@ -101,9 +97,6 @@ Route::resource('admin/CarType/','admin\VehiclInfoController');
 
 
 Route::post('admin/CarType/add','admin\VehiclInfoController@create');
-
-
-Route::resource('/admin/question','admin\QuestionController');
 
 //人员具体信息页面
 Route::get('/admin/basicperson/{id}','admin\BasicpersonController@index');
