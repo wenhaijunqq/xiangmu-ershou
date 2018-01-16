@@ -30,4 +30,12 @@ class AnswerController extends Controller
          $res = DB::table('question')->where('type',$type)->where('check',$check[1])->paginate(2);
          return view('/home/question/asklist',['res'=>$res,'type'=>$type,'types'=>$types]);
     }
+    
+    //点赞
+    public function like($id)
+    {
+        $res = DB::update('update question set likenum=likenum+1 where qid ='.$id);
+        $data = DB::table('question')->where('qid',$id)->first();
+        return $data->likenum;
+    }
 }

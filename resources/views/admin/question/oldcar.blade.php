@@ -26,8 +26,8 @@
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}" name="check">
                                           <option value="2">所有类别</option>
-                                          <option value="1">过审</option>
-                                          <option value="0">未过审</option>
+                                          <option value="1">已审核</option>
+                                          <option value="0">未审核</option>
                                         </select>
                                     </div>
                                 </div>

@@ -7,6 +7,9 @@
   <link rel="icon" type="image/png" href="/img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/layer/skin/layer.css">
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -87,12 +90,25 @@
        <img src="/img/logo.png" alt="..." class="img-circle photos" style="width:40px; height:40px; ">
         <p class="user-name">瓜子官方</p>
         <p class="fabutime">2018-01-09  11:25:05</p>
-        <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">{{$data[0]->like}}</e></button>
+        <button type="button" class="btn btn-success user-like" id="dianzan" onclick="dianzan({{$data[0]->qid}})">
+           <img src="/img/like.png"></img>&nbsp; <e id="likenumber">{{$data[0]->likenum}}</e> 
+        </button>
         <div class="huida-content">{{$data[0]->reply_content}}</div>
      </div>
 </div>
        <!-- 列表结束 -->
           <!-- 页脚 -->
         <div class="footer"></div>
+        
+        <script type="text/javascript">
+            function dianzan(id){
+               $.post("/home/like/"+id,
+                   {'_token':'{{csrf_token()}}'},
+                   function(data){ 
+                       $("e").text(data);
+                       layer.alert("点赞成功",{icon: 6});
+                   });
+            }
+        </script>
 </body>
 </html>

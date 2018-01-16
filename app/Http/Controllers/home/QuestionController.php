@@ -37,6 +37,7 @@ class QuestionController extends Controller
     {
         //接受要修改的数据
        $data = $request -> except(['_token','_method']);
+       // var_dump($data);
        $res=DB::table('question')->insert($data);
         if($res){
             echo '<script>alert("提问成功,审核通过后给您答复，敬请期待~");location.href="/home/question"</script>';
