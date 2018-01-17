@@ -12,15 +12,62 @@
 		        <div class="phone-area js-phone1">
 				    <input class="phone-input js-phone-input" placeholder="请输入手机号码，1702万名车主已提交">
 				    <button class="phone-btn-1 js-phone-btn">免费卖车</button>
-			    	<button class="phone-btn-2 js-subAssess" >快速估价</button>
+			    	<button class="phone-btn-2 js-subAssess" data-toggle="modal" data-target="#myModal" >快速估价</button>
 			    	<p class="phone-error-2 js-phone-error"></p>
 				</div>
-				<script type="text/javascript">
-                   
-				</script>
-				<div class="new-car-entr">
-		            <a href="###" >首付10%，厂商直供，爆款新车开回家 去抢购 &gt;</a>
-		        </div>
+               <!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <center><h4 class="modal-title" id="myModalLabel">先估价再卖车，心里倍儿有底</h4></center>
+						      </div>
+						      <div class="modal-body">
+						       <form class="form-horizontal">
+								  <div class="form-group">
+								    <label for="inputtext3" class="col-sm-2 control-label">车源地</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="inputtext3" placeholder="省、市">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputtext3" class="col-sm-2 control-label">车型</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="inputtext3" placeholder="品牌、车系、车型">
+								    </div>
+								  </div>
+								   <div class="form-group">
+								    <label for="inputPassword3" class="col-sm-2 control-label">上牌时间</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="inputtext3" placeholder="年份、月份">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputPassword3" class="col-sm-2 control-label">行驶里程</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="inputtext3" placeholder="单位：万公里">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputPassword3" class="col-sm-2 control-label">接收手机</label>
+								    <div class="col-sm-10">
+								      <input type="text" class="form-control" id="inputtext3" placeholder="请输入您的手机号">
+								    </div>
+								  </div>							
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">不了，谢谢</button>
+						        <button type="button" class="btn btn-success">开始估价</button>
+						      </div>
+						      </form>
+						    </div>
+						  </div>
+						</div>
+						<br>
+				<!-- <div class="new-car-entr">
+		            <a href="###" >首付10%，厂商直供，爆款新车开回家</a>
+		        </div> -->
 		    </div>
 		    <ul class="sell-ser">
 		        <li>

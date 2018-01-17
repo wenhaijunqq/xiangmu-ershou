@@ -11,9 +11,11 @@
         <!-- 卖车页css样式-->
         <link rel="stylesheet" href="/css/h_SellCar.css">
         <link rel="stylesheet" href="/layer/skin/layer.css">
-        <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="/layer/layer.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     </head>
+       <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+       <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/layer/layer.js"></script>
     
         @include('/home/header')
         <!-- 引入页面内容-->
