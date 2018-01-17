@@ -15,6 +15,9 @@
 			    	<button class="phone-btn-2 js-subAssess" >快速估价</button>
 			    	<p class="phone-error-2 js-phone-error"></p>
 				</div>
+				<script type="text/javascript">
+                   
+				</script>
 				<div class="new-car-entr">
 		            <a href="###" >首付10%，厂商直供，爆款新车开回家 去抢购 &gt;</a>
 		        </div>
