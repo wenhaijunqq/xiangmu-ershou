@@ -166,7 +166,9 @@ Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
 
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
@@ -265,7 +267,9 @@ Route::post('shouye','LoginController@index');
 //前台用户登录
 Route::get('home/register','home\LoginController@register');
 //前台登录验证
+Route::post('home/dotelregister','admin\LoginController@dotelregister');
 
 //前台友情链接
 Route::resource('home/footer','home\LinkController');
+
 Route::post('home/dotelregister','home\LoginController@dotelregister');
