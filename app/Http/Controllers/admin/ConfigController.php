@@ -29,7 +29,7 @@ class ConfigController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -58,6 +58,7 @@ class ConfigController extends Controller
            'fileName' => $fileName,
            'message' => '恭喜上传成功'
        ]);
+
     }
 
     /**
@@ -66,9 +67,9 @@ class ConfigController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        //
+ 
     }
 
     /**
@@ -79,7 +80,8 @@ class ConfigController extends Controller
      */
     public function edit($id)
     {
-        //
+    
+
     }
 
     /**
@@ -91,7 +93,12 @@ class ConfigController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        // if($res){
+        //     echo '<script>alert("修改成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        // }else{
+        //     echo '<script>alert("修改失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        // }
     }
 
     /**

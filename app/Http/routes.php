@@ -122,10 +122,8 @@ Route::get('/admin/CarType/Carlist/{id}','admin\VehiclInfoController@CarList');
 //后台网站车辆管理页面
 Route::resource('admin/CarType/','admin\VehiclInfoController');
 
-
-
-Route::post('admin/CarType/add','admin\VehiclInfoController@create');
-
+//后台网站配置修改
+Route::post('/admin/configedit/{id}','admin\ConfigeditController@update');
 //人员具体信息页面
 Route::get('/admin/basicperson/{id}','admin\BasicpersonController@index');
 //车辆具体信息页面
