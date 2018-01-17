@@ -5,6 +5,7 @@
         <title>首页</title>
         <link rel="stylesheet" href="/css/h_index.css">
         <link rel="stylesheet" href="/css/h_public.css">
+        <link rel="stylesheet" href="/css/h_ss.css">
         <script>
             var i = 1;
             function dinashiqi(){
