@@ -46,13 +46,13 @@
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
-        <li><a href="http://www.chenghang.com/home/baodian" class=" active ">我的宝典</a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class="">我的收藏</a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class="">对比记录</a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class="">我买的车</a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class="">我卖的车</a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class="">会员身份</a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class="">修改密码</a></li>
+        <li><a href="http://www.chenghang.com/home/baodian" class="bb">我的宝典</a></li>
+        <li><a href="http://www.chenghang.com/home/shoucang" class="bb">我的收藏</a></li>
+        <li><a href="http://www.chenghang.com/home/duibi" class="bb">对比记录</a></li>
+        <li><a href="http://www.chenghang.com/home/maiche" class="bb">我买的车</a></li>
+        <li><a href="http://www.chenghang.com/home/shouche" class="bb">我卖的车</a></li>
+        <li><a href="http://www.chenghang.com/home/huiyuan" class="bb">会员身份</a></li>
+        <li><a href="http://www.chenghang.com/home/mima" class="bb">修改密码</a></li>
                 
       </ul>
     </div>     
@@ -70,4 +70,24 @@
 
 
     </body>
+
+    <script type="text/javascript">  
+        $(document).ready(function () {  
+            //鼠标移入变红色  
+        $("li").mouseover(function (){  
+            $(this).css("color", "red");  
+              
+        });  
+            //鼠标移除变黑色  
+        $("li").mouseout(function () {  
+            $(this).css("color", "black");  
+        });  
+            //单击隐藏/出现  
+        $(".bb").click(function () {  
+              
+                $(".bb").toggle();  
+            
+        });  
+    });  
+</script>
 </html>
