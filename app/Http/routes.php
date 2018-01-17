@@ -59,7 +59,6 @@ Route::get('/www/xiangqing', function () {
 
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
-
 Route::get('/home/answer/{id}','Home\AnswerController@index');
 Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
 Route::post('/home/like/{id}','Home\AnswerController@like');
@@ -161,13 +160,15 @@ Route::resource('/admin/examine/wait','admin\ExamineWaitController');
 //后台已经审核路由
 Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 //后台车辆基本信息
-
 Route::post('/admin/estimate/basicinformation/edit/{id}','admin\BasicInformationController@updates');
 
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+
+Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
 
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
