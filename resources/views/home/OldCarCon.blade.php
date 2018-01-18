@@ -5,6 +5,9 @@
 		<title>二手车问答</title>
 		<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
        <link rel="icon" type="image/png" href="/img/favicon.ico">
+      <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+       <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+       <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -62,10 +65,56 @@
 			<div class="search">
 	          <form action="/home/question/show" method="GET" class="form-inline">
 		        <input class="ipt-text" type="text" placeholder="查找问题"  name="key"/>
-				<button class="ipt-btn" type="submit">搜索</button>
-				<a href="/home/question/create"><button class="ipt-btn" type="button">提问</button></a>
-		      </form>		
+				<button class="ipt-btn" type="submit">搜索</button> </form>
 			</div>
+			<div style="margin-left:965px;">
+				<button class="ipt-btn"  data-toggle="modal" data-target="#myModal">提问</button>  		   		
+			</div>
+			 <!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h2><img src="/img/wenicon.png"/>&nbsp;&nbsp;提问</h2>
+						      </div>
+						      <div class="modal-body">
+						       <form class="form-horizontal am-form tpl-form-line-form"  action="/home/question" method="POST">
+						           {{ csrf_field() }}
+                                   {{ method_field('POST')}}
+								  <div class="form-group">
+								    <label for="inputtext3" class="col-sm-2 control-label">问题类别</label>
+								    <div class="col-sm-10">
+								       <label class="radio-inline">
+								        <input type="radio" name="type" id="type" value="0">买车卖车
+								        </label>
+								        <label class="radio-inline">
+								        <input type="radio" name="type" id="type" value="1">交易过户
+								        </label>
+								        <label class="radio-inline">
+								        <input type="radio" name="type" id="type" value="2">保养维修
+								        </label>
+								        <label class="radio-inline">
+								        <input type="radio" name="type" id="type" value="3">金融贷款
+								        </label>
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputtext3" class="col-sm-2 control-label">问题描述</label>
+								    <div class="col-sm-10">
+								      <textarea class="form-control" rows="5" placeholder="请输入您的问题" name="content" style="resize:none;"></textarea>
+								    </div>
+								  </div>
+								  				
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">不了，谢谢</button>
+						        <button type="submit" class="btn btn-success">提交</button>
+						      </div>
+						      </form>
+						    </div>
+						  </div>
+						</div>
 			<div class="hot-question">
 				<a href="/home/answer/6">如何过户上牌？</a>
 				<a href="/home/answer/31">买什么车合适？</a>
@@ -80,10 +129,10 @@
 					<h3 class="buy-tit">买车卖车</h3>
 
 					<ul class="list sale-list">
-                       @foreach($data as $k=>$v)
+                       @foreach($data as $k=>$v) 
 						<li>
 							<span class="icon-circle"></span>
-							<a target="_blank" href="/home/answer/{{$v->qid}}">{{$v->content}}</a>
+							<a target="_blank" href="/home/answer/{{$v->qid}}" style="text-decoration: none;">{{$v->content}}</a>
 						</li>
 						 @endforeach
 					</ul>
