@@ -16,9 +16,9 @@
 Route::get('/', function () {
     return view('home/index');
 });
-Route::get('/www/buy', function () {
-    return view('/home/PurchaseCar');
-});
+//Route::get('/www/buy', function () {
+//    return view('/home/PurchaseCar');
+//});
 Route::get('/www/sell', function () {
     return view('/home/SellCar');
 });
@@ -57,6 +57,12 @@ Route::get('/www/xiangqing', function () {
 	return view('/home/Xiangqing');
 });
 
+//我要买车页
+//查询汽车品牌
+Route::post('/www/buy/car','Home\PurchaseCarController@carModel');
+//查询汽车车系
+Route::post('/www/buy/carType','Home\PurchaseCarController@carType');
+Route::resource('/www/buy','Home\PurchaseCarController');
 //前台问答
 Route::resource('/home/question','Home\QuestionController');
 Route::get('/home/answer/{id}','Home\AnswerController@index');

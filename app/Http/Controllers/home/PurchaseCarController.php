@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\home;
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\Link;
+use App\Http\Model\partition1;
 
-class LinkController extends Controller
+class PurchaseCarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,41 @@ class LinkController extends Controller
      */
     public function index()
     {
-        //
-        $res=Link::get();
-        return view('/home/footer',['res'=>$res]);
+        $data = partition1::get();
+         return view('/home/PurchaseCar',['data'=>$data]);
+    }
+    //查询汽车品牌
+    public function carModel(Request $request)
+    {
+            $a = $request->except('_token');
+            if($a['tid']>0){
+            $data = partition1::where('tid',$a['tid'])->get();
+        }else{
+            $data = partition1::where('tid','>',0)->get();
+        }
+        return Response()->json([
+          'data' => $data,
+          'tid' => $a['tid']
+      ]);
+    }
+    //查询汽车车系
+    public function carType(Request $request)
+    {
+
+            $a = $request->except('_token');
+            $test = partition1::where("id",$a['id'])->get()[0]['tid'];
+            if($test>0){
+            $data = partition1::where('tid',$test)->get();
+            }else{
+            $data = partition1::where('tid','>',0)->get();
+            }
+            return Response()->json([
+              'data' => $data,
+              'id' => $test,
+              'tid'=>$a['id']
+          ]);
+
+
     }
 
     /**
@@ -52,7 +84,6 @@ class LinkController extends Controller
     public function show($id)
     {
         //
-
     }
 
     /**
