@@ -7,7 +7,7 @@
             <div class="container-fluid am-cf">
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 网站配置 <small>Amaze UI</small></div>
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 网站配置 <small>CONFIG</small></div>
                         <p class="page-header-description">此页面来管理网站配置（包括标题 版权 关键字 网站状态 网站LOGO ）</p>
                     </div>
                     <div class="am-u-lg-3 tpl-index-settings-button">
@@ -62,7 +62,7 @@
                                         <div class="am-u-sm-9">
                                             <div class="am-form-group am-form-file">
                                                 <div class="tpl-form-file-img">
-                                                    <img src="/admins/img/a5.png" alt="" id="myimg" style="width:134px;height:134px" name="mylogo">
+                                                    <img src="/img/logo.png" alt="" id="myimg" style="width:134px;height:134px">
                                                 </div>
                                                 <div class="am-form-file">
                                                     <br>
@@ -90,7 +90,7 @@
                                     </div>  
                                     <br><br>
                                     <center>
-                                        <button type="button" class="am-btn am-btn-default am-btn-secondary" id="tj" onclick="updateconfig({{$data->id}})"><span class="am-icon-save"></span> 保存修改</button>
+                                        <button type="button" class="am-btn am-btn-default am-btn-secondary" id="tj" onclick="doUpload({{$data->id}})"><span class="am-icon-save"></span> 保存修改</button>
                                         <button type="reset" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 重置修改</button>
                                     </center>  
                                 </form>
@@ -120,55 +120,53 @@
             //console.log(formdata);
             $.ajax({
                    type: 'POST',
-                   url:'/admin/config/' ,
-                   data:formdata ,
+                   url:'/admin/config',
+                   data:formdata,
                    processData:false,
                    contentType: false,
                    cache: false,
                    async :true,
                    beforeSend:function(){
 
-                        //$("#myimg").attr('src',"/admins/img/timg.gif");
+                        // $("#myimg").attr('src',"/admins/img/timg.gif");
 
                    },
                    success:function(data){
+                       //console.log(data);
                        alert(data.message);
                        arr = data;
                        //filepath = data->filePath;
 
-
-                       $('#myimg').attr('src',data.filePath);
+                       // console.log(data.filePath+"?imageView2/3/w/134/h/134/q/75|imageslim");
+                       $('#myimg').attr('src',data.filePath+"?imageView2/3/w/134/h/134/q/75|imageslim");
                    },
                    error:function(err){
 
-                     alert(err);
+                     alert("提交失败");
                    }
                });
-
         }
 
+            function doUpload(id) {  
+                 var formData = new FormData($( "#logoAdd" )[0]);  // 要求使用的html对象
+                 console.log(formData);
+            //      $.ajax({  
+            //           url: '/admin/configedit'+id ,  
+            //           type: 'POST',  
+            //           data: formData,  
+            //           async: true,  
+            //           // 下面三个参数要指定，如果不指定，会报一个JQuery的错误 
+            // 　　　　　cache: false,  
+            //           contentType: false,  
+            //           processData: false,  
+            //           success: function (data) {  
+            //               alert(data);  
+            //           },  
+            //           error: function (err) {  
+            //               alert(err);  
+            //           }  
+            //      });  
+            } 
 
-            // function updateconfig(id){
-            //     $.ajax({
-            //             cache: true,
-            //             type: "POST",
-            //             url:"/admin/configedit/"+id,
-            //             data:$('#logoAdd').serialize(),// 你的formid
-            //             async: false,
-            //             error: function(request) {
-            //                 alert("Connection error");
-            //             },
-            //             success: function(data) {
-            //                 if(data == '1'){
-            //                     alert("修改成功");
-            //                 }else{
-            //                     alert("修改失败");
-            //                 }
-            //                 // alert(data);
-            //             }
-            //         });                
-            // }
-
-            
 </script>
 @endsection

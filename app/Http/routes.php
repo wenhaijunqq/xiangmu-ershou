@@ -123,7 +123,7 @@ Route::get('/admin/CarType/Carlist/{id}','admin\VehiclInfoController@CarList');
 Route::resource('admin/CarType/','admin\VehiclInfoController');
 
 //后台网站配置修改
-Route::post('/admin/configedit/{id}','admin\ConfigeditController@update');
+Route::post('/admin/configedit/{id}','admin\ConfigeditController@uconfig');
 //人员具体信息页面
 Route::get('/admin/basicperson/{id}','admin\BasicpersonController@index');
 //车辆具体信息页面

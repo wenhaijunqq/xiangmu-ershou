@@ -9,12 +9,10 @@ use App\Http\Controllers\Controller;
 use DB;
 class ConfigeditController extends Controller
 {
-   public function update(Request $request, $id)
+   public function uconfig(Request $request, $id)
    {
-
         // 执行修改的操作
         $data = $request -> except(['_token','_method']);
-
         $res = DB::table('config')->where('id',$id)->update($data);
         return $res;
    }
