@@ -64,10 +64,11 @@ Route::post('/www/buy/car','Home\PurchaseCarController@carModel');
 Route::post('/www/buy/carType','Home\PurchaseCarController@carType');
 Route::resource('/www/buy','Home\PurchaseCarController');
 //前台问答
-Route::resource('/home/question','Home\QuestionController');
 Route::get('/home/answer/{id}','Home\AnswerController@index');
 Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
 Route::post('/home/like/{id}','Home\AnswerController@like');
+Route::resource('/home/question','Home\QuestionController');
+
 
 //个人中心
 Route::resource('/home/center','home\CenterController');
