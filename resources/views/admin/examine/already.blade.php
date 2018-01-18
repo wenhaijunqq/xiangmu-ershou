@@ -72,7 +72,11 @@
                                                 <td><a href="/admin/seeinformation/{{$val['car_id']}}">车辆基本信息</a></td>
                                                 <td>{{$val['ping_id']}}</td>
                                                 <td>{{$val['audit_time']}}</td>
-                                                <td></td>
+                                                @if($val['audit_jg'] == 1)
+                                                <td>审核通过</td>
+                                                @else
+                                                <td>审核未通过</td>
+                                                @endif
                                                 <td><a>评估报告表<a/></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">

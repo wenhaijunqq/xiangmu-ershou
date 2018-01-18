@@ -61,7 +61,13 @@ class WriteAssessController extends Controller
      */
     public function edit($id)
     {
-        //
+        //获取数据加载页面
+        $data = examining::where('car_id',$id)->first();
+        // $arr = json_decode($data['burn_abnormal'],true);
+        // $arr = json_decode($data['burn_abnormal'],true)['Firewall-cotton1'];
+        // dd($arr);
+        return view('admin/estimate/updateassess',['data'=>$data]);
+
     }
 
     /**

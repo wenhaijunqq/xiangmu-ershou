@@ -115,7 +115,6 @@ Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 Route::post('/admin/estimate/basicinformation/edit/{id}','admin\BasicInformationController@updates');
 
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
-
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台用户管理分区,新增用户
@@ -129,7 +128,6 @@ Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
 
 //后台用户管理分区
 Route::get('/admin/xinzeng',function(){
@@ -146,7 +144,7 @@ Route::resource('/admin/adsense/list','admin\AdsenseController');
 //友情链接路由器
 Route::resource('/admin/link/list','admin\LinkController');
 
-Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
 
 //后台表单页
 Route::get('/admin/form',function(){
