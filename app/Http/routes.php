@@ -72,8 +72,6 @@ Route::resource('/home/question','Home\QuestionController');
 
 //个人中心
 Route::resource('/home/center','home\CenterController');
-//个人中心宝典页
-Route::resource('/home/baodian','home\Centerst\BaodianController');
 //个人中心买车页
 Route::resource('/home/maiche','home\Centerst\MaicheController');
 //个人中心售车页
@@ -144,10 +142,10 @@ Route::resource('/admin/order','admin\OrderController');
 
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
-//后台登陆路由
-Route::resource('/admin/login','admin\LoginController@login');
 //后台登录验证
 Route::post('/admin/dologin','admin\LoginController@dologin');
+//后台登陆路由
+Route::resource('/admin/login','admin\LoginController@login');
 //后台手机验证
 Route::post('/admin/phone','admin\LoginController@phone');
 Route::post('code','LoginController@code');

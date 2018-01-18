@@ -9,6 +9,9 @@ use App\Http\Controllers\Controller;
 use Flc\Dysms\Client;
 use Flc\Dysms\Request\SendSms;
 use App\Http\Model\user;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 
  class LoginController extends Controller
@@ -37,18 +40,41 @@ use App\Http\Model\user;
         }  
     }
 
+   
+       //发送验证码
+    public function code(Request $request)
+    {
+        // $phone = $request->input(phone);
+        // $config = [
+        //     'accessKeyId'    => 'LTAIoIL9CepmtlBW',
+        //     'accessKeySecret' => 'y8cJCQJazGlX1KIhLbNrPw4O3kYomW',
+        // ];
+
+        // $client  = new Client($config);
+        // $sendSms = new SendSms;
+        // $sendSms->setPhoneNumbers($phone);
+        // $sendSms->setSignName('冉泽龙');
+        // $sendSms->setTemplateCode('SMS_120405864');
+        $code = rand(100000, 999999);
+        // $sendSms->setTemplateParam(['code' => $code);
+        // $sendSms->setOutId('demo');
+        session(['code'=>$code]);
+        // $client->execute($sendSms);
+        echo $code;
+    }
+
     //执行登录
     public function dologin(Request $request)
     {
-    	$code = $request->input('password');
-    	$phone = $request->input('phone');
-    	// $id = user::where('phone',$phone)->id;
-    	// user(['id'=>$id]);
-    	if($code == session('password')){
-    		echo 1;
-    	}else{
-    		echo 0;
-    	}
+        $password = $request->input('password');
+        $phone = $request->input('phone');
+        // $id = shop::where('phone',$phone)->id;
+        //session(['shopid'=>$id]);
+        if($password == session('password')){
+            echo 1;
+        }else{
+            echo 0;
+        }
     }
 
 
