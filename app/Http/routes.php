@@ -10,7 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('/test',function(){
+    $data1 =\DB::table('Link')->where('status',1)->get();
+    dd($data1);
+});
 
 //前台模板引入
 Route::get('/', function () {

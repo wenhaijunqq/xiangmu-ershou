@@ -316,6 +316,6 @@
              <li><a href="#" class="next"><span>下一页</span><em>&gt;</em></a></li>
          </ul>
      </div>
-     {{var_dump($res)}}
+     
 </body>
 @endsection
