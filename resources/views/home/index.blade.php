@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/h_public.css">
 
         <link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
-        <link rel="stylesheet" href="/css/h_city.css">
+        <link rel="stylesheet"  href="/css/h_ss.css">
         <script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
 
         <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
@@ -149,7 +149,7 @@
                 <div class="nav-1">
                 </div>
                 <div class="nav-2" style="height:25px">
-                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  style="border:0px;background:none;height:31px;font-size:14px;" />
+                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  ni/>
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>

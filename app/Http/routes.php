@@ -197,12 +197,7 @@ Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
 
-//轮播图路由器
-Route::resource('/admin/Carousel/list','admin\CarouselController');
-//广告位路由器
-Route::resource('/admin/adsense/list','admin\AdsenseController');
-//友情链接路由器
-Route::resource('/admin/link/list','admin\LinkController');
+
 
 //后台表单页
 Route::get('/admin/form',function(){
@@ -251,11 +246,10 @@ Route::get('/admin/chakan',function(){
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
+
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-
-Route::resource('/admin/link','admin\LinkController');
-Route::resource('/admin/link/list','admin\LinkController');
+Route::resource('/admin/Link','admin\LinkController');
 
 
 
