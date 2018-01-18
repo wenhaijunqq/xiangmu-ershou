@@ -19,9 +19,6 @@ Route::get('/', function () {
 Route::get('/www/buy', function () {
     return view('/home/PurchaseCar');
 });
-Route::get('/www/sell', function () {
-    return view('/home/SellCar');
-});
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
 });
@@ -271,3 +268,6 @@ Route::post('home/dotelregister','admin\LoginController@dotelregister');
 Route::resource('home/footer','home\LinkController');
 
 Route::post('home/dotelregister','home\LoginController@dotelregister');
+
+//前台我要买车
+Route::resource('/home/sell','home\SellController');

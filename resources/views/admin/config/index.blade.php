@@ -148,24 +148,26 @@
         }
 
             function doUpload(id) {  
+                
                  var formData = new FormData($( "#logoAdd" )[0]);  // 要求使用的html对象
+                 formData.append("logo", "asdasd");   
                  console.log(formData);
-            //      $.ajax({  
-            //           url: '/admin/configedit'+id ,  
-            //           type: 'POST',  
-            //           data: formData,  
-            //           async: true,  
-            //           // 下面三个参数要指定，如果不指定，会报一个JQuery的错误 
-            // 　　　　　cache: false,  
-            //           contentType: false,  
-            //           processData: false,  
-            //           success: function (data) {  
-            //               alert(data);  
-            //           },  
-            //           error: function (err) {  
-            //               alert(err);  
-            //           }  
-            //      });  
+                  $.ajax({  
+                       url: '/admin/configedit/'+id ,  
+                      type: 'POST',  
+                       data: formData,  
+                       async: true,  
+                       // 下面三个参数要指定，如果不指定，会报一个JQuery的错误 
+             　　　　　cache: false,  
+                       contentType: false,  
+                      processData: false,  
+                       success: function (data) {  
+                           alert(data);  
+                       },  
+                       error: function (err) {  
+                           alert(err);  
+                       }  
+                  });  
             } 
 
 </script>
