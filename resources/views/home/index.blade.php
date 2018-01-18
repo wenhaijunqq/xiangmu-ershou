@@ -5,13 +5,14 @@
         <title>首页</title>
         <link rel="stylesheet" href="/css/h_index.css">
         <link rel="stylesheet" href="/css/h_public.css">
+
         <link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
         <link rel="stylesheet" href="/css/h_city.css">
         <script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
 
         <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
         <script type="text/javascript">
-        
+
         $(function(){
             var fn2 = function(city){
                 c.value = city;
@@ -22,8 +23,8 @@
                     left : 172,
                     top  : 45,
                     selected : fn2
-                }); 
-                
+                });
+
             });
             $('body').click(function(){
                 $('#test3').css("color","black");
@@ -32,6 +33,8 @@
 
         });
         </script>
+        <link rel="stylesheet" href="/css/h_ss.css">
+
         <script>
             var i = 1;
             function dinashiqi(){
@@ -106,7 +109,7 @@
                     int=self.setInterval("dinashiqi()",3000);
                     i = 2;
                 }
-                
+
                 zuo.onclick = function(){
                     int = window.clearInterval(int);
                     i++;
@@ -133,8 +136,8 @@
         </script>
     </head>
     <body style="background-color: #f5f5f7">
-   
-         
+
+
 
         <header class="head">
             <ul >
@@ -483,7 +486,7 @@
                 <a href="###" target="_blank">天津二手起亚智跑</a>
                 <a href="####" target="_blank">天津二手现代现代ix...</a>
             </div>
-           
+
             <div class="friendly-link">
                 <p class="link-tit">友情链接：</p>
                 <span class="open-box"></span>
@@ -565,7 +568,7 @@
             <div class="friendly-link">
                 <p class="link-tit">热门页面：</p>
                 <span class="open-box"></span>
-                
+
                 <span class="close-box" data-role="is_show_box"></span>
                 <a href="#">1万元二手车</a>
                 <a href="#">2万左右二手车</a>
