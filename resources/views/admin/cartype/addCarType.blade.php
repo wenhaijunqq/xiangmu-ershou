@@ -160,12 +160,7 @@
                         }
                 });
             })
-                    layer.msg('请添加品牌图标');
-                    return;
-                }
-                $.post("admin/CarType/add",{'car_typeName':$('user-name').val(),'car_icon':arr.filePath,'_token':csrf_field()},function(){
-
-                })
+                  
 
         })
 

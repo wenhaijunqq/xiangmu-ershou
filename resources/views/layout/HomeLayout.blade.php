@@ -23,5 +23,4 @@
         @include('/home/footer')
 
 
-
 </html>

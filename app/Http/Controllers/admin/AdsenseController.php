@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\adsense;
+use DB;
 
 class AdsenseController extends Controller
 {
@@ -18,8 +19,8 @@ class AdsenseController extends Controller
     public function index()
     {
         //加载到广告浏览页面
-        $res = adsense::get();
-       
+        // $res = adsense::get()->simplePaginate(3);
+       $res=adsense::where('id','>','1')->paginate(5);
         
         // dump($res);
          return view('/admin/adsense/list',['res'=>$res]);
@@ -85,9 +86,28 @@ class AdsenseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$key)
     {
         //
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+        
+        
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/adsense"</script>';
+        }else{
+            
+            $res = DB::table('adsense')->where('title','like','%'.$key.'%')->paginate(3);
+            $count = DB::table('adsense')->where('title','like','%'.$key.'%')->count();
+            
+        }
+
+        $res->setPath('/admin/adsense/show');
+        
+        $res = $res->appends(array('key'=>$key));
+        
+        return view('/admin/adsense/list',['res'=>$res,'count'=>$count,'check'=>$check]);
+
     }
 
     /**
@@ -171,4 +191,5 @@ class AdsenseController extends Controller
 
        
     }
+   
 }

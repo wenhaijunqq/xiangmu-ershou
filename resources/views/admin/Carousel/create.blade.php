@@ -6,7 +6,7 @@
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
 
-           
+
 
             <div class="row-content am-cf">
 
@@ -40,7 +40,7 @@
                                             <small>发布时间为必填</small>
                                         </div>
                                     </div>
-    
+
 
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">URL地址 <span class="tpl-form-line-small-title">URL</span></label>
@@ -75,8 +75,8 @@
                     </div>
                 </div>
 
-                
-                
+
+
 
 
             </div>
