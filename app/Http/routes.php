@@ -65,8 +65,6 @@ Route::post('/home/like/{id}','Home\AnswerController@like');
 
 //个人中心
 Route::resource('/home/center','home\CenterController');
-//个人中心宝典页
-Route::resource('/home/baodian','home\Centerst\BaodianController');
 //个人中心买车页
 Route::resource('/home/maiche','home\Centerst\MaicheController');
 //个人中心售车页
@@ -139,10 +137,10 @@ Route::resource('/admin/order','admin\OrderController');
 
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
-//后台登陆路由
-Route::resource('/admin/login','admin\LoginController@login');
 //后台登录验证
 Route::post('/admin/dologin','admin\LoginController@dologin');
+//后台登陆路由
+Route::resource('/admin/login','admin\LoginController@login');
 //后台手机验证
 Route::post('/admin/phone','admin\LoginController@phone');
 Route::post('code','LoginController@code');
@@ -166,7 +164,9 @@ Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
+
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
+
 
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
@@ -265,7 +265,9 @@ Route::post('shouye','LoginController@index');
 //前台用户登录
 Route::get('home/register','home\LoginController@register');
 //前台登录验证
+Route::post('home/dotelregister','admin\LoginController@dotelregister');
 
 //前台友情链接
 Route::resource('home/footer','home\LinkController');
+
 Route::post('home/dotelregister','home\LoginController@dotelregister');
