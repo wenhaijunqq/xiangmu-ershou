@@ -115,7 +115,7 @@
             }else{
                 $('.box1').text('输入正确');
                 $('.box1').css({color:'green',display:'block'});
-                    $.post('/user/login/phone', {phone: $('#phone').val(), '_token': '{{csrf_token()}}'}, function (data) {
+                    $.post('/admin/postPhone', {phone: $('#phone').val(), '_token': '{{csrf_token()}}'}, function (data) {
                         if (data == '1') {
                         } else if (data == '0') {
                             layer.msg('您的手机尚未注册,请先注册');
@@ -149,9 +149,9 @@
             }else if($('.box2').text() =='密码格式书写错误' || $('.box1').text =='手机号格式书写错误' || $('.box1').text()== '手机号尚未注册'){
                 layer.msg('登录信息格式不正确');
             }else{
-                $.post('/user/login/login',{phone:$('#phone').val(),password:$('#password').val(),'_token':'{{csrf_token()}}'},function(data){
+                $.post('/admin/postLogin',{phone:$('#phone').val(),password:$('#password').val(),'_token':'{{csrf_token()}}'},function(data){
                         if(data == '1'){
-                            location.href = '/user/user/';
+                            location.href = '/admin/login';
                         }else{
                             layer.msg('密码错误');
                         }

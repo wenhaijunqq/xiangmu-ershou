@@ -143,12 +143,12 @@ Route::resource('/admin/order','admin\OrderController');
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
 //后台登录验证
-Route::post('/admin/dologin','admin\LoginController@dologin');
+Route::post('/admin/postLogin','admin\LoginController@postLogin');
 //后台登陆路由
 Route::resource('/admin/login','admin\LoginController@login');
 //后台手机验证
-Route::post('/admin/phone','admin\LoginController@phone');
-Route::post('code','LoginController@code');
+Route::post('/admin/postPhone','admin\LoginController@postPhone');
+
 
 //后台账号设置
 Route::resource('/admin/Accountupdate','admin\AccountUpdateController');
