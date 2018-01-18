@@ -107,7 +107,8 @@
 
                    },
                    success:function(data){
-                       alert(data.message);
+                    alert("上传成功");
+                       //alert(data.message);
                        arr = data;
                        //filepath = data->filePath;
 
@@ -116,7 +117,7 @@
                    },
                    error:function(err){
 
-                     alert(err);
+                     alert("上传失败");
                    }
                });
 
@@ -159,8 +160,6 @@
                         }
                 });
             })
-                    
-
 
         })
 

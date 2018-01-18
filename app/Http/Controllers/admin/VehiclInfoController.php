@@ -45,7 +45,7 @@ class VehiclInfoController extends Controller
      */
     public function create(Request $request)
     {
-        dump($_POST);
+          return "asdasdas";
 
     }
 

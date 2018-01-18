@@ -45,7 +45,7 @@
                                               <div class="am-form-group">
                                                 <input type="text" class="am-form-field am-input-sm" name="key">
                                               </div>
-                                              <button type="submit" class="am-btn am-btn-default am-btn-success" >搜</button>
+                                              <button type="submit" class="am-btn am-btn-default am-btn-success am-icon-search"></button>
 
                                         </div>
                                     </div>

@@ -88,7 +88,7 @@ class ReserveController extends Controller
     {
         //执行修改的操作
        $data = $request -> except(['_token','_method']);
-       $res = DB::table('reserve')->where('rid',$id)->update($data);
+       $res = DB::table('reserve')->where('rid',$id)->update();
        if($res){
             echo '<script>alert("修改成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
         }else{
