@@ -77,7 +77,7 @@
                                                 @else
                                                 <td>审核未通过</td>
                                                 @endif
-                                                <td><a>评估报告表<a/></td>
+                                                <td><a href="/admin/writeassess/{{$val['car_id']}}">评估报告表<a/></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;" class="tpl-table-black-operation-del"  onclick="del({{$val['car_id']}},$(this))">

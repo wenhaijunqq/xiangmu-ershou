@@ -80,7 +80,7 @@
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         @if($val['audit_status'] == 0)
-                                                        <a href="javascript:;">
+                                                        <a href="/admin/estimate/writeassess/{{$val['car_id']}}/edit">
                                                             <i class="am-icon-pencil"></i>修改评估
                                                         </a>
                                                         @else

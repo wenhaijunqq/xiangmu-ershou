@@ -68,13 +68,21 @@
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
                                                 <td>{{$val['ping_id']}}</td>
+                                                @if ($val['assess_status'] == 1)
                                                 <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看车辆基础信息</a></td>
+                                                @else
+                                                <td><a style="color:#aaa">查看车辆基础信息</a></td>
+                                                @endif
                                                 @if($val['assess_status']==0)
                                                 <td>未评估</td>
                                                 @else($val['assess_status']==1)
                                                 <td>已评估</td>
-                                                @endif     
-                                                <td><a>查看评估报告</a></td>
+                                                @endif   
+                                                @if($val['assess_status']==1)
+                                                <td><a href="/admin/writeassess/{{$val['car_id']}}">查看评估报告</a></td>
+                                                @else
+                                                <td><a style="color:#aaa">查看评估报告</a></td>
+                                                @endif
                                                 @if($val['assess_status']==1)
                                                 <td>
                                                     <div class="tpl-table-black-operation">

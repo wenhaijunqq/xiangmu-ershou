@@ -25,16 +25,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form method="post" action="">
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
+              <option value="option1">预约单号</option>
+              <option value="option2">车辆名称</option>
+              <option value="option3">拥有者编号</option>
             </select>
                                     </div>
                                 </div>
@@ -46,7 +44,7 @@
           </span>
                                     </div>
                                 </div>
-
+                                </form>
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -77,10 +75,10 @@
                                                 @endif
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},$(this))">
+                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},{{$val['add_assess']}},{{$val['add_status']}},$(this))">
                                                             <i class="am-btn-success"></i> 提交
                                                         </a>
-                                                        <a href="javascript:;" onclick="update({{$val['car_id']}})">
+                                                        <a href="javascript:;" onclick="update({{$val['car_id']}},{{$val['add_assess']}},{{$val['add_status']}})">
                                                             <i class="am-icon-pencil" ></i> 修改
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del({{$val['car_id']}},$(this))">
@@ -117,54 +115,71 @@
     </div>
     </div>
     <script type="text/javascript">
-        function update(id)
+        function update(id,add_assess,add_status)
         {
             //询问框
             layer.confirm('请选择您要修改的信息', {
               btn: ['基础信息','评估信息'] //按钮
             }, function(){
-                window.location.href = '/admin/estimate/basicinformation/'+id+'/edit';
+                if(add_status == 1){
+                    window.location.href = '/admin/estimate/basicinformation/'+id+'/edit';
+                }else{
+                    layer.msg('请先填写基础信息！');
+                }
             }, function(){
-                window.location.href = '/admin/estimate/writeassess/'+id+'/edit';
+                if(add_assess == 1){
+                  window.location.href = '/admin/estimate/writeassess/'+id+'/edit';
+                }else{
+                    layer.msg('请先填写评估信息！');
+                }
             });
         }
         function del(pid,obj)
         {
-            //alert($);
-            layer.confirm('是否取消评估', {
-              btn: ['是','否'] //按钮
-            }, function(){
-               $.post("{{url('/admin/estimate/wait/')}}/"+pid,{'_method':'delete','_token':'{{csrf_token()}}',"id":pid},function(data)
-                {
-                    if(data == 1){
-                        obj.parent().parent().parent().remove();
-                         layer.msg('已取消', {icon: 1});
-                    }
-                   
-                });
                
-              
-            }, function(){
-              
-            });
+                //alert($);
+                layer.confirm('是否取消评估', {
+                  btn: ['是','否'] //按钮
+                }, function(){
+                   $.post("{{url('/admin/estimate/wait/')}}/"+pid,{'_method':'delete','_token':'{{csrf_token()}}',"id":pid},function(data)
+                    {
+                        if(data == 1){
+                            obj.parent().parent().parent().remove();
+                             layer.msg('已取消', {icon: 1});
+                        }
+                       
+                    });
+                   
+                  
+                }, function(){
+                  
+                });
+            
            
         }
-        function add(aid,obj)
+        function add(aid,add_assess,add_status,obj)
         {
-            layer.confirm('是否进行提交', {
-              btn: ['是','否'] //按钮
-            }, function(){
-             $.get("{{url('/admin/estimate/wait/')}}/"+aid,{"id":aid},function(data)
-                {
-                    if(data == 1){
-                        obj.parent().parent().parent().remove();
-                         layer.msg('已提交', {icon: 1});
-                    }
-                   
+            console.log(add_assess);
+            console.log(add_status);
+            if(add_assess == 0 || add_status == 0 ){
+                layer.msg('请先填写评估信息和基础信息！');
+
+            }else{ 
+                layer.confirm('是否进行提交', {
+                  btn: ['是','否'] //按钮
+                }, function(){
+                 $.get("{{url('/admin/estimate/wait/')}}/"+aid,{"id":aid},function(data)
+                    {
+                        if(data == 1){
+                            obj.parent().parent().parent().remove();
+                             layer.msg('已提交', {icon: 1});
+                        }
+                       
+                    });
+                }, function(){
+                  
                 });
-            }, function(){
-              
-            });
+            }
         }
     </script>
 </body>

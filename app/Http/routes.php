@@ -127,6 +127,8 @@ Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
 Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+Route::resource('/admin/writeassess','admin\WriteAssessController');
+Route::post('/admin/estiamte/updateassess/{id}','admin\WriteAssessController@updates');
 
 
 //后台用户管理分区
