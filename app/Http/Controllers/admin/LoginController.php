@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Validator;
     public function login()
     {
         return view('admin/login');
+    } 
+
+    //显示登录界面
+    public function loginindex()
+    {
+        return view('admin/index');
     }
 
     // //检查电话号码是否正确
@@ -64,9 +70,9 @@ use Illuminate\Support\Facades\Validator;
         $password = $data['password'];
 
         $res = user::where('phone','=',$phone)->first();
-
+        
         if($password == $res['password']){
-            $request->session()->put('user', $res['id']);
+            // $request->session()->put('user', $res['id']);
 
             echo '1';
         }else{
