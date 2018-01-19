@@ -1,10 +1,12 @@
 @extends('/layout/HomeLayout')
 @section('title','我要买车')
+<link rel="stylesheet" href="/css/h_PurchaseCar.css">
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <body>
 @section('content')
 <div class="crumbs-search" id="bread">
          <div class="crumbs">
-             <a href="#">瓜子二手车</a>&gt;天津二手车        </div>
+             <a href="#">瓜子二手车</a>&gt;天津二手车      </div>
          <div class="search js-search">
              <div class="search-box suggestion_widget autocomplete" data-default-count="9">
                  <input type="text" class="search-input js_search_input_index" placeholder="搜索您想要的车" >
@@ -19,8 +21,8 @@
              <!-- 品牌 -->
              <dl class="clearfix">
                  <dt>品牌</dt>
-                 <dd>
-                     <div class="dd-top" >
+                 <dd >
+                     <div class="dd-top">
                          <span class="a-box" id="pingpai">
                              <!-- 不限 -->
                              <a class="active" href="###" value="0">不限</a>
@@ -31,8 +33,10 @@
                              @endif
                              @endforeach
                          </span>
+                         <span><h3 class="pointer clearfix"><span>更多</span><i class="glyphicon glyphicon-chevron-up"></i></h3></span>
                      </div>
                  </dd>
+
              </dl>
              <!-- 车系 -->
              <dl class="clearfix">
@@ -296,7 +300,6 @@
              <li><a href="#" class="next"><span>下一页</span><em>&gt;</em></a></li>
          </ul>
      </div>
-     {{var_dump($res)}}
 </body>
 <script type="text/javascript">
     $("#pingpai a").click(function(){
