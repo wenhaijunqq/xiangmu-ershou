@@ -20,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                        @endforeach   
+                                        @endforeach
                                             <!-- more data -->
                                         </tbody>
                                     </table>
@@ -130,15 +130,15 @@
               $.post("{{url('/admin/estimate/already/')}}/"+id,{'id':id,'_method':'delete','_token':'{{csrf_token()}}'},function(data){
                 if(data == 1){
                     obj.parent().parent().parent().remove();
-                
+
                     layer.msg('已删除', {icon: 1});
                 }
                 });
-              
+
             }, function(){
-              
+
             });
-            
+
         }
     </script>
 </body>

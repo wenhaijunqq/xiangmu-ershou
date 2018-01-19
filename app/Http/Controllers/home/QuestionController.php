@@ -28,21 +28,26 @@ class QuestionController extends Controller
     }
 
    
-    public function create()
-    {
-        return view('/home/question/ask');
-    }
+  
 
     public function store(Request $request)
     {
         //接受要修改的数据
        $data = $request -> except(['_token','_method']);
-       $res=DB::table('question')->insert($data);
-        if($res){
-            echo '<script>alert("提问成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
-        }else{
-            echo '<script>alert("提问失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
-        }
+       // var_dump($data['content']);
+       if(!isset($data['type'])){
+           echo '<script>alert("选择问题类别之后方可提问~");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+       }else if($data['content'] ==''){
+           echo '<script>alert("输入问题内容之后方可提问~");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+       }else if(isset($data['type']) && $data['content'] != ''){
+                $res=DB::table('question')->insert($data);
+                if($res){
+                    echo '<script>alert("提问成功,审核通过后给您答复，敬请期待~");location.href="/home/question"</script>';
+                }else{
+                    echo '<script>alert("提问失败，请选择问题类别");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+                }
+       }
+      
     }
 
     /**
@@ -51,9 +56,15 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($key)
     {
-        //
+         $key = $_GET['key'];
+         $check = array(0,1);
+         $res = DB::table('question')->where('check',$check[1])->where('content','like','%'.$key.'%')->paginate(3);
+         $count = DB::table('question')->where('check',$check[1])->where('content','like','%'.$key.'%')->count();
+         $res = $res ->appends(array('key'=>$key));
+         // var_dump($res);
+        return view('/home/question/search',['res'=>$res,'count'=>$count]);
     }
 
     /**

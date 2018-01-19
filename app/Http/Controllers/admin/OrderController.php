@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-class OrderController extends Controller
+class orderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,12 +19,12 @@ class OrderController extends Controller
         // if($request -> has('id')){
         //     //根据提交id查询商品数据
         //     $res = $request -> input('id');
-        //     $data = DB::table('order') -> where('id',$res) -> paginate(1);
+        //     $data = DB::table('orders') -> where('id',$res) -> paginate(1);
         //     //发送数据
-        //     return view('admin.order.index',['data'=>$data]);
+        //     return view('admin.orders.index',['data'=>$data]);
         // }else{
             //查询商品所有数据
-            $data = DB::table('order') -> orderBy('buy_time','desc') -> get();
+            $data = DB::table('orders') -> orderBy('buy_time','desc') -> paginate(5);
             //发送数据
             return view('admin.order.index',['data'=>$data]);
         // }
@@ -57,9 +57,23 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$key)
     {
-
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+        // var_dump($check);
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/order"</script>';
+        }else if($check == 'user'){
+            $res = DB::table('orders')->where('sell_id','like','%'.$key.'%')->orwhere('buy_id','like','%'.$key.'%')->paginate(3);
+            $count = DB::table('orders')->where('sell_id','like','%'.$key.'%')->orwhere('buy_id','like','%'.$key.'%')->count();
+        }else{
+            $res = DB::table('orders')->where("$check",'like','%'.$key.'%')->paginate(2);
+            $count = DB::table('orders')->where("$check",'like','%'.$key.'%')->count();
+        }
+        $res->setPath('/admin/order/show');
+        $res = $res->appends(array('key'=>$key));
+        return view('/admin/order/search',['res'=>$res,'count'=>$count,'check'=>$check]);
     }
 
     // *
@@ -70,7 +84,7 @@ class OrderController extends Controller
      
     public function edit($id)
     {
-        $data = DB::table('order') -> where('id',$id) -> first();
+        $data = DB::table('orders') -> where('id',$id) -> first();
 
         //显示订单列表的详情操作
         return view('admin.order.show',['data'=>$data]);
@@ -97,7 +111,7 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //执行订单删除的操作
-        $res = DB::table('order') -> where('id',$id) -> delete();
+        $res = DB::table('orders') -> where('id',$id) -> delete();
         if($res){
             echo '<script>alert("删除成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
         }else{

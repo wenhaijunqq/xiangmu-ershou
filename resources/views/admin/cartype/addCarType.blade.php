@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -56,7 +57,7 @@
            </div>
            <div class="am-form-group">
             <div class="am-u-sm-9 am-u-sm-push-3">
-             <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" id="sumbit">提交</button>
+             <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" id="sumbit" >提交</button>
             </div>
            </div>
           </div>
@@ -76,7 +77,6 @@
 </html>
 
 <script type="text/javascript">
-
         $(function(){
             $(".myfile").change(function(){
                 uploadImg();
@@ -107,7 +107,8 @@
 
                    },
                    success:function(data){
-                       alert(data.message);
+                    alert("上传成功");
+                       //alert(data.message);
                        arr = data;
                        //filepath = data->filePath;
 
@@ -116,11 +117,14 @@
                    },
                    error:function(err){
 
-                     alert(err);
+                     alert("上传失败");
                    }
                });
 
         }
+
+            $("#sumbit").click(function(){
+
         $(document).on("click","#sumbit",function(){
 
             //判断是否上传文件
@@ -131,24 +135,35 @@
                    return;
                    }
                  if(imgPath == ""){
-                    layer.msg('请添加品牌图标');
-                    return;
-                }
-                $.post("admin/CarType/add",{'car_typeName':$('user-name').val(),'car_icon':arr.filePath,'_token':csrf_field()},function(){
 
-                })
+                    imgPath = $('#myimg').attr('src');
+                }
+                $.post("/admin/CarType/createCat",{'_token':'{{csrf_token()}}','car_typeName':title,'car_icon':arr.filePath,'tid':0},function(data){
+                            //alert(data);
+                        if(data == 1){
+                            layer.alert('添加品牌成功', {
+                              skin: 'layui-layer-molv' //样式类名
+                              ,closeBtn: 0
+                            }, function(){
+                                    parent.location.reload();
+
+                              });
+
+                        }else{
+                            layer.alert('添加品牌失败', {
+                              skin: 'layui-layer-molv' //样式类名
+                              ,closeBtn: 0
+                            }, function(){
+                                      window.location.reload();
+
+                              });
+                        }
+                });
+            })
+
 
         })
 
-//     function addSumbit(){
-//         alert("sfdsf");
-//
-//
-//         $.post('','',function(){
-//
-//         })
-//         //var index=parent.layer.getFrameIndex(window.name);
-//             //parent.layer.close(index);
-// }
+
 
 </script>

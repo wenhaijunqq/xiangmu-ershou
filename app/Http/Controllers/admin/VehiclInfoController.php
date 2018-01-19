@@ -16,8 +16,26 @@ class VehiclInfoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $data = partition1::get();
+        $data = partition1::where('tid','0')->get();
         return view('/admin/cartype/cartype',['data'=>$data]);
+    }
+    public function ModelIndex($id){
+        $data = partition1::where('tid','0')->get();
+        return view('/admin/cartype/addCarModel',['data'=>$data,'id'=>$id]);
+    }
+    public function addModel(Request $request){
+        $a = $request->except('_token');
+        $test = partition1::insert($a);
+        if($test){
+            echo "1";
+        }else{
+            echo "2";
+        }
+    }
+    public function CarList($id){
+        $data = partition1::where('tid',$id)->get();
+        $type = partition1::where('id',$id)->get();
+        return view('/admin/cartype/CarList',['data'=>$data,'type'=>$type]);
     }
 
     /**
@@ -27,9 +45,28 @@ class VehiclInfoController extends Controller
      */
     public function create(Request $request)
     {
-        dump($_POST);
+          return "asdasdas";
 
     }
+
+    // 车辆分类的添加
+    public function test(Request $request)
+    {
+        $a = $request->except('_token');
+        $test = partition1::insert($a);
+        if($test){
+            echo "1";
+        }else{
+            echo "2";
+        }
+    }
+    //车辆分类的修改
+    public function editCar($id)
+    {
+
+
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -79,7 +116,13 @@ class VehiclInfoController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $test = partition1::destroy($id);
+        if($test){
+            echo "1";
+        }else{
+            echo "2";
+        }
     }
 
     /**
@@ -91,7 +134,13 @@ class VehiclInfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $a = $request->except('_token');
+        $test = partition1::where('id',$id)->update($a);
+        if($test){
+            echo "1";
+        }else{
+            echo "2";
+        }
     }
 
     /**
@@ -102,6 +151,7 @@ class VehiclInfoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = partition1::where('id',$id)->first();
+        return view('/admin/cartype/editCar',['data'=>$data]);
     }
 }

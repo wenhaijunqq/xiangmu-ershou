@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>二手车问答列表</title>
   <link rel="icon" type="image/png" href="/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
+  <link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
+	<link rel="stylesheet" type="text/css" href="/admins/css/paginate.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 <body>
@@ -55,7 +56,7 @@
                     <a class="fl" href="/www/buy" title="天津个人二手车">我要买车</a>
                     <a class="fl" href="/www/sell" title="天津二手车出售">我要卖车</a>
                     <a class="fl" href="/www/server" title="瓜子二手车服务保障">服务保障</a>
-                    <a class="fr" href="/www/oldcar" title="瓜子二手车问答系统">二手车问答</a>
+                    <a class="fr" href="/home/question" title="瓜子二手车问答系统">二手车问答</a>
                 </div>
             </div>
         </div>
@@ -68,8 +69,11 @@
        <span>{{$types[$type]}}</span>
  </div>
       <div class="search2">
-          <input type="text" class="search2-input"/>
-          <button class="search2-btn" type="button">搜索</button>
+          <form action="/home/question/show" method="GET" class="form-inline">
+            <input class="search2-input" type="text" placeholder="查找问题"  name="key"/>
+            <button class="search2-btn" type="submit">搜索</button>
+          </form> 
+          
       </div>
    <div class="find-tit">
            为您找到<strong class="co22">“5条”</strong>相关记录
@@ -78,32 +82,16 @@
       <table class="table table-hover" style="width:870px; margin: -20px auto 50px;">
        @for($i=0;$i<count($res);$i++)
         <tr>
-          <td class="wt"><a href="" target="_blank">{{$res[$i]->content}}</a></td>
+          <td class="wt"><a href="/home/answer/{{$res[$i]->qid}}" target="_blank">{{$res[$i]->content}}</a></td>
           <td class="twtime">2018-01-09 14:57:24</td>
         </tr>
         @endfor
       </table>
-      <div id="askpage">
-        <nav aria-label="Page navigation">
-        <ul class="pagination">
-         <li>
-          <a href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-          </a>
-         </li>
-         <li><a href="#">1</a></li>
-         <li><a href="#">2</a></li>
-         <li><a href="#">3</a></li>
-         <li><a href="#">4</a></li>
-         <li><a href="#">5</a></li>
-         <li>
-          <a href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-          </a>
-         </li>
-        </ul>
-       </nav>
-     </div>
+      <div id="pull_right">
+          <div class="am-pagination-centered">
+            {!! $res->render() !!}
+          </div>
+    </div> 
    </div>
 </div>
        <!-- 列表结束 -->

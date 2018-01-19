@@ -7,6 +7,9 @@
   <link rel="icon" type="image/png" href="/img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/layer/skin/layer.css">
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -56,7 +59,7 @@
                     <a class="fl" href="/www/buy" title="天津个人二手车">我要买车</a>
                     <a class="fl" href="/www/sell" title="天津二手车出售">我要卖车</a>
                     <a class="fl" href="/www/server" title="瓜子二手车服务保障">服务保障</a>
-                    <a class="fr" href="/www/oldcar" title="瓜子二手车问答系统">二手车问答</a>
+                    <a class="fr" href="/home/question" title="瓜子二手车问答系统">二手车问答</a>
                 </div>
             </div>
         </div>
@@ -69,8 +72,11 @@
        <span>{{$data[0]->content}}</span>
      </div>
      <div class="search2">
-          <input type="text" class="search2-input"/>
-          <button class="search2-btn" type="button">搜索</button>
+          <form action="/home/question/show" method="GET" class="form-inline">
+            <input class="search2-input" type="text" placeholder="查找问题"  name="key"/>
+            <button class="search2-btn" type="submit">搜索</button>
+          </form> 
+        
      </div>
      <div class="wen">
        <p style="font-size:20px;">
@@ -84,12 +90,25 @@
        <img src="/img/logo.png" alt="..." class="img-circle photos" style="width:40px; height:40px; ">
         <p class="user-name">瓜子官方</p>
         <p class="fabutime">2018-01-09  11:25:05</p>
-        <button type="button" class="btn btn-success user-like"><img src="/img/like.png"></img>&nbsp;<e id="likenumber">{{$data[0]->like}}</e></button>
+        <button type="button" class="btn btn-success user-like" id="dianzan" onclick="dianzan({{$data[0]->qid}})">
+           <img src="/img/like.png"></img>&nbsp; <e id="likenumber">{{$data[0]->likenum}}</e> 
+        </button>
         <div class="huida-content">{{$data[0]->reply_content}}</div>
      </div>
 </div>
        <!-- 列表结束 -->
           <!-- 页脚 -->
         <div class="footer"></div>
+        
+        <script type="text/javascript">
+            function dianzan(id){
+               $.post("/home/like/"+id,
+                   {'_token':'{{csrf_token()}}'},
+                   function(data){ 
+                       $("e").text(data);
+                       layer.alert("点赞成功",{icon: 6});
+                   });
+            }
+        </script>
 </body>
 </html>

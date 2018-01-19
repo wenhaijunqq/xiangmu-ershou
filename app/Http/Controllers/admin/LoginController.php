@@ -8,7 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Flc\Dysms\Client;
 use Flc\Dysms\Request\SendSms;
-use App\Http\Model\seller_log;
+use App\Http\Model\user;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 
  class LoginController extends Controller
@@ -16,61 +19,68 @@ use App\Http\Model\seller_log;
     //显示登录界面
     public function login()
     {
-        return view('home/Login');
-    }
+        return view('admin/login');
+    } 
 
-    //检查电话号码是否正确
-    public function phone(Request $request)
+    //显示登录界面
+    public function loginindex()
     {
-    	$phone = $request->user('phone');
-		if(!preg_match("/^1[34578]{1}\d{9}$/",$phone)){
-		    echo "not"; //不是电话号码
-		}else{
-		     $res = seller_log::where('phone',$phone)->first();
-		     if($res){
-		     	echo 'ok'; //电话可用
-		     }else{
-		     	echo 'no'; //不是商家电话
-		     }
-		}
+        return view('admin/index');
     }
 
-    //发送验证码
-    public function code(Request $request)
+    // //检查电话号码是否正确
+    // public function phone(Request $request)
+    // {   
+       
+    //     $phone = $request->input('phone'); 
+
+    //     if(!preg_match("/^1[34578]{1}\d{9}$/",$phone)){  
+    //         echo "not"; //不是电话号码
+    //     }else{  
+    //          $res = user::where('phone',$phone)->first();
+    //          if($res){
+    //             echo 'ok'; //电话可用
+    //          }else{
+    //             echo 'no'; //不是商家电话
+    //          }
+    //     }  
+    // }
+
+   
+    public function postPhone(request $request)
     {
-    	// $phone = $request->input(phone);
-    	// $config = [
-    	//     'accessKeyId'    => 'LTAIoIL9CepmtlBW',
-    	//     'accessKeySecret' => 'y8cJCQJazGlX1KIhLbNrPw4O3kYomW',
-    	// ];
+        $phone = $request->input('phone');
 
-    	// $client  = new Client($config);
-    	// $sendSms = new SendSms;
-    	// $sendSms->setPhoneNumbers($phone);
-    	// $sendSms->setSignName('飞天科技');
-    	// $sendSms->setTemplateCode('SMS_120405864');
-    	$code = rand(100000, 999999);
-    	// $sendSms->setTemplateParam(['code' => $code);
-    	// $sendSms->setOutId('demo');
-    	session(['code'=>$code]);
-    	// $client->execute($sendSms);
-    	echo $code;
+        $res =  user::where('phone','=',$phone)->first();
+
+
+        if($res){
+            echo '1';
+        }else{
+            echo '0';
+        }
     }
 
-    //执行登录
-    public function dologin(Request $request)
+    public function postLogin(request $request)
     {
-    	$code = $request->input('code');
-    	$phone = $request->input('phone');
-    	// $id = shop::where('phone',$phone)->id;
-    	//session(['shopid'=>$id]);
-    	if($code == session('code')){
-    		echo 1;
-    	}else{
-    		echo 0;
-    	}
-    }
+        $data = $request->except('_token');
 
+        $phone = $data['phone'];
+
+        $password = $data['password'];
+
+        $res = user::where('phone','=',$phone)->first();
+        
+        if($password == $res['password']){
+            // $request->session()->put('user', $res['id']);
+
+            echo '1';
+        }else{
+            echo '0';
+        }
+
+
+    }
 
 
 }

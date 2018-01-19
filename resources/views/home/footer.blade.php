@@ -120,33 +120,10 @@
         <p class="link-tit">友情链接：</p>
         <span class="open-box"></span>
         <span class="close-box" data-role="is_show_box"></span>
-        <a href="###">天津厂房出租</a>
-        <a href="###">天津学车</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津百姓网</a>
-        <a href="###">天津天气预报15天</a>
-        <a href="###">天津信息网</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津车市</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津房产网</a>
-        <a href="###">天津建材网</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津车展</a>
-        <a href="###">天津汽车网</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津汽车网</a>
-        <a href="###">天津汽车陪练</a>
-        <a href="###">天津信息港</a>
-        <a href="###">搜狐汽车天津站</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津二手设备回收</a>
-        <a href="###">天津二手车</a>
-        <a href="###">天津地图</a>
-        <a href="###">天津汽车网</a>
-        <a href="###">天津分类信息</a>
-        <a href="###">天津汽车票</a>
-        <a href="###">高速路况查询</a>
+        <!-- {{var_dump($data1)}} -->
+        @foreach($data1 as $v)
+        <a href="{{$v->url}}">{{$v->name}}</a>
+        @endforeach
     </div>
 
     <div class="friendly-link">

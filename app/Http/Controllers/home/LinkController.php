@@ -18,8 +18,8 @@ class LinkController extends Controller
     public function index()
     {
         //
-        echo "string";
-        // return view('/home/footer');
+        $res=Link::get();
+        return view('/home/HomeLayout',['res'=>$res]);
     }
 
     /**
@@ -52,6 +52,7 @@ class LinkController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**

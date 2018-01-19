@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>二手车提问</title>
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
-   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+	<title>二手车搜索列表</title>
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/zhang_wenda.css" />
+	<link rel="stylesheet" type="text/css" href="/admins/css/paginate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 <body>
 	<div id="header">
@@ -55,43 +56,45 @@
                     <a class="fl" href="/www/buy" title="天津个人二手车">我要买车</a>
                     <a class="fl" href="/www/sell" title="天津二手车出售">我要卖车</a>
                     <a class="fl" href="/www/server" title="瓜子二手车服务保障">服务保障</a>
-                    <a class="fr" href="/www/oldcar" title="瓜子二手车问答系统">二手车问答</a>
+                    <a class="fr" href="/home/question" title="瓜子二手车问答系统">二手车问答</a>
                 </div>
             </div>
         </div>
-        <!-- 提问框开始 -->
-<div class="ask-main-box">
-  <div class="tiwen">
-    <img src="/img/wenicon.png"/><p>提问</p>
-    <form id="form" class="am-form tpl-form-line-form" action="/home/question" method="POST">
-       {{ csrf_field() }}
-      {{ method_field('POST')}}
-      <div class="leibie">
-        您要提问的问题类别（必选）：
-        <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio1" value="0">买车卖车
-        </label>
-        <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio2" value="1">交易过户
-        </label>
-        <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio3" value="2">保养维修
-        </label>
-        <label class="radio-inline">
-        <input type="radio" name="type" id="inlineRadio4" value="3">金融贷款
-        </label>
+        <!-- 列表开始 -->
+
+<div class="listbox">
+<div class="dh">
+       <a href="/">首页</a>   <em>&gt;</em>
+       <a href="/home/question" title="二手车问答">二手车问答</a>  <em>&gt;</em>
+      <span>查询结果</span>
+ </div>
+      <div class="search2">
+        <form action="/home/question/show" method="GET" class="form-inline">
+       <input type="text" class="search2-input" name="key"/>
+         <button class="search2-btn" type="submit">搜索</button>
+    </form>        
       </div>
-      <div id="wentikuang">
-          <textarea class="form-control" rows="5" placeholder="请输入您的问题" name="content"></textarea>
-      </div>
-      <div class="submit">
-      <button type="submit" class="btn btn-success btn-lg">提交</button>
-      </div>
-      </form>
-  </div>
+   <div class="find-tit">
+           为您找到<strong class="co22">“{{$count}}条”</strong>相关记录
+    </div>
+   <div class="wentilist">
+      <table class="table table-hover" style="width:870px; margin: -20px auto 50px;">
+       @for($i=0;$i<count($res);$i++)
+        <tr>
+          <td class="wt"><a href="/home/answer/{{$res[$i]->qid}}" target="_blank">{{$res[$i]->content}}</a></td>
+          <td class="twtime">2018-01-09 14:57:24</td>
+        </tr>
+        @endfor
+      </table>
+      <div id="pull_right">
+          <div class="am-pagination-centered">
+            {!! $res->render() !!}
+          </div>
+    </div> 
+   </div>
 </div>
-        <!-- 提问框结束 -->
-        <!-- 页脚 -->
+       <!-- 列表结束 -->
+          <!-- 页脚 -->
         <div class="footer"></div>
 </body>
 </html>

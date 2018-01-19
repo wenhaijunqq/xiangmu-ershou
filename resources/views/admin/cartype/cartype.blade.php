@@ -1,3 +1,4 @@
+
 @extends('/layout/adminLayout')
 @section('title','后台文章')
 
@@ -50,14 +51,14 @@
           <tbody>
               @foreach($data as $k=>$v)
            <tr class="gradeX" style="text-align:center">
-            <td class="am-text-middle">{{$v['id']}}</td>
+            <td class="am-text-middle" id="content">{{$v['id']}}</td>
             <td> <img src="{{$v['car_icon']}}" class="tpl-table-line-img" alt="" /></td>
             <td class="am-text-middle">{{$v['car_typeName']}}</td>
             <td class="am-text-middle">
              <div class="tpl-table-black-operation">
               <a href="javascript:;" onclick="edit({{$v['id']}})"> <i class="am-icon-pencil"></i> 编辑 </a>
-              <a href="javascript:;" class="tpl-table-black-operation-del"> <i class="am-icon-trash"></i> 删除 </a>
-              <a href="javascript:;"class="am-btn tpl-table-black-operation"> <i class="am-icon-archive"></i> 查看 </a>
+              <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteCar({{$v['id']}},$(this))"> <i class="am-icon-trash"></i> 删除 </a>
+              <a href="/admin/CarType/Carlist/{{$v['id']}}" class="am-btn tpl-table-black-operation"> <i class="am-icon-archive"></i> 查看 </a>
              </div>
             </td>
            </tr>
@@ -88,7 +89,8 @@
  </body>
 </html>
 <script type="text/javascript">
-    $(".new").click(function(){
+    $(".new").click(function()
+    {
         layer.open({
       type: 2,
       title: '车辆类别添加',
@@ -97,9 +99,12 @@
       maxmin: true, //开启最大化最小化按钮
       area: ['893px', '600px'],
       content: '/admin/CarType/add'
-  });
-});
-    function edit(obj){
+            });
+    });
+
+    function edit(obj)
+    {
+
         layer.open({
       type: 2,
       title: '车辆类别添加',
@@ -107,9 +112,37 @@
       shade: false,
       maxmin: true, //开启最大化最小化按钮
       area: ['893px', '600px'],
-      content: '/admin/CarType/edit'
-  });
-
+      content: '/admin/CarType/'+obj+'/edit',
+        });
     }
+
+    function deleteCar(id,obj){
+
+        layer.confirm('您确定要删除吗?', {
+              btn: ['确定','取消'] //按钮
+            }, function()
+            {
+
+                $.get("/admin/CarType/"+id+"/delete/",function(data){
+                        if(data ==1){
+
+                            layer.msg('恭喜您,删除成功', {icon: 1});
+                            obj.parent().parent().parent().remove();
+                        }else{
+
+
+                        }
+
+                })
+            }, function()
+            {
+              layer.msg('您已取消操作', {icon: 5});
+            });
+    }
+
+
+
+
 </script>
 @endsection
+>>>>>>> ba9fa8edd660792dd4be70d542413a30e9cc211b

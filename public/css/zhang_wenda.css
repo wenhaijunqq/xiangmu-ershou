@@ -286,6 +286,7 @@ a{
     position: relative;
     padding: 6px 15px 6px 33px;
     border-bottom: 1px dashed #e6e6e6;
+    font-size:16px;
 }
 .list li a{
 	width: 212px;

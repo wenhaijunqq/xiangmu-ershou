@@ -2,7 +2,6 @@
 @section('title','后台文章')
 
 @section('content')
-    
         <div class="tpl-content-wrapper">
             <div class="row-content am-cf">
                 <div class="row">
@@ -22,28 +21,27 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form action="/admin/question/show" method="GET" class="am-form-inline" role="form">
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2">过审</option>
-              <option value="option3">未过审</option>
-              <option value="option3">买车卖车</option>
-              <option value="option3">交易过户</option>
-              <option value="option3">保养维修</option>
-              <option value="option3">金融贷款</option>
-            </select>
+                                        <select data-am-selected="{btnSize: 'sm'}" name="check">
+                                          <option value="2">所有类别</option>
+                                          <option value="1">已审核</option>
+                                          <option value="0">未审核</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field">
-                                        <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
-          </span>
+                                    
+                                        <div class="am-form-group">
+                                       <input type="text" class="am-form-field " placeholder="请输入关键字" name="key"/>
+                                       </div>
+                                        <button type="submit" class="am-btn am-btn-success am-icon-search"></button>
+                                           
                                     </div>
                                 </div>
-
+                                </form> 
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -83,22 +81,13 @@
                                             <!-- more data -->
                                         </tbody>
                                     </table>
-      
+                             <div id="pull_right">
+                                   <div class="am-pagination-right">
+                                     {!! $data->render() !!}
+                                   </div>
+                             </div> 
                                 </div>
-                                <div class="am-u-lg-12 am-cf">
-
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            
                             </div>
                         </div>
                     </div>

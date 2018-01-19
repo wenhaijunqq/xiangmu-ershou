@@ -2,6 +2,7 @@
 @section('title','后台文章')
 
 @section('content')
+        
 
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
@@ -20,7 +21,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
+                                                <button onclick="window.open('/admin/UserManagement/xinzeng')" type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
                                             </div>
                                         </div>
                                     </div>
@@ -74,12 +75,28 @@
                                                         <a href="/admin/UserManagement/xiangqing">
                                                             <i class="am-icon-pencil"></i> 查看详情
                                                         </a>
+                                                       
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
+
+                                                          @if ($v['status'] == 0)
+                                                            <a href="/admin/UserManagement/qiyong/{{$v['id']}}" id="qiyong">
+                                                            <i class="am-icon-pencil"></i> 启用
+                                                            </a>
+            
+                                                         @else
+                                                          <a id="jinyong" href="/admin/UserManagement/jinyong" class="tpl-table-black-operation-del">
+                                                            <i class="am-icon-trash"></i> 禁用
+                                                        </a>
+
+                                                          @endif
+                                                        
                                                     </div>
                                                 </td>
                                             </tr>
+                                            
+                                                            
                                            @endforeach
                                             <!-- more data -->
                                         </tbody>
@@ -109,6 +126,6 @@
     </div>
 
 </body>
-
+   
 </html>
 @endsection

@@ -10,7 +10,7 @@
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
               禁言小张
           </span>
-                    <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
+                    <a href="/admin/Accountupdate" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
                 </div>
             </div>
 
@@ -62,8 +62,8 @@
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="/admin/imglist">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                            <a href="/admin/CarType/CarModel/0">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增车辆型号
                             </a>
                         </li>
                     </ul>
