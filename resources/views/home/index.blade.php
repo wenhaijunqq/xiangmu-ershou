@@ -153,7 +153,7 @@
                 <div class="nav-nav" id='h'>
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>
-                    <a href="/www/sell">我要卖车</a>
+                    <a href="/home/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>

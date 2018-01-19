@@ -16,7 +16,8 @@ class SellController extends Controller
      */
     public function index()
     {
-        //
+        //加载我要买车页的操作
+        return view('/home/sell/SellCar');
     }
 
     /**

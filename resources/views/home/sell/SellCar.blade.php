@@ -56,7 +56,8 @@
 								    <div class="col-sm-10">
 								      <input type="text" class="form-control" id="inputtext3" placeholder="请输入您的手机号">
 								    </div>
-								  </div>							
+								  </div>
+								  <center><h4 class="modal-title" id="myModalLabel">免费咨询 400-023-1529</h4></center>							
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">不了，谢谢</button>
