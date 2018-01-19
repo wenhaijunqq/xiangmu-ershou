@@ -2,7 +2,7 @@
 @section('title','我要卖车')
 
 @section('content')
-
+<link rel="stylesheet" href="/css/h_SellCar.css">
 <body style="background-image: url(/img/sell-bg.290289564e5360959be1857de09bf8c4.jpg);background-repeat: no-repeat;">
 
 		<div class="main-con">
@@ -54,7 +54,7 @@
 								    <div class="col-sm-10">
 								      <input type="text" class="form-control" id="inputtext3" placeholder="请输入您的手机号">
 								    </div>
-								  </div>							
+								  </div>
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">不了，谢谢</button>

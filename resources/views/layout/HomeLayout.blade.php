@@ -5,13 +5,9 @@
         <title>@yield('title')</title>
         <!-- 公共css样式-->
         <link rel="stylesheet" href="/css/h_public.css">
-
-        <!-- 买车页css样式-->
-        <link rel="stylesheet" href="/css/h_PurchaseCar.css">
         <!-- 卖车页css样式-->
-        <link rel="stylesheet" href="/css/h_SellCar.css">
         <link rel="stylesheet" href="/layer/skin/layer.css">
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
         <script src="/admins/js/jquery.min.js"></script>
         <script src="/layer/layer.js"></script>
     </head>

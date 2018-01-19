@@ -180,7 +180,7 @@ Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementCont
 
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台车辆基本信息查看
-Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
 Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
