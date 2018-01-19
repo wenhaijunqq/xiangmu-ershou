@@ -146,12 +146,14 @@ Route::resource('/admin/order','admin\OrderController');
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
 //后台登录验证
-Route::post('/admin/dologin','admin\LoginController@dologin');
+Route::post('/admin/postLogin','admin\LoginController@postLogin');
 //后台登陆路由
 Route::resource('/admin/login','admin\LoginController@login');
 //后台手机验证
-Route::post('/admin/phone','admin\LoginController@phone');
-Route::post('code','LoginController@code');
+Route::post('/admin/postPhone','admin\LoginController@postPhone');
+//判断登录跳转
+Route::resource('/admin/loginindex','admin\LoginController@loginindex');
+
 
 //后台账号设置
 Route::resource('/admin/Accountupdate','admin\AccountUpdateController');
@@ -176,9 +178,15 @@ Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 
 //后台用户管理分区,新增用户
-Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
-//车看用户
-Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
+Route::resource('/admin/UserManagement/xinzeng','admin\User\UserManagementController');
+//查看用户
+Route::resource('/admin/NameUserManagement/chakan','admin\User\NameUserManagementController');
+//后台用户管理分区
+Route::resource("/admin/UserManagement/qiyong",'admin\User\NameUserManagementController');
+
+
+
+
 
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台车辆基本信息查看
@@ -188,13 +196,7 @@ Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@index
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 
 
-//后台用户管理分区
-Route::get('/admin/xinzeng',function(){
-	return view('/admin/UserManagement/tableList');
-});
-Route::get('/admin/chakan',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
+
 
 
 
@@ -223,24 +225,7 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 
-//后台用户管理分区
-Route::get('/admin/lists',function(){
-	return view('/admin/UserManagement/tableList');
-});
 
-Route::get('/admin/imglists',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
-
-Route::controller('/db','Dbcontroller');
-Route::resource('imglists','imglistsController');
-//后台用户管理分区
-Route::get('/admin/xinzeng',function(){
-	return view('/admin/UserManagement/tableList');
-});
-Route::get('/admin/chakan',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
 
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
