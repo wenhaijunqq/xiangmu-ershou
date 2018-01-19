@@ -24,7 +24,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                                                 <input type="text" class="am-form-field am-input-sm" name="key">
                                               </div>
                                               <button type="submit" class="am-btn am-btn-default am-btn-success am-icon-search"></button>
-                                            
+
                                         </div>
                                     </div>
                                 </form>
@@ -79,13 +79,13 @@
                                                 <td>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     <a href="/admin/order/{{$v->id}}/edit">
-                                                        <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
+                                                        <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button>
                                                     </a>
                                                     <form action="/admin/order/{{$v->id}}" method="POST" style="display: inline;">
                                                             {{csrf_field()}}
                                                             {{method_field('DELETE')}}
                                                             <input type="submit" value="删除" class="am-btn am-btn-danger am-radius am-btn-xs"/>
-                                                    </form>           
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -97,7 +97,7 @@
                                       <div class="am-pagination-right">
                                         {!! $data->render() !!}
                                       </div>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
                         </div>

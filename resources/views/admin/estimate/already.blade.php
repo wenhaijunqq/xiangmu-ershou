@@ -20,7 +20,7 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                                 <th>预约单号</th>
                                                 <th>车辆名称</th>
                                                 <th>拥有者编号</th>
-                                                <th>基本信息(已审核不能修改)</th>
+                                                <th>基本信息</th>
                                                 <th>评估时间</th>
                                                 <th>审核状态</th>
                                                 <th>操作</th>
@@ -66,7 +66,11 @@
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
                                                 <td>{{$val['sell_id']}}</td>
+                                                @if($val['audit_status'] == 0)
+                                                <td><a href="/admin/estimate/basicinformation/{{$val['car_id']}}/edit">查看与修改基本信息</a></td>
+                                                @else
                                                 <td><a href="/admin/seeinformation/{{$val['car_id']}}">查看与修改基本信息</a></td>
+                                                @endif
                                                 <td>{{$val['assess_time']}}</td>
                                                 @if($val['audit_status'] == 0)
                                                 <td>未审核</td>
@@ -90,7 +94,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                        @endforeach   
+                                        @endforeach
                                             <!-- more data -->
                                         </tbody>
                                     </table>
@@ -126,15 +130,15 @@
               $.post("{{url('/admin/estimate/already/')}}/"+id,{'id':id,'_method':'delete','_token':'{{csrf_token()}}'},function(data){
                 if(data == 1){
                     obj.parent().parent().parent().remove();
-                
+
                     layer.msg('已删除', {icon: 1});
                 }
                 });
-              
+
             }, function(){
-              
+
             });
-            
+
         }
     </script>
 </body>

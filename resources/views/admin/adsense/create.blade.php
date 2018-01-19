@@ -4,12 +4,12 @@
 @section('content')
 
         <!-- 内容区域 -->
-      
+
 
             <div class="row-content am-cf">
 
 
-                
+
 
                 <div class="row">
 
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
 
-                                    
+
 
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">URl 地址 <span class="tpl-form-line-small-title">url</span></label>
@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
 
-                                    
+
 
 
                                     <div class="am-form-group">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                
+
 
 
             </div>

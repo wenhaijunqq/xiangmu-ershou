@@ -11,5 +11,5 @@ class examining extends Model
     // 修改默认的主键名称
     public $primaryKey = 'id';
     // 设置默认的时间字段
-    // public $timestamps = false;
+    public $timestamps = false;
 }

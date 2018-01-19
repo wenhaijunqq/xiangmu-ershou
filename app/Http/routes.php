@@ -10,14 +10,20 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('/test',function(){
+    $data1 =\DB::table('Link')->where('status',1)->get();
+    dd($data1);
+});
 
 //前台模板引入
 Route::get('/', function () {
     return view('home/index');
 });
-Route::get('/www/buy', function () {
-    return view('/home/PurchaseCar');
+//Route::get('/www/buy', function () {
+//    return view('/home/PurchaseCar');
+//});
+Route::get('/www/sell', function () {
+    return view('/home/SellCar');
 });
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
@@ -54,16 +60,21 @@ Route::get('/www/xiangqing', function () {
 	return view('/home/Xiangqing');
 });
 
+//我要买车页
+//查询汽车品牌
+Route::post('/www/buy/car','Home\PurchaseCarController@carModel');
+//查询汽车车系
+Route::post('/www/buy/carType','Home\PurchaseCarController@carType');
+Route::resource('/www/buy','Home\PurchaseCarController');
 //前台问答
-Route::resource('/home/question','Home\QuestionController');
 Route::get('/home/answer/{id}','Home\AnswerController@index');
 Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
 Route::post('/home/like/{id}','Home\AnswerController@like');
+Route::resource('/home/question','Home\QuestionController');
+
 
 //个人中心
 Route::resource('/home/center','home\CenterController');
-//个人中心宝典页
-Route::resource('/home/baodian','home\Centerst\BaodianController');
 //个人中心买车页
 Route::resource('/home/maiche','home\Centerst\MaicheController');
 //个人中心售车页
@@ -134,13 +145,15 @@ Route::resource('/admin/order','admin\OrderController');
 
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
+//后台登录验证
+Route::post('/admin/postLogin','admin\LoginController@postLogin');
 //后台登陆路由
 Route::resource('/admin/login','admin\LoginController@login');
-//后台登录验证
-Route::post('/admin/dologin','admin\LoginController@dologin');
 //后台手机验证
-Route::post('/admin/phone','admin\LoginController@phone');
-Route::post('code','LoginController@code');
+Route::post('/admin/postPhone','admin\LoginController@postPhone');
+//判断登录跳转
+Route::resource('/admin/loginindex','admin\LoginController@loginindex');
+
 
 //后台账号设置
 Route::resource('/admin/Accountupdate','admin\AccountUpdateController');
@@ -158,7 +171,6 @@ Route::resource('/admin/examine/already','admin\ExamineAlreadyController');
 Route::post('/admin/estimate/basicinformation/edit/{id}','admin\BasicInformationController@updates');
 
 Route::resource('/admin/basicinformation','admin\BasicInformationController');
-
 Route::get('/admin/estimate/basicinformation/{id}','admin\BasicInformationController@indexs');
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 
@@ -166,33 +178,27 @@ Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 
 //后台用户管理分区,新增用户
-Route::resource('/admin/UserManagement/xinzeng','admin\UserManagementController');
-//车看用户
-Route::resource('/admin/NameUserManagement/chakan','admin\NameUserManagementController');
+Route::resource('/admin/UserManagement/xinzeng','admin\User\UserManagementController');
+//查看用户
+Route::resource('/admin/NameUserManagement/chakan','admin\User\NameUserManagementController');
+//后台用户管理分区
+Route::resource("/admin/UserManagement/qiyong",'admin\User\NameUserManagementController');
+
+
+
+
 
 Route::resource('/admin/estimate/basicinformation','admin\BasicInformationController');
 //后台车辆基本信息查看
-Route::get('/admin/seeinformation','admin\SeeInformationController@index');
+Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
 Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
 
-Route::resource('/admin/basicinformation','Admin\BasicInformationController');
 
-//后台用户管理分区
-Route::get('/admin/xinzeng',function(){
-	return view('/admin/UserManagement/tableList');
-});
-Route::get('/admin/chakan',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
 
-//轮播图路由器
-Route::resource('/admin/Carousel/list','admin\CarouselController');
-//广告位路由器
-Route::resource('/admin/adsense/list','admin\AdsenseController');
-//友情链接路由器
-Route::resource('/admin/link/list','admin\LinkController');
+
+
 
 //后台表单页
 Route::get('/admin/form',function(){
@@ -219,33 +225,15 @@ Route::get('/admin/404',function(){
 	return view('admin/404');
 });
 
-//后台用户管理分区
-Route::get('/admin/lists',function(){
-	return view('/admin/UserManagement/tableList');
-});
 
-Route::get('/admin/imglists',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
-
-Route::controller('/db','Dbcontroller');
-Route::resource('imglists','imglistsController');
-//后台用户管理分区
-Route::get('/admin/xinzeng',function(){
-	return view('/admin/UserManagement/tableList');
-});
-Route::get('/admin/chakan',function(){
-	return view('/admin/UserManagement/tableListImg');
-});
 
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
+
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-
-Route::resource('/admin/link','admin\LinkController');
-Route::resource('/admin/link/list','admin\LinkController');
+Route::resource('/admin/Link','admin\LinkController');
 
 
 

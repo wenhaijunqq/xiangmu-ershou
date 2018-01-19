@@ -77,7 +77,6 @@
 </html>
 
 <script type="text/javascript">
-
         $(function(){
             $(".myfile").change(function(){
                 uploadImg();
@@ -161,7 +160,8 @@
                         }
                 });
             })
-                 
+
+
         })
 
 

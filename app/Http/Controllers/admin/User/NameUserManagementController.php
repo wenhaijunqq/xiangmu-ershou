@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\User;
 
 use Illuminate\Http\Request;
 
@@ -24,6 +24,8 @@ class NameUserManagementController extends Controller
 
     }
 
+
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -53,7 +55,15 @@ class NameUserManagementController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = user::where('id',$id)->first();
+        $status = ($user->status);
+        if($status==0){
+            
+        }
+
+        dump($status);
+        // $res =  user::where($id)->first();
+        // dump($email);
     }
 
     /**

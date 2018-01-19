@@ -49,26 +49,60 @@ use App\Http\Model\seller_log;
     	// $sendSms->setPhoneNumbers($phone);
     	// $sendSms->setSignName('飞天科技');
     	// $sendSms->setTemplateCode('SMS_120405864');
-    	$code = rand(100000, 999999);
+    	// $code = rand(100000, 999999);
     	// $sendSms->setTemplateParam(['code' => $code);
     	// $sendSms->setOutId('demo');
-    	session(['code'=>$code]);
+    	// session(['code'=>$code]);
     	// $client->execute($sendSms);
-    	echo $code;
+    	// echo $code;
     }
 
     //执行登录
     public function dologin(Request $request)
-    {
-    	$code = $request->input('code');
-    	$phone = $request->input('phone');
-    	// $id = shop::where('phone',$phone)->id;
-    	//session(['shopid'=>$id]);
-    	if($code == session('code')){
-    		echo 1;
-    	}else{
-    		echo 0;
-    	}
+    {   
+    	$res = Input::except('_token');
+        $user = User::where('phone',$res['phone'])->first();
+        $UserDetail = UserDetail::where('id',$user['id'])->first();
+        //如果数据库中没有此用户，返回登录页面
+        if(!$user)
+        {
+            return back()->withErrors('没有这个用户') -> withInput();
+        }
+        //验证密码
+        if(user::decrypt($user['password']) != trim($res['password']))
+        {
+            return back()->withErrors('密码错误') -> withInput();
+        }
+        // //验证码
+        // if(session('code') != $res['captcha'])
+        // {
+        //     return back()->withErrors('验证码错误') -> withInput();
+        // }
+        //验证身份
+        if($user['position'] != 1)
+        {
+            return back()->withErrors('您没有管理员权限') -> withInput();
+        }
+        if ( $UserDetail['status'] == 0) {
+            return back()->withErrors(' 当前用户已被禁用，请您联系客服。') -> withInput();
+        }
+        session(['user'=>$user]);
+        return redirect('/admin/index');
+
+
+
+
+
+
+        // $code = $request->input('code');
+    	// $phone = $request->input('phone');
+    	// $id = user::where('phone',$phone)->id;
+    	// session(['shopid'=>$id]);
+    	// if($code == session('code')){
+    	// 	echo 1;
+    	// }else{
+    	// 	echo 0;
+    	// }
     }
 
 
