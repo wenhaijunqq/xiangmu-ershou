@@ -1,7 +1,7 @@
 @extends('/layout/HomeLayout')
 @section('title','我要买车')
 <link rel="stylesheet" href="/css/h_PurchaseCar.css">
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
 <body>
 @section('content')
 <div class="crumbs-search" id="bread">
@@ -33,8 +33,9 @@
                              @endif
                              @endforeach
                          </span>
-                         <span><h3 class="pointer clearfix"><span>更多</span><i class="glyphicon glyphicon-chevron-up"></i></h3></span>
+                         <span><h3 class="pointer clearfix"><span>更多v4</span></i></h3></span>
                      </div>
+
                  </dd>
 
              </dl>
