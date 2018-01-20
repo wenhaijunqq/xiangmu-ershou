@@ -29,7 +29,7 @@
                                     <div class="am-form-group tpl-table-list-select" >
                                         <select data-am-selected="{btnSize: 'sm'}" name="check">
                                          <option value="1">请选择搜索类别</option>
-                                         <option value="title">标题</option>
+                                         <option value="name">标题</option>
                                         </select>
                                     </div>
                                 </div>
