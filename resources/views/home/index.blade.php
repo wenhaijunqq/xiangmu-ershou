@@ -159,7 +159,7 @@
                   </div>
 
           </div>
-            <div class="nav" style="top:-340px;">
+            <div class="nav">
                 <div class="nav-1">
                 </div>
                 <div class="nav-2" style="height:25px">

@@ -301,6 +301,7 @@
              <li><a href="#" class="next"><span>下一页</span><em>&gt;</em></a></li>
          </ul>
      </div>
+
 </body>
 <script type="text/javascript">
     $("#pingpai a").click(function(){

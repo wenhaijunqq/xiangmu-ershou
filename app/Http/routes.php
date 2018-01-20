@@ -248,6 +248,7 @@ Route::post('home/phone','home\LoginController@phone');
 Route::post('code','LoginController@code');
 Route::post('dologin','LoginController@dologin');
 Route::post('shouye','LoginController@index');
+Route::post('home/dotelregister','home\LoginController@dotelregister');
 
 //前台用户登录
 Route::get('home/register','home\LoginController@register');
@@ -261,3 +262,5 @@ Route::post('home/dotelregister','home\LoginController@dotelregister');
 
 //前台我要买车
 Route::resource('/home/sell','home\SellController');
+//前台车辆详情
+Route::resource('/www/xiangqing','home\DetailsController@index');
