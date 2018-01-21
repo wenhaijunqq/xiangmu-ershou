@@ -1184,785 +1184,927 @@
     <ul class="test-tit-five clearfix js-reportTop">
     </ul>
     <!-- 普通项 -->
-    <div class="test-content">
+    <div class="test-content"> 
      <div class="titlediv" id="report">
       <span>检测报告</span>
-     </div>
-     <div class="test03  test-packup  js-onekind">
+     </div> 
+     <div class="test03  test-packup  js-onekind"> 
       <div class="test-tit clearfix" id="accident">
-       事故排查检测
-       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099017">收起<span class="icon-bottom-sanjiao"></span></span>
-      </div>
-      <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></nspan> <strong>25项&nbsp;事故排查 </strong> <p class="fc-yellow">2项异常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>10项&nbsp;泡水排查 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>2项&nbsp;火烧排查 </strong> <p class="fc-green">正常</p> </li>
-      </ul>
-      <div class="tablediv clearfix">
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">25项事故排查检测</th>
+       事故排查检测 
+       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099017">收起<span class="icon-bottom-sanjiao"></span></span> 
+      </div> 
+      <ul class="ul-tab-tit"> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>31项&nbsp;事故排查 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>7项&nbsp;泡水排查 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>2项&nbsp;火烧排查 </strong> <p class="fc-green">正常</p> </li> 
+      </ul> 
+      <div class="tablediv clearfix"> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">31项事故排查检测</th> 
+         </tr> 
+         <tr> 
+          <td>
+            @if(json_decode($res1['accident'],true)['left-frame'] == 0)
+              <span class="icon-right"></span>左前大灯框架
+            @elseif(json_decode($res1['accident'],true)['left-frame'] == 1)
+              <span class="icon-yellow-error"></span>左前大灯框架
+            @elseif(json_decode($res1['accident'],true)['left-frame'] == 2)
+              <span class="icon-line-gray"></span>左前大灯框架
+            @else
+              <span class="icon-line-gray"></span>左前大灯框架
+            @endif 
+          </td> 
+          <td> <span class="icon-right"></span>右前大灯框架 </td> 
          </tr>
-         <tr>
-          <td >
-            sdfdsfds
-          </td>
-          <td> <span class="icon-yellow-error"> <span class="layer-yellow-tip width2"><i class="icon-yellow-sanjiao"></i>
-             <div>
-              轻微钣金（15cm&sup2;以内）
-             </div></span> </span>右A柱 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>左前翼子板内衬 </td> 
+          <td> <span class="icon-right"></span>右前翼子板内衬 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左前翼子板内衬 </td>
-          <td> <span class="icon-right"></span>右C柱 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>左前减震器座 </td> 
+          <td> <span class="icon-right"></span>右前减震器座 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后围板 </td>
-          <td> <span class="icon-right"></span>左前减震器座 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>左前纵梁 </td> 
+          <td> <span class="icon-right"></span>右前纵梁 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左B柱 </td>
-          <td> <span class="icon-right"></span>右前翼子板内衬 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>防火墙 </td> 
+          <td> <span class="icon-right"></span>右A柱 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>右D柱 </td>
-          <td> <span class="icon-right"></span>右B柱 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右B柱 </td> 
+          <td> <span class="icon-right"></span>右侧顶边梁 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>右前减震器座 </td>
-          <td> <span class="icon-right"></span>右前纵梁 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右C柱 </td> 
+          <td> <span class="icon-right"></span>右D柱 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后备箱底板 </td>
-          <td> <span class="icon-right"></span>右侧底边梁 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右侧底大边 </td> 
+          <td> <span class="icon-right"></span>右侧驾驶舱底板 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左车顶边梁 </td>
-          <td> <span class="icon-right"></span>左前纵梁 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右侧尾灯框架 </td> 
+          <td> <span class="icon-right"></span>右后翼子板内衬 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左侧底边梁 </td>
-          <td> <span class="icon-yellow-error"> <span class="layer-yellow-tip width2"><i class="icon-yellow-sanjiao"></i>
-             <div>
-              轻微钣金（15cm&sup2;以内）
-             </div></span> </span>左A柱 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>左侧尾灯框架 </td> 
+          <td> <span class="icon-right"></span>左后翼子板内衬 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左后纵梁 </td>
-          <td> <span class="icon-right"></span>防火墙 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后围板 </td> 
+          <td> <span class="icon-right"></span>后备箱底板 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左后翼子板内衬 </td>
-          <td> <span class="icon-right"></span>左D柱 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右后纵梁 </td> 
+          <td> <span class="icon-right"></span>左后纵梁 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>右后翼子板内衬 </td>
-          <td> <span class="icon-right"></span>右后纵梁 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>左D柱 </td> 
+          <td> <span class="icon-right"></span>左C柱 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>右车顶边梁 </td>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>左侧顶边梁 </td> 
+          <td> <span class="icon-right"></span>左B柱 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td> <span class="icon-right"></span>左A柱 </td> 
+          <td> <span class="icon-right"></span>左侧底大边 </td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">10项泡水排查检测</th>
+         <tr> 
+          <td> <span class="icon-right"></span>左侧驾驶舱底板 </td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>全车地胶地毯 </td>
-          <td> <span class="icon-right"></span>发动机主线束 </td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">7项泡水排查检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>机舱保险盒 </td> 
+          <td> <span class="icon-right"></span>座椅滑轨及固定螺丝 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>防火墙隔音棉 </td>
-          <td> <span class="icon-right"></span>全车座椅坐垫 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>车内线束 </td> 
+          <td> <span class="icon-right"></span>安全带底部 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>保险盒及ECU接口 </td>
-          <td> <span class="icon-right"></span>后备箱边角及备胎槽 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>全车座椅座垫 </td> 
+          <td> <span class="icon-right"></span>全车地毯地胶 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>安全带底部 </td>
-          <td> <span class="icon-right"></span>烟灰缸底座 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>烟灰缸底座 </td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>车内线束 </td>
-          <td> <span class="icon-right"></span>座椅滑轨及安装螺丝 </td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last">
-        <tbody>
-         <tr>
-          <th colspan="3">2项火烧排查检测</th>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>发动机线束及橡胶制品 </td>
-          <td> <span class="icon-right"></span>车辆覆盖件及驾驶舱 </td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last"> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">2项火烧排查检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>防火墙隔音棉 </td> 
+          <td> <span class="icon-right"></span>发动机主线束 </td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-      </div>
-     </div>
-     <!-- 外观内饰 -->
-     <div class="test02  test-packup  js-onekind">
+         <tr> 
+          <td></td> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+          <td></td> 
+         </tr>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <!-- 外观内饰 --> 
+     <div class="test02  test-packup  js-onekind"> 
       <div class="test-tit clearfix" id="core">
-       核心部件检测
-       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099018">收起<span class="icon-bottom-sanjiao"></span></span>
-      </div>
-      <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></span> <strong>13项&nbsp;机舱项 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;底盘悬架项 </strong> <p class="fc-green">正常</p> </li>
-      </ul>
-      <div class="tablediv clearfix">
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">13项机舱项检测</th>
+       核心部件检测 
+       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099018">收起<span class="icon-bottom-sanjiao"></span></span> 
+      </div> 
+      <ul class="ul-tab-tit"> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>15项&nbsp;机舱项 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;底盘悬架项 </strong> <p class="fc-green">正常</p> </li> 
+      </ul> 
+      <div class="tablediv clearfix"> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">15项机舱项检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>发动机油底壳 </td> 
+          <td> <span class="icon-right"></span>防冻液液面 </td> 
+          <td> <span class="icon-right"></span>机油液面 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>发动机缸垫 </td>
-          <td> <span class="icon-right"></span>制动油壶 </td>
-          <td> <span class="icon-right"></span>冷凝器 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>变速箱总成 </td> 
+          <td> <span class="icon-right"></span>发动机总成 </td> 
+          <td> <span class="icon-right"></span>电瓶（极柱） </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>发动机外围皮带 </td>
-          <td> <span class="icon-right"></span>水箱 </td>
-          <td> <span class="icon-right"></span>电瓶（极柱） </td>
+         <tr> 
+          <td> <span class="icon-right"></span>制动油壶 </td> 
+          <td> <span class="icon-right"></span>助力油壶 </td> 
+          <td> <span class="icon-right"></span>转向助力泵 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>机油液面 </td>
-          <td> <span class="icon-right"></span>变速箱总成 </td>
-          <td> <span class="icon-right"></span>发动机总成 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>水箱水管 </td> 
+          <td> <span class="icon-right"></span>水箱 </td> 
+          <td> <span class="icon-right"></span>冷凝器 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>水箱水管 </td>
-          <td> <span class="icon-right"></span>防冻液液面 </td>
-          <td> <span class="icon-right"></span>助力油壶 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>发动机外围皮带 </td> 
+          <td> <span class="icon-right"></span>发动机缸垫 </td> 
+          <td> <span class="icon-right"></span>变速箱油底壳 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>转向助力泵 </td>
-          <td></td>
-          <td></td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last"> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">4项底盘悬架项检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>左前减震器 </td> 
+          <td> <span class="icon-right"></span>右前减震器 </td> 
+          <td> <span class="icon-right"></span>右后减震器 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td> <span class="icon-right"></span>左后减震器 </td> 
+          <td></td> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last">
-        <tbody>
-         <tr>
-          <th colspan="3">5项底盘悬架项检测</th>
+         <tr> 
+          <td></td> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>消音器（尾段） </td>
-          <td> <span class="icon-right"></span>右后减震器 </td>
-          <td> <span class="icon-right"></span>左前减震器 </td>
+         <tr> 
+          <td></td> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>左后减震器 </td>
-          <td> <span class="icon-right"></span>右前减震器 </td>
-          <td></td>
+         <tr> 
+          <td></td> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-         </tr>
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-         </tr>
-         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-         </tr>
-         <tr>
-         </tr>
-        </tbody>
-       </table>
-      </div>
-     </div>
-     <!-- 外观内饰 -->
-     <div class="test06  test-packup  js-onekind">
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <!-- 外观内饰 --> 
+     <div class="test06  test-packup  js-onekind"> 
       <div class="test-tit clearfix" id="function">
-       常用功能检测
-       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099019">收起<span class="icon-bottom-sanjiao"></span></span>
-      </div>
-      <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></span> <strong>14项&nbsp;安全系统 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>13项&nbsp;外部配置 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>13项&nbsp;内部配置 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>14项&nbsp;灯光系统 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;高科技配置 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;随车工具 <span class="tip-icon js-tip-icon5"> <span class="layer-tip bottom-layer"> <i class="icon-small-sanjiao"></i>随车工具是否随车赠送，需在交易过程中与车主确认</span> </span> </strong> <p class="fc-green">正常</p> </li>
-      </ul>
-      <div class="tablediv clearfix">
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">14项安全系统检测</th>
+       常用功能检测 
+       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099019">收起<span class="icon-bottom-sanjiao"></span></span> 
+      </div> 
+      <ul class="ul-tab-tit"> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>15项&nbsp;安全系统 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>22项&nbsp;外部配置 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>14项&nbsp;内部配置 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>15项&nbsp;灯光系统 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;高科技配置 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;随车工具 <span class="tip-icon js-tip-icon5"> <span class="layer-tip bottom-layer"> <i class="icon-small-sanjiao"></i>随车工具是否随车赠送，需在交易过程中与车主确认</span> </span> </strong> <p class="fc-green">正常</p> </li> 
+      </ul> 
+      <div class="tablediv clearfix"> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">15项安全系统检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>驾驶座安全气囊 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>前排头部气囊 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>副驾驶安全气囊 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 后排侧气囊 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前排侧气囊 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>驾驶座安全气囊 </td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 后排侧气囊 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>前排侧气囊 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前排头部气囊 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后排头部气囊 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后排头部气囊 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>副驾驶安全气囊 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>胎压监测 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>胎压检测 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>中控锁 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>车内中控锁 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>儿童座椅接口 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>儿童安全座椅接口 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>无钥匙启动 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>无钥匙启动 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>无钥匙进入系统 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>遥控钥匙 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>遥控钥匙 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 电子驻车制动 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>防抱死系统(ABS) </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>防抱死系统(ABS) </td>
+         <tr> 
+          <td> <span class="icon-right"></span>车身稳定控制(ESP) </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>车身稳定系统(ESP) </td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 电子驻车制动 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">13项外部配置检测</th>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>电动天窗 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 全景天窗 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>电动吸合门 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 感应后备箱 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>感应雨刷 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 后雨刷 </td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">22项外部配置检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>左前轮毂 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>前电动车窗 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>左前轮胎 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后电动车窗 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前挡风玻璃 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后视镜电动调节 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右前轮毂 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后视镜电动折叠 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右前轮胎 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后视镜加热 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右后轮毂 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后风挡遮阳帘 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>右后轮胎 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后排侧遮阳帘 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后挡风玻璃 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>左后轮毂 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td> <span class="icon-right"></span>左后轮胎 </td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">13项内部配置检测</th>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 全景天窗 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>多功能方向盘 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>感应雨刷 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>定速巡航 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后雨刷 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> HUD抬头数字显示 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前电动车窗 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>空调 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后电动车窗 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>自动空调 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后视镜电动调节 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>GPS导航 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后视镜电动折叠 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>倒车雷达 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后视镜加热 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 倒车影像系统 </td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 电动吸合门 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>真皮座椅 </td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 后排侧遮阳帘 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>前排座椅加热 </td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 感应后备箱 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后排座椅加热 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>电动天窗 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 座椅通风 </td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">14项内部配置检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>皮质座椅 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>主驾驶座椅电动调节 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前排座椅加热 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 座椅通风 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td> <span class="icon-right"></span>驾驶座座椅电动调节 </td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">14项灯光系统检测</th>
+         <tr> 
+          <td> <span class="icon-right"></span>多功能方向盘 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后雾灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>定速巡航 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>近光灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>GPS导航 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>刹车灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>倒车雷达 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>倒车灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>倒车影像系统 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后转向灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>手动空调 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>前雾灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>自动空调 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>室内顶灯 </td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> HUD抬头显示 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>前转向灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>后排座椅加热 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>远光灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>空调 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>氙气大灯 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> LED大灯 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>自动头灯 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>大灯高度可调 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>大灯清洗 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
+         <tr> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">5项高科技配置检测</th>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 车道偏离预警系统 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 自动泊车 </td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">15项灯光系统检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>近光灯 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 盲点辅助系统 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>远光灯 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 全景摄像头 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前转向灯 </td> 
          </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 发动机自动启停 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>前雾灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>后转向灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>刹车灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>倒车灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>后雾灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>室内顶灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>氙气大灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> LED大灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>自动头灯 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>前雾灯 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td> <span class="icon-right"></span>大灯高度可调 </td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last">
-        <tbody>
-         <tr>
-          <th colspan="3">5项随车工具检测</th>
+         <tr> 
+          <td> <span class="icon-right"></span>大灯清洗 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>备胎 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>维修工具包 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>千斤顶 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>三角警示标 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>灭火器 </td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">5项高科技配置检测</th> 
+         </tr> 
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 车道偏离预警系统 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 自动泊车 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 盲点辅助系统 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td> <span class="icon-right"></span>全景摄像头 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 发动机自动启停 </td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
-          <td></td>
+         <tr> 
+          <td></td> 
          </tr>
-         <tr>
+         <tr> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-      </div>
-     </div>
-     <!-- 外观内饰 -->
-     <div class="test03  test-packup  js-onekind">
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last"> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">5项随车工具检测</th> 
+         </tr> 
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 千斤顶 </td> 
+         </tr>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 灭火器 </td> 
+         </tr>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 三角警示标 </td> 
+         </tr>
+         <tr> 
+          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 维修工具包 </td> 
+         </tr>
+         <tr> 
+          <td> <span class="icon-right"></span>备胎 </td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+          <td></td> 
+         </tr>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <!-- 外观内饰 --> 
+     <div class="test03  test-packup  js-onekind"> 
       <div class="test-tit clearfix" id="start">
-       启动驾驶检测
-       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099020">收起<span class="icon-bottom-sanjiao"></span></span>
-      </div>
-      <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;仪表台指示灯 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;发动机状态 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>2项&nbsp;变速箱及转向 </strong> <p class="fc-green">正常</p> </li>
-      </ul>
-      <div class="tablediv clearfix">
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">4项仪表台指示灯检测</th>
+       启动驾驶检测 
+       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099020">收起<span class="icon-bottom-sanjiao"></span></span> 
+      </div> 
+      <ul class="ul-tab-tit"> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>6项&nbsp;仪表台指示灯 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;发动机状态 </strong> <p class="fc-green">正常</p> </li> 
+       <li class="last"> <span class="icon-green-right"></span> <strong>2项&nbsp;变速箱及转向 </strong> <p class="fc-green">正常</p> </li> 
+      </ul> 
+      <div class="tablediv clearfix"> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">6项仪表台指示灯检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>调表车 </td> 
+          <td> <span class="icon-right"></span>制动系统指示灯 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>制动系统指示灯 </td>
-          <td> <span class="icon-right"></span>安全系统指示灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>安全气囊故障灯 </td> 
+          <td> <span class="icon-right"></span>车身稳定系统故障灯 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>发动机工况指示灯 </td>
-          <td> <span class="icon-right"></span>变速箱指示灯 </td>
+         <tr> 
+          <td> <span class="icon-right"></span>发动机故障灯 </td> 
+          <td> <span class="icon-right"></span>变速箱故障灯 </td> 
          </tr>
-         <tr>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table "> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">4项发动机状态检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>启动 </td> 
+          <td> <span class="icon-right"></span>怠速 </td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">4项发动机状态检测</th>
+         <tr> 
+          <td> <span class="icon-right"></span>发动机抖动 </td> 
+          <td> <span class="icon-right"></span>尾气 </td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>启动状态 </td>
-          <td> <span class="icon-right"></span>怠速状态 </td>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>发动机抖动 </td>
-          <td> <span class="icon-right"></span>尾气 </td>
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last"> 
+        <tbody> 
+         <tr> 
+          <th colspan="3">2项变速箱及转向检测</th> 
+         </tr> 
+         <tr> 
+          <td> <span class="icon-right"></span>变速箱挂挡 </td> 
+          <td> <span class="icon-right"></span>转向 </td> 
          </tr>
-         <tr>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last">
-        <tbody>
-         <tr>
-          <th colspan="3">2项变速箱及转向检测</th>
+         <tr> 
+          <td></td> 
+          <td></td> 
          </tr>
-         <tr>
-          <td> <span class="icon-right"></span>变速箱挂挡 </td>
-          <td> <span class="icon-right"></span>转向 </td>
-         </tr>
-         <tr>
-          <td></td>
-          <td></td>
-         </tr>
-         <tr>
-         </tr>
-        </tbody>
-       </table>
-      </div>
-     </div>
-     <!-- 外观内饰 -->
+         <tr> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <!-- 外观内饰 --> 
      <div class="test04 surface js-onekind
-                     test-packup" id="surface">
+                     test-packup" id="surface"> 
       <div class="test-tit clearfix">
-       外观内饰检测
-       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099021"> 收起 <span class="icon-bottom-sanjiao"></span></span>
-      </div>
-      <ul class="ul-tab-tit">
-       <li> <span class="icon-green-right"></span> <strong>67项&nbsp;缺陷项检测</strong> <p class="fc-green">正常</p> </li>
-       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;漆面修复检测</strong> <p class="fc-yellow">6项异常</p> </li>
-       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;钣金修复检测</strong> <p class="fc-yellow">5项异常</p> </li>
-       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;外观件更换检测</strong> <p class="fc-yellow">3项异常</p> </li>
-      </ul>
-      <div class="tablediv">
-       <!-- 照片缺省 -->
-       <div class="detectBox clearfix">
-        <div class="pad-div">
-         <ul class="picture-tit-tab clearfix">
-          <li> <p class="js-cli" surtype="js-surpic" data-gzlog="tracking_type=click&amp;eventid=0220050000099022"> 缺陷照片 </p> <span class="number-bg-green active">正常</span> </li>
-          <li class="on"> <p class="js-cli" surtype="js-paint" data-gzlog="tracking_type=click&amp;eventid=0220050000099023"> 漆面修复 </p> <span class="number-bg-yellow active">6</span> </li>
-          <li> <p class="js-cli" surtype="js-sheetMetal" data-gzlog="tracking_type=click&amp;eventid=0220050000099024"> 钣金修复 </p> <span class="number-bg-yellow active">5</span> </li>
-          <li> <p class="js-cli" surtype="js-exterior" data-gzlog="tracking_type=click&amp;eventid=0220050000099025"> 外观件更换 </p> <span class="number-bg-yellow active">3</span> </li>
-         </ul>
-        </div>
-        <div class="outward fl">
-         <div class="appearance-img">
-          <div class="appearance-con clueEvaluate">
-           <div class="car-appearance-left"></div>
-           <ul class="areabox">
-            <li class="js-waiguan js-exterior hood ">
+       外观内饰检测 
+       <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099021"> 收起 <span class="icon-bottom-sanjiao"></span></span> 
+      </div> 
+      <ul class="ul-tab-tit"> 
+       <li> <span class="icon-green-right"></span> <strong>67项&nbsp;缺陷项检测</strong> <p class="fc-green">正常</p> </li> 
+       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;漆面修复检测</strong> <p class="fc-green">正常</p> </li> 
+       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;钣金修复检测</strong> <p class="fc-yellow">1项异常</p> </li> 
+       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;外观件更换检测</strong> <p class="fc-green">正常</p> </li> 
+      </ul> 
+      <div class="tablediv"> 
+       <!-- 照片缺省 --> 
+       <div class="detectBox clearfix"> 
+        <div class="pad-div"> 
+         <ul class="picture-tit-tab clearfix"> 
+          <li> <p class="js-cli" surtype="js-surpic" data-gzlog="tracking_type=click&amp;eventid=0220050000099022"> 缺陷照片 </p> <span class="number-bg-green active">正常</span> </li> 
+          <li> <p class="js-cli" surtype="js-paint" data-gzlog="tracking_type=click&amp;eventid=0220050000099023"> 漆面修复 </p> <span class="number-bg-green active">正常</span> </li> 
+          <li class="on"> <p class="js-cli" surtype="js-sheetMetal" data-gzlog="tracking_type=click&amp;eventid=0220050000099024"> 钣金修复 </p> <span class="number-bg-yellow active">1</span> </li> 
+          <li> <p class="js-cli" surtype="js-exterior" data-gzlog="tracking_type=click&amp;eventid=0220050000099025"> 外观件更换 </p> <span class="number-bg-green active">正常</span> </li> 
+         </ul> 
+        </div> 
+        <div class="outward fl"> 
+         <div class="appearance-img"> 
+          <div class="appearance-con clueEvaluate"> 
+           <div class="car-appearance-left"></div> 
+           <ul class="areabox"> 
+            <li class="js-waiguan js-sheetMetal door_fl active"> 
              <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 发动机盖:更换
-             </div> </li>
-            <li class="js-waiguan js-exterior foot_save ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 后保险杠:更换
-             </div> </li>
-            <li class="js-waiguan js-exterior head_save ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 前保险杠:更换
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_rl ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左后翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal trunk_lid ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 后备箱盖:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_rr ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右后翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_fl ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左前翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_fr ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右前翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-paint door_fl active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左侧前门:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint door_rr active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右侧后门:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint door_fr active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右侧前门:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint a_pillar_r2 active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右A柱:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint a_pillar_l2 active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左A柱:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint door_rl active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左侧后门:喷漆
-             </div> </li>
-           </ul>
-           <!-- 缺陷图 -->
-           <!-- 缺陷图 -->
-          </div>
-         </div>
-        </div>
-        <div class="outward fr">
-         <div class="exterior-img exterior-img-2">
-          <div class="car-appearance-right"></div>
-          <div class="appearance-det clueEvaluate"></div>
-          <!-- 缺陷图 -->
-          <!-- 缺陷图 -->
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
+              <span class="icon-sanjiao-yellow"></span> 左侧前门:钣金 
+             </div> </li> 
+           </ul> 
+           <!-- 缺陷图 --> 
+           <!-- 缺陷图 --> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="outward fr"> 
+         <div class="exterior-img exterior-img-2"> 
+          <div class="car-appearance-right"></div> 
+          <div class="appearance-det clueEvaluate"></div> 
+          <!-- 缺陷图 --> 
+          <!-- 缺陷图 --> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
     </div>
     <!--    车主检测报告-->
     <!--    猜你喜欢-->

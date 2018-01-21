@@ -1211,7 +1211,7 @@
                                                 <input type="text" name="Cabin-box1" value="" style="display:none" placeholder="请输入异常信息">
                                                 @endif
                                             </td>
-                                            <td width="25%" style="text-align:center">soaking_water
+                                            <td width="25%" style="text-align:center">
                                                 <label for="Seat-screws">座椅滑轨及固定螺丝</label>
                                             </td>
                                             <td width="25%%">

@@ -162,7 +162,7 @@
                                                 <div class="tpl-form-file-img">
                                                     <img src="/admins/img/a5.png" alt="">
                                                 </div>
-                                                <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                                                <button type="button" class="am-btn am-btn-danger am-btn-sm" onclick="imgs()">
                                                 <i class="am-icon-cloud-upload"></i> 添加车辆图片</button>
                                                 <input id="doc-form-file" type="file" multiple="" name="car_pic">
                                             </div>
@@ -190,6 +190,13 @@
 
     </div>
     </div>
+
+    <script type="text/javascript">
+        function imgs()
+        {
+            alert(111);
+        }
+    </script>
        
 </body>
 
