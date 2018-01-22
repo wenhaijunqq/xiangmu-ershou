@@ -85,7 +85,7 @@
                                     </div>
                                     <center>                                      
                                         <a href="/admin/basicperson/{{$data->id}}" class="am-btn am-btn-success" target="_blank"><span class="am-icon-archive"></span> 查看人员具体信息</a></button>
-                                       <a href="/admin/basiccar" class="am-btn am-btn-secondary" target="_blank"><span class="am-icon-archive"></span> 查看车辆具体信息</a></button>
+                                       <a href="/admin/basiccar/{{$data->car_id}}" class="am-btn am-btn-secondary" target="_blank"><span class="am-icon-archive"></span> 查看车辆具体信息</a></button>
                                     </center>
                                 </form>
 

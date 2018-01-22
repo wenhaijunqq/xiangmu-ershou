@@ -61,13 +61,13 @@
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
-        <li><a href="http://www.chenghang.com/home/baodian" class=""><font class="bb">我的宝典</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class=""><font class="bb">我的收藏</font></a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class=""><font class="bb">对比记录</font></a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class=""><font class="bb">我买的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class=""><font class="bb">我卖的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class=""><font class="bb">会员身份</font></a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class=" active "><font class="bb">修改密码</font></a></li>
+        <li><a href="/home/baodian" class="  ">我的宝典</a></li>
+        <li><a href="/home/shoucang" class="">我的收藏</a></li>
+        <li><a href="/home/duibi" class="">浏览记录</a></li>
+        <li><a href="/home/maiche" class="">我买的车</a></li>
+        <li><a href="/home/shouche" class="">我卖的车</a></li>
+        <li><a href="/home/huiyuan" class="">会员身份</a></li>
+        <li><a href="/home/mima" class="active">修改密码</a></li>
                 
       </ul>
     </div>     

@@ -33,7 +33,7 @@
                 <div class="nav-nav" id='h' style="width:600px">
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>
-                    <a href="/www/sell">我要卖车</a>
+                    <a href="/home/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>
@@ -46,13 +46,13 @@
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
-        <li><a href="http://www.chenghang.com/home/baodian" class=" active ">我的宝典</a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class="">我的收藏</a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class="">对比记录</a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class="">我买的车</a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class="">我卖的车</a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class="">会员身份</a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class="">修改密码</a></li>
+        <li><a href="/home/baodian" class=" active ">我的宝典</a></li>
+        <li><a href="/home/shoucang" class="">我的收藏</a></li>
+        <li><a href="/home/duibi" class="">浏览记录</a></li>
+        <li><a href="/home/maiche" class="">我买的车</a></li>
+        <li><a href="/home/shouche" class="">我卖的车</a></li>
+        <li><a href="/home/huiyuan" class="">会员身份</a></li>
+        <li><a href="/home/mima" class="">修改密码</a></li>
                 
       </ul>
     </div>     

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{{$datac[0]->title}}</title>
+        <link rel="icon" type="image/png" href="/admins/i/favicon.ico">
         <meta name="keywords" content="{{$datac[0]->key}}">
         <link rel="stylesheet" href="/css/h_index.css">
         <link rel="stylesheet" href="/css/h_public.css">
@@ -150,7 +151,7 @@
                   <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  style="border:0px;background:none;height:31px;font-size:14px;" />
                 </div>
                 <div class="phone">400-060-6046</div>
-                <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
+                <div class="login"><a href="/home/login" >登录</a></div>
                 <div class="nav-nav" id='h'>
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>

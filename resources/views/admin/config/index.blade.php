@@ -142,7 +142,7 @@
                    },
                    error:function(err){
 
-                     alert("上传失败");
+                     alert("上传失败，请检查您的网络状态");
                    }
                });
         }
