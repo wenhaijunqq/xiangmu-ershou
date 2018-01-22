@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\partition1;
+use App\tool\Common;
 
 class PurchaseCarController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +20,24 @@ class PurchaseCarController extends Controller
      */
     public function index()
     {
-        $data = partition1::get();
-         return view('/home/PurchaseCar',['data'=>$data]);
+        $data = partition1::orderBy('ping')->get();
+        $data1 = partition1::where('tid','0')->orderBy('ping')->get();
+        $array = $data1;
+        $att = array();
+        $uid = array();
+        $num = 0;
+        foreach ($array as $key => $value) {
+            //dump($value['ping']);
+            if(array_key_exists($value['ping'],$att) == true){
+                $att[$value['ping']]=$att[$value['ping']].",".$value['car_typeName'];
+                $uid[]= $value['id'];
+            }else{
+                $att[$value['ping']]=$value['car_typeName'];
+                $uid[]= $value['id'];
+            }
+
+        }
+         return view('/home/PurchaseCar',['data'=>$data,'att'=>$att,'uid'=>$uid,'num'=>$num]);
     }
     //查询汽车品牌
     public function carModel(Request $request)

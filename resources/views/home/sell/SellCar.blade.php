@@ -2,7 +2,9 @@
 @section('title','我要卖车')
 
 @section('content')
-<link rel="stylesheet" href="/css/h_SellCar.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+       <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+       <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <body style="background-image: url(/img/sell-bg.290289564e5360959be1857de09bf8c4.jpg);background-repeat: no-repeat;">
 
 		<div class="main-con">
@@ -24,11 +26,11 @@
 						        <center><h4 class="modal-title" id="myModalLabel">先估价再卖车，心里倍儿有底</h4></center>
 						      </div>
 						      <div class="modal-body">
-						       <form class="form-horizontal" action="">
+						       <form class="form-horizontal" action="/home/sell">
 								  <div class="form-group">
 								    <label for="inputtext3" class="col-sm-2 control-label">车源地</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="inputtext3" placeholder="省、市">
+								      <input type="text" class="form-control" id="inputtext3" placeholder="省、市" name="">
 								    </div>
 								  </div>
 								  <div class="form-group">
@@ -54,7 +56,7 @@
 								    <div class="col-sm-10">
 								      <input type="text" class="form-control" id="inputtext3" placeholder="请输入您的手机号">
 								    </div>
-								  </div>
+								  </div>							
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">不了，谢谢</button>
