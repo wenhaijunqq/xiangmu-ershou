@@ -20,33 +20,37 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <form method="get" action="/admin/estimate/wait">
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+
                                     <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
+                                        <select data-am-selected="{btnSize: 'sm'}" name="key">
+              @if(empty($reqall['key']))
+              <option value="rid" >预约单号</option>
+              <option value="car_name" >车辆名称</option>
+              <option value="sell_id">拥有者编号</option>
+              @else
+              <option value="rid" {{$reqall["key"] == "rid"? "selected" :"" }}>预约单号</option>
+              <option value="car_name" {{$reqall["key"] == "car_name"? "selected" :"" }}>车辆名称</option>
+              <option value="sell_id" {{$reqall["key"] == "sell_id"? "selected" :"" }}>拥有者编号</option>
+              @endif
             </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field ">
+                                        <input type="text" class="am-form-field " name="val" value="{{isset($reqall['val'])? $reqall['val'] :'' }}">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="submit"></button>
           </span>
                                     </div>
                                 </div>
-
+                                </form>
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -73,10 +77,10 @@
                                                 <td><a href="/admin/estimate/writeassess/{{$val['car_id']}}">填写评估报告</a></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},$(this))">
+                                                        <a href="javascript:;" onclick="add({{$val['car_id']}},{{$val['add_assess']}},{{$val['add_status']}},$(this))">
                                                             <i class="am-btn-success"></i> 提交
                                                         </a>
-                                                        <a href="javascript:;" onclick="update({{$val['car_id']}})">
+                                                        <a href="javascript:;" onclick="update({{$val['car_id']}},{{$val['add_assess']}},{{$val['add_status']}})">
                                                             <i class="am-icon-pencil" ></i> 修改
                                                         </a>
                                                         <a href="javascript:;" class="tpl-table-black-operation-del" onclick="del({{$val['car_id']}},$(this))">
@@ -91,17 +95,12 @@
                                     </table>
                                 </div>
                                 <div class="am-u-lg-12 am-cf">
-
                                     <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
+                                    @if(isset($reqall))
+                                    {!! $data->appends($reqall)->render() !!}
+                                    @else
+                                    {!! $data->render() !!}
+                                    @endif
                                     </div>
                                 </div>
                             </div>
@@ -113,54 +112,71 @@
     </div>
     </div>
     <script type="text/javascript">
-        function update(id)
+        function update(id,add_assess,add_status)
         {
             //询问框
             layer.confirm('请选择您要修改的信息', {
               btn: ['基础信息','评估信息'] //按钮
             }, function(){
-                window.location.href = '/admin/estimate/basicinformation/'+id+'/edit';
+                if(add_status == 1){
+                    window.location.href = '/admin/estimate/basicinformation/'+id+'/edit';
+                }else{
+                    layer.msg('请先填写基础信息！');
+                }
             }, function(){
-              
+                if(add_assess == 1){
+                  window.location.href = '/admin/estimate/writeassess/'+id+'/edit';
+                }else{
+                    layer.msg('请先填写评估信息！');
+                }
             });
         }
         function del(pid,obj)
         {
-            //alert($);
-            layer.confirm('是否取消评估', {
-              btn: ['是','否'] //按钮
-            }, function(){
-               $.post("{{url('/admin/estimate/wait/')}}/"+pid,{'_method':'delete','_token':'{{csrf_token()}}',"id":pid},function(data)
-                {
-                    if(data == 1){
-                        obj.parent().parent().parent().remove();
-                         layer.msg('已取消', {icon: 1});
-                    }
-                   
+
+                //alert($);
+                layer.confirm('是否取消评估', {
+                  btn: ['是','否'] //按钮
+                }, function(){
+                   $.post("{{url('/admin/estimate/wait/')}}/"+pid,{'_method':'delete','_token':'{{csrf_token()}}',"id":pid},function(data)
+                    {
+                        if(data == 1){
+                            obj.parent().parent().parent().remove();
+                             layer.msg('已取消', {icon: 1});
+                        }
+
+                    });
+
+
+                }, function(){
+
                 });
-               
-              
-            }, function(){
-              
-            });
-           
+
+
         }
-        function add(aid,obj)
+        function add(aid,add_assess,add_status,obj)
         {
-            layer.confirm('是否进行提交', {
-              btn: ['是','否'] //按钮
-            }, function(){
-             $.get("{{url('/admin/estimate/wait/')}}/"+aid,{"id":aid},function(data)
-                {
-                    if(data == 1){
-                        obj.parent().parent().parent().remove();
-                         layer.msg('已提交', {icon: 1});
-                    }
-                   
+            console.log(add_assess);
+            console.log(add_status);
+            if(add_assess == 0 || add_status == 0 ){
+                layer.msg('请先填写评估信息和基础信息！');
+
+            }else{
+                layer.confirm('是否进行提交', {
+                  btn: ['是','否'] //按钮
+                }, function(){
+                 $.get("{{url('/admin/estimate/wait/')}}/"+aid,{"id":aid},function(data)
+                    {
+                        if(data == 1){
+                            obj.parent().parent().parent().remove();
+                             layer.msg('已提交', {icon: 1});
+                        }
+
+                    });
+                }, function(){
+
                 });
-            }, function(){
-              
-            });
+            }
         }
     </script>
 </body>

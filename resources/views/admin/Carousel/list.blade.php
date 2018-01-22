@@ -21,22 +21,19 @@
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
                                                 <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span><a href="/admin/Carousel/create">新增</a></button>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-                                    <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2">IT业界</option>
-              <option value="option3">数码产品</option>
-              <option value="option3">笔记本电脑</option>
-              <option value="option3">平板电脑</option>
-              <option value="option3">只能手机</option>
-              <option value="option3">超极本</option>
-            </select>
+
+
+                                    <div class="am-form-group tpl-table-list-select" >
+                                        <select data-am-selected="{btnSize: 'sm'}" name="check">
+                                         <option value="1">请选择搜索类别</option>
+                                         <option value="name">标题</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
@@ -61,7 +58,7 @@
                                         </thead>
                                         <tbody>
                                         @if(count($res) == 1)
-                                        @foreach($res as $v) 
+                                        @foreach($res as $v)
                                             <tr class="gradeX" style="text-align:center">
                                                 <td class="am-text-middle">{{$v['id']}}</td>
                                                 <td>
@@ -88,14 +85,14 @@
                                         @endif
                                         <!-- 通过ajax去删除 -->
                                                     <script>
-                          
+
                                                              function del(id,obj){
                                                                  // $.post("{{url('/admin/adsense/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data)
                                                                 $.post("{{url('/admin/Carousel/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}',"id":id},function(data)
                                                                  {
                                                                  if(data == 1){
                                                                        obj.parent().parent().parent().remove();
-                                                                        
+
                                                                      alert('删除成功！');
                                                                  }else if(data == 0){
                                                                      alert('删除失败！');
@@ -106,7 +103,7 @@
                                             </tbody>
                                     </table>
                                 </div>
-                                            
+
                                <div class="am-u-lg-12 am-cf">
 
                                     <div class="am-fr">

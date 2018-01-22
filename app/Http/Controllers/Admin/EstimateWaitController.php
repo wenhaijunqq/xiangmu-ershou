@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\appointment;
+use DB;
 class EstimateWaitController extends Controller
 {
     /**
@@ -14,11 +15,35 @@ class EstimateWaitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //加载待评估的页面
-        $data = appointment::where('ping_id','>',0)->where('assess_status',0)->get();
-        return view('admin/estimate/wait',['data'=>$data]);
+        // 分页搜索
+        //判断是否键名传递过来 并获取
+        $key = $request->input('key')? $request->input('key') : "";
+        if($key == ""){
+            $data = appointment::where('ping_id','>',0)->where('assess_status',0)->paginate(8);
+            return view('admin/estimate/wait',['data'=>$data]);
+        }else{
+            // 获取值
+            $val = $request->input('val');
+            $reqall = $request->all();
+            if($key == "rid"){
+                $data = appointment::where('ping_id','>',0)->where('assess_status',0)->where('rid','like','%'.$val.'%')->paginate(8);
+            }else if($key == "car_name"){
+                $data = appointment::where('ping_id','>',0)->where('assess_status',0)->where('car_name','like','%'.$val.'%')->paginate(8);
+            }else if($key == "sell_id"){
+                $data = appointment::where('ping_id','>',0)->where('assess_status',0)->where('sell_id','like','%'.$val.'%')->paginate(8);
+            }
+            // dd($reqall['val']);
+            return view('admin/estimate/wait',['data'=>$data,'reqall'=>$reqall]);
+        }
+        
+         
+        
+        
+       
+        
     }
 
     /**
@@ -71,7 +96,7 @@ class EstimateWaitController extends Controller
      */
     public function edit($id)
     {
-        
+        echo "sda21";
 
     }
 
@@ -103,4 +128,6 @@ class EstimateWaitController extends Controller
             echo "0";
         }
     }
+
+
 }

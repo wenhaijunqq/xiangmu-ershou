@@ -13,7 +13,7 @@
 
         <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
         <script type="text/javascript">
-        
+
         $(function(){
             var fn2 = function(city){
                 c.value = city;
@@ -24,8 +24,8 @@
                     left : 172,
                     top  : 45,
                     selected : fn2
-                }); 
-                
+                });
+
             });
             $('body').click(function(){
                 $('#test3').css("color","black");
@@ -108,7 +108,7 @@
                     int=self.setInterval("dinashiqi()",3000);
                     i = 2;
                 }
-                
+
                 zuo.onclick = function(){
                     int = window.clearInterval(int);
                     i++;
@@ -135,8 +135,8 @@
         </script>
     </head>
     <body style="background-color: #f5f5f7">
-   
-         
+
+
 
         <header class="head">
             <ul >
@@ -146,6 +146,25 @@
             </ul>
             <div class="nav">
                 <div class="nav-1" style="background-image:url({{$datac[0]->logo}})">
+
+            </ul> -->
+            <div class="js-silder">
+
+                  <div class="silder-main">
+                      <div class="silder-main-img"  ">
+                          <img src="img/m-1.png" alt="">
+                      </div>
+                      <div class="silder-main-img" >
+                          <img src="img/m-2.png" alt="">
+                      </div>
+                      <div class="silder-main-img" >
+                          <img src="img/m-3.png" alt="">
+                      </div>
+                  </div>
+
+          </div>
+            <div class="nav">
+                <div class="nav-1">
                 </div>
                 <div class="nav-2" style="height:25px">
                   <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  style="border:0px;background:none;height:31px;font-size:14px;" />
@@ -486,7 +505,7 @@
                 <a href="###" target="_blank">天津二手起亚智跑</a>
                 <a href="####" target="_blank">天津二手现代现代ix...</a>
             </div>
-           
+
             <div class="friendly-link">
                 <p class="link-tit">友情链接：</p>
                 <span class="open-box"></span>
@@ -568,7 +587,7 @@
             <div class="friendly-link">
                 <p class="link-tit">热门页面：</p>
                 <span class="open-box"></span>
-                
+
                 <span class="close-box" data-role="is_show_box"></span>
                 <a href="#">1万元二手车</a>
                 <a href="#">2万左右二手车</a>

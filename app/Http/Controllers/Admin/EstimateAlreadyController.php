@@ -14,11 +14,29 @@ class EstimateAlreadyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //加载已评估页面
-        $data = appointment::where('ping_id','>',0)->where('assess_status',1)->where('del_assess',0)->get();
-        return view('admin/estimate/already',['data'=>$data]);
+        //加载待评估的页面
+        // 分页搜索
+        //判断是否键名传递过来 并获取
+        $key = $request->input('key')? $request->input('key') : "";
+        if($key == ""){
+            $data = appointment::where('ping_id','>',0)->where('assess_status',1)->where('del_assess',0)->paginate(8);
+            return view('admin/estimate/already',['data'=>$data]);
+        }else{
+            // 获取值
+            $val = $request->input('val');
+            $reqall = $request->all();
+            if($key == "rid"){
+                $data = appointment::where('ping_id','>',0)->where('assess_status',1)->where('del_assess',0)->where('rid','like','%'.$val.'%')->paginate(8);
+            }else if($key == "car_name"){
+                $data = appointment::where('ping_id','>',0)->where('assess_status',1)->where('del_assess',0)->where('car_name','like','%'.$val.'%')->paginate(8);
+            }else if($key == "sell_id"){
+                $data = appointment::where('ping_id','>',0)->where('assess_status',1)->where('del_assess',0)->where('sell_id','like','%'.$val.'%')->paginate(8);
+            }
+            // dd($reqall['val']);
+            return view('admin/estimate/already',['data'=>$data,'reqall'=>$reqall]);
+        }
     }
 
     /**

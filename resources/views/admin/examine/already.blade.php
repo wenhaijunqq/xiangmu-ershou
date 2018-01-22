@@ -14,39 +14,34 @@
 
 
                             </div>
-                            <div class="widget-body  am-fr">
-
-                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
-                                    <div class="am-form-group">
-                                        <div class="am-btn-toolbar">
-                                            <div class="am-btn-group am-btn-group-xs">
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <form method="get" action="/admin/examine/wait">
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+
                                     <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}">
-              <option value="option1">所有类别</option>
-              <option value="option2"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
-              <option value="option3"></option>
+                                        <select data-am-selected="{btnSize: 'sm'}" name="key">
+              @if(empty($reqall['key']))
+              <option value="rid" >预约单号</option>
+              <option value="car_name" >车辆名称</option>
+              <option value="sell_id">拥有者编号</option>
+              <option value="ping_id">评估员编号</option>
+              @else
+              <option value="rid" {{$reqall["key"] == "rid"? "selected" :"" }}>预约单号</option>
+              <option value="car_name" {{$reqall["key"] == "car_name"? "selected" :"" }}>车辆名称</option>
+              <option value="sell_id" {{$reqall["key"] == "sell_id"? "selected" :"" }}>拥有者编号</option>
+              <option value="ping_id" {{$reqall["key"] == "ping_id"? "selected" :"" }}>评估员编号</option>
+              @endif
             </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field ">
+                                        <input type="text" class="am-form-field " name="val" value="{{isset($reqall['val'])? $reqall['val'] :'' }}">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="submit"></button>
           </span>
                                     </div>
                                 </div>
-
+                                </form>
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
@@ -62,9 +57,9 @@
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
-                                        
+
                                         <tbody>
-                                        @foreach($data as $key=>$val) 
+                                        @foreach($data as $key=>$val)
                                             <tr class="gradeX">
                                                 <td>{{$val['rid']}}</td>
                                                 <td>{{$val['car_name']}}</td>
@@ -72,8 +67,12 @@
                                                 <td><a href="/admin/seeinformation/{{$val['car_id']}}">车辆基本信息</a></td>
                                                 <td>{{$val['ping_id']}}</td>
                                                 <td>{{$val['audit_time']}}</td>
-                                                <td></td>
-                                                <td><a>评估报告表<a/></td>
+                                                @if($val['audit_jg'] == 1)
+                                                <td>审核通过</td>
+                                                @else
+                                                <td>审核未通过</td>
+                                                @endif
+                                                <td><a href="/admin/writeassess/{{$val['car_id']}}">评估报告表<a/></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;" class="tpl-table-black-operation-del"  onclick="del({{$val['car_id']}},$(this))">
@@ -83,8 +82,8 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                            
-                                            
+
+
                                             <!-- more data -->
                                         </tbody>
                                     </table>
@@ -92,15 +91,11 @@
                                 <div class="am-u-lg-12 am-cf">
 
                                     <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
+                                    @if(isset($reqall))
+                                    {!! $data->appends($reqall)->render() !!}
+                                    @else
+                                    {!! $data->render() !!}
+                                    @endif
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +110,7 @@
 
         function del(id,obj)
         {
-            
+
             layer.confirm('确定是否删除', {
               btn: ['是','否'] //按钮
             }, function(){
@@ -126,16 +121,16 @@
                         obj.parent().parent().parent().remove();
                         layer.msg('已删除', {icon: 1});
                     }
-                    
+
                 });
 
-                
-              
-              
+
+
+
             }, function(){
-              
+
             });
-           
+
         }
     </script>
 </body>

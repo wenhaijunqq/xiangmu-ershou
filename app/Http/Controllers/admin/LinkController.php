@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\Link;
+use DB;
 
 class LinkController extends Controller
 {
@@ -19,8 +20,9 @@ class LinkController extends Controller
     {
         // echo "加载友情链接显示页面";
         //加载友情链接显示页面
-         $res= Link::get();
-        
+         $res=Link::where('id','>','0')->paginate(3);
+
+
           return view('/admin/Link/list',['res'=>$res]);
 
     }
@@ -45,8 +47,8 @@ class LinkController extends Controller
     public function store(Request $request)
     {
         $res = $request->except(['_token']);
-         
-        
+
+
         $Link = new Link;
         $Link->name = $res['name'];
         $Link->url = $res['url'];
@@ -68,9 +70,28 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$key)
     {
         //
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+
+
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/Link"</script>';
+        }else{
+
+            $res = DB::table('Link')->where('name','like','%'.$key.'%')->paginate(2);
+            $count = DB::table('Link')->where('name','like','%'.$key.'%')->count();
+
+        }
+
+        $res->setPath('/admin/Link/show');
+
+        $res = $res->appends(array('key'=>$key));
+
+        return view('/admin/Link/list',['res'=>$res,'count'=>$count,'check'=>$check]);
+
     }
 
     /**
@@ -101,10 +122,10 @@ class LinkController extends Controller
          $jieguo = Link::find($id);
         // var_dump($jieguo);
 
-        $jieguo->name = $res['name'];     
+        $jieguo->name = $res['name'];
         $jieguo->url = $res['url'];
         $jieguo->status = $res['status'];
-        
+
         $aaa =  $jieguo->save();
         if($aaa){
              echo "<script>alert('恭喜，修改成功！');location.href='/admin/Link'</script>";
@@ -112,7 +133,7 @@ class LinkController extends Controller
             echo "<script>alert('抱歉，修改失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 
         }
-    
+
     }
 
     /**
@@ -126,7 +147,7 @@ class LinkController extends Controller
         //
         $res = Link::find($id);
         $jieguo = $res->delete();
-        
+
 
        if($jieguo){
             echo  1;
@@ -135,5 +156,5 @@ class LinkController extends Controller
        }
 
     }
-    
+
 }

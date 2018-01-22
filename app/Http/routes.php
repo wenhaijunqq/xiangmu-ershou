@@ -156,6 +156,8 @@ Route::get('/admin/seeinformation/{id}','admin\SeeInformationController@index');
 //后台评估报告
 Route::get('/admin/estimate/writeassess/{id}','admin\WriteAssessController@indexs');
 Route::resource('/admin/estimate/writeassess','admin\WriteAssessController');
+Route::resource('/admin/writeassess','admin\WriteAssessController');
+Route::post('/admin/estiamte/updateassess/{id}','admin\WriteAssessController@updates');
 
 Route::resource('/admin/basicinformation','Admin\BasicInformationController');
 
@@ -233,11 +235,12 @@ Route::resource('/admin/link/list','admin\LinkController');
 Route::resource('/','home\IndexController');
 
 //登录
-Route::get('/home/login','home\LoginController@login');
-Route::post('/home/phone','home\LoginController@phone');
-Route::get('/home/code','home\LoginController@code');
-// Route::post('dologin','LoginController@dologin');
-// Route::post('shouye','LoginController@index');
+Route::get('home/login','home\LoginController@login');
+Route::post('home/phone','home\LoginController@phone');
+Route::post('code','LoginController@code');
+//Route::post('dologin','LoginController@dologin');
+//Route::post('shouye','LoginController@index');
+Route::post('home/dotelregister','home\LoginController@dotelregister');
 
 //前台用户登录
 // Route::get('home/register','home\LoginController@register');
@@ -251,3 +254,5 @@ Route::post('home/dotelregister','home\LoginController@dotelregister');
 
 //前台我要卖车
 Route::resource('/home/sell','home\SellController');
+//前台车辆详情
+Route::resource('/www/xiangqing','home\DetailsController@index');

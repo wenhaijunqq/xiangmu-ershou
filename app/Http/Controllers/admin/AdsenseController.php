@@ -18,9 +18,9 @@ class AdsenseController extends Controller
     public function index()
     {
         //加载到广告浏览页面
-        $res = adsense::get();
-       
-        
+        // $res = adsense::get()->simplePaginate(3);
+       $res=adsense::where('id','>','1')->paginate(2);
+
         // dump($res);
          return view('/admin/adsense/list',['res'=>$res]);
 
@@ -58,7 +58,7 @@ class AdsenseController extends Controller
             $filename = $temp_name.'.'.$hz;
             // 上传
             $pic -> move('./uploads',$filename);
-            
+
 
         }else{
             dd('没有文件上传');
@@ -76,7 +76,7 @@ class AdsenseController extends Controller
               echo "<script>alert('抱歉，添加失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
 
        }
-          
+
     }
 
     /**
@@ -88,6 +88,25 @@ class AdsenseController extends Controller
     public function show($id)
     {
         //
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+
+
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/adsense"</script>';
+        }else{
+
+            $res = DB::table('adsense')->where('title','like','%'.$key.'%')->paginate(2);
+            $count = DB::table('adsense')->where('title','like','%'.$key.'%')->count();
+
+        }
+
+        $res->setPath('/admin/adsense/show');
+
+        $res = $res->appends(array('key'=>$key));
+
+        return view('/admin/adsense/list',['res'=>$res,'count'=>$count,'check'=>$check]);
+
     }
 
     /**
@@ -100,7 +119,7 @@ class AdsenseController extends Controller
     {
         //加载修改页面
         $res = adsense::find($id);
-        
+
         return view('/admin/adsense/edit',['res'=>$res]);
 
     }
@@ -114,7 +133,7 @@ class AdsenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
          // echo "update页面";
         $res = $request->except(['_token','_method']);
         if($request->hasFile('pic')){
@@ -128,7 +147,7 @@ class AdsenseController extends Controller
             $filename = $temp_name.'.'.$hz;
             // 上传
             $pic -> move('./uploads',$filename);
-            
+
         }else{
             dd('没有文件上传');
         }
@@ -139,7 +158,7 @@ class AdsenseController extends Controller
         $jieguo->title = $res['title'];
         $jieguo->url = $res['url'];
         $jieguo->pic = $filename;
-        
+
         $aaa =  $jieguo->save();
         if($aaa){
             echo "<script>alert('恭喜，修改成功！');location.href='/admin/adsense'</script>";
@@ -157,11 +176,11 @@ class AdsenseController extends Controller
      */
     public function destroy($id)
     {
-     
-        
+
+
         $res = adsense::find($id);
         $jieguo = $res->delete();
-        
+
 
        if($jieguo){
             echo  1;
@@ -169,6 +188,7 @@ class AdsenseController extends Controller
             echo  0;
        }
 
-       
+
     }
+
 }

@@ -51,6 +51,7 @@ class BasicInformationController extends Controller
     public function show($id)
     {
         //
+       
     }
 
     /**

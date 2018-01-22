@@ -18,7 +18,8 @@ class CarouselController extends Controller
     public function index()
     {
         //加载到轮播图浏览页面
-        $res = Carousel::get();
+        // $res = Carousel::get();
+        $res=Carousel::where('id','>','1')->paginate(2);
         return view('/admin/Carousel/list',['res'=>$res]);
     }
 
@@ -29,7 +30,7 @@ class CarouselController extends Controller
      */
     public function create()
     {
-        
+
          return view('/admin/Carousel/create');
 
     }
@@ -55,7 +56,7 @@ class CarouselController extends Controller
             $filename = $temp_name.'.'.$hz;
             // 上传
             $pic -> move('./uploads',$filename);
-            
+
         }else{
             dd('没有文件上传');
         }
@@ -85,6 +86,24 @@ class CarouselController extends Controller
     public function show($id)
     {
         //
+        $key = $_GET['key'];
+        $check = $_GET['check'];
+
+
+        if($check == 1){
+              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/Carousel"</script>';
+        }else{
+
+            $res = DB::table('Carousel')->where('title','like','%'.$key.'%')->paginate(2);
+            $count = DB::table('Carousel')->where('title','like','%'.$key.'%')->count();
+
+        }
+
+        $res->setPath('/admin/Carousel/show');
+
+        $res = $res->appends(array('key'=>$key));
+
+        return view('/admin/Carousel/list',['res'=>$res,'count'=>$count,'check'=>$check]);
     }
 
     /**
@@ -123,7 +142,7 @@ class CarouselController extends Controller
             $filename = $temp_name.'.'.$hz;
             // 上传
             $pic -> move('./uploads',$filename);
-            
+
         }else{
             dd('没有文件上传');
         }
@@ -135,7 +154,7 @@ class CarouselController extends Controller
         $jieguo->time = $res['time'];
         $jieguo->url = $res['url'];
         $jieguo->pic = $filename;
-        
+
         $aaa =  $jieguo->save();
         if($aaa){
             echo "<script>alert('恭喜，修改成功！');location.href='/admin/Carousel'</script>";
@@ -156,7 +175,7 @@ class CarouselController extends Controller
         //
          $res = Carousel::find($id);
         $jieguo = $res->delete();
-        
+
 
        if($jieguo){
             echo  1;
