@@ -63,16 +63,20 @@
                                         @if(count($res))
                                         @foreach($res as $k=>$v)
                                             <tr class="gradeX" style="text-align:center">
-                                                <td>{{$v -> id}}</td>
-                                                <td>{{$v -> name}}</td>
-                                                <td>{{$v -> url}}</td>
-                                                <td>{{$v -> status == 1 ? '开启' : '关闭'}}</td>
+                                                <td>{{$v['id']}}</td>
+                                                <td>{{$v['name']}}</td>
+                                                <td>{{$v['url']}}</td>
+                                                @if($v['status']==1)                                                
+                                                <td>开启</td>
+                                                @else
+                                                <td>关闭</td>
+                                                @endif
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/Link/{{$v -> id}}/edit">
+                                                        <a href="/admin/Link/{{$v['id']}}/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="" class="tpl-table-black-operation-del" onclick="del({{$v -> id}},$(this))">
+                                                        <a href="" class="tpl-table-black-operation-del" onclick="del({{$v['id']}},$(this))">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
@@ -107,7 +111,15 @@
                                 <div class="am-u-lg-12 am-cf">
 
                                     <div class="am-fr">
-                                       
+                                        <ul class="am-pagination tpl-pagination">
+                                            <li class="am-disabled"><a href="#">«</a></li>
+                                            <li class="am-active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">»</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

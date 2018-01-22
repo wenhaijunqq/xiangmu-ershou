@@ -40,11 +40,11 @@
                     <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
                 </div>
                 <div class="phone">400-060-6046</div>
-                <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
+                <div class="login"><a href="/home/login" >登录</a></div>
                 <div class="nav-nav" id='h' style="width:600px">
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>
-                    <a href="/www/sell">我要卖车</a>
+                    <a href="/home/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>
@@ -56,14 +56,14 @@
         
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
-      <ul class="list">
-        <li><a href="http://www.chenghang.com/home/baodian" class=" active "><font class="bb">我的宝典</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class=""><font class="bb">我的收藏</font></a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class=""><font class="bb">对比记录</font></a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class=""><font class="bb">我买的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class=""><font class="bb">我卖的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class=""><font class="bb">会员身份</font></a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class=""><font class="bb">修改密码</font></a></li>
+     <ul class="list">
+        <li><a href="/home/baodian" class=" active ">我的宝典</a></li>
+        <li><a href="/home/shoucang" class="">我的收藏</a></li>
+        <li><a href="/home/duibi" class="">对比记录</a></li>
+        <li><a href="/home/maiche" class="">我买的车</a></li>
+        <li><a href="/home/shouche" class="">我卖的车</a></li>
+        <li><a href="/home/huiyuan" class="">会员身份</a></li>
+        <li><a href="/home/mima" class="">修改密码</a></li>
                 
       </ul>
     </div>     

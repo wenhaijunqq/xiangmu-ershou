@@ -14,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+
+        //
+        $config = DB::table('config') -> where('id',1) -> get();
+        view() -> share('config',$config);
     }
 
     /**

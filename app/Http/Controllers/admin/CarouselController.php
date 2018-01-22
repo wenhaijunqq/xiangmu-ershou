@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\Carousel;
-use DB;
 
 class CarouselController extends Controller
 {
@@ -19,8 +18,7 @@ class CarouselController extends Controller
     public function index()
     {
         //加载到轮播图浏览页面
-        // $res = Carousel::get();
-        $res=Carousel::where('id','>','1')->paginate(3);
+        $res = Carousel::get();
         return view('/admin/Carousel/list',['res'=>$res]);
     }
 
@@ -84,27 +82,9 @@ class CarouselController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$key)
+    public function show($id)
     {
         //
-        $key = $_GET['key'];
-        $check = $_GET['check'];
-        
-        
-        if($check == 1){
-              echo '<script>alert("请您选择要搜索的类别");location.href="/admin/Carousel"</script>';
-        }else{
-            
-            $res = DB::table('Carousel')->where('title','like','%'.$key.'%')->paginate(3);
-            $count = DB::table('Carousel')->where('title','like','%'.$key.'%')->count();
-            
-        }
-
-        $res->setPath('/admin/Carousel/show');
-        
-        $res = $res->appends(array('key'=>$key));
-        
-        return view('/admin/Carousel/list',['res'=>$res,'count'=>$count,'check'=>$check]);
     }
 
     /**

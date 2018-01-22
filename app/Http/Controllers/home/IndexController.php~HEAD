@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\Link;
-
-class LinkController extends Controller
+use DB;
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,14 @@ class LinkController extends Controller
      */
     public function index()
     {
-        //
-        $res=Link::get();
-        return view('/home/footer',['res'=>$res]);
+        //显示网页主页
+        $datac = DB::table('config') -> get();
+        dd($datac);
+        if($datac[0]->Wstatus == 1){
+            return view('home/index',['datac'=>$datac]);
+        }else{
+            return view('errors/404');
+        }
     }
 
     /**
@@ -52,7 +56,6 @@ class LinkController extends Controller
     public function show($id)
     {
         //
-
     }
 
     /**

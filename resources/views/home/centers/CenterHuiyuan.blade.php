@@ -13,20 +13,7 @@
             <link rel="stylesheet" href="/css/h_public.css">
             <link rel="stylesheet" href="/css/h_index.css">
     <script src="/js/jquery-3.2.1.js"></script>
-     <style>
-        li a .bb:link {
-        color:#00e224;
-        }
-        li a .aa:hover {
-        color:#00e224;
-        } 
-        li a .bb:visited {
-        color:#00e224;
-        }
-        li a .bb:active {
-        color:#00e224;
-        }
-    </style>
+
 </head>  
     <body class="bg-f0">
         
@@ -39,6 +26,7 @@
                 </div>
                 <div class="nav-2">
                     <span style="font-size: 14px;color: #888;">天津</span>
+                    <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
@@ -58,13 +46,15 @@
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
-        <li><a href="http://www.chenghang.com/home/center" class="bb"><font class="aa">我的宝典</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class="bb"><font class="aa">我的收藏</font></a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class="bb"><font class="aa">对比记录</font></a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class="bb"><font class="aa">我买的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class="bb"><font class="aa">我卖的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class="active"><font class="aa">会员身份</font></a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class="bb"><font class="aa">修改密码</font></a></li>  </ul>
+        <li><a href="/home/baodian" class="  ">我的宝典</a></li>
+        <li><a href="/home/shoucang" class="">我的收藏</a></li>
+        <li><a href="/home/duibi" class="">浏览记录</a></li>
+        <li><a href="/home/maiche" class="">我买的车</a></li>
+        <li><a href="/home/shouche" class="">我卖的车</a></li>
+        <li><a href="/home/huiyuan" class="active">会员身份</a></li>
+        <li><a href="/home/mima" class="">修改密码</a></li>
+                
+      </ul>
     </div>     
         <div class="right">
             <div class="ncar-tip">

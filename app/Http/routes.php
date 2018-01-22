@@ -13,14 +13,9 @@
 
 
 //前台模板引入
-Route::get('/', function () {
-    return view('home/index');
-});
-//Route::get('/www/buy', function () {
-//    return view('/home/PurchaseCar');
-//});
-Route::get('/www/sell', function () {
-    return view('/home/SellCar');
+
+Route::get('/www/buy', function () {
+    return view('/home/PurchaseCar');
 });
 Route::get('/www/server', function () {
     return view('/home/ServerPro');
@@ -37,41 +32,17 @@ Route::get('/www/asklist',function(){
 Route::get('/www/answer',function(){
 	return view('/home/question/answer');
 });
-Route::get('IndexLogin', function () {
-    return view('/home/login');
-});
-Route::get('/IndexRegister', function () {
-    return view('/home/register');
-});
-Route::get('/www/xiangqing', function () {
-	return view('/home/Xiangqing');
-});
 
-Route::get('IndexLogin', function () {
-    return view('/home/login');
-});
-Route::get('/IndexRegister', function () {
-    return view('/home/register');
-});
-Route::get('/www/xiangqing', function () {
-	return view('/home/Xiangqing');
-});
-
-//我要买车页
-//查询汽车品牌
-Route::post('/www/buy/car','Home\PurchaseCarController@carModel');
-//查询汽车车系
-Route::post('/www/buy/carType','Home\PurchaseCarController@carType');
-Route::resource('/www/buy','Home\PurchaseCarController');
 //前台问答
+Route::resource('/home/question','Home\QuestionController');
 Route::get('/home/answer/{id}','Home\AnswerController@index');
 Route::get('/home/asklist/{type}','Home\AnswerController@asklist');
 Route::post('/home/like/{id}','Home\AnswerController@like');
-Route::resource('/home/question','Home\QuestionController');
-
 
 //个人中心
 Route::resource('/home/center','home\CenterController');
+//个人中心宝典页
+Route::resource('/home/baodian','home\Centerst\BaodianController');
 //个人中心买车页
 Route::resource('/home/maiche','home\Centerst\MaicheController');
 //个人中心售车页
@@ -132,23 +103,24 @@ Route::post('/admin/configedit/{id}','admin\ConfigeditController@uconfig');
 //人员具体信息页面
 Route::get('/admin/basicperson/{id}','admin\BasicpersonController@index');
 //车辆具体信息页面
-Route::get('/admin/basiccar','admin\BasicpersonController@show');
+Route::get('/admin/basiccar/{id}','admin\BasicpersonController@show');
 //后台预约搜索页
 Route::resource('/admin/ysearch','admin\SearchController');
 //后台网站配置页
 Route::resource('/admin/config','admin\ConfigController');
 //后台订单信息页
 Route::resource('/admin/order','admin\OrderController');
-
+//后台估价页
+Route::resource('/admin/gujia','admin\GujiaController');
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
-//后台登录验证
-Route::post('/admin/dologin','admin\LoginController@dologin');
 //后台登陆路由
 Route::resource('/admin/login','admin\LoginController@login');
+//后台登录验证
+Route::post('/admin/dologin','admin\LoginController@dologin');
 //后台手机验证
 Route::post('/admin/phone','admin\LoginController@phone');
-Route::post('code','LoginController@code');
+// Route::post('code','LoginController@code');
 
 //后台账号设置
 Route::resource('/admin/Accountupdate','admin\AccountUpdateController');
@@ -195,7 +167,12 @@ Route::get('/admin/chakan',function(){
 	return view('/admin/UserManagement/tableListImg');
 });
 
-
+//轮播图路由器
+Route::resource('/admin/Carousel/list','admin\CarouselController');
+//广告位路由器
+Route::resource('/admin/adsense/list','admin\AdsenseController');
+//友情链接路由器
+Route::resource('/admin/link/list','admin\LinkController');
 
 //后台表单页
 Route::get('/admin/form',function(){
@@ -244,32 +221,33 @@ Route::get('/admin/chakan',function(){
 //轮播图路由器
 Route::resource('/admin/Carousel','admin\CarouselController');
 //广告位路由器
-
 Route::resource('/admin/adsense','admin\AdsenseController');
 //友情链接路由器
-Route::resource('/admin/Link','admin\LinkController');
+
+Route::resource('/admin/link','admin\LinkController');
+Route::resource('/admin/link/list','admin\LinkController');
 
 
 
 //前台
-
+Route::resource('/','home\IndexController');
 
 //登录
-Route::get('home/login','home\LoginController@login');
-Route::post('home/phone','home\LoginController@phone');
-Route::post('code','LoginController@code');
-Route::post('dologin','LoginController@dologin');
-Route::post('shouye','LoginController@index');
+Route::get('/home/login','home\LoginController@login');
+Route::post('/home/phone','home\LoginController@phone');
+Route::get('/home/code','home\LoginController@code');
+// Route::post('dologin','LoginController@dologin');
+// Route::post('shouye','LoginController@index');
 
 //前台用户登录
-Route::get('home/register','home\LoginController@register');
+// Route::get('home/register','home\LoginController@register');
 //前台登录验证
-Route::post('home/dotelregister','admin\LoginController@dotelregister');
+// Route::post('home/dotelregister','admin\LoginController@dotelregister');
 
 //前台友情链接
 Route::resource('home/footer','home\LinkController');
 
 Route::post('home/dotelregister','home\LoginController@dotelregister');
 
-//前台我要买车
+//前台我要卖车
 Route::resource('/home/sell','home\SellController');

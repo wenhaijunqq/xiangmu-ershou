@@ -2,17 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>首页</title>
+        <title>{{$datac[0]->title}}</title>
+        <link rel="icon" type="image/png" href="/admins/i/favicon.ico">
+        <meta name="keywords" content="{{$datac[0]->key}}">
         <link rel="stylesheet" href="/css/h_index.css">
         <link rel="stylesheet" href="/css/h_public.css">
-
         <link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
-        <link rel="stylesheet"  href="/css/h_ss.css">
+        <link rel="stylesheet" href="/css/h_city.css">
         <script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
 
         <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
         <script type="text/javascript">
-
+        
         $(function(){
             var fn2 = function(city){
                 c.value = city;
@@ -23,8 +24,8 @@
                     left : 172,
                     top  : 45,
                     selected : fn2
-                });
-
+                }); 
+                
             });
             $('body').click(function(){
                 $('#test3').css("color","black");
@@ -33,8 +34,6 @@
 
         });
         </script>
-        <link rel="stylesheet" href="/css/h_ss.css">
-
         <script>
             var i = 1;
             function dinashiqi(){
@@ -109,7 +108,7 @@
                     int=self.setInterval("dinashiqi()",3000);
                     i = 2;
                 }
-
+                
                 zuo.onclick = function(){
                     int = window.clearInterval(int);
                     i++;
@@ -136,8 +135,8 @@
         </script>
     </head>
     <body style="background-color: #f5f5f7">
-
-
+   
+         
 
         <header class="head">
             <ul >
@@ -146,17 +145,17 @@
                 <li id="li2" style="background-image: url('img/m-3.png');display: none;background-repeat: on-repeat;"></li>
             </ul>
             <div class="nav">
-                <div class="nav-1">
+                <div class="nav-1" style="background-image:url({{$datac[0]->logo}})">
                 </div>
                 <div class="nav-2" style="height:25px">
-                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  ni/>
+                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  style="border:0px;background:none;height:31px;font-size:14px;" />
                 </div>
                 <div class="phone">400-060-6046</div>
-                <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
+                <div class="login"><a href="/home/login" >登录</a></div>
                 <div class="nav-nav" id='h'>
                     <a href="/">首页</a>
                     <a href="/www/buy">我要买车</a>
-                    <a href="/www/sell">我要卖车</a>
+                    <a href="/home/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>
@@ -395,6 +394,7 @@
                     </div>
                     <p class="arc-info">Copyright 2017 www.guazi.com All Rights Reserved</p>
                     <p class="arc-info">京ICP备15053955号  ICP证151071号 </p>
+                    <p class="arc-info">{{$datac[0]->Copying}} 版权所有</p>
                     <div class="protect clearfix">
                         <a class="police" rel="nofollow" target="_blank" href="#">京公网安备11010802020161号</a>
                     </div>
@@ -486,7 +486,7 @@
                 <a href="###" target="_blank">天津二手起亚智跑</a>
                 <a href="####" target="_blank">天津二手现代现代ix...</a>
             </div>
-
+           
             <div class="friendly-link">
                 <p class="link-tit">友情链接：</p>
                 <span class="open-box"></span>
@@ -568,7 +568,7 @@
             <div class="friendly-link">
                 <p class="link-tit">热门页面：</p>
                 <span class="open-box"></span>
-
+                
                 <span class="close-box" data-role="is_show_box"></span>
                 <a href="#">1万元二手车</a>
                 <a href="#">2万左右二手车</a>

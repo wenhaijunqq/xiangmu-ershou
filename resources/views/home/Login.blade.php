@@ -13,17 +13,15 @@
 	
 			<div class="login-top">
 				<h1>用户登录</h1>
-				<form>
+				<form >
 					{{ csrf_field()}}
-					<input type="text" name="phone" id="phone" value="请输入手机号码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入手机号码';}">
-					<input id= "text" type="text" value="请输入手机验证码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入手机验证码';}">
+					<input type="text" name="phone" id="phone" placeholder="请输入手机号码"><span class="box1"</span>
+					<input id= "text" type="text" placeholder="请输入手机验证码" >
 					<input type="button" id="btn" class="btn_mfyzm" id="dyMobileButton" value="获取验证码">
-				</form>
-				<form  method="post" action="{{ url('home/dotelregister') }}">
-				<div class="forgot">
-		
-					<input type="submit" value="登 录">
-				</div>
+					<br><br>
+					<div align="center">
+						<input type="submit" value="登 录" id="deng">
+					</div>
 				</form>
 				
 			</div>
@@ -38,84 +36,60 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		//检查电话号码
-		$('input[name=phone]').blur(function(){
-		    var phone = $(this).val();
-		    $.post('/home/phone',{'phone':phone,'_token':'{{csrf_token()}}'},function(data){
-		          switch(data){
-		            case 'no':
-		                layer.tips('手机号码格式不正确', '#phone');
-		                $('#btn').attr('disabled','disabled');
-		                break;
-		            case 'not':
-		                layer.tips('手机号码输入错误', '#phone');
-		                $('#btn').attr('disabled','disabled');
-		                break;
-		            case 'ok':
-		                $('#btn').removeAttr('disabled');
-		                break;
-		        }
-		    });
-		});
+		 $('#phone').blur(function(){
 
+            //设置一个判断手机号是否合法的正则表达式
+            var string = "^[1][3,4,5,7,8][0-9]{9}$";
 
-		//发送验证码
-		var time = 0;
-		$('#btn').click(function(){
-		    if(time == 0){
-		        var phone = $('input[name=phone]').val();
-		        $.post('home/code',{'phone':phone,'_token':'{{csrf_token()}}'},function(data){
-		            alert(data);
-		        });
-		        $('#btn').attr('disabled','disabled');
-		    }
-		    if (time == 0) {
-		            time = 10; 
-		            var index = setInterval(function(){
-		                time--;
-		                if (time == 0) {
-		                    clearInterval(index);
-		                    time = 0;
-		                    $('#btn').removeAttr('disabled');
-		                }
-		            }, 1000);
-		        }
-		});
+            var res = $('#phone').val().match(string);
 
-		//执行登录
-		$('#dynamicLogon').click(function(){
-		    var code = $('#dynamicPWD').val();
-		    var phone = $('input[name=phone]').val();
-		    $.post('/shop/dologin',{'code':code,'phone':phone,'_token':'{{csrf_token()}}'},function(data){
-		        if(data == 0){
-		            layer.tips('验证码不正确', '#dynamicPWD');
-		        }else{
-		            location.href='/shop/index';
-		        }
-		    });
-		});
+            if(res == null){
+                 layer.tips('手机号码格式不正确,请重新输入', '#phone');
+               
+            }else{
+                 layer.tips('手机号码格式正确', '#phone');
+              
+                    $.post('/home/phone', {phone: $('#phone').val(), '_token': '{{csrf_token()}}'}, function (data) {
+                      
+                    });
+            }
+
+        });
+
+		 $('#deng').click(function(){
+		 	yzm();
+		 	// console.log(111);
+		 	// alert('1');
+
+           	    $.get('/home/code', {phone: $('#phone').val()}, function (data) {
+
+           	    });
+		 });
+		 function yzm() {
+             var timer = "";
+             var nums = 60;
+             var validCode = true;//定义该变量是为了处理后面的重复点击事件
+             $("#yzm").on('click', function () {
+                 // console.log("111");
+                 var code = $(this);
+                 if (validCode) {
+                     validCode = false;
+                     timer = setInterval(function () {
+                         if (nums > 0) {
+                             nums--;
+                             code.val(nums + "秒后重新发送");
+                             code.attr('disabled', 'disabled');
+                         }
+                         else {
+                             clearInterval(timer);
+                             nums = 60;//重置回去
+                             validCode = true;
+                             code.removeAttr('disabled');
+                             code.val("发送验证码");
+                         }
+                     }, 1000)
+                 }
+             })
+         }
 	</script>
 </html>
-
-
-<!-- 
-<?php
-    // use Flc\Dysms\Client;
-    // use Flc\Dysms\Request\SendSms;
-
-    // $config = [
-    //     'accessKeyId'    => 'LTAIJ33Rm3OWNv7b',
-    //     'accessKeySecret' => 'ViXzSAUkYRLQC73lCvyVT6waz8FzbS',
-    // ];
-
-    // $client  = new Client($config);
-    // $sendSms = new SendSms;
-    // $sendSms->setPhoneNumbers('17610330283');
-    // $sendSms->setSignName('飞天科技');
-    // $sendSms->setTemplateCode('SMS_120365798');
-    // $sendSms->setTemplateParam(['code' => rand(100000, 999999)]);
-    // $sendSms->setOutId('demo');
-
-    // print_r($client->execute($sendSms));
-
- ?> -->

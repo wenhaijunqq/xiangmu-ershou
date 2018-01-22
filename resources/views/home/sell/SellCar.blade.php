@@ -5,6 +5,12 @@
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
        <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+       <style type="text/css">
+		span{
+			padding-left: 15px;
+			font-size: 12px;
+		}
+	</style>
 <body style="background-image: url(/img/sell-bg.290289564e5360959be1857de09bf8c4.jpg);background-repeat: no-repeat;">
 
 		<div class="main-con">
@@ -26,41 +32,44 @@
 						        <center><h4 class="modal-title" id="myModalLabel">先估价再卖车，心里倍儿有底</h4></center>
 						      </div>
 						      <div class="modal-body">
-						       <form class="form-horizontal" action="/home/sell">
+						       <form class="form-horizontal" action="/home/sell" method="POST" id="myform">
+						        {{ csrf_field() }}
+     							{{ method_field('POST')}}
 								  <div class="form-group">
 								    <label for="inputtext3" class="col-sm-2 control-label">车源地</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="inputtext3" placeholder="省、市" name="">
+								      <input type="text" class="form-control" id="from" placeholder="省、市" name="from"><span></span>
 								    </div>
 								  </div>
 								  <div class="form-group">
 								    <label for="inputtext3" class="col-sm-2 control-label">车型</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="inputtext3" placeholder="品牌、车系、车型">
+								      <input type="text" class="form-control" id="models" placeholder="品牌、车系、车型" name="models"><span></span>
 								    </div>
 								  </div>
 								   <div class="form-group">
 								    <label for="inputPassword3" class="col-sm-2 control-label">上牌时间</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="inputtext3" placeholder="年份、月份">
+								      <input type="text" class="form-control" id="register" placeholder="年份-月份-日期" name="register"><span></span>
 								    </div>
 								  </div>
 								  <div class="form-group">
 								    <label for="inputPassword3" class="col-sm-2 control-label">行驶里程</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="inputtext3" placeholder="单位：万公里">
+								      <input type="text" class="form-control" id="kilometres" placeholder="单位：万公里" name="kilometres"><span></span>
 								    </div>
 								  </div>
 								  <div class="form-group">
 								    <label for="inputPassword3" class="col-sm-2 control-label">接收手机</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" id="inputtext3" placeholder="请输入您的手机号">
+								      <input type="text" class="form-control" id="phone" placeholder="请输入您的手机号" name="phone"><span></span>
 								    </div>
-								  </div>							
+								  </div>
+								  <center><h4 class="modal-title" id="myModalLabel">免费咨询 400-023-1529</h4></center>							
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-default" data-dismiss="modal">不了，谢谢</button>
-						        <button type="button" class="btn btn-success">开始估价</button>
+						        <input type="submit" class="btn btn-success" value="开始估价">
 						      </div>
 						      </form>
 						    </div>
@@ -109,36 +118,32 @@
 		        <ul class="deal-list clearfix">
 		            <div class="deal-list-wrapper clearfix" style="left: -;">
 		                <li>
-			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
-			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
-			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
-			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
-			                <div class="deal-day">1天<br><em>卖出</em></div>
+			                <img src="{{$car1->car_pic}}" alt="">
+			                <h2 class="deal-p1">{{$car1->Vbrand}} {{$car1->car_name}} {{$car1->displacement}} </h2>
+			                <p class="deal-p2">{{$car1->car_license}} | {{$car1->km}}公里 | {{$car1->add}}</p>
+			                <p class="deal-p3">成交价<em>{{$data[0]->price}}元</em> 
 		            	</li>
 		            	<li>
-			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
-			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
-			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
-			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
-			                <div class="deal-day">1天<br><em>卖出</em></div>
+			                <img src="{{$car2->car_pic}}" alt="">
+			                <h2 class="deal-p1">{{$car2->Vbrand}} {{$car2->car_name}} {{$car2->displacement}} </h2>
+			                <p class="deal-p2">{{$car2->car_license}} | {{$car2->km}}公里 | {{$car2->add}}</p>
+			                <p class="deal-p3">成交价<em>{{$data[1]->price}}元</em> 
 		            	</li>
 		            	<li>
-			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
-			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
-			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
-			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
-			                <div class="deal-day">1天<br><em>卖出</em></div>
+			                <img src="{{$car3->car_pic}}" alt="">
+			                <h2 class="deal-p1">{{$car3->Vbrand}} {{$car3->car_name}} {{$car3->displacement}} </h2>
+			                <p class="deal-p2">{{$car3->car_license}} | {{$car3->km}}公里 | {{$car3->add}}</p>
+			                <p class="deal-p3">成交价<em>{{$data[2]->price}}元</em> 
 		            	</li>
 		            	<li>
-			                <img src="img/qn171026103824e1da9003fbad594239e68a550b082a99.jpg" alt="">
-			                <h2 class="deal-p1">比亚迪F0 2009款 爱国版 1.0L 舒适型</h2>
-			                <p class="deal-p2">2009年 | 4.9万公里 | 淄博</p>
-			                <p class="deal-p3">成交价<em>8700元</em> 比车商多卖<i>2千元</i></p>
-			                <div class="deal-day">1天<br><em>卖出</em></div>
+			                <img src="{{$car4->car_pic}}" alt="">
+			                <h2 class="deal-p1">{{$car4->Vbrand}} {{$car4->car_name}} {{$car4->displacement}} </h2>
+			                <p class="deal-p2">{{$car4->car_license}} | {{$car4->km}}公里 | {{$car4->add}}</p>
+			                <p class="deal-p3">成交价<em>{{$data[3]->price}}元</em> 
 		            	</li>
 		           </div>
 		        </ul>
-		        <a class="deal-more">查看全部成交车源</a>
+				<p></p>
 		    </div>
 		</div>
 	<div class="guazi-qa">
@@ -182,6 +187,96 @@
 	        </ul>
 	    </div>
 	</div>
+	<script type="text/javascript">
+		var preg_from = /\S{1,}/;
+		var preg_models = /\S{1,}/;
+		var preg_kilometres = /^([1-9]|10)$/;
+		var preg_register = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/;
+		var preg_phone = /^1[3|4|5|7|8]\d{9}$/;
+		//获取标签
+		var span = document.getElementsByTagName('span');
+		var myform = document.getElementById('myform');
+		// 标识符
+		var isFrom = false;
+		var isModels = false;
+		var isKilometres = false;
+		var isRegister = false;
+		var isPhone = false;
+		//绑定点击事件
+		myform.onsubmit = function(){
+			var from = this.from.value;
+			var models = this.models.value;
+			var kilometres = this.kilometres.value;
+			var register = this.register.value;
+			var phone = this.phone.value;
 
+			//检测车源地
+			if(preg_from.test(from)){
+				// 匹配成功
+				span[3].innerHTML = '<font color="green">车源地格式正确</font>'; 
+				isFrom = true;
+			}else{
+				// 匹配失败
+				span[3].innerHTML = '<font color="red">请输入车源地</font>';
+				isFrom = false;
+			}
+
+			//检测车型
+			if(preg_models.test(models)){
+				// 匹配成功
+				span[4].innerHTML = '<font color="green">车型格式正确</font>'; 
+				isModels = true;
+			}else{
+				// 匹配失败
+				span[4].innerHTML = '<font color="red">请输入车辆型号</font>';
+				isModels = false;
+			}
+
+			//检测上牌时间
+			if(preg_register.test(register)){
+				// 匹配成功
+				span[5].innerHTML = '<font color="green">上牌日期格式正确</font>'; 
+				isRegister = true;
+			}else{
+				// 匹配失败
+				span[5].innerHTML = '<font color="red">请输入上牌时间或您输入的时间格式不正确</font>';
+				isRegister = false;
+			}
+
+			//检测公里数
+			if(preg_kilometres.test(kilometres)){
+				// 匹配成功
+				span[6].innerHTML = '<font color="green">公里数格式正确</font>'; 
+				isKilometres = true;
+			}else{
+				// 匹配失败
+				span[6].innerHTML = '<font color="red">请输入公里数或您输入的公里数格式不正确</font>';
+				isKilometres = false;
+			}
+
+
+			//检测手机号
+			if(preg_phone.test(phone)){
+				// 匹配成功
+				span[7].innerHTML = '<font color="green">恭喜手机号可用</font>'; 
+				isPhone = true;
+			}else{
+				// 匹配失败
+				span[7].innerHTML = '<font color="red">抱歉手机号不合法</font>';
+				isPhone = false;
+			}
+			// console.log(isPhone);
+			// console.log(isFrom);
+			// console.log(isKilometres);
+			// console.log(isModels);
+			// console.log(isRegister);
+
+			if(isPhone && isFrom && isKilometres && isRegister && isModels){
+				return true;
+			}
+				return false;
+
+		}
+	</script>
 </body>
 @endsection

@@ -22,8 +22,10 @@ class BasicpersonController extends Controller
         return view('/admin/basicperson',['data'=>$data,'sell'=>$sell,'buy'=>$buy,'ping'=>$ping]);
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('admin.basiccar');
+        $data = DB::table('vehicle_information') -> where('car_id',$id) -> get();
+        // dd($data);
+        return view('admin.basiccar',['data'=>$data]);
     }
 }

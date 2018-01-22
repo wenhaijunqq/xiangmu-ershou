@@ -72,6 +72,7 @@
                  <dd>
                      <div class="dd-top">
 
+
                          <span class="a-box" id="carModel">
                              <a class="active" value="0">不限</a>
                              @foreach($data as $k=>$v)
@@ -80,6 +81,7 @@
                               <a href="###" value="{{$v->id}}">{{$v->car_typeName}}</a>
                              @endif
                              @endforeach
+
 
                          <span class="a-box">
                              <a class="active" >不限</a>
@@ -437,5 +439,8 @@
 
 
 </script>
+
+
+</body>
 
 @endsection

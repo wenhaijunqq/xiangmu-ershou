@@ -25,6 +25,7 @@
             </div>
             <p class="arc-info">Copyright 2017 www.guazi.com All Rights Reserved</p>
             <p class="arc-info">京ICP备15053955号  ICP证151071号 </p>
+            <p class="arc-info">{{$config[0]->Copying}} 版权所有</p>
             <div class="protect clearfix">
                 <a class="police" rel="nofollow" target="_blank" href="#">京公网安备11010802020161号</a>
             </div>

@@ -11,10 +11,14 @@ class ConfigeditController extends Controller
 {
    public function uconfig(Request $request, $id)
    {
-
         // 执行修改的操作
-        //$data = $request -> except(['_token','_method']);
-        //$res = DB::table('config')->where('id',$id)->update($data);
-        return $request->all();
+        $data = $request -> except('_token');
+        $res = DB::table('config')->where("id",$id)->update($data);
+        if($res){
+        	echo "1";
+        }else{
+        	echo "0";
+        }
+       
    }
 }

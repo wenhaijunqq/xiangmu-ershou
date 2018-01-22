@@ -35,7 +35,7 @@
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
                                     
                                         <div class="am-form-group">
-                                       <input type="text" class="am-form-field " placeholder="请输入关键字" name="key"/>
+                                       <input type="text" class="am-form-field " name="key"/>
                                        </div>
                                         <button type="submit" class="am-btn am-btn-success am-icon-search"></button>
                                            

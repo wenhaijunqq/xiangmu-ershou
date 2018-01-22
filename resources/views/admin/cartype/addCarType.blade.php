@@ -77,6 +77,7 @@
 </html>
 
 <script type="text/javascript">
+
         $(function(){
             $(".myfile").change(function(){
                 uploadImg();
@@ -123,7 +124,6 @@
 
         }
 
-            $("#sumbit").click(function(){
 
         $(document).on("click","#sumbit",function(){
 
@@ -160,9 +160,7 @@
                         }
                 });
             })
-
-
-        })
+                 
 
 
 

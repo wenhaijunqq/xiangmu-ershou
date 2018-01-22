@@ -37,7 +37,7 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">网站标题 <span class="tpl-form-line-small-title">TITLE</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字" value="{{$data->title}}" name="title"> 
+                                            <input type="text" class="tpl-form-input" id="web-title" placeholder="请输入标题文字" value="{{$data->title}}" name="title"> 
                                             <small>请填写标题文字10-20字左右。</small>
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@
                                     <div class="am-form-group">
                                         <label for="user-email" class="am-u-sm-3 am-form-label">网站版权 <span class="tpl-form-line-small-title">COPYING</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="am-form-field tpl-form-no-bg" placeholder="请输入网站版权" style="{{$data->Copying}}" name="copying">
+                                            <input type="text" class="am-form-field tpl-form-no-bg" placeholder="请输入网站版权" value="{{$data->Copying}}" name="copying" id="web-copying">
                                             <small>请填写网站版权10-20字左右。</small>
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">关键字 <span class="tpl-form-line-small-title">SEO</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" placeholder="输入关键字" value="{{$data->key}}" name="seo">
+                                            <input type="text" placeholder="输入关键字" value="{{$data->key}}" name="seo" id="web-seo">
                                         </div>
                                     </div>
 
@@ -62,7 +62,7 @@
                                         <div class="am-u-sm-9">
                                             <div class="am-form-group am-form-file">
                                                 <div class="tpl-form-file-img">
-                                                    <img src="/img/logo.png" alt="" id="myimg" style="width:134px;height:134px">
+                                                    <img src="{{$data->logo}}" alt="" id="myimg" style="width:134px;height:134px">
                                                 </div>
                                                 <div class="am-form-file">
                                                     <br>
@@ -77,7 +77,7 @@
                                     <div class="am-form-group">
                                         <label for="user-phone" class="am-u-sm-3 am-form-label">网站维护 <span class="tpl-form-line-small-title">STATUS</span></label>
                                         <div class="am-u-sm-9">
-                                            <select data-am-selected="{searchBox:0}" style="display:none;" name="wstatus">
+                                            <select data-am-selected="{searchBox:0}" style="display:none;" name="wstatus" id="web-status">
                                             @if($data->Wstatus == 1)
                                                 <option value="1" selected>开启网页</option>
                                                 <option value="0">关闭网页</option>
@@ -90,7 +90,7 @@
                                     </div>  
                                     <br><br>
                                     <center>
-                                        <button type="button" class="am-btn am-btn-default am-btn-secondary" id="tj" onclick="doUpload({{$data->id}})"><span class="am-icon-save"></span> 保存修改</button>
+                                        <button type="button" class="am-btn am-btn-default am-btn-secondary" id="sumbit"><span class="am-icon-save"></span> 保存修改</button>
                                         <button type="reset" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 重置修改</button>
                                     </center>  
                                 </form>
@@ -142,33 +142,41 @@
                    },
                    error:function(err){
 
-                     alert("提交失败");
+                     alert("上传失败，请检查您的网络状态");
                    }
                });
         }
 
-            function doUpload(id) {  
-                
-                 var formData = new FormData($( "#logoAdd" )[0]);  // 要求使用的html对象
-                 formData.append("logo", "asdasd");   
-                 console.log(formData);
-                  $.ajax({  
-                       url: '/admin/configedit/'+id ,  
-                      type: 'POST',  
-                       data: formData,  
-                       async: true,  
-                       // 下面三个参数要指定，如果不指定，会报一个JQuery的错误 
-             　　　　　cache: false,  
-                       contentType: false,  
-                      processData: false,  
-                       success: function (data) {  
-                           alert(data);  
-                       },  
-                       error: function (err) {  
-                           alert(err);  
-                       }  
-                  });  
-            } 
+
+
+        $(document).on("click","#sumbit",function(){
+
+
+            //判断是否上传文件
+
+                var imgPath = $(".myfile").val();
+                  if(imgPath == ""){
+                    imgPath = $('#myimg').attr('src');
+                }else{
+                    imgPath = arr.filePath;
+                }
+
+                var title = $("#web-title").val();
+                var copying = $("#web-copying").val();
+                var seo = $("#web-seo").val();
+                var status = $("#web-status").val();
+
+                //alert($("#web-title").val());
+                $.post("/admin/configedit/1",{'_token':'{{csrf_token()}}','title':title,'logo':imgPath,'Copying':copying,'key':seo,'Wstatus':status},function(data){
+                        
+                        if(data == 1){
+                            alert("恭喜，修改成功");
+                        }else{
+                            return false;
+                        }
+                });
+            })
+
 
 </script>
 @endsection

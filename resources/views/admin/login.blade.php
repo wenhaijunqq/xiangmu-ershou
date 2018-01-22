@@ -19,11 +19,7 @@
     <script type="text/javascript" src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
     <link rel="stylesheet" href="/layer/skin/layer.css" />
     <script type="text/javascript" src='/layer/layer.js'></script>
-    <style type="text/css">
-        .box1,.box2{
-                   display: none;
-        }
-    </style>
+
     
 </head>
 
@@ -48,16 +44,16 @@
             <div class="tpl-login-content">
                 <div class="tpl-login-logo">
                 </div>
-                <form class="am-form tpl-form-line-form" action="/admin/dologin" method="post">
+                <form class="am-form tpl-form-line-form">
                  {!! csrf_field() !!}
                     <div class="am-form-group">
                         <input type="text" name="phone" class="tpl-form-input" id="phone" value="" placeholder="请输入账号">
-                        <div class="box1">账号不存在</div>
+
                     </div>
 
                     <div class="am-form-group">
-                        <input type="password" class="tpl-form-input" id="password" value="" placeholder="请输入密码">
-                        <div class="box2">密码错误</div>
+                        <input type="password" class="tpl-form-input" id="userPwd" value="" placeholder="请输入密码">
+
                     </div>
 
                     <div class="am-form-group tpl-login-remember-me">
@@ -68,7 +64,7 @@
                     </div>
                     <div class="am-form-group">
 
-                        <button type="button" id="login" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
+                        <button type="button" id="dynamicLogon" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
 
                     </div>
                 </form>
@@ -81,86 +77,63 @@
 </body>
 <script type="text/javascript">
 
-    // //检查电话号码
-    // $('input[name=phone]').blur(function(){
+    //检查电话号码
+    $('input[name=phone]').blur(function(){
 
-    //     var phone = $(this).val();
-    //     $.post('/admin/phone',{'phone':phone,'_token':'{{csrf_token()}}'},function(data){
-    //           switch(data){
-    //             case 'no':
-    //                 layer.tips('用户不存在', '#phone');
-    //                 break;
-    //             case 'not':
-    //                 layer.tips('格式错误', '#phone');
-    //                 break;
-    //             case 'ok':
-    //                 layer.tips('输入正确', '#phone');
-    //                 break;
+        var phone = $(this).val();
+        $.post('/admin/phone',{'phone':phone,'_token':'{{csrf_token()}}'},function(data){
+              switch(data){
+                case 'no':
+                    layer.tips('用户不存在', '#phone');
+                    break;
+                case 'not':
+                    layer.tips('格式错误', '#phone');
+                    break;
+                case 'ok':
+                    layer.tips('输入正确', '#phone');
+                    break;
            
                 
+            }
+        });
+    });
+
+
+    // //发送验证码
+    // var time = 0;
+    // $('#btn').click(function(){
+    //     if(time == 0){
+    //         var phone = $('input[name=phone]').val();
+    //         $.post('/admin/code',{'phone':phone,'_token':'{{csrf_token()}}'},function(data){
+    //             alert(data);
+    //         });
+    //         $('#btn').attr('disabled','disabled');
+    //     }
+    //     if (time == 0) {
+    //             time = 10; 
+    //             var index = setInterval(function(){
+    //                 time--;
+    //                 if (time == 0) {
+    //                     clearInterval(index);
+    //                     time = 0;
+    //                     $('#btn').removeAttr('disabled');
+    //                 }
+    //             }, 1000);
     //         }
-    //     });
     // });
-    
-    $('#phone').blur(function(){
 
-            //设置一个判断手机号是否合法的正则表达式
-            var string = "^[1][3,4,5,7,8][0-9]{9}$";
-
-            var res = $('#phone').val().match(string);
- 
-            if(res == null){
-                $('.box1').text('格式错误');
-                $('.box1').css({color:'red',display:'block'});
+    //执行登录
+    $('#dynamicLogon').click(function(){
+        var code = $('#userPwd').val();
+        var phone = $('input[name=phone]').val();
+        $.post('/admin/dologin',{'code':code,'phone':phone,'_token':'{{csrf_token()}}'},function(data){
+            if(data == 0){
+                layer.tips('验证码不正确', '#userPwd');
             }else{
-                $('.box1').text('输入正确');
-                $('.box1').css({color:'green',display:'block'});
-                    $.post('/user/login/phone', {phone: $('#phone').val(), '_token': '{{csrf_token()}}'}, function (data) {
-                        if (data == '1') {
-                        } else if (data == '0') {
-                            layer.msg('您的手机尚未注册,请先注册');
-                            $('.box1').text('手机号尚未注册');
-                            $('.box1').css({color:'red',display:'block'});
-                        }
-                    });
-            }
-
-        });
-    $('#password').change(function(){
-
-            var string1 = '^[a-z0-9_-]{6,18}$';
-
-            var res1= $('#password').val().match(string1);
-
-            if(res1 == null){
-
-                $('.box2').text('密码格式书写错误');
-                $('.box2').css({color:'red',display:'block'});
-            }else{
-
-                $('.box2').text('密码格式书写正确');
-                $('.box2').css({color:'green',display:'block'});
+                location.href='/admin/index';
             }
         });
-
-    $('#login').click(function(){
-            if(!$('#phone').val() || !$('#password').val()){
-                layer.msg('登录信息不能为空');
-            }else if($('.box2').text() =='密码格式书写错误' || $('.box1').text =='手机号格式书写错误' || $('.box1').text()== '手机号尚未注册'){
-                layer.msg('登录信息格式不正确');
-            }else{
-                $.post('/user/login/login',{phone:$('#phone').val(),password:$('#password').val(),'_token':'{{csrf_token()}}'},function(data){
-                        if(data == '1'){
-                            location.href = '/user/user/';
-                        }else{
-                            layer.msg('密码错误');
-                        }
-                });
-            }
-
-        });
-
-   
+    });
 </script>
 
 </html>
