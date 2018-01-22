@@ -113,7 +113,7 @@ class BasicInformationController extends Controller
         $data = $request->except(['_token','_method']);
         $res = vehicle_information::where('car_id',$id)->update($data);
         if($res){
-            echo "<script>alert('修改成功！');location.href='/admin/estimate/wait'</script>";   
+            echo "<script>alert('修改成功！');location.href='/admin/estimate/wait'</script>";
         }else{
             echo "<script>alert('修改失败！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
         }

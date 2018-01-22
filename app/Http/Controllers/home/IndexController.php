@@ -1,20 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\home;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-
-
 use DB;
 class IndexController extends Controller
-
 {
-
-
     /**
      * Display a listing of the resource.
      *
@@ -22,18 +13,15 @@ class IndexController extends Controller
      */
     public function index()
     {
-
         //显示网页主页
         $datac = DB::table('config') -> get();
         // dd($data);
         if($datac[0]->Wstatus == 1){
             return view('home/index',['datac'=>$datac]);
-
         }else{
             return view('errors/404');
         }
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +31,6 @@ class IndexController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -54,7 +41,6 @@ class IndexController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -65,7 +51,6 @@ class IndexController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -76,7 +61,6 @@ class IndexController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -88,7 +72,6 @@ class IndexController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
