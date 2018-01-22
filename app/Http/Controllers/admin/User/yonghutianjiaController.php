@@ -52,22 +52,29 @@ class yonghutianjiaController extends Controller
         $hz = $file->getClientOriginalExtension();
 
         $filename = md5(time()+rand(0,99999)).'.'.$hz;
-       // dump($filename);        
+         // dd($filename);        
         //上传图像七牛
         $disk = \Storage::disk('qiniu');
-        $res = $disk->put("/systems/sysimgs/".$filename,file_get_contents($filepath));
-        dd($data);
-        $data = $request->except(['_token','_method','head','position','repass']); 
-         //dd($data);
+        $disk->put($filename,file_get_contents($filepath));
 
-        //获取插入返回的id
-         $res = DB::table('user')->insertGetid($data);
+        $data = $request->except(['_token','query_string','head','repass']);
+         // $data = $request->all();
+        $data['head'] = $filename;
+        $res = DB::table('user')->insert($data);
+        // $password="password";
+        // $repass="repass";   
+        //     if($repass==$password){
+        //         //获取插入返回的id
+                
+
+        //     }
+        
 
         //获取position添加info表
-        $info = $request->only('position');
-        $info['head'] = $filename;
-        $info['uid'] = $res;
-        $infos = DB::table('userhead')->insert($info);
+        // $info = $request->only('position');
+         // $info['head'] = $filename;
+        // $info['uid'] = $res;
+        // $infos = DB::table('user')->insert($info);
 
         //判断
         if($res){

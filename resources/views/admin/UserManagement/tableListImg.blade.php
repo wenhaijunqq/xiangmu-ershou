@@ -62,8 +62,7 @@
                                             <tr class="gradeX">
                                                 <td class="am-text-middle">{{$v['id']}}</td>
                                                 <td>
-                                                    {{$v['head']}}
-                                                    <!-- <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt=""> -->
+                                                    <img src="http://p2dtsikvg.bkt.clouddn.com/{{$v['head']}}" onerror="this.src='/img/vip.png'" class="tpl-table-line-img" alt="">
                                                 </td>
                                                 <td class="am-text-middle">{{$v['name']}}</td>
                                                 <td class="am-text-middle"><!-- {{$v['position']}} -->
