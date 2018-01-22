@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\user;
-
+use DB;
 class NameUserManagementController extends Controller
 {
     /**
@@ -18,13 +18,18 @@ class NameUserManagementController extends Controller
     public function index()
     {
         //查看用户分页
-        $data = user::get();
-        return view('admin/UserManagement/tableListImg',['data'=>$data]);
+         $data = user::get();
+         return view('admin/UserManagement/tableListImg',['data'=>$data]);
         
 
     }
 
+     public function CarList($id){
 
+        $type = user::where('id',$id)->get();
+        return view('admin/UserManagement/chakanxiangqing',['type'=>$type]);
+
+    }
     
     /**
      * Show the form for creating a new resource.
@@ -54,16 +59,23 @@ class NameUserManagementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {  
+        //$data = user::get();
         $user = user::where('id',$id)->first();
         $status = ($user->status);
-        if($status==0){
-            
+        
+        if($status==0){ 
+            DB::table('user')->where('id', $id)->update(['status' => 1]);
+             echo "<script>alert('禁用成功！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+             // return view('admin/UserManagement/tableListImg',['data'=>$data]);
+        }else if($status==1){
+            DB::table('user')->where('id', $id)->update(['status' => 0]);
+             echo "<script>alert('启用成功！');location.href='".$_SERVER['HTTP_REFERER']."'</script>";
+             // return view('admin/UserManagement/tableListImg',['data'=>$data]);
         }
 
-        dump($status);
-        // $res =  user::where($id)->first();
-        // dump($email);
+
+
     }
 
     /**
@@ -75,6 +87,12 @@ class NameUserManagementController extends Controller
     public function edit($id)
     {
         //
+           $test = user::destroy($id);
+        if($test){
+            echo "1";
+        }else{
+            echo "2";
+        }
     }
 
     /**
@@ -95,8 +113,7 @@ class NameUserManagementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+     public function destroy($id)
+    {     
     }
 }

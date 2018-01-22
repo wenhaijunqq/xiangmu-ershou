@@ -50,31 +50,32 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>头像</th>
                                                 <th>用户名</th>
+                                                <th>手机号</th>
+                                                <th>年龄</th>
                                                 <th>身份权限</th>
                                                 <th>邮箱</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($data as $k=>$v)
+                                        @foreach($type as $k=>$v)
                                             <tr class="gradeX">
+                                                
                                                 <td class="am-text-middle">{{$v['id']}}</td>
-                                                <td>
-                                                    {{$v['head']}}
-                                                    <!-- <img src="/admins/img/k.jpg" class="tpl-table-line-img" alt=""> -->
-                                                </td>
+                                              
                                                 <td class="am-text-middle">{{$v['name']}}</td>
+                                                <td class="am-text-middle">{{$v['phone']}}</td>
+                                                <td class="am-text-middle">
+                                                     {{$v['sex']}}
+                                                </td>
                                                 <td class="am-text-middle"><!-- {{$v['position']}} -->
                                                      @if($v->position == '0' || $v->position == null) 普通用户 @elseif($v->position == '1') 管理员 @elseif($v->position == '2') 审核员 @elseif($v->position == '3') 评估员 @endif 
                                                 </td>
                                                 <td class="am-text-middle">{{$v['email']}}</td>
                                                 <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/chakanxiangqing/{{$v['id']}}" class="new">
-                                                            <i class="am-icon-pencil"></i> 查看详情
-                                                        </a>
+                                                       
                                                        
                                                         <a href="#" onclick="deleteCar({{$v['id']}},$(this))" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
@@ -101,20 +102,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="am-u-lg-12 am-cf">
-
-                                    <div class="am-fr">
-                                        <ul class="am-pagination tpl-pagination">
-                                            <li class="am-disabled"><a href="#">«</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

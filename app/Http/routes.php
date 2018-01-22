@@ -179,12 +179,16 @@ Route::resource('/admin/basicinformation','admin\BasicInformationController');
 
 //后台用户管理分区,新增用户
 Route::resource('/admin/UserManagement/xinzeng','admin\User\UserManagementController');
+//提交用户数据
+Route::resource('/admin/UserManagement/tijiao','admin\User\yonghutianjiaController');
 //查看用户
 Route::resource('/admin/NameUserManagement/chakan','admin\User\NameUserManagementController');
 //后台用户管理分区
 Route::resource("/admin/UserManagement/qiyong",'admin\User\NameUserManagementController');
-
-
+//后台用户删除
+Route::get('/admin/CarType/{id}/shanchu/','admin\User\NameUserManagementController@edit');
+//后台用户查看
+Route::get('/admin/chakanxiangqing/{id}','admin\User\NameUserManagementController@CarList');
 
 
 
