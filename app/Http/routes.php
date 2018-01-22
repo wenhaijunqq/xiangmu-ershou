@@ -74,20 +74,14 @@ Route::resource('/home/question','Home\QuestionController');
 
 
 //个人中心
-Route::resource('/home/center','home\CenterController');
 //个人中心买车页
 Route::resource('/home/maiche','home\Centerst\MaicheController');
 //个人中心售车页
 Route::resource('/home/shouche','home\Centerst\ShoucheController');
-//个人中心密码页
-Route::resource('/home/mima','home\Centerst\MimaController');
-//个人中心会员页
-Route::resource('/home/huiyuan','home\Centerst\HuiyuanController');
-//个人中心对比页
-Route::resource('/home/duibi','home\Centerst\DuibiController');
 //个人中心收藏页
 Route::resource('/home/shoucang','home\Centerst\ShoucangController');
-
+//个人中心宝典页
+Route::resource('/home/baodian','home\Centerst\BaodianController');
 
 //后台模板引入
 Route::controller('/admin/login','Admin\LoginController');

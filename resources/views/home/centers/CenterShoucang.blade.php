@@ -10,8 +10,10 @@
     <link rel="stylesheet" type="text/css" href="/css/gerenzhongxin/footer.css" />
     <link rel="stylesheet" type="text/css" href="/css/gerenzhongxin/page2016_9d570cf.css" />
     <link rel="stylesheet" type="text/css" href="/css/gerenzhongxin/popup_68f8bb9.css" />
+   
             <link rel="stylesheet" href="/css/h_public.css">
             <link rel="stylesheet" href="/css/h_index.css">
+             <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
     <script src="/js/jquery-3.2.1.js"></script>
      <style>
         li a .bb:link {
@@ -25,6 +27,37 @@
         }
         li a .bb:active {
         color:#00e224;
+        }
+        .my-list{
+           padding: 22px 0 0 13px;
+
+        }
+        .mylist-li{
+            position: relative;
+            float: left;
+            width: 290px;
+            height: 300px;
+            margin-top: 5px;
+            margin-left: 5px;
+            background: #fff;
+            border: 2px solid #f5f5f5;
+
+        }
+        .list-title{
+            font-size:17px; 
+            margin-top:10px;
+        }
+        .list-time{
+            color: #666;
+            padding-left: 10px;
+        }
+        .list-pirce{
+            font-size:22px;
+            color:orangered; 
+             padding-left: 10px;
+        }
+         .zhanghao{
+            color: #999;
         }
     </style>
 </head>  
@@ -48,33 +81,81 @@
                     <a href="/www/sell">我要卖车</a>
                     <a href="/www/server">瓜子服务</a>
                     <a href="/home/question">瓜子问答</a>
-                    <a href="/home/center">个人中心</a>
+                    <a href="/home/baodian">个人中心</a>
                 </div>
                     
             </div>
         </div>
         
         
-    <div class="mcar-center clearfix">
+    <div class="mcar-center clearfix" style="width:1200px;">
         <div class="left" style="height: 435px;">
-      <ul class="list">
-         <li><a href="http://www.chenghang.com/home/center" class="bb"><font class="aa">我的宝典</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class="active"><font class="aa">我的收藏</font></a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class="bb"><font class="aa">对比记录</font></a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class="bb"><font class="aa">我买的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class="bb"><font class="aa">我卖的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class="bb"><font class="aa">会员身份</font></a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class="bb"><font class="aa">修改密码</font></a></li> 
-     </ul>
+    <ul class="list">
+    <br>
+     <li>
+           <center><img src="/img/geren.png">
+            <h4>个人中心</h4>
+           <span class="zhanghao">手机号：17611405063</span></center>
+        </li>
+        <br><br><br>
+        <li><a href="/home/baodian" class="  ">我的宝典</a></li>
+        <li><a href="/home/shoucang" class="active">我的收藏</a></li>
+      
+        <li><a href="/home/maiche" class="">我买的车</a></li>
+        <li><a href="/home/shouche" class="">我卖的车</a></li>
+      </ul>
     </div>     
-        <div class="right">
-            <div class="ncar-tip">
+        <div class="right" style="width:997px;">
+            <div class="content">
+                <ul class="my-list">
+                    <li class="mylist-li">
+                       <img src="/img/listcar.jpg" alt="" width="290px">
+                       <p  class="list-title">宝马5系 2014款 525Li 豪华设计套装</p>
+                       <p class="list-time">
+                         2012年12月上牌
+                         <em>|</em>
+                         行驶8.9万公里
+                       </p>
+                       <p class="list-pirce">
+                          <span>28.80万</span>&nbsp;&nbsp;
+                          <button type="button" class="btn btn-default btn-sm">删除</button>
+                       </p>
+                    </li>
+                    <li class="mylist-li">
+                       <img src="/img/listcar.jpg" alt="" width="290px">
+                       <p  class="list-title">宝马5系 2014款 525Li 豪华设计套装</p>
+                       <p class="list-time">
+                         2012年12月上牌
+                         <em>|</em>
+                         行驶8.9万公里
+                       </p>
+                       <p class="list-pirce">
+                          <span>28.80万</span>&nbsp;&nbsp;
+                          <button type="button" class="btn btn-default btn-sm">删除</button>
+                       </p>
+                    </li>
+                    <li class="mylist-li">
+                       <img src="/img/listcar.jpg" alt="" width="290px">
+                       <p  class="list-title">宝马5系 2014款 525Li 豪华设计套装</p>
+                       <p class="list-time">
+                         2012年12月上牌
+                         <em>|</em>
+                         行驶8.9万公里
+                       </p>
+                       <p class="list-pirce">
+                          <span>28.80万</span>&nbsp;&nbsp;
+                          <button type="button" class="btn btn-default btn-sm">删除</button>
+                       </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="ncar-tip">
                 <img src="/img/error_people.png">
                 <div class="con fr">
                         <p>主人，您暂时还没有提问，赶紧去宝典看看有没有想问的吧！</p>
                         <a href="https://www.xin.com/qa/lists/" target="_blank">去宝典看看&nbsp;&gt;</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

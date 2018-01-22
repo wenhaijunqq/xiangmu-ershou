@@ -382,3 +382,42 @@ img{
         padding: 0;
     }
 }
+li a .bb:link {
+        color:#00e224;
+        }
+        li a .aa:hover {
+        color:#00e224;
+        } 
+        li a .bb:visited {
+        color:#00e224;
+        }
+        li a .bb:active {
+        color:#00e224;
+        }
+        .my-list{
+           padding: 22px 0 0 13px;
+
+        }
+        .mylist-li{
+            position: relative;
+            float: left;
+            width: 290px;
+            height: 300px;
+            margin-top: 5px;
+            margin-left: 5px;
+            background: #fff;
+            border: 2px solid #f5f5f5;
+
+        }
+        .list-title{
+            font-size:17px; 
+            margin-top:10px;
+        }
+        .list-time{
+            padding-left: 10px;
+        }
+        .list-pirce{
+            font-size:22px;
+            color:orangered; 
+             padding-left: 10px;
+        }
