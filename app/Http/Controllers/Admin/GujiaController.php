@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-class UserManagementController extends Controller
+use DB;
+class GujiaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,10 @@ class UserManagementController extends Controller
      */
     public function index()
     {
-        //查看用户分页
-        return view('admin/UserManagement/tableList');
-
+        //查询商品所有数据
+        $data = DB::table('evaluation') -> orderBy('id','asc') -> paginate(2);
+        //显示估价页的操作
+        return view('admin/gujia/index',['data'=>$data]);
     }
 
     /**
@@ -28,7 +29,7 @@ class UserManagementController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -84,6 +85,12 @@ class UserManagementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //执行估价信息删除的操作
+        $res = DB::table('evaluation') -> where('id',$id) -> delete();
+        if($res){
+            echo '<script>alert("删除成功");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }else{
+            echo '<script>alert("删除失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+        }
     }
 }

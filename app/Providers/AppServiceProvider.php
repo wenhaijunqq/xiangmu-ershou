@@ -3,8 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Http\Model\link;
-
+use DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,11 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        // $data1 =Link::where('status',1)->first();
-        $data1 =\DB::table('Link')->where('status',1)->get();
-        view()->share('data1',$data1);
-
+        //
+        $config = DB::table('config') -> where('id',1) -> get();
+        view() -> share('config',$config);
     }
 
     /**

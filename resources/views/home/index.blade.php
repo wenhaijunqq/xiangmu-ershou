@@ -2,16 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>首页</title>
+        <title>{{$datac[0]->title}}</title>
+        <meta name="keywords" content="{{$datac[0]->key}}">
         <link rel="stylesheet" href="/css/h_index.css">
         <link rel="stylesheet" href="/css/h_public.css">
-
         <link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
-        <link rel="stylesheet"  href="/css/h_ss.css">
+        <link rel="stylesheet" href="/css/h_city.css">
         <script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
+
         <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
         <script type="text/javascript">
-
+        
         $(function(){
             var fn2 = function(city){
                 c.value = city;
@@ -22,8 +23,8 @@
                     left : 172,
                     top  : 45,
                     selected : fn2
-                });
-
+                }); 
+                
             });
             $('body').click(function(){
                 $('#test3').css("color","black");
@@ -32,8 +33,6 @@
 
         });
         </script>
-        <link rel="stylesheet" href="/css/h_ss.css">
-
         <script>
             var i = 1;
             function dinashiqi(){
@@ -108,7 +107,7 @@
                     int=self.setInterval("dinashiqi()",3000);
                     i = 2;
                 }
-
+                
                 zuo.onclick = function(){
                     int = window.clearInterval(int);
                     i++;
@@ -135,35 +134,20 @@
         </script>
     </head>
     <body style="background-color: #f5f5f7">
-
-
+   
+         
 
         <header class="head">
-            <!-- <ul >
+            <ul >
                 <li id="li0" style="background-image: url('img/m-1.png');background-repeat: on-repeat;"></li>
                 <li id="li1" style="background-image: url('img/m-2.png');background-repeat: on-repeat;display: none;"></li>
                 <li id="li2" style="background-image: url('img/m-3.png');display: none;background-repeat: on-repeat;"></li>
-            </ul> -->
-            <div class="js-silder">
-
-                  <div class="silder-main">
-                      <div class="silder-main-img"  ">
-                          <img src="img/m-1.png" alt="">
-                      </div>
-                      <div class="silder-main-img" >
-                          <img src="img/m-2.png" alt="">
-                      </div>
-                      <div class="silder-main-img" >
-                          <img src="img/m-3.png" alt="">
-                      </div>
-                  </div>
-
-          </div>
-            <div class="nav" style="top:-340px;">
-                <div class="nav-1">
+            </ul>
+            <div class="nav">
+                <div class="nav-1" style="background-image:url({{$datac[0]->logo}})">
                 </div>
                 <div class="nav-2" style="height:25px">
-                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" />
+                  <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20"  style="border:0px;background:none;height:31px;font-size:14px;" />
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
@@ -175,10 +159,15 @@
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>
                 </div>
-
-
+                <span id="zuo" style="position:absolute;top:200px;left: 7px;font-size: 20px;color: #888;font-weight: 900;">&lt;</span>
+                <span id="you" style="position:absolute;top:200px;right: 7px;font-size: 20px;color: #888;font-weight: 900;">&gt;</span>
+                <div class="nav-btn">
+                    <em id="em0" style="background-color:#000"></em>
+                    <em id="em1"></em>
+                    <em id="em2"></em>
+                </div>
         </header>
-        <div id="body" style="display:black;">
+        <div id="body">
             <div class="head-body">
                 <div>
                     <div class="head-body-left">
@@ -404,6 +393,7 @@
                     </div>
                     <p class="arc-info">Copyright 2017 www.guazi.com All Rights Reserved</p>
                     <p class="arc-info">京ICP备15053955号  ICP证151071号 </p>
+                    <p class="arc-info">{{$datac[0]->Copying}} 版权所有</p>
                     <div class="protect clearfix">
                         <a class="police" rel="nofollow" target="_blank" href="#">京公网安备11010802020161号</a>
                     </div>
@@ -495,15 +485,38 @@
                 <a href="###" target="_blank">天津二手起亚智跑</a>
                 <a href="####" target="_blank">天津二手现代现代ix...</a>
             </div>
-
+           
             <div class="friendly-link">
                 <p class="link-tit">友情链接：</p>
                 <span class="open-box"></span>
                 <span class="close-box" data-role="is_show_box"></span>
-                <!-- {{var_dump($data1)}} -->
-                @foreach($data1 as $v)
-                <a href="{{$v->url}}">{{$v->name}}</a>
-                @endforeach
+                <a href="###">天津厂房出租</a>
+                <a href="###">天津学车</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津百姓网</a>
+                <a href="###">天津天气预报15天</a>
+                <a href="###">天津信息网</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津车市</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津房产网</a>
+                <a href="###">天津建材网</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津车展</a>
+                <a href="###">天津汽车网</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津汽车网</a>
+                <a href="###">天津汽车陪练</a>
+                <a href="###">天津信息港</a>
+                <a href="###">搜狐汽车天津站</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津二手设备回收</a>
+                <a href="###">天津二手车</a>
+                <a href="###">天津地图</a>
+                <a href="###">天津汽车网</a>
+                <a href="###">天津分类信息</a>
+                <a href="###">天津汽车票</a>
+                <a href="###">高速路况查询</a>
             </div>
 
             <div class="friendly-link">
@@ -554,7 +567,7 @@
             <div class="friendly-link">
                 <p class="link-tit">热门页面：</p>
                 <span class="open-box"></span>
-
+                
                 <span class="close-box" data-role="is_show_box"></span>
                 <a href="#">1万元二手车</a>
                 <a href="#">2万左右二手车</a>
@@ -591,20 +604,5 @@
                 010-57317000
             </p>
         </div>
-        <script src="/js/wySilder.min.js" type="text/javascript"></script>
-
-         <script>
-           $(function (){
-             $(".js-silder").silder({
-                     auto: true,//自动播放，传入任何可以转化为true的值都会自动轮播
-                     speed: 20,//轮播图运动速度
-                     sideCtrl: true,//是否需要侧边控制按钮
-                     bottomCtrl: false,//是否需要底部控制按钮
-                     defaultView: 0,//默认显示的索引
-                     interval: 3000,//自动轮播的时间，以毫秒为单位，默认3000毫秒
-                     activeClass: "active",//小的控制按钮激活的样式，不包括作用两边，默认active
-                 });
-           });
-         </script>
     </body>
 </html>

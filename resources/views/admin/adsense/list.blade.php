@@ -25,24 +25,28 @@
                                         </div>
                                     </div>
                                 </div>
-                             <form class="am-form-inline" role="form" action="/admin/adsense/show" method="GET" >
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}" name="check">
-                                             <option value="1">请选择搜索类别</option>
-                                             <option value="title">标题</option>
-                                        </select>
+                                        <select data-am-selected="{btnSize: 'sm'}">
+              <option value="option1">所有类别</option>
+              <option value="option2">IT业界</option>
+              <option value="option3">数码产品</option>
+              <option value="option3">笔记本电脑</option>
+              <option value="option3">平板电脑</option>
+              <option value="option3">只能手机</option>
+              <option value="option3">超极本</option>
+            </select>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field " name="key">
+                                        <input type="text" class="am-form-field ">
                                         <span class="am-input-group-btn">
-                                             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="submit"></button>
-                                        </span>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+          </span>
                                     </div>
                                 </div>
-                            </form>
+
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
                                         <thead>
@@ -56,28 +60,28 @@
                                         </thead>
                                         <tbody>
                                         @if(count($res))
-                                        @foreach($res as $v)
+                                        @foreach($res as $v) 
                                             <tr class="gradeX" style="text-align:center">
-                                                <td class="am-text-middle">{{$v -> id}}</td>
+                                                <td class="am-text-middle">{{$v['id']}}</td>
                                                 <td>
-                                                    <img src="../../../uploads/{{$v -> pic}}" class="tpl-table-line-img" style="max-height: 100px;"alt="">
+                                                    <img src="../../../uploads/{{$v['pic']}}" class="tpl-table-line-img" style="max-height: 100px;"alt="">
                                                 </td>
-                                                <td class="am-text-middle">{{$v -> title}}</td>
-                                                <td class="am-text-middle">{{$v -> url}}</td>
+                                                <td class="am-text-middle">{{$v['title']}}</td>
+                                                <td class="am-text-middle">{{$v['url']}}</td>
                                                 <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="/admin/adsense/{{$v -> id}}/edit">
+                                                        <a href="/admin/adsense/{{$v['id']}}/edit">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="javascript:void(0)" class="tpl-table-black-operation-del" onclick="del({{$v -> id }},$(this))">
+                                                        <a href="javascript:void(0)" class="tpl-table-black-operation-del" onclick="del({{$v['id']}},$(this))">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
-
+                                                       
                                                     </div>
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            @else
+                                            @else 
                                                 <tr class="gradeX">
                                                     <td colspan="5" align="center">没有任何操作数据</td>
                                                 </tr>
@@ -85,14 +89,14 @@
                                             <!-- more data -->
                                              <!-- 通过ajax去删除 -->
                                                           <script>
-
+                          
                                                              function del(id,obj){
                                                                  // $.post("{{url('/admin/adsense/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data)
                                                                 $.post("{{url('/admin/adsense/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}',"id":id},function(data)
                                                                  {
                                                                  if(data == 1){
                                                                        obj.parent().parent().parent().remove();
-
+                                                                        
                                                                      alert('删除成功！');
                                                                  }else if(data == 0){
                                                                      alert('删除失败！');
@@ -105,14 +109,17 @@
                                     </table>
                                 </div>
                                 <div class="am-u-lg-12 am-cf">
-                                <div class="am-fr">
-                                    @if(empty($check))
-                                        {!! $res->render() !!}
-                                    @else
-                                        {!! $res->appends(['check'=>$check])->render() !!}
-                                    @endif
 
-
+                                    <div class="am-fr">
+                                        <ul class="am-pagination tpl-pagination">
+                                            <li class="am-disabled"><a href="#">«</a></li>
+                                            <li class="am-active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">»</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

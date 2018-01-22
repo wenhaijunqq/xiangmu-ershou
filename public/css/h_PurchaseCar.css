@@ -130,15 +130,14 @@ width: 63px;float: left;height: 34px;padding: 0 15px;margin: 17px 0 0 15px;
     width: 1128px;
 }
 .dd-top {
-    margin: 15px 0 15px 6px;
-	height: 20px;
-   overflow: hidden;
+    height: 20px;
+    padding: 15px 0 15px 6px;
 }
-
 .dd-top .a-box {
-     float: left;
+    float: left;
     width: 940px;
-
+    height: 20px;
+    overflow: hidden;
 }
 .dd-top a.active {
     color: #fff;
@@ -147,14 +146,12 @@ width: 63px;float: left;height: 34px;padding: 0 15px;margin: 17px 0 0 15px;
 }
 .dd-top a {
     float: left;
-    /* height: 20px; */
+    height: 20px;
     font-size: 14px;
     line-height: 20px;
     color: #495056;
     padding: 0 6px;
     margin: 0 8px;
-
-	display: inline-block;
 }
 .dd-btn {
     float: right;

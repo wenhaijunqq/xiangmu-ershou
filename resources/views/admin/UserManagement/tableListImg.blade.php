@@ -2,7 +2,6 @@
 @section('title','后台文章')
 
 @section('content')
-        
 
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
@@ -75,28 +74,12 @@
                                                         <a href="/admin/UserManagement/xiangqing">
                                                             <i class="am-icon-pencil"></i> 查看详情
                                                         </a>
-                                                       
                                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
-
-                                                          @if ($v['status'] == 0)
-                                                            <a href="/admin/UserManagement/qiyong/{{$v['id']}}" id="qiyong">
-                                                            <i class="am-icon-pencil"></i> 启用
-                                                            </a>
-            
-                                                         @else
-                                                          <a id="jinyong" href="/admin/UserManagement/jinyong" class="tpl-table-black-operation-del">
-                                                            <i class="am-icon-trash"></i> 禁用
-                                                        </a>
-
-                                                          @endif
-                                                        
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
-                                                            
                                            @endforeach
                                             <!-- more data -->
                                         </tbody>
@@ -126,6 +109,6 @@
     </div>
 
 </body>
-   
+
 </html>
 @endsection

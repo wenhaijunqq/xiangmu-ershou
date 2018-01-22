@@ -25,6 +25,7 @@
             </div>
             <p class="arc-info">Copyright 2017 www.guazi.com All Rights Reserved</p>
             <p class="arc-info">京ICP备15053955号  ICP证151071号 </p>
+            <p class="arc-info">{{$config[0]->Copying}} 版权所有</p>
             <div class="protect clearfix">
                 <a class="police" rel="nofollow" target="_blank" href="#">京公网安备11010802020161号</a>
             </div>
@@ -120,10 +121,33 @@
         <p class="link-tit">友情链接：</p>
         <span class="open-box"></span>
         <span class="close-box" data-role="is_show_box"></span>
-        <!-- {{var_dump($data1)}} -->
-        @foreach($data1 as $v)
-        <a href="{{$v->url}}">{{$v->name}}</a>
-        @endforeach
+        <a href="###">天津厂房出租</a>
+        <a href="###">天津学车</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津百姓网</a>
+        <a href="###">天津天气预报15天</a>
+        <a href="###">天津信息网</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津车市</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津房产网</a>
+        <a href="###">天津建材网</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津车展</a>
+        <a href="###">天津汽车网</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津汽车网</a>
+        <a href="###">天津汽车陪练</a>
+        <a href="###">天津信息港</a>
+        <a href="###">搜狐汽车天津站</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津二手设备回收</a>
+        <a href="###">天津二手车</a>
+        <a href="###">天津地图</a>
+        <a href="###">天津汽车网</a>
+        <a href="###">天津分类信息</a>
+        <a href="###">天津汽车票</a>
+        <a href="###">高速路况查询</a>
     </div>
 
     <div class="friendly-link">
@@ -170,7 +194,7 @@
         <p class="link-tit">移动版：</p>
         <a href="###">瓜子二手车天津移动页</a>
     </div>
-
+ 
     <div class="friendly-link">
         <p class="link-tit">热门页面：</p>
         <span class="open-box"></span>

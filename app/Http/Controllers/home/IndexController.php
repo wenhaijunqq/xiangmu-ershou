@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\user;
-
-class NameUserManagementController extends Controller
+use DB;
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +16,16 @@ class NameUserManagementController extends Controller
      */
     public function index()
     {
-        //查看用户分页
-        $data = user::get();
-        return view('admin/UserManagement/tableListImg',['data'=>$data]);
-        
-
+        //显示网页主页
+        $datac = DB::table('config') -> get();
+        // dd($data);
+        if($datac[0]->Wstatus == 1){
+            return view('home/index',['datac'=>$datac]);
+        }else{
+            return view('errors/404');
+        }
     }
 
-
-    
     /**
      * Show the form for creating a new resource.
      *
@@ -55,15 +55,7 @@ class NameUserManagementController extends Controller
      */
     public function show($id)
     {
-        $user = user::where('id',$id)->first();
-        $status = ($user->status);
-        if($status==0){
-            
-        }
-
-        dump($status);
-        // $res =  user::where($id)->first();
-        // dump($email);
+        //
     }
 
     /**

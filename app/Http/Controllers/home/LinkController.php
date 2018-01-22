@@ -19,7 +19,7 @@ class LinkController extends Controller
     {
         //
         $res=Link::get();
-        return view('/home/HomeLayout',['res'=>$res]);
+        return view('/home/footer',['res'=>$res]);
     }
 
     /**

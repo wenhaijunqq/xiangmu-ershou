@@ -25,7 +25,7 @@
                                             <th colspan="4" style="text-align:center">基本参数</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”或 “ ”来表示！）</th>
+                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”来表示！）</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -104,7 +104,7 @@
                                             <th colspan="4" style="text-align:center">发动机参数</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”或 “ ” 来表示！）</th>
+                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”来表示！）</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -183,7 +183,7 @@
                                             <th colspan="4" style="text-align:center">底盘及制动</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”或 “ ” 来表示！）</th>
+                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”来表示！）</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -262,7 +262,7 @@
                                             <th colspan="4" style="text-align:center">安全配置</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”或 “ ” 来表示！）</th>
+                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”来表示！）</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -341,7 +341,7 @@
                                             <th colspan="4" style="text-align:center">外部配置</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”或 “ ” 来表示！）</th>
+                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”来表示！）</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -420,7 +420,7 @@
                                             <th colspan="4" style="text-align:center">内部配置</th>
                                         </tr>
                                         <tr>
-                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”或 “ ” 来表示！）</th>
+                                            <th colspan="4" style="text-align:center;color:red">（注意：没有此项参数用“ - ”来表示！）</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -926,14 +926,14 @@
                                         </tr>
                                         <tr class="gradeX">
                                             <td width="25%" style="text-align:center">
-                                                <label for="Ashtray-base">烟灰缸底座</label>
+                                                <label for="Ashtray base">烟灰缸底座</label>
                                             </td>
                                             <td width="25%%">
-                                                <input type="radio" name="Ashtray-base" value="3" onclick="del($(this))"/>取消此项
-                                                <input type="radio" name="Ashtray-base" value="2" onclick="not($(this))"/>没有此项
-                                                <input type="radio" name="Ashtray-base" value="0" checked = "checked" onclick="normal($(this))"/>正常
-                                                <input type="radio" name="Ashtray-base" value="1" onclick="unusual($(this))"/>异常
-                                                <input type="text" name="Ashtray-base1" value="" style="display:none" placeholder="请输入异常信息">
+                                                <input type="radio" name="Ashtray base" value="3" onclick="del($(this))"/>取消此项
+                                                <input type="radio" name="Ashtray base" value="2" onclick="not($(this))"/>没有此项
+                                                <input type="radio" name="Ashtray base" value="0" checked = "checked" onclick="normal($(this))"/>正常
+                                                <input type="radio" name="Ashtray base" value="1" onclick="unusual($(this))"/>异常
+                                                <input type="text" name="Ashtray base1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                         </tr>
                                  </tbody>
@@ -1852,7 +1852,6 @@
                                                 <label for="Fog-q-lightsr">前雾灯</label>
                                             </td>
                                             <td width="25%%">
-                                                <input type="radio" name="Fog-q-lightsr" value="3" onclick="del($(this))"/>取消此项
                                                 <input type="radio" name="Fog-q-lightsr" value="2" onclick="not($(this))"/>没有此项
                                                 <input type="radio" name="Fog-q-lightsr" value="0" checked = "checked" onclick="normal($(this))"/>正常
                                                 <input type="radio" name="Fog-q-lightsr" value="1" onclick="unusual($(this))"/>异常
@@ -1912,7 +1911,7 @@
                                                 <input type="radio" name="Indoor-light" value="2" onclick="not($(this))"/>没有此项
                                                 <input type="radio" name="Indoor-light" value="0" checked = "checked" onclick="normal($(this))"/>正常
                                                 <input type="radio" name="Indoor-light" value="1" onclick="unusual($(this))"/>异常
-                                                <input type="text" name="Indoor-light1" value="" style="display:none" placeholder="请输入异常信息">
+                                                <input type="text" name="Indoor-lightr1" value="" style="display:none" placeholder="请输入异常信息">
                                             </td>
                                             <td width="25%" style="text-align:center">
                                                 <label for="Xenon-headlights">氙气大灯</label>
@@ -2277,10 +2276,9 @@
                                             </td>
                                         </tr>
                                 </table>
-                               
                                 <div class="am-form-group" style="margin-left:300px;">
-                                        <div class="am-u-sm-9 am-u-sm-push-3" onclick="tijiao()">
-                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success " id="submit" > 提交</button>
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success "> 提交</button>
                                         </div>
                                 </div>
                             </div>
@@ -2288,74 +2286,22 @@
                     </div>
                     </form>
                     <script type="text/javascript">
-
-                      
-                        $('#submit').click(function(){
-                           var yichang = $('input[value=1][checked=checked]');
-                            if(yichang.length == 0){
-                                return true;
-                            }else{
-                               var arr = new Array();
-                                    var h = 0;
-                                   yichang.each(function(i){
-                                        var zhi = $(this).next().val();
-                                        if(zhi == ''){
-
-                                        }else{
-                                            
-                                            
-                                            arr[h] = zhi;
-                                            h ++;
-                                        }
-                                        
-                                   });
-
-                                   // console.log(arr.length)
-                                   // console.log(yichang.length)
-                                if(arr.length == yichang.length){
-                                    return true;
-                                }else{
-                                    layer.msg('有异常信息没有填写，请填写异常信息!');
-                                    // alert('有异常信息没有填写，请填写异常信息!');
-                                    return false;
-                                }
-
-                            }
-                               
-                                
-                               
-                            });
-                        
-                        
                         function unusual(obj)
                         {
                             //alert(obj);
                             obj.next().css('display','block');
-                            obj.attr('checked','checked');
-                            obj.prev().removeAttr('checked');
-                            obj.prev().prev().removeAttr('checked');
-                            obj.prev().prev().prev().removeAttr('checked');
                         }
                         function normal(obj)
                         {
                             //alert(obj);
                             obj.next().next().css('display','none');
                             obj.next().next().val('');
-                            obj.attr('checked','checked');
-                            obj.prev().removeAttr('checked');
-                            obj.prev().prev().removeAttr('checked');
-                            obj.next().removeAttr('checked');
-
                         }
                         function not(obj)
                         {
                             //alert(obj);
                             obj.next().next().next().css('display','none');
                             obj.next().next().next().val('');
-                            obj.attr('checked','checked');
-                            obj.prev().removeAttr('checked');
-                            obj.next().removeAttr('checked');
-                            obj.next().next().removeAttr('checked');
 
                         }
                         function del(obj)
@@ -2363,13 +2309,8 @@
                             //alert(obj);
                             obj.next().next().next().next().css('display','none');
                             obj.next().next().next().next().val('');
-                            obj.attr('checked','checked');
-                            obj.next().removeAttr('checked');
-                            obj.next().next().removeAttr('checked');
-                            obj.next().next().next().removeAttr('checked');
 
                         }
-
                     </script>
     
             </div>

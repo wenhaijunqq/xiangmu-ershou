@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Model\user;
 
-class UserManagementController extends Controller
+class NameUserManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +18,9 @@ class UserManagementController extends Controller
     public function index()
     {
         //查看用户分页
-        return view('admin/UserManagement/tableList');
+        $data = user::get();
+        return view('admin/UserManagement/tableListImg',['data'=>$data]);
+        
 
     }
 
@@ -28,7 +31,7 @@ class UserManagementController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**

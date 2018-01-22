@@ -55,7 +55,7 @@ class ExamineWaitController extends Controller
         $date = date('Y-m-d H:i:s',time());
        
         // 修改评估状态
-        $res = appointment::where('car_id',$id)->update(['audit_status'=>1,'audit_time'=>$date,'audit_jg'=>1]);
+        $res = appointment::where('car_id',$id)->update(['audit_status'=>1,'audit_time'=>$date]);
         if($res){
              echo 1;   
         }else{

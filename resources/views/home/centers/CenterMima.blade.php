@@ -18,7 +18,7 @@
         li a .bb:link {
         color:#00e224;
         }
-        li a .aa:hover {
+        li a .bb:hover {
         color:#00e224;
         } 
         li a .bb:visited {
@@ -41,6 +41,7 @@
                 </div>
                 <div class="nav-2">
                     <span style="font-size: 14px;color: #888;">天津</span>
+                    <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
@@ -60,14 +61,14 @@
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
-        <li><a href="http://www.chenghang.com/home/center" class="bb"><font class="aa">我的宝典</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shoucang" class="bb"><font class="aa">我的收藏</font></a></li>
-        <li><a href="http://www.chenghang.com/home/duibi" class="bb"><font class="aa">对比记录</font></a></li>
-        <li><a href="http://www.chenghang.com/home/maiche" class="bb"><font class="aa">我买的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/shouche" class="bb"><font class="aa">我卖的车</font></a></li>
-        <li><a href="http://www.chenghang.com/home/huiyuan" class="bb"><font class="aa">会员身份</font></a></li>
-        <li><a href="http://www.chenghang.com/home/mima" class="active"><font class="aa">修改密码</font></a></li>
-                 
+        <li><a href="http://www.chenghang.com/home/baodian" class=""><font class="bb">我的宝典</font></a></li>
+        <li><a href="http://www.chenghang.com/home/shoucang" class=""><font class="bb">我的收藏</font></a></li>
+        <li><a href="http://www.chenghang.com/home/duibi" class=""><font class="bb">对比记录</font></a></li>
+        <li><a href="http://www.chenghang.com/home/maiche" class=""><font class="bb">我买的车</font></a></li>
+        <li><a href="http://www.chenghang.com/home/shouche" class=""><font class="bb">我卖的车</font></a></li>
+        <li><a href="http://www.chenghang.com/home/huiyuan" class=""><font class="bb">会员身份</font></a></li>
+        <li><a href="http://www.chenghang.com/home/mima" class=" active "><font class="bb">修改密码</font></a></li>
+                
       </ul>
     </div>     
         <div class="right">
@@ -75,21 +76,26 @@
             <div class="ncar-tip">
                 <form class="form-horizontal">
                       <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputEmail3" placeholder="text">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3" placeholder="email">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                         </div>
                       </div>
-                
-                      
-                      
-
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember me
+                            </label>
+                          </div>
+                        </div>
+                      </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                           <button type="submit" class="btn btn-default">Sign in</button>
