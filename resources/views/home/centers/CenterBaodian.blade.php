@@ -25,10 +25,10 @@
         }
 
     </style>
-</head>  
+</head>
     <body class="bg-f0">
-        
-        
+
+
         <div class="_ckcity" data-cityname="beijing" data-type="1" style="display:none"></div>
         <!--20141203新版头部开始-->
         <div class="fixed-head-wrap ">
@@ -49,11 +49,11 @@
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>
                 </div>
-                    
+
             </div>
         </div>
-        
-        
+
+
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
@@ -64,9 +64,9 @@
         <li><a href="http://www.chenghang.com/home/shouche" class=""><font class="bb">我卖的车</font></a></li>
         <li><a href="http://www.chenghang.com/home/huiyuan" class=""><font class="bb">会员身份</font></a></li>
         <li><a href="http://www.chenghang.com/home/mima" class=""><font class="bb">修改密码</font></a></li>
-                
+
       </ul>
-    </div>     
+    </div>
         <div class="right">
             <div class="ncar-tip">
                 <img src="/img/error_people.png">

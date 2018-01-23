@@ -20,7 +20,7 @@ class DetailsController extends Controller
     public function index()
     {
         //
-        $id = 2;
+        $id = 3;
         $res = DB::table('user')->find($id);
 
 

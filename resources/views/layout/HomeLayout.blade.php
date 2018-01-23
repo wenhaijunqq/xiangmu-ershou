@@ -6,6 +6,8 @@
         <!-- 公共css样式-->
         <link rel="stylesheet" href="/css/h_public.css">
         <link rel="stylesheet"  href="/css/h_ss.css">
+    		<link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
+    		<script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
         <!-- 买车页css样式-->
         <link rel="stylesheet" href="/css/h_PurchaseCar.css">
         <!-- 卖车页css样式-->

@@ -7,10 +7,13 @@
   <meta name="description" content="北京二手车,急卖二手车,直面个人买家 好车卖出好价,瓜子二手车均经过259项检测,标准无事故,优质个人二手车,14天可退1年质保,个人二手车买卖首选瓜子二手车直卖网!" />
   <link rel="stylesheet" href="/css/xiangqing1.css" >
   <link rel="stylesheet" href="/css/xiangqing2.css" >
-  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
   <script src="/js/xiangqing.hm.js.下载"></script>
   <link rel="stylesheet" href="/css/xiangqing1.css" >
   <link rel="stylesheet" href="/css/xiangqing2.css" >
+  <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
+  <link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
+  <script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
+  <link rel="stylesheet"  href="/css/h_ss.css">
 
  <script type="text/javascript" src=/js/xiangqing.base.4b81eb2fb2dda5120fb9.js.下载"></script>
  </head>
@@ -25,7 +28,29 @@
     <h1> <a href="/bj/" title="瓜子二手车">瓜子二手车</a> </h1>
     <div class="city">
      <!-- 鼠标悬停 .city添加class名active -->
-     <p class="city-curr"> 北京<i></i> </p>
+       <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20" style="border:0px;" />
+       <script type="text/javascript">
+
+       $(function(){
+           var fn2 = function(city){
+               c.value = city;
+           };
+           $('#test3').hover(function(){
+               $('#test3').css("color","red");
+               citypicker.show({
+                   left : 255,
+                   top  : 40,
+                   selected : fn2
+               });
+
+           });
+           $('body').click(function(){
+               $('#test3').css("color","black");
+               $('#div_select_city_sub_menu').hide();
+           });
+
+       });
+       </script>
      <div class="white-line"></div>
      <!--        class:all-city的作用是局部滚动不影响整体滚动-->
      <div class="city-box all-city">
@@ -479,7 +504,7 @@
       </ul>
       <div class="nav-r">
        <a rel="nofollow" href="javascript:" class="orgbtn js-apt" data-gzlog="tracking_type=click&amp;eventid=0460310000000074&amp;position=2&amp;carid=14350062">预约看车 <span class="layer-tip bottom-layer js-layer-tip" style="width: 233px; height: 43px; display: none;"> <i class="icon-small-sanjiao"></i> 此车已有<i class="fc-green">169</i>人关注，预计很快售出，建议尽快<i class="fc-green js-apt" data-gzlog="tracking_type=click&amp;eventid=0460310000000074&amp;carid=14350062">预约看车</i> </span> </a>
-       <a rel="nofollow" href="javascript:;" class="greenbtn borderbtn js-bargain" data-gzlog="tracking_type=click&amp;eventid=0460310000000075&amp;position=2&amp;carid=36691">我要砍价</a>
+       <a rel="nofollow" href="javascript:;" class="greenbtn borderbtn js-bargain" data-gzlog="tracking_type=click&amp;eventid=0460310000000075&amp;position=2&amp;carid=36691">我要收藏</a>
        <a href="javascript:;" data-gzlog="tracking_type=click&amp;eventid=92747112&amp;position=2&amp;carid=14350062" class="freephonebtn js-freePhone">免费咨询</a>
       </div>
      </div>
@@ -821,277 +846,7 @@
        <span class="tip-icon js-tip-icon4"> <span class="layer-tip bottom-layer"> <i class="icon-small-sanjiao"></i>保险是否随车赠送，需要在交易过程中与车主确认。</span> </span>
       </div>商业险到期</li>
     </ul>
-    <div class="detailcontent clearfix js-detailcontent active">
-     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="param-table
-            one">
 
-      <tbody>
-
-       <tr>
-        <th colspan="2">基本参数</th>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">厂商</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['manufacturer']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">级别</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['grade']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">发动机</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['engine']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">变速箱</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['gearbox']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">车身结构</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['body-structure']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">长*宽*高(mm)</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['volume']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">轴距(mm)</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['wheel-base']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">行李箱容积(L)</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['boot']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">整备质量(kg)</td>
-        <td width="50%" class="td2">{{json_decode($res1['basic_parameter'],true)['weight']}}</td>
-       </tr>
-      </tbody>
-
-     </table>
-     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="param-table
-            ">
-      <tbody>
-       <tr>
-        <th colspan="2">发动机参数</th>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">排量(L)</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['displacement']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">进气形式</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['air-suction']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">气缸</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['air-cylinder']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">最大马力(Ps)</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['horsepower']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">最大扭矩(N*m)</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['torque']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">燃料类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['Fuel-type']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">燃油标号</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['fuel-oil']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">供油方式</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['Oil-drive']}}</td>
-       </tr>
-       <tr title="各地车管所对排放标准认定有差异，结果仅供参考，外迁请详细咨询迁入地车管所。">
-        <td width="50%" class="td1">排放标准</td>
-        <td width="50%" class="td2">{{json_decode($res1['engine_parameter'],true)['emission-standard']}}</td>
-       </tr>
-      </tbody>
-     </table>
-     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="param-table
-            ">
-      <tbody>
-       <tr>
-        <th colspan="2">底盘及制动</th>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">驱动方式</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['drive']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">助力类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['assistance']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前悬挂类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['forward-mounting']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">后悬挂类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['Rear-Suspension']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前制动类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['front-brake']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">后制动类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['rear-brake']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">驻车制动类型</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['parking-braking']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前轮胎规格</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['Front-Tyre']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">后轮胎规格</td>
-        <td width="50%" class="td2">{{json_decode($res1['underpan_braking'],true)['rear-tire']}}</td>
-       </tr>
-      </tbody>
-     </table>
-     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="param-table
-            one">
-      <tbody>
-       <tr>
-        <th colspan="2">安全配置</th>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">主副驾驶安全气囊</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['deputy-airbags']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前后排侧气囊</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['side-airbags']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前后排头部气囊</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['Head-Airbag']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">胎压检测</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['tire-pressure']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">车内中控锁</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['central-locking']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">儿童座椅接口</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['ISO-FIX-LATCH']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">无钥匙启动</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['KEYLESS-GO']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">防抱死系统(ABS)</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['ABS']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">车身稳定控制(ESP)</td>
-        <td width="50%" class="td2">{{json_decode($res1['safety_configuration'],true)['ESP']}}</td>
-       </tr>
-      </tbody>
-     </table>
-     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="param-table
-            ">
-      <tbody>
-       <tr>
-        <th colspan="2">外部配置</th>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">电动天窗</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['power-sunroof']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">全景天窗</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['panoramic-sunroof']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">电动吸合门</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['Electric-suction-door']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">感应后备箱</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['Induction-trunk']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">感应雨刷</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['Rain-sensing-Wipers']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">后雨刷</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['rear-wiper']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前后电动车窗</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['AND-POWER-WINDOWS']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">后视镜电动调节</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['power-mirror']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">后视镜加热</td>
-        <td width="50%" class="td2">{{json_decode($res1['exterior_configuration'],true)['warm-mirror']}}</td>
-       </tr>
-      </tbody>
-     </table>
-     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="param-table
-            ">
-      <tbody>
-       <tr>
-        <th colspan="2">内部配置</th>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">多功能方向盘</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['MFL']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">定速巡航</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['cruise-control']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">空调</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['air-conditioner']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">自动空调</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['automatic-air-conditioning']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">GPS导航</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['GPS']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">倒车雷达</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['car-backing-radar']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">倒车影像系统</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['Back-eye-camera']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">真皮座椅</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['leather-seat']}}</td>
-       </tr>
-       <tr>
-        <td width="50%" class="td1">前后排座椅加热</td>
-        <td width="50%" class="td2">{{json_decode($res1['interior_configuration'],true)['seat-heating']}}</td>
-       </tr>
-      </tbody>
-     </table>
-     <div class="text-ins">
-      以上基本信息为车辆初评时录入，实际情况以看车时为准
-     </div>
     </div>
     <!--    车主基本信息-->
    </div>
@@ -1180,11 +935,11 @@
    </div>
    <!--    质量检测报告车源图片-->
    <!--    车主检测报告-->
-   <div class="test-box js-report">
+   <div class="test-box js-report ">
     <ul class="test-tit-five clearfix js-reportTop">
     </ul>
     <!-- 普通项 -->
-    <div class="test-content">
+    <div class="test-content car-picture-infor">
      <div class="titlediv" id="report">
       <span>检测报告</span>
      </div>
@@ -1194,74 +949,414 @@
        <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099017">收起<span class="icon-bottom-sanjiao"></span></span>
       </div>
       <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></nspan> <strong>25项&nbsp;事故排查 </strong> <p class="fc-yellow">2项异常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>10项&nbsp;泡水排查 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>31项&nbsp;事故排查 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>7项&nbsp;泡水排查 </strong> <p class="fc-green">正常</p> </li>
        <li class="last"> <span class="icon-green-right"></span> <strong>2项&nbsp;火烧排查 </strong> <p class="fc-green">正常</p> </li>
       </ul>
       <div class="tablediv clearfix">
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">25项事故排查检测</th>
+          <th colspan="3">31项事故排查检测</th>
          </tr>
          <tr>
-          <td >
-            sdfdsfds
+          <td  class="{{json_decode($res1['accident'],true)['left-frame']}}">
+            @if(json_decode($res1['accident'],true)['left-frame'] == 0)
+              <span class="icon-right"></span>左前大灯框架
+            @elseif(json_decode($res1['accident'],true)['left-frame'] == 1)
+            <span class="icon-yellow-error">
+              <span class="layer-yellow-tip width2" style="display:none">
+                <i class="icon-yellow-sanjiao"></i>
+                <div>{{json_decode($res1['accident_abnormal'],true)['left-frame1']}}</div>
+              </span>
+            </span>左前大灯框架
+            @elseif(json_decode($res1['accident'],true)['left-frame'] == 2)
+              <span class="icon-line-gray"></span>左前大灯框架
+            @else
+              <span class="icon-line-gray"></span><s>左前大灯框架</s>
+            @endif
           </td>
-          <td> <span class="icon-yellow-error"> <span class="layer-yellow-tip width2"><i class="icon-yellow-sanjiao"></i>
-             <div>
-              轻微钣金（15cm&sup2;以内）
-             </div></span> </span>右A柱 </td>
+          <td class="{{json_decode($res1['accident'],true)['right-frame']}}">
+            @if(json_decode($res1['accident'],true)['right-frame'] == 0)
+              <span class="icon-right"></span>右前大灯框架
+            @elseif(json_decode($res1['accident'],true)['right-frame'] == 1)
+              <span class="icon-yellow-error"></span>右前大灯框架
+            @elseif(json_decode($res1['accident'],true)['right-frame'] == 2)
+              <span class="icon-line-gray"></span>右前大灯框架
+            @else
+              <span class="icon-line-gray"></span><s>右前大灯框架</s>
+            @endif
+
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左前翼子板内衬 </td>
-          <td> <span class="icon-right"></span>右C柱 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-front-lining']}}">
+            @if(json_decode($res1['accident'],true)['Left-front-lining'] == 0)
+             <span class="icon-right"></span>左前翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Left-front-lining'] == 1)
+               <span class="icon-yellow-error"></span>左前翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Left-front-lining'] == 2)
+               <span class="icon-line-gray"></span>左前翼子板内衬
+             @else
+               <span class="icon-line-gray"></span><s>左前翼子板内衬</s>
+             @endif
+
+         </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-front-lining']}}">
+            @if(json_decode($res1['accident'],true)['Right-front-lining'] == 0)
+             <span class="icon-right"></span>右前翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Right-front-lining'] == 1)
+               <span class="icon-yellow-error"></span>右前翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Right-front-lining'] == 2)
+               <span class="icon-line-gray"></span>右前翼子板内衬
+             @else
+               <span class="icon-line-gray"></span><s>右前翼子板内衬</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后围板 </td>
-          <td> <span class="icon-right"></span>左前减震器座 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-front-lining']}}">
+
+            @if(json_decode($res1['accident'],true)['Left-damper-holder'] == 0)
+             <span class="icon-right"></span>左前减震器座
+             @elseif(json_decode($res1['accident'],true)['Left-damper-holder'] == 1)
+               <span class="icon-yellow-error"></span>左前减震器座
+             @elseif(json_decode($res1['accident'],true)['Left-damper-holder'] == 2)
+               <span class="icon-line-gray"></span>左前减震器座
+             @else
+               <span class="icon-line-gray"></span><s>左前减震器座</s>
+             @endif
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['right-damper-holder']}}">
+            @if(json_decode($res1['accident'],true)['right-damper-holder'] == 0)
+             <span class="icon-right"></span>右前减震器座
+             @elseif(json_decode($res1['accident'],true)['right-damper-holder'] == 1)
+               <span class="icon-yellow-error"></span>右前减震器座
+             @elseif(json_decode($res1['accident'],true)['right-damper-holder'] == 2)
+               <span class="icon-line-gray"></span>右前减震器座
+             @else
+               <span class="icon-line-gray"></span><s>右前减震器座</s>
+             @endif
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左B柱 </td>
-          <td> <span class="icon-right"></span>右前翼子板内衬 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-longeron']}}">
+            @if(json_decode($res1['accident'],true)['Left-longeron'] == 0)
+             <span class="icon-right"></span>左前纵梁
+             @elseif(json_decode($res1['accident'],true)['Left-longeron'] == 1)
+               <span class="icon-yellow-error"></span>左前纵梁
+             @elseif(json_decode($res1['accident'],true)['Left-longeron'] == 2)
+               <span class="icon-line-gray"></span>左前纵梁
+             @else
+               <span class="icon-line-gray"></span><s>左前纵梁</s>
+             @endif
+         </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-longeron']}}">
+            @if(json_decode($res1['accident'],true)['Right-longeron'] == 0)
+             <span class="icon-right"></span>右前纵梁
+             @elseif(json_decode($res1['accident'],true)['Right-longeron'] == 1)
+               <span class="icon-yellow-error"></span>右前纵梁
+             @elseif(json_decode($res1['accident'],true)['Right-longeron'] == 2)
+               <span class="icon-line-gray"></span>右前纵梁
+             @else
+               <span class="icon-line-gray"></span><s>右前纵梁<s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>右D柱 </td>
-          <td> <span class="icon-right"></span>右B柱 </td>
+          <td  class="{{json_decode($res1['accident'],true)['firewall']}}">
+            @if(json_decode($res1['accident'],true)['firewall'] == 0)
+             <span class="icon-right"></span>防火墙
+             @elseif(json_decode($res1['accident'],true)['firewall'] == 1)
+               <span class="icon-yellow-error"></span>防火墙
+             @elseif(json_decode($res1['accident'],true)['firewall'] == 2)
+               <span class="icon-line-gray"></span>防火墙
+             @else
+               <span class="icon-line-gray"></span><s>防火墙</s>
+             @endif
+
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-A-column']}}">
+            @if(json_decode($res1['accident'],true)['Right-A-column'] == 0)
+             <span class="icon-right"></span>右A柱
+             @elseif(json_decode($res1['accident'],true)['Right-A-column'] == 1)
+               <span class="icon-yellow-error"></span>右A柱
+             @elseif(json_decode($res1['accident'],true)['Right-A-column'] == 2)
+               <span class="icon-line-gray"></span>右A柱
+             @else
+               <span class="icon-line-gray"></span><s>右A柱</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>右前减震器座 </td>
-          <td> <span class="icon-right"></span>右前纵梁 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-B-column']}}">
+            @if(json_decode($res1['accident'],true)['Right-B-column'] == 0)
+             <span class="icon-right"></span>右B柱
+             @elseif(json_decode($res1['accident'],true)['Right-B-column'] == 1)
+               <span class="icon-yellow-error"></span>右B柱
+             @elseif(json_decode($res1['accident'],true)['Right-B-column'] == 2)
+               <span class="icon-line-gray"></span>右B柱
+             @else
+               <span class="icon-line-gray"></span><s>右B柱</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-side']}}">
+            @if(json_decode($res1['accident'],true)['Right-side'] == 0)
+             <span class="icon-right"></span>右侧顶边梁
+             @elseif(json_decode($res1['accident'],true)['Right-side'] == 1)
+               <span class="icon-yellow-error"></span>右侧顶边梁
+             @elseif(json_decode($res1['accident'],true)['Right-side'] == 2)
+               <span class="icon-line-gray"></span>右侧顶边梁
+             @else
+               <span class="icon-line-gray"></span><s>右侧顶边梁</s>
+             @endif
+
+
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后备箱底板 </td>
-          <td> <span class="icon-right"></span>右侧底边梁 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-C-column']}}">
+            @if(json_decode($res1['accident'],true)['Right-C-column'] == 0)
+             <span class="icon-right"></span>右C柱
+             @elseif(json_decode($res1['accident'],true)['Right-C-column'] == 1)
+               <span class="icon-yellow-error"></span>右C柱
+             @elseif(json_decode($res1['accident'],true)['Right-C-column'] == 2)
+               <span class="icon-line-gray"></span>右C柱
+             @else
+               <span class="icon-line-gray"></span><s>右C柱</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-D-column']}}">
+            @if(json_decode($res1['accident'],true)['Right-D-column'] == 0)
+             <span class="icon-right"></span>右D柱
+             @elseif(json_decode($res1['accident'],true)['Right-D-column'] == 1)
+               <span class="icon-yellow-error"></span>右D柱
+             @elseif(json_decode($res1['accident'],true)['Right-D-column'] == 2)
+               <span class="icon-line-gray"></span>右D柱
+             @else
+               <span class="icon-line-gray"></span><s>右D柱</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左车顶边梁 </td>
-          <td> <span class="icon-right"></span>左前纵梁 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-edge']}}">
+            @if(json_decode($res1['accident'],true)['Right-edge'] == 0)
+             <span class="icon-right"></span>右侧底大边
+             @elseif(json_decode($res1['accident'],true)['Right-edge'] == 1)
+               <span class="icon-yellow-error"></span>右侧底大边
+             @elseif(json_decode($res1['accident'],true)['Right-edge'] == 2)
+               <span class="icon-line-gray"></span>右侧底大边
+             @else
+               <span class="icon-line-gray"></span><s>右侧底大边</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-floor']}}">
+            @if(json_decode($res1['accident'],true)['Right-floor'] == 0)
+             <span class="icon-right"></span>右侧驾驶舱底板
+             @elseif(json_decode($res1['accident'],true)['Right-floor'] == 1)
+               <span class="icon-yellow-error"></span>右侧驾驶舱底板
+             @elseif(json_decode($res1['accident'],true)['Right-floor'] == 2)
+               <span class="icon-line-gray"></span>右侧驾驶舱底板
+             @else
+               <span class="icon-line-gray"></span><s>右侧驾驶舱底板</s>
+             @endif
+
+
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左侧底边梁 </td>
-          <td> <span class="icon-yellow-error"> <span class="layer-yellow-tip width2"><i class="icon-yellow-sanjiao"></i>
-             <div>
-              轻微钣金（15cm&sup2;以内）
-             </div></span> </span>左A柱 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Rightrear-frame']}}">
+            @if(json_decode($res1['accident'],true)['Rightrear-frame'] == 0)
+             <span class="icon-right"></span>右侧尾灯框架
+             @elseif(json_decode($res1['accident'],true)['Rightrear-frame'] == 1)
+               <span class="icon-yellow-error"></span>右侧尾灯框架
+             @elseif(json_decode($res1['accident'],true)['Rightrear-frame'] == 2)
+               <span class="icon-line-gray"></span>右侧尾灯框架
+             @else
+               <span class="icon-line-gray"></span><s>右侧尾灯框架</s>
+             @endif
+
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Right-lining']}}">
+            @if(json_decode($res1['accident'],true)['Right-lining'] == 0)
+             <span class="icon-right"></span>右后翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Right-lining'] == 1)
+               <span class="icon-yellow-error"></span>右后翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Right-lining'] == 2)
+               <span class="icon-line-gray"></span>右后翼子板内衬
+             @else
+               <span class="icon-line-gray"></span>右后翼子板内衬
+             @endif
+
+
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左后纵梁 </td>
-          <td> <span class="icon-right"></span>防火墙 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Leftrear-frame']}}">
+            @if(json_decode($res1['accident'],true)['Leftrear-frame'] == 0)
+             <span class="icon-right"></span>左侧尾灯框架
+             @elseif(json_decode($res1['accident'],true)['Leftrear-frame'] == 1)
+               <span class="icon-yellow-error"></span>左侧尾灯框架
+             @elseif(json_decode($res1['accident'],true)['Leftrear-frame'] == 2)
+               <span class="icon-line-gray"></span>左侧尾灯框架
+             @else
+               <span class="icon-line-gray"></span><s>左侧尾灯框架</s>
+             @endif
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-lining']}}">
+            @if(json_decode($res1['accident'],true)['Left-lining'] == 0)
+             <span class="icon-right"></span>左后翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Left-lining'] == 1)
+               <span class="icon-yellow-error"></span>左后翼子板内衬
+             @elseif(json_decode($res1['accident'],true)['Left-lining'] == 2)
+               <span class="icon-line-gray"></span>左后翼子板内衬
+             @else
+               <span class="icon-line-gray"></span><s>左后翼子板内衬</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左后翼子板内衬 </td>
-          <td> <span class="icon-right"></span>左D柱 </td>
+          <td  class="{{json_decode($res1['accident'],true)['back-panel']}}">
+            @if(json_decode($res1['accident'],true)['back-panel'] == 0)
+             <span class="icon-right"></span>后围板
+             @elseif(json_decode($res1['accident'],true)['back-panel'] == 1)
+               <span class="icon-yellow-error"></span>后围板
+             @elseif(json_decode($res1['accident'],true)['back-panel'] == 2)
+               <span class="icon-line-gray"></span>后围板
+             @else
+               <span class="icon-line-gray"></span><s>后围板</s>
+             @endif
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Trunk-board']}}">
+            @if(json_decode($res1['accident'],true)['Trunk-board'] == 0)
+             <span class="icon-right"></span>后备箱底板
+             @elseif(json_decode($res1['accident'],true)['Trunk-board'] == 1)
+               <span class="icon-yellow-error"></span>后备箱底板
+             @elseif(json_decode($res1['accident'],true)['Trunk-board'] == 2)
+               <span class="icon-line-gray"></span>后备箱底板
+             @else
+               <span class="icon-line-gray"></span><s>后备箱底板</s>
+             @endif
+
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>右后翼子板内衬 </td>
-          <td> <span class="icon-right"></span>右后纵梁 </td>
+          <td  class="{{json_decode($res1['accident'],true)['right-SPAR']}}">
+            @if(json_decode($res1['accident'],true)['right-SPAR'] == 0)
+             <span class="icon-right"></span>右后纵梁
+             @elseif(json_decode($res1['accident'],true)['right-SPAR'] == 1)
+               <span class="icon-yellow-error"></span>右后纵梁
+             @elseif(json_decode($res1['accident'],true)['right-SPAR'] == 2)
+               <span class="icon-line-gray"></span>右后纵梁
+             @else
+               <span class="icon-line-gray"></span><s>右后纵梁</s>
+             @endif
+
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['left-SPAR']}}">
+            @if(json_decode($res1['accident'],true)['left-SPAR'] == 0)
+             <span class="icon-right"></span>左后纵梁
+             @elseif(json_decode($res1['accident'],true)['left-SPAR'] == 1)
+               <span class="icon-yellow-error"></span>左后纵梁
+             @elseif(json_decode($res1['accident'],true)['left-SPAR'] == 2)
+               <span class="icon-line-gray"></span>左后纵梁
+             @else
+               <span class="icon-line-gray"></span><s>左后纵梁</s>
+             @endif
+
+
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>右车顶边梁 </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-D-column']}}">
+            @if(json_decode($res1['accident'],true)['Left-D-column'] == 0)
+             <span class="icon-right"></span>左D柱
+             @elseif(json_decode($res1['accident'],true)['Left-D-column'] == 1)
+               <span class="icon-yellow-error"></span>左D柱
+             @elseif(json_decode($res1['accident'],true)['Left-D-column'] == 2)
+               <span class="icon-line-gray"></span>左D柱
+             @else
+               <span class="icon-line-gray"></span><s>左D柱</s>
+             @endif
+
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-C-column']}}">
+            @if(json_decode($res1['accident'],true)['Left-C-column'] == 0)
+             <span class="icon-right"></span>左C柱
+             @elseif(json_decode($res1['accident'],true)['Left-C-column'] == 1)
+               <span class="icon-yellow-error"></span>左C柱
+             @elseif(json_decode($res1['accident'],true)['Left-C-column'] == 2)
+               <span class="icon-line-gray"></span>左C柱
+             @else
+               <span class="icon-line-gray"></span><s>左C柱</s>
+             @endif
+          </td>
+         </tr>
+         <tr>
+          <td  class="{{json_decode($res1['accident'],true)['Left-side']}}">
+            @if(json_decode($res1['accident'],true)['Left-side'] == 0)
+             <span class="icon-right"></span>左侧顶边梁
+             @elseif(json_decode($res1['accident'],true)['Left-side'] == 1)
+               <span class="icon-yellow-error"></span>左侧顶边梁
+             @elseif(json_decode($res1['accident'],true)['Left-side'] == 2)
+               <span class="icon-line-gray"></span>左侧顶边梁
+             @else
+               <span class="icon-line-gray"></span><s>左侧顶边梁</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-B-column']}}">
+            @if(json_decode($res1['accident'],true)['Left-B-column'] == 0)
+             <span class="icon-right"></span>左B柱
+             @elseif(json_decode($res1['accident'],true)['Left-B-column'] == 1)
+               <span class="icon-yellow-error"></span>左B柱
+             @elseif(json_decode($res1['accident'],true)['Left-B-column'] == 2)
+               <span class="icon-line-gray"></span>左B柱
+             @else
+               <span class="icon-line-gray"></span><s>左B柱</s>
+             @endif
+          </td>
+         </tr>
+         <tr>
+          <td  class="{{json_decode($res1['accident'],true)['Left-A-column']}}">
+            @if(json_decode($res1['accident'],true)['Left-A-column'] == 0)
+             <span class="icon-right"></span>左A柱
+             @elseif(json_decode($res1['accident'],true)['Left-A-column'] == 1)
+               <span class="icon-yellow-error"></span>左A柱
+             @elseif(json_decode($res1['accident'],true)['Left-A-column'] == 2)
+               <span class="icon-line-gray"></span>左A柱
+             @else
+               <span class="icon-line-gray"></span><s>左A柱</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['accident'],true)['Left-edge']}}">
+            @if(json_decode($res1['accident'],true)['Left-edge'] == 0)
+             <span class="icon-right"></span>左侧底大边
+             @elseif(json_decode($res1['accident'],true)['Left-edge'] == 1)
+               <span class="icon-yellow-error"></span>左侧底大边
+             @elseif(json_decode($res1['accident'],true)['Left-edge'] == 2)
+               <span class="icon-line-gray"></span>左侧底大边
+             @else
+               <span class="icon-line-gray"></span><s>左侧底大边</s>
+             @endif
+            </td>
+         </tr>
+         <tr>
+          <td  class="{{json_decode($res1['accident'],true)['Left-floor']}}">
+            @if(json_decode($res1['accident'],true)['Left-floor'] == 0)
+             <span class="icon-right"></span>左侧驾驶舱底板
+             @elseif(json_decode($res1['accident'],true)['Left-floor'] == 1)
+               <span class="icon-yellow-error"></span>左侧驾驶舱底板
+             @elseif(json_decode($res1['accident'],true)['Left-floor'] == 2)
+               <span class="icon-line-gray"></span>左侧驾驶舱底板
+             @else
+               <span class="icon-line-gray"></span><s>左侧驾驶舱底板</s>
+             @endif
+           </td>
           <td></td>
          </tr>
          <tr>
@@ -1271,27 +1366,109 @@
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">10项泡水排查检测</th>
+          <th colspan="3">7项泡水排查检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>全车地胶地毯 </td>
-          <td> <span class="icon-right"></span>发动机主线束 </td>
+          <td  class="{{json_decode($res1['soaking_water'],true)['Cabin-box']}}">
+            @if(json_decode($res1['soaking_water'],true)['Cabin-box'] == 0)
+             <span class="icon-right"></span>机舱保险盒
+             @elseif(json_decode($res1['soaking_water'],true)['Cabin-box'] == 1)
+               <span class="icon-yellow-error"></span>机舱保险盒
+             @elseif(json_decode($res1['soaking_water'],true)['Cabin-box'] == 2)
+               <span class="icon-line-gray"></span>机舱保险盒
+             @else
+               <span class="icon-line-gray"></span><s>机舱保险盒</s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['soaking_water'],true)['Seat-screws']}}">
+            @if(json_decode($res1['soaking_water'],true)['Seat-screws'] == 0)
+             <span class="icon-right"></span>座椅滑轨及固定螺丝
+             @elseif(json_decode($res1['soaking_water'],true)['Seat-screws'] == 1)
+               <span class="icon-yellow-error"></span>座椅滑轨及固定螺丝
+             @elseif(json_decode($res1['soaking_water'],true)['Seat-screws'] == 2)
+               <span class="icon-line-gray"></span>座椅滑轨及固定螺丝
+             @else
+               <span class="icon-line-gray"></span><s>座椅滑轨及固定螺丝</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>防火墙隔音棉 </td>
-          <td> <span class="icon-right"></span>全车座椅坐垫 </td>
+          <td  class="{{json_decode($res1['soaking_water'],true)['Interior-harness']}}">
+            @if(json_decode($res1['soaking_water'],true)['Interior-harness'] == 0)
+             <span class="icon-right"></span>车内线束
+             @elseif(json_decode($res1['soaking_water'],true)['Interior-harness'] == 1)
+               <span class="icon-yellow-error"></span>车内线束
+             @elseif(json_decode($res1['soaking_water'],true)['Interior-harness'] == 2)
+               <span class="icon-line-gray"></span>车内线束
+             @else
+               <span class="icon-line-gray"></span><s>车内线束</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['soaking_water'],true)['Seat-bottom']}}">
+            @if(json_decode($res1['soaking_water'],true)['Seat-bottom'] == 0)
+             <span class="icon-right"></span>安全带底部
+             @elseif(json_decode($res1['soaking_water'],true)['Seat-bottom'] == 1)
+               <span class="icon-yellow-error"></span>安全带底部
+             @elseif(json_decode($res1['soaking_water'],true)['Seat-bottom'] == 2)
+               <span class="icon-line-gray"></span>安全带底部
+             @else
+               <span class="icon-line-gray"></span><s>安全带底部</>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>保险盒及ECU接口 </td>
-          <td> <span class="icon-right"></span>后备箱边角及备胎槽 </td>
+           <td  class="{{json_decode($res1['soaking_water'],true)['The-cushion']}}">
+            @if(json_decode($res1['soaking_water'],true)['The-cushion'] == 0)
+             <span class="icon-right"></span>全车座椅座垫
+             @elseif(json_decode($res1['soaking_water'],true)['The-cushion'] == 1)
+               <span class="icon-yellow-error"></span>全车座椅座垫
+             @elseif(json_decode($res1['soaking_water'],true)['The-cushion'] == 2)
+               <span class="icon-line-gray"></span>全车座椅座垫
+             @else
+               <span class="icon-line-gray"></span><s>全车座椅座垫</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['soaking_water'],true)['Car-plastic']}}">
+            @if(json_decode($res1['soaking_water'],true)['Car-plastic'] == 0)
+             <span class="icon-right"></span>全车地毯地胶
+             @elseif(json_decode($res1['soaking_water'],true)['Car-plastic'] == 1)
+               <span class="icon-yellow-error"></span>全车地毯地胶
+             @elseif(json_decode($res1['soaking_water'],true)['Car-plastic'] == 2)
+               <span class="icon-line-gray"></span>全车地毯地胶
+             @else
+               <span class="icon-line-gray"></span><s>全车地毯地胶</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>安全带底部 </td>
-          <td> <span class="icon-right"></span>烟灰缸底座 </td>
+          <td  class="{{json_decode($res1['soaking_water'],true)['Ashtray-base']}}">
+            @if(json_decode($res1['soaking_water'],true)['Ashtray-base'] == 0)
+             <span class="icon-right"></span>烟灰缸底座
+             @elseif(json_decode($res1['soaking_water'],true)['Ashtray-base'] == 1)
+               <span class="icon-yellow-error"></span>烟灰缸底座
+             @elseif(json_decode($res1['soaking_water'],true)['Ashtray-base'] == 2)
+               <span class="icon-line-gray"></span>烟灰缸底座
+             @else
+               <span class="icon-line-gray"></span><s>烟灰缸底座</s>
+             @endif
+          </td>
+          <td></td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>车内线束 </td>
-          <td> <span class="icon-right"></span>座椅滑轨及安装螺丝 </td>
+          <td></td>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1335,8 +1512,41 @@
           <th colspan="3">2项火烧排查检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>发动机线束及橡胶制品 </td>
-          <td> <span class="icon-right"></span>车辆覆盖件及驾驶舱 </td>
+          <td  class="{{json_decode($res1['burn'],true)['Firewall-cotton']}}">
+            @if(json_decode($res1['burn'],true)['Firewall-cotton'] == 0)
+             <span class="icon-right"></span>防火墙隔音棉
+             @elseif(json_decode($res1['burn'],true)['Firewall-cotton'] == 1)
+               <span class="icon-yellow-error"></span>防火墙隔音棉
+             @elseif(json_decode($res1['burn'],true)['Firewall-cotton'] == 2)
+               <span class="icon-line-gray"></span>防火墙隔音棉
+             @else
+               <span class="icon-line-gray"></span><s>防火墙隔音棉</s>
+             @endif
+
+           </td>
+          <td  class="{{json_decode($res1['burn'],true)['Main-harness']}}">
+            @if(json_decode($res1['burn'],true)['Main-harness'] == 0)
+             <span class="icon-right"></span>发动机主线束
+             @elseif(json_decode($res1['burn'],true)['Main-harness'] == 1)
+               <span class="icon-yellow-error"></span>发动机主线束
+             @elseif(json_decode($res1['burn'],true)['Main-harness'] == 2)
+               <span class="icon-line-gray"></span>发动机主线束
+             @else
+               <span class="icon-line-gray"></span><s>发动机主线束</s>
+             @endif
+           </td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1399,39 +1609,190 @@
        <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099018">收起<span class="icon-bottom-sanjiao"></span></span>
       </div>
       <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></span> <strong>13项&nbsp;机舱项 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;底盘悬架项 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>15项&nbsp;机舱项 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;底盘悬架项 </strong> <p class="fc-green">正常</p> </li>
       </ul>
       <div class="tablediv clearfix">
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">13项机舱项检测</th>
+          <th colspan="3">15项机舱项检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>发动机缸垫 </td>
-          <td> <span class="icon-right"></span>制动油壶 </td>
-          <td> <span class="icon-right"></span>冷凝器 </td>
+
+            <td  class="{{json_decode($res1['machinery_space'],true)['Engine-oil-pan']}}">
+            @if(json_decode($res1['machinery_space'],true)['Engine-oil-pan'] == 0)
+             <span class="icon-right"></span>发动机油底壳
+             @elseif(json_decode($res1['machinery_space'],true)['Engine-oil-pan'] == 1)
+               <span class="icon-yellow-error"></span>发动机油底壳
+             @elseif(json_decode($res1['machinery_space'],true)['Engine-oil-pan'] == 2)
+               <span class="icon-line-gray"></span>发动机油底壳
+             @else
+               <span class="icon-line-gray"></span><s>发动机油底壳</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Antifreeze-level']}}">
+            @if(json_decode($res1['machinery_space'],true)['Antifreeze-level'] == 0)
+             <span class="icon-right"></span>防冻液液面
+             @elseif(json_decode($res1['machinery_space'],true)['Antifreeze-level'] == 1)
+               <span class="icon-yellow-error"></span>防冻液液面
+             @elseif(json_decode($res1['machinery_space'],true)['Antifreeze-level'] == 2)
+               <span class="icon-line-gray"></span>防冻液液面
+             @else
+               <span class="icon-line-gray"></span><s>防冻液液面</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Oil-level']}}">
+            @if(json_decode($res1['machinery_space'],true)['Oil-level'] == 0)
+             <span class="icon-right"></span>机油液面
+             @elseif(json_decode($res1['machinery_space'],true)['Oil-level'] == 1)
+               <span class="icon-yellow-error"></span>机油液面
+             @elseif(json_decode($res1['machinery_space'],true)['Oil-level'] == 2)
+               <span class="icon-line-gray"></span>机油液面
+             @else
+               <span class="icon-line-gray"></span><s>机油液面</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>发动机外围皮带 </td>
-          <td> <span class="icon-right"></span>水箱 </td>
-          <td> <span class="icon-right"></span>电瓶（极柱） </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Transmission']}}">
+            @if(json_decode($res1['machinery_space'],true)['Transmission'] == 0)
+             <span class="icon-right"></span>变速箱总成
+             @elseif(json_decode($res1['machinery_space'],true)['Transmission'] == 1)
+               <span class="icon-yellow-error"></span>变速箱总成
+             @elseif(json_decode($res1['machinery_space'],true)['Transmission'] == 2)
+               <span class="icon-line-gray"></span>变速箱总成
+             @else
+               <span class="icon-line-gray"></span><s>变速箱总成</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Engine_assembly']}}">
+            @if(json_decode($res1['machinery_space'],true)['Engine_assembly'] == 0)
+             <span class="icon-right"></span>发动机总成
+             @elseif(json_decode($res1['machinery_space'],true)['Engine_assembly'] == 1)
+               <span class="icon-yellow-error"></span>发动机总成
+             @elseif(json_decode($res1['machinery_space'],true)['Engine_assembly'] == 2)
+               <span class="icon-line-gray"></span>发动机总成
+             @else
+               <span class="icon-line-gray"></span><s>发动机总成</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Battery']}}">
+            @if(json_decode($res1['machinery_space'],true)['Battery'] == 0)
+             <span class="icon-right"></span>电瓶（极柱）
+             @elseif(json_decode($res1['machinery_space'],true)['Battery'] == 1)
+               <span class="icon-yellow-error"></span>电瓶（极柱）
+             @elseif(json_decode($res1['machinery_space'],true)['Battery'] == 2)
+               <span class="icon-line-gray"></span>电瓶（极柱）
+             @else
+               <span class="icon-line-gray"></span><s>电瓶（极柱）</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>机油液面 </td>
-          <td> <span class="icon-right"></span>变速箱总成 </td>
-          <td> <span class="icon-right"></span>发动机总成 </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Brake-oil-pot']}}">
+            @if(json_decode($res1['machinery_space'],true)['Brake-oil-pot'] == 0)
+             <span class="icon-right"></span>制动油壶
+             @elseif(json_decode($res1['machinery_space'],true)['Brake-oil-pot'] == 1)
+               <span class="icon-yellow-error"></span>制动油壶
+             @elseif(json_decode($res1['machinery_space'],true)['Brake-oil-pot'] == 2)
+               <span class="icon-line-gray"></span>制动油壶
+             @else
+               <span class="icon-line-gray"></span><s>制动油壶</s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Booster-oil']}}">
+            @if(json_decode($res1['machinery_space'],true)['Booster-oil'] == 0)
+             <span class="icon-right"></span>助力油壶
+             @elseif(json_decode($res1['machinery_space'],true)['Booster-oil'] == 1)
+               <span class="icon-yellow-error"></span>助力油壶
+             @elseif(json_decode($res1['machinery_space'],true)['Booster-oil'] == 2)
+               <span class="icon-line-gray"></span>助力油壶
+             @else
+               <span class="icon-line-gray"></span><s>助力油壶</s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Power-pump']}}">
+            @if(json_decode($res1['machinery_space'],true)['Power-pump'] == 0)
+             <span class="icon-right"></span>转向助力泵
+             @elseif(json_decode($res1['machinery_space'],true)['Power-pump'] == 1)
+               <span class="icon-yellow-error"></span>转向助力泵
+             @elseif(json_decode($res1['machinery_space'],true)['Power-pump'] == 2)
+               <span class="icon-line-gray"></span>转向助力泵
+             @else
+               <span class="icon-line-gray"></span><s>转向助力泵</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>水箱水管 </td>
-          <td> <span class="icon-right"></span>防冻液液面 </td>
-          <td> <span class="icon-right"></span>助力油壶 </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Water-tank-pipes']}}">
+            @if(json_decode($res1['machinery_space'],true)['Water-tank-pipes'] == 0)
+             <span class="icon-right"></span>水箱水管
+             @elseif(json_decode($res1['machinery_space'],true)['Water-tank-pipes'] == 1)
+               <span class="icon-yellow-error"></span>水箱水管
+             @elseif(json_decode($res1['machinery_space'],true)['Water-tank-pipes'] == 2)
+               <span class="icon-line-gray"></span>水箱水管
+             @else
+               <span class="icon-line-gray"></span><s>水箱水管</s>
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Water-tank']}}">
+            @if(json_decode($res1['machinery_space'],true)['Water-tank'] == 0)
+             <span class="icon-right"></span>水箱
+             @elseif(json_decode($res1['machinery_space'],true)['Water-tank'] == 1)
+               <span class="icon-yellow-error"></span>水箱
+             @elseif(json_decode($res1['machinery_space'],true)['Water-tank'] == 2)
+               <span class="icon-line-gray"></span>水箱
+             @else
+               <span class="icon-line-gray"></span><s>水箱</s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Condenser']}}">
+            @if(json_decode($res1['machinery_space'],true)['Condenser'] == 0)
+             <span class="icon-right"></span>冷凝器
+             @elseif(json_decode($res1['machinery_space'],true)['Condenser'] == 1)
+               <span class="icon-yellow-error"></span>冷凝器
+             @elseif(json_decode($res1['machinery_space'],true)['Condenser'] == 2)
+               <span class="icon-line-gray"></span>冷凝器
+             @else
+               <span class="icon-line-gray"></span><s>冷凝器</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>转向助力泵 </td>
-          <td></td>
-          <td></td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Engine-belt']}}">
+            @if(json_decode($res1['machinery_space'],true)['Engine-belt'] == 0)
+             <span class="icon-right"></span>发动机外围皮带
+             @elseif(json_decode($res1['machinery_space'],true)['Engine-belt'] == 1)
+               <span class="icon-yellow-error"></span>发动机外围皮带
+             @elseif(json_decode($res1['machinery_space'],true)['Engine-belt'] == 2)
+               <span class="icon-line-gray"></span>发动机外围皮带
+             @else
+               <span class="icon-line-gray"></span><s>发动机外围皮带</s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Engine-pad']}}">
+            @if(json_decode($res1['machinery_space'],true)['Engine-pad'] == 0)
+             <span class="icon-right"></span>发动机缸垫
+             @elseif(json_decode($res1['machinery_space'],true)['Engine-pad'] == 1)
+               <span class="icon-yellow-error"></span>发动机缸垫
+             @elseif(json_decode($res1['machinery_space'],true)['Engine-pad'] == 2)
+               <span class="icon-line-gray"></span>发动机缸垫
+             @else
+               <span class="icon-line-gray"></span><s>发动机缸垫<s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['machinery_space'],true)['Transmission-pan']}}">
+            @if(json_decode($res1['machinery_space'],true)['Transmission-pan'] == 0)
+             <span class="icon-right"></span>变速箱油底壳
+             @elseif(json_decode($res1['machinery_space'],true)['Transmission-pan'] == 1)
+               <span class="icon-yellow-error"></span>变速箱油底壳
+             @elseif(json_decode($res1['machinery_space'],true)['Transmission-pan'] == 2)
+               <span class="icon-line-gray"></span>变速箱油底壳
+             @else
+               <span class="icon-line-gray"></span><s>变速箱油底壳</s>
+             @endif
+           </td>
          </tr>
          <tr>
          </tr>
@@ -1440,16 +1801,56 @@
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table last">
         <tbody>
          <tr>
-          <th colspan="3">5项底盘悬架项检测</th>
+          <th colspan="3">4项底盘悬架项检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>消音器（尾段） </td>
-          <td> <span class="icon-right"></span>右后减震器 </td>
-          <td> <span class="icon-right"></span>左前减震器 </td>
+          <td  class="{{json_decode($res1['underpan'],true)['Left-q-absorber']}}">
+            @if(json_decode($res1['underpan'],true)['Left-q-absorber'] == 0)
+             <span class="icon-right"></span>左前减震器
+             @elseif(json_decode($res1['underpan'],true)['Left-q-absorber'] == 1)
+               <span class="icon-yellow-error"></span>左前减震器
+             @elseif(json_decode($res1['underpan'],true)['Left-q-absorber'] == 2)
+               <span class="icon-line-gray"></span>左前减震器
+             @else
+               <span class="icon-line-gray"></span><s>左前减震器</s>
+             @endif
+           </td>
+          <td  class="{{json_decode($res1['underpan'],true)['Right-q-h-absorber']}}">
+            @if(json_decode($res1['underpan'],true)['Right-q-h-absorber'] == 0)
+             <span class="icon-right"></span>右前减震器
+             @elseif(json_decode($res1['underpan'],true)['Right-q-h-absorber'] == 1)
+               <span class="icon-yellow-error"></span>右前减震器
+             @elseif(json_decode($res1['underpan'],true)['Right-q-h-absorber'] == 2)
+               <span class="icon-line-gray"></span>右前减震器
+             @else
+               <span class="icon-line-gray"></span>右前减震器
+             @endif
+          </td>
+          <td  class="{{json_decode($res1['underpan'],true)['Right-h-absorber']}}">
+            @if(json_decode($res1['underpan'],true)['Right-h-absorber'] == 0)
+             <span class="icon-right"></span>右后减震器
+             @elseif(json_decode($res1['underpan'],true)['Right-h-absorber'] == 1)
+               <span class="icon-yellow-error"></span>右后减震器
+             @elseif(json_decode($res1['underpan'],true)['Right-q-h-absorber'] == 2)
+               <span class="icon-line-gray"></span>右后减震器
+             @else
+               <span class="icon-line-gray"></span><s>右后减震器</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>左后减震器 </td>
-          <td> <span class="icon-right"></span>右前减震器 </td>
+          <td  class="{{json_decode($res1['underpan'],true)['Left-h-absorber']}}">
+            @if(json_decode($res1['underpan'],true)['Left-h-absorber'] == 0)
+             <span class="icon-right"></span>左后减震器
+             @elseif(json_decode($res1['underpan'],true)['Left-h-absorber'] == 1)
+               <span class="icon-yellow-error"></span>左后减震器
+             @elseif(json_decode($res1['underpan'],true)['Left-h-absorber'] == 2)
+               <span class="icon-line-gray"></span>左后减震器
+             @else
+               <span class="icon-line-gray"></span><s>左后减震器</s>
+             @endif
+           </td>
+          <td></td>
           <td></td>
          </tr>
          <tr>
@@ -1480,10 +1881,10 @@
        <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099019">收起<span class="icon-bottom-sanjiao"></span></span>
       </div>
       <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></span> <strong>14项&nbsp;安全系统 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>13项&nbsp;外部配置 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>13项&nbsp;内部配置 </strong> <p class="fc-green">正常</p> </li>
-       <li class="last"> <span class="icon-green-right"></span> <strong>14项&nbsp;灯光系统 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>15项&nbsp;安全系统 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>22项&nbsp;外部配置 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>14项&nbsp;内部配置 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>15项&nbsp;灯光系统 </strong> <p class="fc-green">正常</p> </li>
        <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;高科技配置 </strong> <p class="fc-green">正常</p> </li>
        <li class="last"> <span class="icon-green-right"></span> <strong>5项&nbsp;随车工具 <span class="tip-icon js-tip-icon5"> <span class="layer-tip bottom-layer"> <i class="icon-small-sanjiao"></i>随车工具是否随车赠送，需在交易过程中与车主确认</span> </span> </strong> <p class="fc-green">正常</p> </li>
       </ul>
@@ -1491,97 +1892,222 @@
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">14项安全系统检测</th>
+          <th colspan="3">15项安全系统检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>前排头部气囊 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Driver-seat-airbag']}}">
+            @if(json_decode($res1['secure'],true)['Driver-seat-airbag'] == 0)
+             <span class="icon-right"></span>驾驶座安全气囊
+             @elseif(json_decode($res1['secure'],true)['Driver-seat-airbag'] == 1)
+               <span class="icon-yellow-error"></span>驾驶座安全气囊
+             @elseif(json_decode($res1['secure'],true)['Driver-seat-airbag'] == 2)
+               <span class="icon-line-gray"></span>驾驶座安全气囊
+             @else
+               <span class="icon-line-gray"></span><s>驾驶座安全气囊</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 后排侧气囊 </td>
+          <td class="{{json_decode($res1['secure'],true)['Co-pilot-airbag']}}">
+            @if(json_decode($res1['secure'],true)['Co-pilot-airbag'] == 0)
+             <span class="icon-right"></span>副驾驶安全气囊
+             @elseif(json_decode($res1['secure'],true)['Co-pilot-airbag'] == 1)
+               <span class="icon-yellow-error"></span>副驾驶安全气囊
+             @elseif(json_decode($res1['secure'],true)['Co-pilot-airbag'] == 2)
+               <span class="icon-line-gray"></span>副驾驶安全气囊
+             @else
+               <span class="icon-line-gray"></span><s>副驾驶安全气囊</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>驾驶座安全气囊 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Front-side-airbags']}}">
+            @if(json_decode($res1['secure'],true)['Front-side-airbags'] == 0)
+             <span class="icon-right"></span>前排侧气囊
+             @elseif(json_decode($res1['secure'],true)['Front-side-airbags'] == 1)
+               <span class="icon-yellow-error"></span>前排侧气囊
+             @elseif(json_decode($res1['secure'],true)['Front-side-airbags'] == 2)
+               <span class="icon-line-gray"></span>前排侧气囊
+             @else
+               <span class="icon-line-gray"></span><s>前排侧气囊</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>前排侧气囊 </td>
+          <td class="{{json_decode($res1['secure'],true)['Rear-side-airbags']}}">
+            @if(json_decode($res1['secure'],true)['Rear-side-airbags'] == 0)
+             <span class="icon-right"></span>后排侧气囊
+             @elseif(json_decode($res1['secure'],true)['Rear-side-airbags'] == 1)
+               <span class="icon-yellow-error"></span>后排侧气囊
+             @elseif(json_decode($res1['secure'],true)['Rear-side-airbags'] == 2)
+               <span class="icon-line-gray"></span>后排侧气囊
+             @else
+               <span class="icon-line-gray"></span><s>后排侧气囊</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后排头部气囊 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Front-head-airbags']}}">
+            @if(json_decode($res1['secure'],true)['Front-head-airbags'] == 0)
+             <span class="icon-right"></span>前排头部气囊
+             @elseif(json_decode($res1['secure'],true)['Front-head-airbags'] == 1)
+               <span class="icon-yellow-error"></span>前排头部气囊
+             @elseif(json_decode($res1['secure'],true)['Front-head-airbags'] == 2)
+               <span class="icon-line-gray"></span>前排头部气囊
+             @else
+               <span class="icon-line-gray"></span><s>前排头部气囊</s>
+             @endif
+
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>副驾驶安全气囊 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Rear-head-airbags']}}">
+            @if(json_decode($res1['secure'],true)['Rear-head-airbags'] == 0)
+             <span class="icon-right"></span>后排头部气囊
+             @elseif(json_decode($res1['secure'],true)['Rear-head-airbags'] == 1)
+               <span class="icon-yellow-error"></span>后排头部气囊
+             @elseif(json_decode($res1['secure'],true)['Rear-head-airbags'] == 2)
+               <span class="icon-line-gray"></span>后排头部气囊
+             @else
+               <span class="icon-line-gray"></span><s>后排头部气囊</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>胎压检测 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Tire-pressure-monitoring']}}">
+            @if(json_decode($res1['secure'],true)['Tire-pressure-monitoring'] == 0)
+             <span class="icon-right"></span>胎压监测
+             @elseif(json_decode($res1['secure'],true)['Tire-pressure-monitoring'] == 1)
+               <span class="icon-yellow-error"></span>胎压监测
+             @elseif(json_decode($res1['secure'],true)['Tire-pressure-monitoring'] == 2)
+               <span class="icon-line-gray"></span>胎压监测
+             @else
+               <span class="icon-line-gray"></span><s>胎压监测</s>
+             @endif
+
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>车内中控锁 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Central-locking']}}">
+            @if(json_decode($res1['secure'],true)['Central-locking'] == 0)
+             <span class="icon-right"></span>中控锁
+             @elseif(json_decode($res1['secure'],true)['Central-locking'] == 1)
+               <span class="icon-yellow-error"></span>中控锁
+             @elseif(json_decode($res1['secure'],true)['Central-locking'] == 2)
+               <span class="icon-line-gray"></span>中控锁
+             @else
+               <span class="icon-line-gray"></span><s>中控锁</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>儿童安全座椅接口 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Child-seat']}}">
+            @if(json_decode($res1['secure'],true)['Child-seat'] == 0)
+             <span class="icon-right"></span>儿童座椅接口
+             @elseif(json_decode($res1['secure'],true)['Child-seat'] == 1)
+               <span class="icon-yellow-error"></span>儿童座椅接口
+             @elseif(json_decode($res1['secure'],true)['Child-seat'] == 2)
+               <span class="icon-line-gray"></span>儿童座椅接口
+             @else
+               <span class="icon-line-gray"></span><s>儿童座椅接口</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>无钥匙启动 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Keyless-start']}}">
+            @if(json_decode($res1['secure'],true)['Keyless-start'] == 0)
+             <span class="icon-right"></span>无钥匙启动
+             @elseif(json_decode($res1['secure'],true)['Keyless-start'] == 1)
+               <span class="icon-yellow-error"></span>无钥匙启动
+             @elseif(json_decode($res1['secure'],true)['Keyless-start'] == 2)
+               <span class="icon-line-gray"></span>无钥匙启动
+             @else
+               <span class="icon-line-gray"></span><s>无钥匙启动</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>遥控钥匙 </td>
+          <td  class="{{json_decode($res1['secure'],true)['Keyless-entry']}}">
+            @if(json_decode($res1['secure'],true)['Keyless-entry'] == 0)
+             <span class="icon-right"></span>无钥匙进入系统
+             @elseif(json_decode($res1['secure'],true)['Keyless-entry'] == 1)
+               <span class="icon-yellow-error"></span>无钥匙进入系统
+             @elseif(json_decode($res1['secure'],true)['Keyless-entry'] == 2)
+               <span class="icon-line-gray"></span>无钥匙进入系统
+             @else
+               <span class="icon-line-gray"></span><s>无钥匙进入系统</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 电子驻车制动 </td>
+          <td  class="{{json_decode($res1['secure'],true)['remote-key']}}">
+            @if(json_decode($res1['secure'],true)['remote-key'] == 0)
+             <span class="icon-right"></span>遥控钥匙
+             @elseif(json_decode($res1['secure'],true)['remote-key'] == 1)
+               <span class="icon-yellow-error"></span>遥控钥匙
+             @elseif(json_decode($res1['secure'],true)['remote-key'] == 2)
+               <span class="icon-line-gray"></span>遥控钥匙
+             @else
+               <span class="icon-line-gray"></span><s>遥控钥匙</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>防抱死系统(ABS) </td>
+          <td  class="{{json_decode($res1['secure'],true)['ABS_detection']}}">
+            @if(json_decode($res1['secure'],true)['ABS_detection'] == 0)
+             <span class="icon-right"></span>防抱死系统(ABS)
+             @elseif(json_decode($res1['secure'],true)['ABS_detection'] == 1)
+               <span class="icon-yellow-error"></span>防抱死系统(ABS)
+             @elseif(json_decode($res1['secure'],true)['ABS_detection'] == 2)
+               <span class="icon-line-gray"></span>防抱死系统(ABS)
+             @else
+               <span class="icon-line-gray"></span><s>防抱死系统(ABS)</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>车身稳定系统(ESP) </td>
+          <td  class="{{json_decode($res1['secure'],true)['ESP_detection']}}">
+            @if(json_decode($res1['secure'],true)['ESP_detection'] == 0)
+             <span class="icon-right"></span>车身稳定控制(ESP)
+             @elseif(json_decode($res1['secure'],true)['ESP_detection'] == 1)
+               <span class="icon-yellow-error"></span>车身稳定控制(ESP)
+             @elseif(json_decode($res1['secure'],true)['ESP_detection'] == 2)
+               <span class="icon-line-gray"></span>车身稳定控制(ESP)
+             @else
+               <span class="icon-line-gray"></span><s>车身稳定控制(ESP)</s>
+             @endif
+          </td>
          </tr>
          <tr>
-         </tr>
-        </tbody>
-       </table>
-       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
-        <tbody>
-         <tr>
-          <th colspan="3">13项外部配置检测</th>
-         </tr>
-         <tr>
-          <td> <span class="icon-right"></span>电动天窗 </td>
-         </tr>
-         <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 全景天窗 </td>
+          <td class="{{json_decode($res1['secure'],true)['Electronic-parking-brake']}}">
+            @if(json_decode($res1['secure'],true)['Electronic-parking-brake'] == 0)
+             <span class="icon-right"></span>电子驻车制动
+             @elseif(json_decode($res1['secure'],true)['Electronic-parking-brake'] == 1)
+               <span class="icon-yellow-error"></span>电子驻车制动
+             @elseif(json_decode($res1['secure'],true)['Electronic-parking-brake'] == 2)
+               <span class="icon-line-gray"></span>电子驻车制动
+             @else
+               <span class="icon-line-gray"></span><s>电子驻车制动</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>电动吸合门 </td>
+          <td></td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 感应后备箱 </td>
+          <td></td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>感应雨刷 </td>
+          <td></td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 后雨刷 </td>
+          <td></td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>前电动车窗 </td>
+          <td></td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后电动车窗 </td>
-         </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后视镜电动调节 </td>
-         </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后视镜电动折叠 </td>
-         </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后视镜加热 </td>
-         </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后风挡遮阳帘 </td>
-         </tr>
-         <tr>
-          <td> <span class="icon-right"></span>后排侧遮阳帘 </td>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1593,46 +2119,507 @@
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">13项内部配置检测</th>
+          <th colspan="3">22项外部配置检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>多功能方向盘 </td>
+          <td class="{{json_decode($res1['external'],true)['Left-h-front-hub']}}">
+            @if(json_decode($res1['external'],true)['Left-h-front-hub'] == 0)
+             <span class="icon-right"></span>左前轮毂
+             @elseif(json_decode($res1['external'],true)['Left-h-front-hub'] == 1)
+               <span class="icon-yellow-error"></span>左前轮毂
+             @elseif(json_decode($res1['external'],true)['Left-h-front-hub'] == 2)
+               <span class="icon-line-gray"></span>左前轮毂
+             @else
+               <span class="icon-line-gray"></span><s>左前轮毂</s>
+             @endif
+            </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>定速巡航 </td>
+          <td class="{{json_decode($res1['external'],true)['Left-front-tire']}}">
+            @if(json_decode($res1['external'],true)['Left-front-tire'] == 0)
+             <span class="icon-right"></span>左前轮胎
+             @elseif(json_decode($res1['external'],true)['Left-front-tire'] == 1)
+               <span class="icon-yellow-error"></span>左前轮胎
+             @elseif(json_decode($res1['external'],true)['Left-front-tire'] == 2)
+               <span class="icon-line-gray"></span>左前轮胎
+             @else
+               <span class="icon-line-gray"></span><s>左前轮胎</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> HUD抬头数字显示 </td>
+          <td class="{{json_decode($res1['external'],true)['front-windshield']}}">
+            @if(json_decode($res1['external'],true)['front-windshield'] == 0)
+             <span class="icon-right"></span>前挡风玻璃
+             @elseif(json_decode($res1['external'],true)['front-windshield'] == 1)
+               <span class="icon-yellow-error"></span>前挡风玻璃
+             @elseif(json_decode($res1['external'],true)['front-windshield'] == 2)
+               <span class="icon-line-gray"></span>前挡风玻璃
+             @else
+               <span class="icon-line-gray"></span><s>前挡风玻璃</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>空调 </td>
+          <td class="{{json_decode($res1['external'],true)['Right-q-front-hub']}}">
+            @if(json_decode($res1['external'],true)['Right-q-front-hub'] == 0)
+           <span class="icon-right"></span>右前轮毂
+           @elseif(json_decode($res1['external'],true)['Right-q-front-hub'] == 1)
+             <span class="icon-yellow-error"></span>右前轮毂
+           @elseif(json_decode($res1['external'],true)['Right-q-front-hub'] == 2)
+             <span class="icon-line-gray"></span>右前轮毂
+           @else
+             <span class="icon-line-gray"></span><s>右前轮毂</s>
+           @endif
+            </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>自动空调 </td>
+          <td class="{{json_decode($res1['external'],true)['Right-front-tire']}}">
+            @if(json_decode($res1['external'],true)['Right-front-tire'] == 0)
+           <span class="icon-right"></span>右前轮胎
+           @elseif(json_decode($res1['external'],true)['Right-front-tire'] == 1)
+             <span class="icon-yellow-error"></span>右前轮胎
+           @elseif(json_decode($res1['external'],true)['Right-front-tire'] == 2)
+             <span class="icon-line-gray"></span>右前轮胎
+           @else
+             <span class="icon-line-gray"></span><s>右前轮胎</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>GPS导航 </td>
+          <td class="{{json_decode($res1['external'],true)['Right-front-hub']}}">
+            @if(json_decode($res1['external'],true)['Right-front-hub'] == 0)
+           <span class="icon-right"></span>右后轮毂
+           @elseif(json_decode($res1['external'],true)['Right-front-hub'] == 1)
+             <span class="icon-yellow-error"></span>右后轮毂
+           @elseif(json_decode($res1['external'],true)['Right-front-hub'] == 2)
+             <span class="icon-line-gray"></span>右后轮毂
+           @else
+             <span class="icon-line-gray"></span><s>右后轮毂</s>
+           @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>倒车雷达 </td>
+          <td class="{{json_decode($res1['external'],true)['Right-rear-tire']}}">
+            @if(json_decode($res1['external'],true)['Right-rear-tire'] == 0)
+           <span class="icon-right"></span>右后轮胎
+           @elseif(json_decode($res1['external'],true)['Right-rear-tire'] == 1)
+             <span class="icon-yellow-error"></span>右后轮胎
+           @elseif(json_decode($res1['external'],true)['Right-rear-tire'] == 2)
+             <span class="icon-line-gray"></span>右后轮胎
+           @else
+             <span class="icon-line-gray"></span><s>右后轮胎</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 倒车影像系统 </td>
+          <td class="{{json_decode($res1['external'],true)['Rear-windshield']}}">
+            @if(json_decode($res1['external'],true)['Rear-windshield'] == 0)
+           <span class="icon-right"></span>后挡风玻璃
+           @elseif(json_decode($res1['external'],true)['Rear-windshield'] == 1)
+             <span class="icon-yellow-error"></span>后挡风玻璃
+           @elseif(json_decode($res1['external'],true)['Rear-windshield'] == 2)
+             <span class="icon-line-gray"></span>后挡风玻璃
+           @else
+             <span class="icon-line-gray"></span><s>后挡风玻璃</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>真皮座椅 </td>
+          <td class="{{json_decode($res1['external'],true)['Right-rear-hub']}}">
+            @if(json_decode($res1['external'],true)['Right-rear-hub'] == 0)
+           <span class="icon-right"></span>左后轮毂
+           @elseif(json_decode($res1['external'],true)['Right-rear-hub'] == 1)
+             <span class="icon-yellow-error"></span>左后轮毂
+           @elseif(json_decode($res1['external'],true)['Right-rear-hub'] == 2)
+             <span class="icon-line-gray"></span>左后轮毂
+           @else
+             <span class="icon-line-gray"></span><s>左后轮毂</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>前排座椅加热 </td>
+          <td class="{{json_decode($res1['external'],true)['Left-rear-tire']}}">
+            @if(json_decode($res1['external'],true)['Left-rear-tire'] == 0)
+           <span class="icon-right"></span>左后轮胎
+           @elseif(json_decode($res1['external'],true)['Left-rear-tire'] == 1)
+             <span class="icon-yellow-error"></span>左后轮胎
+           @elseif(json_decode($res1['external'],true)['Left-rear-tire'] == 2)
+             <span class="icon-line-gray"></span>左后轮胎
+           @else
+             <span class="icon-line-gray"></span><s>左后轮胎</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后排座椅加热 </td>
+          <td class="{{json_decode($res1['external'],true)['Panoramic-skylight']}}">
+            @if(json_decode($res1['external'],true)['Panoramic-skylight'] == 0)
+           <span class="icon-right"></span>全景天窗
+           @elseif(json_decode($res1['external'],true)['Panoramic-skylight'] == 1)
+             <span class="icon-yellow-error"></span>全景天窗
+           @elseif(json_decode($res1['external'],true)['Panoramic-skylight'] == 2)
+             <span class="icon-line-gray"></span>全景天窗
+           @else
+             <span class="icon-line-gray"></span><s>全景天窗</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 座椅通风 </td>
+          <td class="{{json_decode($res1['external'],true)['Induction-wipers']}}">
+            @if(json_decode($res1['external'],true)['Induction-wipers'] == 0)
+           <span class="icon-right"></span>感应雨刷
+           @elseif(json_decode($res1['external'],true)['Induction-wipers'] == 1)
+             <span class="icon-yellow-error"></span>感应雨刷
+           @elseif(json_decode($res1['external'],true)['Induction-wipers'] == 2)
+             <span class="icon-line-gray"></span>感应雨刷
+           @else
+             <span class="icon-line-gray"></span><s>感应雨刷</s>
+           @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>主驾驶座椅电动调节 </td>
+          <td class="{{json_decode($res1['external'],true)['After-wipers']}}">
+            @if(json_decode($res1['external'],true)['After-wipers'] == 0)
+           <span class="icon-right"></span>后雨刷
+           @elseif(json_decode($res1['external'],true)['After-wipers'] == 1)
+             <span class="icon-yellow-error"></span>后雨刷
+           @elseif(json_decode($res1['external'],true)['After-wipers'] == 2)
+             <span class="icon-line-gray"></span>后雨刷
+           @else
+             <span class="icon-line-gray"></span><s>后雨刷</s>
+           @endif
+           </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Front-window']}}">
+            @if(json_decode($res1['external'],true)['Front-window'] == 0)
+           <span class="icon-right"></span>前电动车窗
+           @elseif(json_decode($res1['external'],true)['Front-window'] == 1)
+             <span class="icon-yellow-error"></span>前电动车窗
+           @elseif(json_decode($res1['external'],true)['Front-window'] == 2)
+             <span class="icon-line-gray"></span>前电动车窗
+           @else
+             <span class="icon-line-gray"></span><s>前电动车窗</s>
+           @endif
+           </td>
+         </tr>
+         <tr>
+           <td class="{{json_decode($res1['external'],true)['Rear-windows']}}">
+            @if(json_decode($res1['external'],true)['Rear-windows'] == 0)
+           <span class="icon-right"></span>后电动车窗
+           @elseif(json_decode($res1['external'],true)['Rear-windows'] == 1)
+             <span class="icon-yellow-error"></span>后电动车窗
+           @elseif(json_decode($res1['external'],true)['Rear-windows'] == 2)
+             <span class="icon-line-gray"></span>后电动车窗
+           @else
+             <span class="icon-line-gray"></span><s>后电动车窗</s>
+           @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Rearview-mirror-adjustment']}}">
+            @if(json_decode($res1['external'],true)['Rearview-mirror-adjustment'] == 0)
+           <span class="icon-right"></span>后视镜电动调节
+           @elseif(json_decode($res1['external'],true)['Rearview-mirror-adjustment'] == 1)
+             <span class="icon-yellow-error"></span>后视镜电动调节
+           @elseif(json_decode($res1['external'],true)['Rearview-mirror-adjustment'] == 2)
+             <span class="icon-line-gray"></span>后视镜电动调节
+           @else
+             <span class="icon-line-gray"></span><s>后视镜电动调节</s>
+           @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Rearview-mirror-fold']}}">
+            @if(json_decode($res1['external'],true)['Rearview-mirror-fold'] == 0)
+           <span class="icon-right"></span>后视镜电动折叠
+           @elseif(json_decode($res1['external'],true)['Rearview-mirror-fold'] == 1)
+             <span class="icon-yellow-error"></span>后视镜电动折叠
+           @elseif(json_decode($res1['external'],true)['Rearview-mirror-fold'] == 2)
+             <span class="icon-line-gray"></span>后视镜电动折叠
+           @else
+             <span class="icon-line-gray"></span><s>后视镜电动折叠</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+
+
+            <td class="{{json_decode($res1['external'],true)['Rearview-heatingr']}}">
+              @if(json_decode($res1['external'],true)['Rearview-heatingr'] == 0)
+             <span class="icon-right"></span>后视镜加热
+             @elseif(json_decode($res1['external'],true)['Rearview-heatingr'] == 1)
+               <span class="icon-yellow-error"></span>后视镜加热
+             @elseif(json_decode($res1['external'],true)['Rearview-heatingr'] == 2)
+               <span class="icon-line-gray"></span>后视镜加热
+             @else
+               <span class="icon-line-gray"></span><s>后视镜加热</s>
+              @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Electric-door']}}">
+            @if(json_decode($res1['external'],true)['Electric-door'] == 0)
+           <span class="icon-right"></span>电动吸合门
+           @elseif(json_decode($res1['external'],true)['Electric-door'] == 1)
+             <span class="icon-yellow-error"></span>电动吸合门
+           @elseif(json_decode($res1['external'],true)['Electric-door'] == 2)
+             <span class="icon-line-gray"></span>电动吸合门
+           @else
+             <span class="icon-line-gray"></span><s>电动吸合门</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Rear-side-sunshade']}}">
+            @if(json_decode($res1['external'],true)['Rear-side-sunshade'] == 0)
+           <span class="icon-right"></span>后排侧遮阳帘
+           @elseif(json_decode($res1['external'],true)['Rear-side-sunshade'] == 1)
+             <span class="icon-yellow-error"></span>后排侧遮阳帘
+           @elseif(json_decode($res1['external'],true)['Rear-side-sunshade'] == 2)
+             <span class="icon-line-gray"></span>后排侧遮阳帘
+           @else
+             <span class="icon-line-gray"></span><s>后排侧遮阳帘</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Induction']}}">
+            @if(json_decode($res1['external'],true)['Induction'] == 0)
+           <span class="icon-right"></span>感应后备箱
+           @elseif(json_decode($res1['external'],true)['Induction'] == 1)
+             <span class="icon-yellow-error"></span>感应后备箱
+           @elseif(json_decode($res1['external'],true)['Induction'] == 2)
+             <span class="icon-line-gray"></span>感应后备箱
+           @else
+             <span class="icon-line-gray"></span><s>感应后备箱</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['external'],true)['Electric-sunroof']}}">
+            @if(json_decode($res1['external'],true)['Electric-sunroof'] == 0)
+           <span class="icon-right"></span>电动天窗
+           @elseif(json_decode($res1['external'],true)['Electric-sunroof'] == 1)
+             <span class="icon-yellow-error"></span>电动天窗
+           @elseif(json_decode($res1['external'],true)['Electric-sunroof'] == 2)
+             <span class="icon-line-gray"></span>电动天窗
+           @else
+             <span class="icon-line-gray"></span><s>电动天窗</s>
+            @endif
+          </td>
+         </tr>
+
+        </tbody>
+       </table>
+       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
+        <tbody>
+         <tr>
+          <th colspan="3">14项内部配置检测</th>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Leather-seat']}}">
+            @if(json_decode($res1['inside'],true)['Leather-seat'] == 0)
+           <span class="icon-right"></span>皮质座椅
+           @elseif(json_decode($res1['inside'],true)['Leather-seat'] == 1)
+             <span class="icon-yellow-error"></span>皮质座椅
+           @elseif(json_decode($res1['inside'],true)['Leather-seat'] == 2)
+             <span class="icon-line-gray"></span>皮质座椅
+           @else
+             <span class="icon-line-gray"></span><s>皮质座椅</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['front-heated']}}">
+            @if(json_decode($res1['inside'],true)['front-heated'] == 0)
+           <span class="icon-right"></span>前排座椅加热
+           @elseif(json_decode($res1['inside'],true)['front-heated'] == 1)
+             <span class="icon-yellow-error"></span>前排座椅加热
+           @elseif(json_decode($res1['inside'],true)['front-heated'] == 2)
+             <span class="icon-line-gray"></span>前排座椅加热
+           @else
+             <span class="icon-line-gray"></span><s>前排座椅加热</s>
+            @endif
+           </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Seat-ventilation']}}">
+            @if(json_decode($res1['inside'],true)['Seat-ventilation'] == 0)
+           <span class="icon-right"></span>座椅通风
+           @elseif(json_decode($res1['inside'],true)['Seat-ventilation'] == 1)
+             <span class="icon-yellow-error"></span>座椅通风
+           @elseif(json_decode($res1['inside'],true)['Seat-ventilation'] == 2)
+             <span class="icon-line-gray"></span>座椅通风
+           @else
+             <span class="icon-line-gray"></span><s>座椅通风</s>
+            @endif
+           </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Driver-adjustment']}}">
+            @if(json_decode($res1['inside'],true)['Driver-adjustment'] == 0)
+           <span class="icon-right"></span>驾驶座座椅电动调节
+           @elseif(json_decode($res1['inside'],true)['Driver-adjustment'] == 1)
+             <span class="icon-yellow-error"></span>驾驶座座椅电动调节
+           @elseif(json_decode($res1['inside'],true)['Driver-adjustment'] == 2)
+             <span class="icon-line-gray"></span>驾驶座座椅电动调节
+           @else
+             <span class="icon-line-gray"></span><s>驾驶座座椅电动调节</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Multifunction-wheel']}}">
+            @if(json_decode($res1['inside'],true)['Multifunction-wheel'] == 0)
+           <span class="icon-right"></span>多功能方向盘
+           @elseif(json_decode($res1['inside'],true)['Multifunction-wheel'] == 1)
+             <span class="icon-yellow-error"></span>多功能方向盘
+           @elseif(json_decode($res1['inside'],true)['Multifunction-wheel'] == 2)
+             <span class="icon-line-gray"></span>多功能方向盘
+           @else
+             <span class="icon-line-gray"></span><s>多功能方向盘</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+           <td class="{{json_decode($res1['inside'],true)['Cruise']}}">
+            @if(json_decode($res1['inside'],true)['Cruise'] == 0)
+           <span class="icon-right"></span>定速巡航
+           @elseif(json_decode($res1['inside'],true)['Cruise'] == 1)
+             <span class="icon-yellow-error"></span>定速巡航
+           @elseif(json_decode($res1['inside'],true)['Cruise'] == 2)
+             <span class="icon-line-gray"></span>定速巡航
+           @else
+             <span class="icon-line-gray"></span><s>定速巡航</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['positioning-system']}}">
+            @if(json_decode($res1['inside'],true)['positioning-system'] == 0)
+           <span class="icon-right"></span>GPS导航
+           @elseif(json_decode($res1['inside'],true)['positioning-system'] == 1)
+             <span class="icon-yellow-error"></span>GPS导航
+           @elseif(json_decode($res1['inside'],true)['positioning-system'] == 2)
+             <span class="icon-line-gray"></span>GPS导航
+           @else
+             <span class="icon-line-gray"></span><s>GPS导航</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Reversing-radar']}}">
+            @if(json_decode($res1['inside'],true)['Reversing-radar'] == 0)
+           <span class="icon-right"></span>倒车雷达
+           @elseif(json_decode($res1['inside'],true)['Reversing-radar'] == 1)
+             <span class="icon-yellow-error"></span>倒车雷达
+           @elseif(json_decode($res1['inside'],true)['Reversing-radar'] == 2)
+             <span class="icon-line-gray"></span>倒车雷达
+           @else
+             <span class="icon-line-gray"></span><s>倒车雷达</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Reverse-image']}}">
+            @if(json_decode($res1['inside'],true)['Reverse-image'] == 0)
+           <span class="icon-right"></span>倒车影像系统
+           @elseif(json_decode($res1['inside'],true)['Reverse-image'] == 1)
+             <span class="icon-yellow-error"></span>倒车影像系统
+           @elseif(json_decode($res1['inside'],true)['Reverse-image'] == 2)
+             <span class="icon-line-gray"></span>倒车影像系统
+           @else
+             <span class="icon-line-gray"></span><s>倒车影像系统</s>
+            @endif
+           </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Manual-conditioning']}}">
+            @if(json_decode($res1['inside'],true)['Manual-conditioning'] == 0)
+           <span class="icon-right"></span>手动空调
+           @elseif(json_decode($res1['inside'],true)['Manual-conditioning'] == 1)
+             <span class="icon-yellow-error"></span>手动空调
+           @elseif(json_decode($res1['inside'],true)['Manual-conditioning'] == 2)
+             <span class="icon-line-gray"></span>手动空调
+           @else
+             <span class="icon-line-gray"></span><s>手动空调</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['Automatic-conditioning']}}">
+            @if(json_decode($res1['inside'],true)['Automatic-conditioning'] == 0)
+           <span class="icon-right"></span>自动空调
+           @elseif(json_decode($res1['inside'],true)['Automatic-conditioning'] == 1)
+             <span class="icon-yellow-error"></span>自动空调
+           @elseif(json_decode($res1['inside'],true)['Automatic-conditioning'] == 2)
+             <span class="icon-line-gray"></span>自动空调
+           @else
+             <span class="icon-line-gray"></span><s>自动空调</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['HUD-display']}}">
+            @if(json_decode($res1['inside'],true)['HUD-display'] == 0)
+           <span class="icon-right"></span>HUD抬头显示
+           @elseif(json_decode($res1['inside'],true)['HUD-display'] == 1)
+             <span class="icon-yellow-error"></span>HUD抬头显示
+           @elseif(json_decode($res1['inside'],true)['HUD-display'] == 2)
+             <span class="icon-line-gray"></span>HUD抬头显示
+           @else
+             <span class="icon-line-gray"></span>HUD抬头显示
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['conditioning']}}">
+            @if(json_decode($res1['inside'],true)['conditioning'] == 0)
+           <span class="icon-right"></span>后排座椅加热
+           @elseif(json_decode($res1['inside'],true)['conditioning'] == 1)
+             <span class="icon-yellow-error"></span>后排座椅加热
+           @elseif(json_decode($res1['inside'],true)['conditioning'] == 2)
+             <span class="icon-line-gray"></span>后排座椅加热
+           @else
+             <span class="icon-line-gray"></span><s>后排座椅加热</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['inside'],true)['air_conditioner']}}">
+            @if(json_decode($res1['inside'],true)['air_conditioner'] == 0)
+           <span class="icon-right"></span>空调
+           @elseif(json_decode($res1['inside'],true)['air_conditioner'] == 1)
+             <span class="icon-yellow-error"></span>空调
+           @elseif(json_decode($res1['inside'],true)['air_conditioner'] == 2)
+             <span class="icon-line-gray"></span>空调
+           @else
+             <span class="icon-line-gray"></span><s>空调</s>
+            @endif
+
+          </td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1644,49 +2631,223 @@
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">14项灯光系统检测</th>
+          <th colspan="3">15项灯光系统检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后雾灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Low-lights']}}">
+            @if(json_decode($res1['lamplight'],true)['Low-lights'] == 0)
+           <span class="icon-right"></span>近光灯
+           @elseif(json_decode($res1['lamplight'],true)['Low-lights'] == 1)
+             <span class="icon-yellow-error"></span>近光灯
+           @elseif(json_decode($res1['lamplight'],true)['Low-lights'] == 2)
+             <span class="icon-line-gray"></span>近光灯
+           @else
+             <span class="icon-line-gray"></span><s>近光灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>近光灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['High-beam']}}">
+            @if(json_decode($res1['lamplight'],true)['High-beam'] == 0)
+           <span class="icon-right"></span>远光灯
+           @elseif(json_decode($res1['lamplight'],true)['High-beam'] == 1)
+             <span class="icon-yellow-error"></span>远光灯
+           @elseif(json_decode($res1['lamplight'],true)['High-beam'] == 2)
+             <span class="icon-line-gray"></span>远光灯
+           @else
+             <span class="icon-line-gray"></span><s>远光灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>刹车灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Front-turn-signal']}}">
+            @if(json_decode($res1['lamplight'],true)['Front-turn-signal'] == 0)
+           <span class="icon-right"></span>前转向灯
+           @elseif(json_decode($res1['lamplight'],true)['Front-turn-signal'] == 1)
+             <span class="icon-yellow-error"></span>前转向灯
+           @elseif(json_decode($res1['lamplight'],true)['Front-turn-signal'] == 2)
+             <span class="icon-line-gray"></span>前转向灯
+           @else
+             <span class="icon-line-gray"></span>前转向灯
+            @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>倒车灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Fog-q-lightsr']}}">
+            @if(json_decode($res1['lamplight'],true)['Fog-q-lightsr'] == 0)
+           <span class="icon-right"></span>前雾灯
+           @elseif(json_decode($res1['lamplight'],true)['Fog-q-lightsr'] == 1)
+             <span class="icon-yellow-error"></span>前雾灯
+           @elseif(json_decode($res1['lamplight'],true)['Fog-q-lightsr'] == 2)
+             <span class="icon-line-gray"></span>前雾灯
+           @else
+             <span class="icon-line-gray"></span><s>前雾灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>后转向灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['After-signal']}}">
+            @if(json_decode($res1['lamplight'],true)['After-signal'] == 0)
+           <span class="icon-right"></span>后转向灯
+           @elseif(json_decode($res1['lamplight'],true)['After-signal'] == 1)
+             <span class="icon-yellow-error"></span>后转向灯
+           @elseif(json_decode($res1['lamplight'],true)['After-signal'] == 2)
+             <span class="icon-line-gray"></span>后转向灯
+           @else
+             <span class="icon-line-gray"></span><s>后转向灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>前雾灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['brake-light']}}">
+            @if(json_decode($res1['lamplight'],true)['brake-light'] == 0)
+           <span class="icon-right"></span>刹车灯
+           @elseif(json_decode($res1['lamplight'],true)['brake-light'] == 1)
+             <span class="icon-yellow-error"></span>刹车灯
+           @elseif(json_decode($res1['lamplight'],true)['brake-light'] == 2)
+             <span class="icon-line-gray"></span>刹车灯
+           @else
+             <span class="icon-line-gray"></span><s>刹车灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>室内顶灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Reversing-lights']}}">
+            @if(json_decode($res1['lamplight'],true)['Reversing-lights'] == 0)
+           <span class="icon-right"></span>倒车灯
+           @elseif(json_decode($res1['lamplight'],true)['Reversing-lights'] == 1)
+             <span class="icon-yellow-error"></span>倒车灯
+           @elseif(json_decode($res1['lamplight'],true)['Reversing-lights'] == 2)
+             <span class="icon-line-gray"></span>倒车灯
+           @else
+             <span class="icon-line-gray"></span><s>倒车灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>前转向灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Fog-h-lights']}}">
+            @if(json_decode($res1['lamplight'],true)['Fog-h-lights'] == 0)
+           <span class="icon-right"></span>后雾灯
+           @elseif(json_decode($res1['lamplight'],true)['Fog-h-lights'] == 1)
+             <span class="icon-yellow-error"></span>后雾灯
+           @elseif(json_decode($res1['lamplight'],true)['Fog-h-lights'] == 2)
+             <span class="icon-line-gray"></span>后雾灯
+           @else
+             <span class="icon-line-gray"></span><s>后雾灯</s>
+            @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>远光灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Indoor-light']}}">
+            @if(json_decode($res1['lamplight'],true)['Indoor-light'] == 0)
+           <span class="icon-right"></span>室内顶灯
+           @elseif(json_decode($res1['lamplight'],true)['Indoor-light'] == 1)
+             <span class="icon-yellow-error"></span>室内顶灯
+           @elseif(json_decode($res1['lamplight'],true)['Indoor-light'] == 2)
+             <span class="icon-line-gray"></span>室内顶灯
+           @else
+             <span class="icon-line-gray"></span><s>室内顶灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>氙气大灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Xenon-headlights']}}">
+            @if(json_decode($res1['lamplight'],true)['Xenon-headlights'] == 0)
+           <span class="icon-right"></span>氙气大灯
+           @elseif(json_decode($res1['lamplight'],true)['Xenon-headlights'] == 1)
+             <span class="icon-yellow-error"></span>氙气大灯
+           @elseif(json_decode($res1['lamplight'],true)['Xenon-headlights'] == 2)
+             <span class="icon-line-gray"></span>氙气大灯
+           @else
+             <span class="icon-line-gray"></span><s>氙气大灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> LED大灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['LED-headlights']}}">
+            @if(json_decode($res1['lamplight'],true)['LED-headlights'] == 0)
+           <span class="icon-right"></span>LED大灯
+           @elseif(json_decode($res1['lamplight'],true)['LED-headlights'] == 1)
+             <span class="icon-yellow-error"></span>LED大灯
+           @elseif(json_decode($res1['lamplight'],true)['LED-headlights'] == 2)
+             <span class="icon-line-gray"></span>LED大灯
+           @else
+             <span class="icon-line-gray"></span><s>LED大灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>自动头灯 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Automatic-headlights']}}">
+            @if(json_decode($res1['lamplight'],true)['Automatic-headlights'] == 0)
+           <span class="icon-right"></span>自动头灯
+           @elseif(json_decode($res1['lamplight'],true)['Automatic-headlights'] == 1)
+             <span class="icon-yellow-error"></span>自动头灯
+           @elseif(json_decode($res1['lamplight'],true)['Automatic-headlights'] == 2)
+             <span class="icon-line-gray"></span>自动头灯
+           @else
+             <span class="icon-line-gray"></span>自动头灯
+            @endif
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>大灯高度可调 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Fog-q-lights']}}">
+            @if(json_decode($res1['lamplight'],true)['Fog-q-lights'] == 0)
+           <span class="icon-right"></span>前雾灯
+           @elseif(json_decode($res1['lamplight'],true)['Fog-q-lights'] == 1)
+             <span class="icon-yellow-error"></span>前雾灯
+           @elseif(json_decode($res1['lamplight'],true)['Fog-q-lights'] == 2)
+             <span class="icon-line-gray"></span>前雾灯
+           @else
+             <span class="icon-line-gray"></span>前雾灯
+            @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>大灯清洗 </td>
+          <td class="{{json_decode($res1['lamplight'],true)['Headlight-adjustable']}}">
+            @if(json_decode($res1['lamplight'],true)['Headlight-adjustable'] == 0)
+           <span class="icon-right"></span>大灯高度可调
+           @elseif(json_decode($res1['lamplight'],true)['Headlight-adjustable'] == 1)
+             <span class="icon-yellow-error"></span>大灯高度可调
+           @elseif(json_decode($res1['lamplight'],true)['Headlight-adjustable'] == 2)
+             <span class="icon-line-gray"></span>大灯高度可调
+           @else
+             <span class="icon-line-gray"></span><s>大灯高度可调</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td class="{{json_decode($res1['lamplight'],true)['Headlight']}}">
+            @if(json_decode($res1['lamplight'],true)['Headlight'] == 0)
+           <span class="icon-right"></span>大灯清洗
+           @elseif(json_decode($res1['lamplight'],true)['Headlight'] == 1)
+             <span class="icon-yellow-error"></span>大灯清洗
+           @elseif(json_decode($res1['lamplight'],true)['Headlight'] == 2)
+             <span class="icon-line-gray"></span>大灯清洗
+           @else
+             <span class="icon-line-gray"></span><s>大灯清洗</s>
+            @endif
+          </td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
          </tr>
          <tr>
          </tr>
@@ -1698,19 +2859,95 @@
           <th colspan="3">5项高科技配置检测</th>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 车道偏离预警系统 </td>
+           <td class="{{json_decode($res1['high_tech'],true)['departure-warning']}}">
+             @if(json_decode($res1['high_tech'],true)['departure-warning'] == 0)
+            <span class="icon-right"></span>车道偏离预警系统
+            @elseif(json_decode($res1['high_tech'],true)['departure-warning'] == 1)
+              <span class="icon-yellow-error"></span>车道偏离预警系统
+            @elseif(json_decode($res1['high_tech'],true)['departure-warning'] == 2)
+              <span class="icon-line-gray"></span>车道偏离预警系统
+            @else
+              <span class="icon-line-gray"></span><s>车道偏离预警系统</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 自动泊车 </td>
+           <td class="{{json_decode($res1['high_tech'],true)['Automatic-parking']}}">
+             @if(json_decode($res1['high_tech'],true)['Automatic-parking'] == 0)
+            <span class="icon-right"></span>自动泊车
+            @elseif(json_decode($res1['high_tech'],true)['Automatic-parking'] == 1)
+              <span class="icon-yellow-error"></span>自动泊车
+            @elseif(json_decode($res1['high_tech'],true)['Automatic-parking'] == 2)
+              <span class="icon-line-gray"></span>自动泊车
+            @else
+              <span class="icon-line-gray"></span><s>自动泊车</s>
+             @endif
+
+           </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 盲点辅助系统 </td>
+           <td class="{{json_decode($res1['high_tech'],true)['Blind-system']}}">
+             @if(json_decode($res1['high_tech'],true)['Blind-system'] == 0)
+            <span class="icon-right"></span>盲点辅助系统
+            @elseif(json_decode($res1['high_tech'],true)['Blind-system'] == 1)
+              <span class="icon-yellow-error"></span>盲点辅助系统
+            @elseif(json_decode($res1['high_tech'],true)['Blind-system'] == 2)
+              <span class="icon-line-gray"></span>盲点辅助系统
+            @else
+              <span class="icon-line-gray"></span><s>盲点辅助系统</s>
+             @endif
+          </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 全景摄像头 </td>
+            <td class="{{json_decode($res1['high_tech'],true)['Panoramic-camera']}}">
+              @if(json_decode($res1['high_tech'],true)['Panoramic-camera'] == 0)
+             <span class="icon-right"></span>全景摄像头
+             @elseif(json_decode($res1['high_tech'],true)['Panoramic-camera'] == 1)
+               <span class="icon-yellow-error"></span>全景摄像头
+             @elseif(json_decode($res1['high_tech'],true)['Panoramic-camera'] == 2)
+               <span class="icon-line-gray"></span>全景摄像头
+             @else
+               <span class="icon-line-gray"></span><s>全景摄像头</s>
+              @endif
+           </td>
          </tr>
          <tr>
-          <td class="td1 gray-style"> <span class="icon-line-gray"></span> 发动机自动启停 </td>
+
+           <td class="{{json_decode($res1['high_tech'],true)['Engine-automatically']}}">
+             @if(json_decode($res1['high_tech'],true)['Engine-automatically'] == 0)
+            <span class="icon-right"></span>发动机自动启停
+            @elseif(json_decode($res1['high_tech'],true)['Engine-automatically'] == 1)
+              <span class="icon-yellow-error"></span>发动机自动启停
+            @elseif(json_decode($res1['high_tech'],true)['Engine-automatically'] == 2)
+              <span class="icon-line-gray"></span>发动机自动启停
+            @else
+              <span class="icon-line-gray"></span><s>发动机自动启停</s>
+             @endif
+          </td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1749,19 +2986,93 @@
           <th colspan="3">5项随车工具检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>备胎 </td>
+
+           <td class="{{json_decode($res1['car_instrument'],true)['jack']}}">
+             @if(json_decode($res1['car_instrument'],true)['jack'] == 0)
+            <span class="icon-right"></span>千斤顶
+            @elseif(json_decode($res1['car_instrument'],true)['jack'] == 1)
+              <span class="icon-yellow-error"></span>千斤顶
+            @elseif(json_decode($res1['car_instrument'],true)['jack'] == 2)
+              <span class="icon-line-gray"></span>千斤顶
+            @else
+              <span class="icon-line-gray"></span><s>千斤顶</s>
+             @endif
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>维修工具包 </td>
+           <td class="{{json_decode($res1['car_instrument'],true)['Fire-extinguisher']}}">
+             @if(json_decode($res1['car_instrument'],true)['Fire-extinguisher'] == 0)
+            <span class="icon-right"></span>灭火器
+            @elseif(json_decode($res1['car_instrument'],true)['Fire-extinguisher'] == 1)
+              <span class="icon-yellow-error"></span>灭火器
+            @elseif(json_decode($res1['car_instrument'],true)['Fire-extinguisher'] == 2)
+              <span class="icon-line-gray"></span>灭火器
+            @else
+              <span class="icon-line-gray"></span><s>灭火器</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>千斤顶 </td>
+           <td class="{{json_decode($res1['car_instrument'],true)['warning-signs']}}">
+             @if(json_decode($res1['car_instrument'],true)['warning-signs'] == 0)
+            <span class="icon-right"></span>三角警示标
+            @elseif(json_decode($res1['car_instrument'],true)['warning-signs'] == 1)
+              <span class="icon-yellow-error"></span>三角警示标
+            @elseif(json_decode($res1['car_instrument'],true)['warning-signs'] == 2)
+              <span class="icon-line-gray"></span>三角警示标
+            @else
+              <span class="icon-line-gray"></span><s>三角警示标</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>三角警示标 </td>
+           <td class="{{json_decode($res1['car_instrument'],true)['Repair-kit']}}">
+             @if(json_decode($res1['car_instrument'],true)['Repair-kit'] == 0)
+            <span class="icon-right"></span>维修工具包
+            @elseif(json_decode($res1['car_instrument'],true)['Repair-kit'] == 1)
+              <span class="icon-yellow-error"></span>维修工具包
+            @elseif(json_decode($res1['car_instrument'],true)['Repair-kit'] == 2)
+              <span class="icon-line-gray"></span>维修工具包
+            @else
+              <span class="icon-line-gray"></span><s>维修工具包</s>
+             @endif
+           </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>灭火器 </td>
+           <td class="{{json_decode($res1['car_instrument'],true)['Spare-tire']}}">
+             @if(json_decode($res1['car_instrument'],true)['Spare-tire'] == 0)
+            <span class="icon-right"></span>备胎
+            @elseif(json_decode($res1['car_instrument'],true)['Spare-tire'] == 1)
+              <span class="icon-yellow-error"></span>备胎
+            @elseif(json_decode($res1['car_instrument'],true)['Spare-tire'] == 2)
+              <span class="icon-line-gray"></span>备胎
+            @else
+              <span class="icon-line-gray"></span><s>备胎</s>
+             @endif
+           </td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
+         </tr>
+         <tr>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1803,7 +3114,7 @@
        <span class="open-right js-disreport" data-gzlog="tracking_type=click&amp;eventid=0220050000099020">收起<span class="icon-bottom-sanjiao"></span></span>
       </div>
       <ul class="ul-tab-tit">
-       <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;仪表台指示灯 </strong> <p class="fc-green">正常</p> </li>
+       <li class="last"> <span class="icon-green-right"></span> <strong>6项&nbsp;仪表台指示灯 </strong> <p class="fc-green">正常</p> </li>
        <li class="last"> <span class="icon-green-right"></span> <strong>4项&nbsp;发动机状态 </strong> <p class="fc-green">正常</p> </li>
        <li class="last"> <span class="icon-green-right"></span> <strong>2项&nbsp;变速箱及转向 </strong> <p class="fc-green">正常</p> </li>
       </ul>
@@ -1811,15 +3122,85 @@
        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="test-list-table ">
         <tbody>
          <tr>
-          <th colspan="3">4项仪表台指示灯检测</th>
+          <th colspan="3">6项仪表台指示灯检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>制动系统指示灯 </td>
-          <td> <span class="icon-right"></span>安全系统指示灯 </td>
+
+            <td class="{{json_decode($res1['instrument_desk'],true)['Tune-car']}}">
+              @if(json_decode($res1['instrument_desk'],true)['Tune-car'] == 0)
+             <span class="icon-right"></span>调车表
+             @elseif(json_decode($res1['instrument_desk'],true)['Tune-car'] == 1)
+               <span class="icon-yellow-error"></span>调车表
+             @elseif(json_decode($res1['instrument_desk'],true)['Tune-car'] == 2)
+               <span class="icon-line-gray"></span>调车表
+             @else
+               <span class="icon-line-gray"></span><s>调车表</s>
+              @endif
+
+          </td>
+
+            <td class="{{json_decode($res1['instrument_desk'],true)['Brake-indicator']}}">
+              @if(json_decode($res1['instrument_desk'],true)['Brake-indicator'] == 0)
+             <span class="icon-right"></span>制动系统指示灯
+             @elseif(json_decode($res1['instrument_desk'],true)['Brake-indicator'] == 1)
+               <span class="icon-yellow-error"></span>制动系统指示灯
+             @elseif(json_decode($res1['instrument_desk'],true)['Brake-indicator'] == 2)
+               <span class="icon-line-gray"></span>制动系统指示灯
+             @else
+               <span class="icon-line-gray"></span><s>制动系统指示灯</s>
+              @endif
+            </td>
+
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>发动机工况指示灯 </td>
-          <td> <span class="icon-right"></span>变速箱指示灯 </td>
+           <td class="{{json_decode($res1['instrument_desk'],true)['Airbag-light']}}">
+             @if(json_decode($res1['instrument_desk'],true)['Airbag-light'] == 0)
+            <span class="icon-right"></span>安全气囊故障灯
+            @elseif(json_decode($res1['instrument_desk'],true)['Airbag-light'] == 1)
+              <span class="icon-yellow-error"></span>安全气囊故障灯
+            @elseif(json_decode($res1['instrument_desk'],true)['Airbag-light'] == 2)
+              <span class="icon-line-gray"></span>安全气囊故障灯
+            @else
+              <span class="icon-line-gray"></span><s>安全气囊故障灯</s>
+             @endif
+           </td>
+           <td class="{{json_decode($res1['instrument_desk'],true)['Body-light']}}">
+             @if(json_decode($res1['instrument_desk'],true)['Body-light'] == 0)
+            <span class="icon-right"></span>车身稳定系统故障灯
+            @elseif(json_decode($res1['instrument_desk'],true)['Body-light'] == 1)
+              <span class="icon-yellow-error"></span>车身稳定系统故障灯
+            @elseif(json_decode($res1['instrument_desk'],true)['Body-light'] == 2)
+              <span class="icon-line-gray"></span>车身稳定系统故障灯
+            @else
+              <span class="icon-line-gray"></span><s>车身稳定系统故障灯</s>
+             @endif
+           </td>
+         </tr>
+         <tr>
+
+            <td class="{{json_decode($res1['instrument_desk'],true)['Engine-light']}}">
+              @if(json_decode($res1['instrument_desk'],true)['Engine-light'] == 0)
+             <span class="icon-right"></span>发动机故障灯
+             @elseif(json_decode($res1['instrument_desk'],true)['Engine-light'] == 1)
+               <span class="icon-yellow-error"></span>发动机故障灯
+             @elseif(json_decode($res1['instrument_desk'],true)['Engine-light'] == 2)
+               <span class="icon-line-gray"></span>发动机故障灯
+             @else
+               <span class="icon-line-gray"></span><s>发动机故障灯</s>
+              @endif
+            </td>
+
+          <td class="{{json_decode($res1['instrument_desk'],true)['Transmission-light']}}">
+            @if(json_decode($res1['instrument_desk'],true)['Transmission-light'] == 0)
+           <span class="icon-right"></span>变速箱故障灯
+           @elseif(json_decode($res1['instrument_desk'],true)['Transmission-light'] == 1)
+             <span class="icon-yellow-error"></span>变速箱故障灯
+           @elseif(json_decode($res1['instrument_desk'],true)['Transmission-light'] == 2)
+             <span class="icon-line-gray"></span>变速箱故障灯
+           @else
+             <span class="icon-line-gray"></span><s>变速箱故障灯</s>
+            @endif
+          </td>
          </tr>
          <tr>
          </tr>
@@ -1831,12 +3212,62 @@
           <th colspan="3">4项发动机状态检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>启动状态 </td>
-          <td> <span class="icon-right"></span>怠速状态 </td>
+
+            <td class="{{json_decode($res1['engine'],true)['start-up']}}">
+              @if(json_decode($res1['engine'],true)['start-up'] == 0)
+             <span class="icon-right"></span>启动
+             @elseif(json_decode($res1['engine'],true)['start-up'] == 1)
+               <span class="icon-yellow-error"></span>启动
+             @elseif(json_decode($res1['engine'],true)['start-up'] == 2)
+               <span class="icon-line-gray"></span>启动
+             @else
+               <span class="icon-line-gray"></span><s>启动</s>
+              @endif
+            </td>
+
+
+            <td class="{{json_decode($res1['engine'],true)['Idle-speed']}}">
+              @if(json_decode($res1['engine'],true)['Idle-speed'] == 0)
+             <span class="icon-right"></span>怠速
+             @elseif(json_decode($res1['engine'],true)['Idle-speed'] == 1)
+               <span class="icon-yellow-error"></span>怠速
+             @elseif(json_decode($res1['engine'],true)['Idle-speed'] == 2)
+               <span class="icon-line-gray"></span>怠速
+             @else
+               <span class="icon-line-gray"></span><s>怠速</s>
+              @endif
+
+          </td>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>发动机抖动 </td>
-          <td> <span class="icon-right"></span>尾气 </td>
+           <td class="{{json_decode($res1['engine'],true)['Engine-shake']}}">
+             @if(json_decode($res1['engine'],true)['Engine-shake'] == 0)
+            <span class="icon-right"></span>发动机抖动
+            @elseif(json_decode($res1['engine'],true)['Engine-shake'] == 1)
+              <span class="icon-yellow-error"></span>发动机抖动
+            @elseif(json_decode($res1['engine'],true)['Engine-shake'] == 2)
+              <span class="icon-line-gray"></span>发动机抖动
+            @else
+              <span class="icon-line-gray"></span><s>发动机抖动</s>
+             @endif
+
+         </td>
+         <td class="{{json_decode($res1['engine'],true)['exhaust']}}">
+           @if(json_decode($res1['engine'],true)['exhaust'] == 0)
+          <span class="icon-right"></span>尾气
+          @elseif(json_decode($res1['engine'],true)['exhaust'] == 1)
+            <span class="icon-yellow-error"></span>尾气
+          @elseif(json_decode($res1['engine'],true)['exhaust'] == 2)
+            <span class="icon-line-gray"></span>尾气
+          @else
+            <span class="icon-line-gray"></span><s>尾气</s>
+           @endif
+
+       </td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
          </tr>
          <tr>
          </tr>
@@ -1848,8 +3279,33 @@
           <th colspan="3">2项变速箱及转向检测</th>
          </tr>
          <tr>
-          <td> <span class="icon-right"></span>变速箱挂挡 </td>
-          <td> <span class="icon-right"></span>转向 </td>
+           <td class="{{json_decode($res1['gearbox'],true)['Gearbox-gear']}}">
+             @if(json_decode($res1['gearbox'],true)['Gearbox-gear'] == 0)
+            <span class="icon-right"></span>变速箱挂挡
+            @elseif(json_decode($res1['gearbox'],true)['Gearbox-gear'] == 1)
+              <span class="icon-yellow-error"></span>变速箱挂挡
+            @elseif(json_decode($res1['gearbox'],true)['Gearbox-gear'] == 2)
+              <span class="icon-line-gray"></span>变速箱挂挡
+            @else
+              <span class="icon-line-gray"></span><s>变速箱挂挡</s>
+             @endif
+
+         </td>
+         <td class="{{json_decode($res1['gearbox'],true)['Turn']}}">
+           @if(json_decode($res1['gearbox'],true)['Turn'] == 0)
+          <span class="icon-right"></span>转向
+          @elseif(json_decode($res1['gearbox'],true)['Turn'] == 1)
+            <span class="icon-yellow-error"></span>转向
+          @elseif(json_decode($res1['gearbox'],true)['Turn'] == 2)
+            <span class="icon-line-gray"></span>转向
+          @else
+            <span class="icon-line-gray"></span><s>转向</s>
+           @endif
+          </td>
+         </tr>
+         <tr>
+          <td></td>
+          <td></td>
          </tr>
          <tr>
           <td></td>
@@ -1870,9 +3326,9 @@
       </div>
       <ul class="ul-tab-tit">
        <li> <span class="icon-green-right"></span> <strong>67项&nbsp;缺陷项检测</strong> <p class="fc-green">正常</p> </li>
-       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;漆面修复检测</strong> <p class="fc-yellow">6项异常</p> </li>
-       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;钣金修复检测</strong> <p class="fc-yellow">5项异常</p> </li>
-       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;外观件更换检测</strong> <p class="fc-yellow">3项异常</p> </li>
+       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;漆面修复检测</strong> <p class="fc-green">正常</p> </li>
+       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;钣金修复检测</strong> <p class="fc-yellow">1项异常</p> </li>
+       <li> <span class="icon-green-right"></span> <strong>21项&nbsp;外观件更换检测</strong> <p class="fc-green">正常</p> </li>
       </ul>
       <div class="tablediv">
        <!-- 照片缺省 -->
@@ -1880,9 +3336,9 @@
         <div class="pad-div">
          <ul class="picture-tit-tab clearfix">
           <li> <p class="js-cli" surtype="js-surpic" data-gzlog="tracking_type=click&amp;eventid=0220050000099022"> 缺陷照片 </p> <span class="number-bg-green active">正常</span> </li>
-          <li class="on"> <p class="js-cli" surtype="js-paint" data-gzlog="tracking_type=click&amp;eventid=0220050000099023"> 漆面修复 </p> <span class="number-bg-yellow active">6</span> </li>
-          <li> <p class="js-cli" surtype="js-sheetMetal" data-gzlog="tracking_type=click&amp;eventid=0220050000099024"> 钣金修复 </p> <span class="number-bg-yellow active">5</span> </li>
-          <li> <p class="js-cli" surtype="js-exterior" data-gzlog="tracking_type=click&amp;eventid=0220050000099025"> 外观件更换 </p> <span class="number-bg-yellow active">3</span> </li>
+          <li> <p class="js-cli" surtype="js-paint" data-gzlog="tracking_type=click&amp;eventid=0220050000099023"> 漆面修复 </p> <span class="number-bg-green active">正常</span> </li>
+          <li class="on"> <p class="js-cli" surtype="js-sheetMetal" data-gzlog="tracking_type=click&amp;eventid=0220050000099024"> 钣金修复 </p> <span class="number-bg-yellow active">1</span> </li>
+          <li> <p class="js-cli" surtype="js-exterior" data-gzlog="tracking_type=click&amp;eventid=0220050000099025"> 外观件更换 </p> <span class="number-bg-green active">正常</span> </li>
          </ul>
         </div>
         <div class="outward fl">
@@ -1890,61 +3346,9 @@
           <div class="appearance-con clueEvaluate">
            <div class="car-appearance-left"></div>
            <ul class="areabox">
-            <li class="js-waiguan js-exterior hood ">
+            <li class="js-waiguan js-sheetMetal door_fl active">
              <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 发动机盖:更换
-             </div> </li>
-            <li class="js-waiguan js-exterior foot_save ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 后保险杠:更换
-             </div> </li>
-            <li class="js-waiguan js-exterior head_save ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 前保险杠:更换
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_rl ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左后翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal trunk_lid ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 后备箱盖:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_rr ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右后翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_fl ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左前翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-sheetMetal fender_fr ">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右前翼子板:钣金
-             </div> </li>
-            <li class="js-waiguan js-paint door_fl active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左侧前门:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint door_rr active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右侧后门:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint door_fr active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右侧前门:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint a_pillar_r2 active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 右A柱:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint a_pillar_l2 active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左A柱:喷漆
-             </div> </li>
-            <li class="js-waiguan js-paint door_rl active">
-             <div class="emplaintext">
-              <span class="icon-sanjiao-yellow"></span> 左侧后门:喷漆
+              <span class="icon-sanjiao-yellow"></span> 左侧前门:钣金
              </div> </li>
            </ul>
            <!-- 缺陷图 -->
@@ -2911,43 +4315,13 @@
     <a href="/cs/bmw-7/" target="_blank">长沙二手宝马宝马7系</a>
    </div>
    <div class="friendly-link">
-    <p class="link-tit">热门城市：</p>
+    <p class="link-tit">友情链接：</p>
     <span class="open-box"></span>
     <span class="close-box" data-role="is_show_box"></span>
-    <a href="/www/">全国二手车</a>
-    <a href="/zz/">郑州二手车</a>
-    <a href="/sh/">上海二手车</a>
-    <a href="/sy/">沈阳二手车</a>
-    <a href="/km/">昆明二手车</a>
-    <a href="/bj/">北京二手车</a>
-    <a href="/nn/">南宁二手车</a>
-    <a href="/cc/">长春二手车</a>
-    <a href="/cd/">成都二手车</a>
-    <a href="/tj/">天津二手车</a>
-    <a href="/gz/">广州二手车</a>
-    <a href="/cq/">重庆二手车</a>
-    <a href="/dg/">东莞二手车</a>
-    <a href="/dl/">大连二手车</a>
-    <a href="/sjz/">石家庄二手车</a>
-    <a href="/hz/">杭州二手车</a>
-    <a href="/lz/">兰州二手车</a>
-    <a href="/qd/">青岛二手车</a>
-    <a href="/xa/">西安二手车</a>
-    <a href="/nb/">宁波二手车</a>
-    <a href="/jn/">济南二手车</a>
-    <a href="/sz/">深圳二手车</a>
-    <a href="/gy/">贵阳二手车</a>
-    <a href="/tangshan/">唐山二手车</a>
-    <a href="/hrb/">哈尔滨二手车</a>
-    <a href="/su/">苏州二手车</a>
-    <a href="/wh/">武汉二手车</a>
-    <a href="/foshan/">佛山二手车</a>
-    <a href="/fz/">福州二手车</a>
-    <a href="/nj/">南京二手车</a>
-    <a href="/cs/">长沙二手车</a>
-    <a href="/">二手车</a>
-    <a href="/zq_map/allmap/">二手车信息推荐</a>
-    <a href="/zq_pd/suoyin/s_a/">汽车信息</a>
+    @foreach($data1 as $v)
+    <a href="{{$v->url}}">{{$v->name}}</a>
+    @endforeach
+
    </div>
    <div class="friendly-link">
     <p class="link-tit">移动版：</p>
@@ -3003,5 +4377,14 @@
   <div style="display:none;" class="js-check-post-code" data-str="eab3e925c6dfc993a06f4ecec4adbb3a" data-time="1515396735"></div>
   <input type="text" name="js-waf-seo-referer" value="/bj/buy/" style="display:none;" />
   <input type="hidden" data-role="dataSource" class="dataSourceButton" data-source="[]" />
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('td[class=2]').attr('class','td1 gray-style');
+      $('td[class=3]').attr('class','td1 gray-style');
+      $('td[class=1]').next().first-child().attr('display','block');
+    });
+
+  </script>
  </body>
 </html>

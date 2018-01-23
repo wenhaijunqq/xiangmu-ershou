@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/layer/skin/layer.css">
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/layer/layer.js"></script>
+		<script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
+		<link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
+		<script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -20,15 +23,30 @@
 
                 <!--地区选择下拉框-->
                 <div class="city">
-                    <select  class="form-control">
-                        <option value="1">天津</option>
-                        <option value="2">上海</option>
-                        <option value="3">北京</option>
-                        <option value="4">深圳</option>
-                        <option value="4">广州</option>
-                    </select>
+                    <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20" style="border:0px" />
                 </div>
+								<script type="text/javascript">
 
+				        $(function(){
+				            var fn2 = function(city){
+				                c.value = city;
+				            };
+				            $('#test3').hover(function(){
+				                $('#test3').css("color","red");
+				                citypicker.show({
+				                    left : 450,
+				                    top  : 45,
+				                    selected : fn2
+				                });
+
+				            });
+				            $('body').click(function(){
+				                $('#test3').css("color","black");
+				                $('#div_select_city_sub_menu').hide();
+				            });
+
+				        });
+				        </script>
                 <!--登录 -->
                 <div class="uc">
                     <a href="/IndexLogin">
@@ -75,13 +93,13 @@
           <form action="/home/question/show" method="GET" class="form-inline">
             <input class="search2-input" type="text" placeholder="查找问题"  name="key"/>
             <button class="search2-btn" type="submit">搜索</button>
-          </form> 
-        
+          </form>
+
      </div>
      <div class="wen">
        <p style="font-size:20px;">
          {{$data[0]->content}}
-       </p> 
+       </p>
        <p></p>
        <p id="time1"><font color="#8A8B86">2016-06-03 16:26:11　浏览：3458 &nbsp;<a class="btn btn-default" href="/www/buy" target="_blank" role="button">查找全部车源</a></font></p>
      </div>
@@ -91,7 +109,7 @@
         <p class="user-name">瓜子官方</p>
         <p class="fabutime">2018-01-09  11:25:05</p>
         <button type="button" class="btn btn-success user-like" id="dianzan" onclick="dianzan({{$data[0]->qid}})">
-           <img src="/img/like.png"></img>&nbsp; <e id="likenumber">{{$data[0]->likenum}}</e> 
+           <img src="/img/like.png"></img>&nbsp; <e id="likenumber">{{$data[0]->likenum}}</e>
         </button>
         <div class="huida-content">{{$data[0]->reply_content}}</div>
      </div>
@@ -99,12 +117,12 @@
        <!-- 列表结束 -->
           <!-- 页脚 -->
         <div class="footer"></div>
-        
+
         <script type="text/javascript">
             function dianzan(id){
                $.post("/home/like/"+id,
                    {'_token':'{{csrf_token()}}'},
-                   function(data){ 
+                   function(data){
                        $("e").text(data);
                        layer.alert("点赞成功",{icon: 6});
                    });

@@ -8,6 +8,10 @@
    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/layer/skin/layer.css">
     <script type="text/javascript" src="/layer/layer.js"></script>
+		<script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
+		<link rel="stylesheet"  href="/css/h_ss.css">
+		<link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
+		<script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -17,15 +21,31 @@
                 <div class="top_icon"></div>
 
                 <!--地区选择下拉框-->
-                <div class="city">
-                    <select  class="form-control">
-                        <option value="1">天津</option>
-                        <option value="2">上海</option>
-                        <option value="3">北京</option>
-                        <option value="4">深圳</option>
-                        <option value="4">广州</option>
-                    </select>
+								<div class="city">
+                    <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20" style="border:0px" />
                 </div>
+								<script type="text/javascript">
+
+				        $(function(){
+				            var fn2 = function(city){
+				                c.value = city;
+				            };
+				            $('#test3').hover(function(){
+				                $('#test3').css("color","red");
+				                citypicker.show({
+				                    left : 450,
+				                    top  : 45,
+				                    selected : fn2
+				                });
+
+				            });
+				            $('body').click(function(){
+				                $('#test3').css("color","black");
+				                $('#div_select_city_sub_menu').hide();
+				            });
+
+				        });
+				        </script>
 
                 <!--登录 -->
                 <div class="uc">

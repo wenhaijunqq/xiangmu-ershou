@@ -16,3 +16,25 @@
         <a href="/home/center">个人中心</a>
     </div>
 </div>
+<script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
+<script>
+$(function(){
+    var fn2 = function(city){
+        c.value = city;
+    };
+    $('#test3').hover(function(){
+        $('#test3').css("color","red");
+        citypicker.show({
+            left : 172,
+            top  : 45,
+            selected : fn2
+        });
+
+    });
+    $('body').click(function(){
+        $('#test3').css("color","black");
+        $('#div_select_city_sub_menu').hide();
+    });
+
+});
+</script>

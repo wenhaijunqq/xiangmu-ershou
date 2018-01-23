@@ -13,11 +13,37 @@
             <link rel="stylesheet" href="/css/h_public.css">
             <link rel="stylesheet" href="/css/h_index.css">
     <script src="/js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet"  href="/css/h_ss.css">
+    <script type="text/javascript" src='/js/jquery-3.2.1.min.js'></script>
+		<link rel="stylesheet" rev="stylesheet" href="/css/jock-citypicker-2.0.min.css" type="text/css" />
+		<script type="text/javascript" src="/js/jock-citypicker-2.0.min.js"></script>
 
-</head>  
+</head>
     <body class="bg-f0">
-        
-        
+      <script type="text/javascript">
+
+      $(function(){
+          var fn2 = function(city){
+              c.value = city;
+          };
+          $('#test3').hover(function(){
+              $('#test3').css("color","red");
+              citypicker.show({
+                  left : 315,
+                  top  : 40,
+                  selected : fn2
+              });
+
+          });
+          $('body').click(function(){
+              $('#test3').css("color","black");
+              $('#div_select_city_sub_menu').hide();
+          });
+
+      });
+      </script>
+
+
         <div class="_ckcity" data-cityname="beijing" data-type="1" style="display:none"></div>
         <!--20141203新版头部开始-->
         <div class="fixed-head-wrap ">
@@ -25,8 +51,7 @@
                         <div class="nav-1">
                 </div>
                 <div class="nav-2">
-                    <span style="font-size: 14px;color: #888;">天津</span>
-                    <span style="display: inline-block;width: 11px;height: 6px;background-image: url(img/m-4.png);background-position: -265px -35px;"></span>
+                    <input id="test3" type="text" name="city1" value="北京市" readOnly="readOnly" size="8" height="20" style="border:0px;" />
                 </div>
                 <div class="phone">400-060-6046</div>
                 <div class="login"><a href="{{ url('home/login') }}" >登录</a></div>
@@ -38,11 +63,11 @@
                     <a href="/home/question">瓜子问答</a>
                     <a href="/home/center">个人中心</a>
                 </div>
-                    
+
             </div>
         </div>
-        
-        
+
+
     <div class="mcar-center clearfix">
         <div class="left" style="height: 435px;">
       <ul class="list">
@@ -53,9 +78,9 @@
         <li><a href="http://www.chenghang.com/home/shouche" class="">我卖的车</a></li>
         <li><a href="http://www.chenghang.com/home/huiyuan" class="">会员身份</a></li>
         <li><a href="http://www.chenghang.com/home/mima" class="">修改密码</a></li>
-                
+
       </ul>
-    </div>     
+    </div>
         <div class="right">
             <div class="ncar-tip">
                 <img src="/img/error_people.png">
