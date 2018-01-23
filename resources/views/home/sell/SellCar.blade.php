@@ -18,10 +18,10 @@
 		        <div class="slogan-1">个人卖给个人,无中间商赚差价</div>
 		        <div class="slogan-2">买家少花钱，卖家最高多卖20%，平均7天售出</div>
 		        <div class="phone-area js-phone1">
-				    <input class="phone-input js-phone-input" placeholder="请输入手机号码，1702万名车主已提交">
-				    <button class="phone-btn-1 js-phone-btn">免费卖车</button>
-			    	<button class="phone-btn-2 js-subAssess" data-toggle="modal" data-target="#myModal" >快速估价</button>
-			    	<p class="phone-error-2 js-phone-error"></p>
+		       	<center>	
+		        	<input class="phone-input js-phone-input" placeholder="请输入手机号码，1702万名车主已提交" style="width:550px;" type="text" id="tel">
+			    	<button class="phone-btn-2 js-subAssess" data-toggle="modal" data-target="#myModal" style="width:160px;" id="bon">我要卖车</button>
+			    </center>
 				</div>
                <!-- Modal -->
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -29,7 +29,7 @@
 						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <center><h4 class="modal-title" id="myModalLabel">先估价再卖车，心里倍儿有底</h4></center>
+						        <center><h3 class="modal-title" id="myModalLabel">只差1步，多卖20%，平均7天成交</h4></center>
 						      </div>
 						      <div class="modal-body">
 						       <form class="form-horizontal" action="/home/sell" method="POST" id="myform">
@@ -188,6 +188,14 @@
 	    </div>
 	</div>
 	<script type="text/javascript">
+		//绑定手机号按钮
+		$('#bon').click(function(){
+			var pho = $('#tel').val();
+			// alert(pho);
+			// attr('#phone').val() = $('#tel').val();
+			document.getElementById("phone").value = pho;
+		});
+		//弹出框
 		var preg_from = /\S{1,}/;
 		var preg_models = /\S{1,}/;
 		var preg_kilometres = /^([1-9]|10)$/;
@@ -204,6 +212,7 @@
 		var isPhone = false;
 		//绑定点击事件
 		myform.onsubmit = function(){
+
 			var from = this.from.value;
 			var models = this.models.value;
 			var kilometres = this.kilometres.value;
@@ -215,7 +224,7 @@
 				// 匹配成功
 				span[3].innerHTML = '<font color="green">车源地格式正确</font>'; 
 				isFrom = true;
-			}else{
+			}else{m
 				// 匹配失败
 				span[3].innerHTML = '<font color="red">请输入车源地</font>';
 				isFrom = false;

@@ -81,7 +81,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                     <a href="/admin/reserve/{{$v->rid}}/edit">
                                                         <button type="button" class="am-btn am-btn-default am-radius am-btn-xs">编辑</button> 
-                                                    </a> 
+                                                    </a>
                                                     <a href="/admin/reserve/{{$v->rid}}">
                                                         <button type="button" class="am-btn am-btn-success am-radius am-btn-xs">查看</button> 
                                                     </a>

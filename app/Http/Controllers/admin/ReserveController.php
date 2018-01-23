@@ -18,6 +18,7 @@ class ReserveController extends Controller
     {
         //加载预约信息首页的操作
         $data = DB::table('reserve') -> orderBy('yutime','desc') -> paginate(5);
+        // dd($data);
         //将数据返回
         return view('admin.reserve.index',['data'=>$data]);
     }

@@ -34,7 +34,7 @@
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>用户编号</th>
+                                                <th>预约单号</th>
                                                 <th>电话号码</th>
                                                 <th>车源地</th>
                                                 <th>车辆类型</th>
@@ -53,7 +53,10 @@
                                                 <td align="center">{{$v -> register}}</td>
                                                 <td align="center">{{$v -> kilometres}}</td>
                                                 <td align="center">
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        
+                                                           <button id="pg" class="am-btn am-btn-success am-radius am-btn-xs" onclick="add({{$v -> phone}},$(this))">
+                                                               <i class="am-btn-success"></i> 通过评估
+                                                           </button> 
                                                     <form action="/admin/gujia/{{$v->id}}" method="POST" style="display: inline;">
                                                             {{csrf_field()}}
                                                             {{method_field('DELETE')}}
@@ -81,6 +84,23 @@
     </div>
     </div>
 </body>
+ <script type="text/javascript">
 
+        function add(id,obj){
+            layer.confirm('确定生成预约', {
+              btn: ['是','否'] //按钮
+            }, function(){
+                $.get("{{url('/admin/gujia/')}}/"+id,function(data){
+                    if(data == 1){
+                        layer.msg('已提交', {icon: 1});
+                        $(obj).parent().parent().remove();
+                    }
+                });
+            }, function(){
+              
+            });
+        }
+        
+ </script>
 </html>
 @endsection

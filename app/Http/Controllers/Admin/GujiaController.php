@@ -51,7 +51,16 @@ class GujiaController extends Controller
      */
     public function show($id)
     {
-        //
+        $time = date("Y-m-d H:i:s",intval(time()));
+        // echo $time;
+       $user = DB::table('user')->where('phone',$id)->value('id');
+       $res = DB::table('reserve')->insert(['sell_id'=>$user,'rid'=>rand(10000,99999),'yutime'=>$time]);
+       if($res){
+         $res1 = DB::table('evaluation')->where('phone',$id)->delete();
+         echo 1; 
+       }else{
+         echo 0;
+       }
     }
 
     /**
@@ -64,6 +73,7 @@ class GujiaController extends Controller
     {
         //
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -93,4 +103,5 @@ class GujiaController extends Controller
             echo '<script>alert("删除失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
         }
     }
+
 }
