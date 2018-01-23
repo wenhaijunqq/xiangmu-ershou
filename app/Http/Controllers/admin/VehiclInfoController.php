@@ -15,9 +15,27 @@ class VehiclInfoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        $data = partition1::where('tid','0')->get();
-        return view('/admin/cartype/cartype',['data'=>$data]);
+    public function index(Request $request){
+        $key = $request->input('key')? $request->input('key') : "";
+
+        if($key == ""){
+
+            $data = partition1::where('tid','0')->paginate(5);
+            return view('/admin/cartype/cartype',['data'=>$data]);
+        }else{
+            // 获取值
+            $val = $request->input('val');
+            $reqall = $request->all();
+            if($key == "id"){
+                $data = partition1::where('tid','0')->where('id','like','%'.$val.'%')->paginate(5);
+
+            }else if($key == "car_typeName"){
+                $data = partition1::where('tid','0')->where('car_typeName','like','%'.$val.'%')->paginate(5);
+            }
+             //dd($reqall['val']);
+            return view('/admin/cartype/cartype',['data'=>$data,'reqall'=>$reqall]);
+        }
+
     }
     public function ModelIndex($id){
         $data = partition1::where('tid','0')->get();
@@ -45,7 +63,7 @@ class VehiclInfoController extends Controller
      */
     public function create(Request $request)
     {
-          return "asdasdas";
+          //return "asdasdas";
 
     }
 
@@ -116,13 +134,18 @@ class VehiclInfoController extends Controller
      */
     public function edit($id)
     {
-
-        $test = partition1::destroy($id);
-        if($test){
-            echo "1";
+        $data = partition1::where('tid',$id)->get()->toArray();
+        if($data){
+            echo "3";
         }else{
-            echo "2";
+            $test = partition1::destroy($id);
+            if($test){
+                echo "1";
+            }else{
+                echo "2";
+            }
         }
+
     }
 
     /**
