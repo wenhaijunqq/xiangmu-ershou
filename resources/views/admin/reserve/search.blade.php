@@ -76,7 +76,7 @@
                                                 <td>{{$v -> ping_id}}</td>
                                                 <td>{{$v -> yutime}}</td>
                                                 <td>{{$v -> seetime}}</td>
-                                                <td>{{$v -> yu_status == 1 ? '看车中' : '预约中'}}</td>
+                                                <td>{{$v -> yu_status == 1 ? '看车中' : '卖车中'}}</td>
                                                 <td>
                                                 &nbsp;&nbsp;&nbsp;
                                                     <a href="/admin/reserve/{{$v->rid}}/edit">

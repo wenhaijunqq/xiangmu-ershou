@@ -84,12 +84,6 @@
                                         </div>
                                     </div>
                                      <div class="am-form-group">
-                                        <label for="user-name" class="am-u-sm-3 am-form-label"> 看车时间 <span class="tpl-form-line-small-title">SEETIME</span></label>
-                                        <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{{$data[0]->seetime}}" readonly>
-                                        </div>
-                                    </div>
-                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label"> 预约状态 <span class="tpl-form-line-small-title">YU_STATUS</span></label>
                                         <div class="am-u-sm-9">
                                         @if($data[0] -> yu_status  == 1)
@@ -102,7 +96,7 @@
                                             <div class="am-radio">
                                               <label>
                                                 <input type="radio" name="yu_status" value="0">
-                                                预约中
+                                                卖车中
                                               </label>
                                             </div>
                                         @else
@@ -115,7 +109,7 @@
                                             <div class="am-radio">
                                               <label>
                                                 <input type="radio" name="yu_status" value="0" checked>
-                                                预约中
+                                                卖车中
                                               </label>
                                             </div>
                                         @endif

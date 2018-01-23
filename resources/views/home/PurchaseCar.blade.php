@@ -1,10 +1,7 @@
 @extends('/layout/HomeLayout')
 @section('title','我要买车')
-
 <body>
 @section('content')
-
-<link rel="stylesheet" href="/css/h_PurchaseCar.css">
 <div class="crumbs-search" id="bread">
          <div class="crumbs">
              <a href="#">瓜子二手车</a>&gt;天津二手车        </div>
@@ -44,42 +41,14 @@
                              <a href="###">雪佛兰</a>
                              <a href="###">雪铁龙</a>
                          </span>
-                         <span><span style="" id="geng"  style="font-size: 14pt;">更多</span>
-                     </div>
-                     <div class="dd-all clearfix js-brand js-option-hid-info" id="ping" style="display:none">
-                             <ul class="xlcd">
-                                 @foreach($att as $k=>$v)
-
-                                 <li class="xlpp">
-                                     <label>{{$k}}</label>
-                                     <p>
-                                    @foreach(explode(',',$v) as $key=>$value)
-                                        <em style="display:none">{{$num=$num+1}}</em>
-                                     <a  data-gzlog="tracking_type=click&amp;eventid=92458035&amp;filter=brand&amp;brand=audi" href="###" value="{{$uid[$num-1]}}">{{$value}}</a>
-
-                                    @endforeach
-                                    </p>
-                                 </li>
-                                 @endforeach
-                            </ul>
                      </div>
                  </dd>
-
              </dl>
              <!-- 车系 -->
              <dl class="clearfix">
                  <dt>车系</dt>
                  <dd>
                      <div class="dd-top">
-                         <span class="a-box" id="carModel">
-                             <a class="active" value="0">不限</a>
-                             @foreach($data as $k=>$v)
-                             @if($v->tid > 0)
-
-                              <a href="###" value="{{$v->id}}">{{$v->car_typeName}}</a>
-                             @endif
-                             @endforeach
-
                          <span class="a-box">
                              <a class="active" >不限</a>
                              <a href="###">速腾</a>
@@ -236,13 +205,8 @@
          </div>
      </div>
      <div class="screen-result js-top" id="post">
-         <p class="result-p1">当前筛选：</p>
-         <ul class="result-li">
-            <li><a href="###"><i></i><span>价格：</span>3万以下</a><i>×</i></li>
-         </ul>
-        <p class="result-p2"><a href="###">重置条件</a></p>
-        <p class="result-p3">共为您找到412辆好车</p>
-    </div>
+         <p class="result-p3">共为您找到1670辆好车</p>
+     </div>
      <div class="list-filter">
          <div class="list-tab">
              <a class="active" >全部</a>
@@ -353,87 +317,4 @@
          </ul>
      </div>
 </body>
-
-<script type="text/javascript">
-
-    $("#pingpai a").click(function(){
-        $("#pingpai>a").attr("class",'');
-        $(this).attr("class","active");
-        $(".xlcd li p a").attr("class",'');
-        $("#ping").attr("style","display:none");
-        $("#geng").html("更多");
-        $(this).parent().parent().parent().prev().html();
-        $(this).attr("value");
-        $.post('/www/buy/car',{'_token':'{{csrf_token()}}','tid':$(this).attr("value")},function(data){
-            text ="<a class='active' href='###' value='0'>不限</a>";
-            $.each(data.data, function(i, val) {
-                text+="<a href='###' value='"+val.id+"'>"+val.car_typeName+"</a>"
-            });
-            $('#carModel').html(text);
-        })
-
-    })
-
-    $(".xlpp p a").click(function(){
-        $(".xlcd li p a").attr("class",'');
-        $(this).attr("class","active");
-        $("#pingpai a").attr("class",'');
-        $("#ping").attr("style","display:none");
-        $("#geng").html("更多");
-        //console.log($(this).parent().parent().parent().prev().html());
-        //console.log($(this).attr("value"));
-        $.post('/www/buy/car',{'_token':'{{csrf_token()}}','tid':$(this).attr("value")},function(data){
-            text ="<a class='active' href='###' value='0'>不限</a>";
-            $.each(data.data, function(i, val) {
-                text+="<a href='###' value='"+val.id+"'>"+val.car_typeName+"</a>"
-            });
-            $('#carModel').html(text);
-        })
-    })
-
-    $("#carModel").on('click','a',function(){
-        $("#carModel a").attr("class",'');
-        $("#pingpai a").attr("class",'');
-        $(this).attr("class","active");
-        //console.log($(this).parent().parent().parent().prev().html());
-        console.log($(this).attr("value"));
-        $.post('/www/buy/carType',{'_token':'{{csrf_token()}}','id':$(this).attr("value")},function(data){
-            text ="<a  href='###' value='0'>不限</a>";
-            $.each(data.data, function(i, val) {
-                text+="<a href='###' value='"+val.id+"'>"+val.car_typeName+"</a>"
-            });
-            $('#carModel').html(text);
-            $("#pingpai a[value='"+data.id+"']").attr("class",'active');
-            $("#carModel a[value='"+data.tid+"']").attr("class",'active');
-        })
-    })
-    //移入移除变换颜色
-    $("#geng").mouseover(function(){
-        $(this).attr("style","color:green");
-    }).mouseout(function(){
-        $(this).attr("style","");
-    });
-
-    $("#geng").click(function(){
-
-    if($("#geng").html() == '更多'){
-        $("#ping").attr("style","display:block");
-        $(this).html("收起");
-    }else{
-        $("#ping").attr("style","display:none");
-        $(this).html("更多");
-    }
-    })
-
-    $(".dd-option a").click(function(){
-        $(this).parent().prev().text($(this).text());
-    })
-    $(".clearfix a").click(function(){
-        console.log($(this).text());
-    })
-
-
-
-</script>
-
 @endsection

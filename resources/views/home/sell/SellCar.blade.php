@@ -192,7 +192,6 @@
 		$('#bon').click(function(){
 			var pho = $('#tel').val();
 			// alert(pho);
-			// attr('#phone').val() = $('#tel').val();
 			document.getElementById("phone").value = pho;
 		});
 		//弹出框

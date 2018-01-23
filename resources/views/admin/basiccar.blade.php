@@ -16,7 +16,7 @@
                             <div class="widget-head am-cf">
                                 <div class="widget-title am-fl">基本信息</div>
                                 <div class="widget-function am-fr">
-                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                    <a href="/admin/order"><button type="button" class="am-btn am-btn-success">返回订单列表</button></a>
                                 </div>
                             </div>
                             <div class="widget-body am-fr">

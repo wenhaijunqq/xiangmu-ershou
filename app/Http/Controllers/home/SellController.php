@@ -46,13 +46,23 @@ class SellController extends Controller
     {
         //接受要添加的数据
         $data = $request -> except(['_token','_method']);
+        // dd($data['phone']);
+        $phone = array('phone'=>$data['phone'],'auth'=>0);
+        // dd($phone);
         //执行添加的动作
-        $res = DB::table('evaluation') -> insert($data);
-        if($res){
-            echo '<script>alert("提交成功 工作人员会在第一时间联系您");location.href="/home/sell"</script>';
+        if(isset($data)){
+            $res = DB::table('evaluation') -> insert($data);
+            $user = DB::table('user') -> insert($phone);
+            if($res){
+                echo '<script>alert("提交成功 工作人员会在第一时间联系您");location.href="/home/sell"</script>';
+            }else{
+                echo '<script>alert("提交失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+            }
         }else{
-            echo '<script>alert("提交失败");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
+            echo '<script>alert("请添加基础信息");location.href="'.$_SERVER['HTTP_REFERER'].'"</script>';
         }
+        
+
     }
 
     /**

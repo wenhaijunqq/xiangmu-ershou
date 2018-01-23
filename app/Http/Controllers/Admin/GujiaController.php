@@ -17,7 +17,7 @@ class GujiaController extends Controller
     public function index()
     {
         //查询商品所有数据
-        $data = DB::table('evaluation') -> orderBy('id','asc') -> paginate(2);
+        $data = DB::table('evaluation') -> orderBy('id','asc') -> paginate(5);
         //显示估价页的操作
         return view('admin/gujia/index',['data'=>$data]);
     }

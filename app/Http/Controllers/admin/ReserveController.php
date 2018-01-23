@@ -55,10 +55,22 @@ class ReserveController extends Controller
         //执行查看的操作
         $data = DB::table('reserve') -> where('rid',$id) -> get();
         $sell = DB::table('user') -> where('id',$data[0]->sell_id) -> get();
-        $buy = DB::table('user') -> where('id',$data[0]->buy_id) -> get();
-        $ping = DB::table('assessor') -> where('id',$data[0]->ping_id) -> get();
-        //将数据带回网页
-        return view('admin.reserve.show',['data'=>$data,'sell'=>$sell,'buy'=>$buy,'ping'=>$ping]);
+        if($data[0]->buy_id != '' && $data[0]->ping_id == ''){
+
+            $buy = DB::table('user') -> where('id',$data[0]->buy_id) -> get();
+            return view('admin.reserve.show',['data'=>$data,'sell'=>$sell,'buy'=>$buy]);
+
+        }elseif ($data[0]->buy_id != '' && $data[0]->ping_id != '') {
+
+            $buy = DB::table('user') -> where('id',$data[0]->buy_id) -> get();
+            $ping = DB::table('assessor') -> where('id',$data[0]->ping_id) -> get();
+            return view('admin.reserve.show',['data'=>$data,'sell'=>$sell,'buy'=>$buy,'ping'=>$ping]);
+
+        }elseif($data[0]->buy_id == ''){
+
+            //将数据带回网页
+            return view('admin.reserve.show',['data'=>$data,'sell'=>$sell]);
+        }
     }
 
     /**
