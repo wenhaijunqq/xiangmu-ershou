@@ -4,11 +4,11 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="/admins/img/user04.png" alt="">
+                        <img  onerror="this.src='/img/vip.png'"alt="">
                     </div>
                     <span class="user-panel-logged-in-text">
-              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              禁言小张
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon" ></i>
+          
           </span>
                     <a href="/admin/Accountupdate" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
                 </div>

@@ -60,6 +60,7 @@ class yonghutianjiaController extends Controller
         $data = $request->except(['_token','query_string','head','repass']);
          // $data = $request->all();
         $data['head'] = $filename;
+        
         $res = DB::table('user')->insert($data);
         // $password="password";
         // $repass="repass";   

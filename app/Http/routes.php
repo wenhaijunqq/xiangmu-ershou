@@ -145,6 +145,8 @@ Route::resource('/admin/order','admin\OrderController');
 
 //后台预约信息页
 Route::resource('/admin/reserve','admin\ReserveController');
+//后台退出
+Route::resource('/admin/tuichu','admin\tuichuController');
 //后台登录验证
 Route::post('/admin/postLogin','admin\LoginController@postLogin');
 //后台登陆路由
@@ -157,6 +159,8 @@ Route::resource('/admin/loginindex','admin\LoginController@loginindex');
 
 //后台账号设置
 Route::resource('/admin/Accountupdate','admin\AccountUpdateController');
+//后台修改资料
+Route::resource('/admin/UserManagement/baocun','admin\AccountUpdateController@update');
 
 
 //后台已经评估路由

@@ -123,6 +123,7 @@
             }
 
         });
+    
     $('#password').blur(function(){
 
             var string1 = '^[a-z0-9_-]{6,18}$';
@@ -132,9 +133,6 @@
             if(res1 == null){
 
                 layer.tips('密码格式错误', '#password');
-            }else{
-
-                layer.tips('输入正确', '#password');
             }
         });
 
@@ -147,6 +145,7 @@
                 $.post('/admin/postLogin',{phone:$('#phone').val(),password:$('#password').val(),'_token':'{{csrf_token()}}'},function(data){
                         if(data == '1'){
                             location.href = '/admin/loginindex';
+                           // $.session.set('phone', $('#phone').val());
                         }else if(data == "0"){
                             layer.msg('密码错误');
                         }

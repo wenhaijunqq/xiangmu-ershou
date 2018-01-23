@@ -17,13 +17,17 @@ use Illuminate\Support\Facades\Validator;
  class LoginController extends Controller
 {
     //显示登录界面
-    public function login()
+    public function login(request $request)
     {
-        return view('admin/login');
+        if($request->session()->get('phone')){ 
+            return view('admin/index');
+         }else{
+           return view('admin/login');  
+         }
     } 
 
     //显示登录界面
-    public function loginindex()
+    public function loginindex(request $request)
     {
         return view('admin/index');
     }
@@ -72,14 +76,12 @@ use Illuminate\Support\Facades\Validator;
         $res = user::where('phone','=',$phone)->first();
         
         if($password == $res['password']){
-            // $request->session()->put('user', $res['id']);
+             $request->session()->put('phone', $phone);
 
             echo '1';
         }else{
             echo '0';
         }
-
-
     }
 
 
