@@ -1,4 +1,3 @@
-
 @extends('/layout/adminLayout')
 @section('title','后台文章')
 
@@ -27,17 +26,30 @@
           </div>
          </div>
         </div>
+        <form method="get" action="/admin/CarType/">
         <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
          <div class="am-form-group tpl-table-list-select">
-          <select data-am-selected="{btnSize: 'sm'}"> <option value="option1">所有类别</option> <option value="option2">IT业界</option> <option value="option3">数码产品</option> <option value="option3">笔记本电脑</option> <option value="option3">平板电脑</option> <option value="option3">只能手机</option> <option value="option3">超极本</option> </select>
+          <select data-am-selected="{btnSize: 'sm'}" name="key">
+              @if(empty($reqall['key']))
+
+              <option value="id" >车辆ID</option>
+              <option value="car_typeName">车辆名称</option>
+              @else
+
+              <option value="id" {{$reqall["key"] == "id"? "selected" :"" }}>车辆ID</option>
+              <option value="car_typeName" {{$reqall["key"] == "car_typeName"? "selected" :"" }}>车辆名称</option>
+
+              @endif
+              </select>
          </div>
         </div>
         <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
          <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-          <input type="text" class="am-form-field " />
-          <span class="am-input-group-btn"> <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button> </span>
+          <input type="text" class="am-form-field " name="val"/>
+          <span class="am-input-group-btn"> <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="submit"></button> </span>
          </div>
         </div>
+        </form>
         <div class="am-u-sm-12">
          <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
           <thead>
@@ -69,15 +81,11 @@
         </div>
         <div class="am-u-lg-12 am-cf">
          <div class="am-fr">
-          <ul class="am-pagination tpl-pagination">
-           <li class="am-disabled"><a href="#">&laquo;</a></li>
-           <li class="am-active"><a href="#">1</a></li>
-           <li><a href="#">2</a></li>
-           <li><a href="#">3</a></li>
-           <li><a href="#">4</a></li>
-           <li><a href="#">5</a></li>
-           <li><a href="#">&raquo;</a></li>
-          </ul>
+             @if(isset($reqall))
+             {!! $data->appends($reqall)->render() !!}
+             @else
+             {!! $data->render() !!}
+             @endif
          </div>
         </div>
        </div>
@@ -128,8 +136,12 @@
 
                             layer.msg('恭喜您,删除成功', {icon: 1});
                             obj.parent().parent().parent().remove();
-                        }else{
+                        }else if(data == 2){
+                            layer.msg('恭喜您,删除失败', {icon: 1});
 
+
+                        }else{
+                            layer.msg('请删除子类之后再进行操作', {icon: 3});
 
                         }
 
@@ -145,4 +157,3 @@
 
 </script>
 @endsection
->>>>>>> ba9fa8edd660792dd4be70d542413a30e9cc211b
